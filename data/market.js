@@ -1,10 +1,40 @@
 // 每日市場洞察：由 scripts/fetch_market.py 自動產生（GitHub Action 每天台灣時間 06:00），請不要手動改
 window.CD = window.CD || {};
-window.CD.marketUpdated = "2026-10-15 15:51";
+window.CD.marketUpdated = "2026-10-15 15:52";
 window.CD.marketGroups = [{"id": "tw", "name": "台灣財經"}, {"id": "strategy", "name": "商業與戰略"}, {"id": "tech", "name": "科技・新創・創投"}, {"id": "growth", "name": "行銷・產品・增長"}, {"id": "smb", "name": "創業與中小企業"}];
 window.CD.marketSummary = null;
-window.CD.marketStatus = [{"source": "市場先生", "ok": false, "error": "HTTP Error 403: Forbidden"}, {"source": "MacroMicro 財經M平方", "ok": true, "count": 2}, {"source": "Harvard Business Review", "ok": true, "count": 3}, {"source": "Business Insider", "ok": true, "count": 3}, {"source": "Fast Company", "ok": true, "count": 3}, {"source": "TechCrunch", "ok": true, "count": 3}, {"source": "The Verge", "ok": true, "count": 2}, {"source": "Wired", "ok": true, "count": 2}, {"source": "Springwise", "ok": true, "count": 2}, {"source": "Lenny's Newsletter", "ok": true, "count": 2}, {"source": "Brian Balfour（Reforge）", "ok": true, "count": 0}, {"source": "HubSpot Blog", "ok": true, "count": 2}, {"source": "Shopify Blog", "ok": true, "count": 2}, {"source": "Entrepreneur", "ok": true, "count": 3}, {"source": "Small Business Trends", "ok": true, "count": 2}];
+window.CD.marketStatus = [{"source": "市場先生", "ok": true, "count": 3}, {"source": "MacroMicro 財經M平方", "ok": true, "count": 2}, {"source": "Harvard Business Review", "ok": true, "count": 3}, {"source": "Business Insider", "ok": true, "count": 3}, {"source": "Fast Company", "ok": true, "count": 3}, {"source": "TechCrunch", "ok": true, "count": 3}, {"source": "The Verge", "ok": true, "count": 2}, {"source": "Wired", "ok": true, "count": 2}, {"source": "Springwise", "ok": true, "count": 2}, {"source": "Lenny's Newsletter", "ok": true, "count": 2}, {"source": "Brian Balfour（Reforge）", "ok": true, "count": 0}, {"source": "HubSpot Blog", "ok": true, "count": 2}, {"source": "Shopify Blog", "ok": true, "count": 2}, {"source": "Entrepreneur", "ok": true, "count": 3}, {"source": "Small Business Trends", "ok": true, "count": 2}];
 window.CD.market = [
+  {
+    "source": "市場先生",
+    "group": "tw",
+    "title": "2026哩程信用卡要選哪張？5張最值得辦的哩程信用卡推薦",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9MN0JocnJYTzlZenV5ZDdPcXJldVdfZnc2Umd5WjFYT01CNVFmU3lxdDlrV2RFY3pFWnJsX01PR2JRWkc1NmxnQVNwTXVja3oyVnBNUGp1bw?oc=5",
+    "date": "2026-10-14",
+    "excerpt": "",
+    "titleZh": "",
+    "takeaway": ""
+  },
+  {
+    "source": "市場先生",
+    "group": "tw",
+    "title": "新生兒保單怎麼買？新生兒保險規劃重點、投保時機一次看懂",
+    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9SZzdyT2lhNWNMTkM5R3U4MnhjMS0tbEpxOXBpV0JfSmhxczdsN2dHNTdXSkU4NXFCc3NGc1JkLWVHWFJfZWpsVWx5dURZem9ULTBlel9R?oc=5",
+    "date": "2026-10-14",
+    "excerpt": "",
+    "titleZh": "",
+    "takeaway": ""
+  },
+  {
+    "source": "市場先生",
+    "group": "tw",
+    "title": "2026 沒薪資證明能辦信用卡嗎？5張沒薪轉可辦的卡片推薦",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB2OVR0MkU5V1dOV19NSW5DbnN3aXluTDV5SjAtNXpTc1FXc3luYzFMRkVGYXZ4YUY1dlFYQlprWk55VjVqOXJJUmg4ejdyV1NqOXc?oc=5",
+    "date": "2026-10-13",
+    "excerpt": "",
+    "titleZh": "",
+    "takeaway": ""
+  },
   {
     "source": "MacroMicro 財經M平方",
     "group": "tw",
