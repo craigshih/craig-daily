@@ -202,7 +202,8 @@ def build_prompt(articles):
         "2. watch：3 個值得持續追蹤的問題，每個 20 字內。\n"
         "3. items：每篇文章一筆，i 對應編號；titleZh 是把標題翻成繁體中文的精簡標題（英文標題一定要翻譯，不可保留英文原文；中文原文就照抄）；"
         "takeaway 是一句 30–50 字的重點，說明它對產業或商業決策的意義。只根據標題與摘要，不要編造數字。\n\n"
-        "只輸出 JSON，格式：{\"summary\": \"…\", \"watch\": [\"…\"], \"items\": [{\"i\": 0, \"titleZh\": \"…\", \"takeaway\": \"…\"}]}\n\n"
+        "只輸出 JSON，格式：{\"summary\": \"…\", \"watch\": [\"…\"], \"items\": [{\"i\": 0, \"titleZh\": \"…\", \"takeaway\": \"…\"}]}\n"
+        "titleZh 範例：「Managers Need to Get Better at Killing Digital Products」→「主管要學會果斷收掉數位產品」。\n\n"
         + listing
     )
 
@@ -260,6 +261,39 @@ def summarize_groq(prompt):
         except (urllib.error.URLError, ValueError, KeyError, TimeoutError) as e:
             print(f"Groq {model}（{mode}）失敗：{e}", file=sys.stderr)
     return None
+
+
+HAS_CJK = re.compile(r"[\u4e00-\u9fff]")
+
+
+def translate_titles_groq(articles):
+    """第一輪沒翻成中文的標題，再用一次小請求只做翻譯。"""
+    todo = [i for i, a in enumerate(articles) if not HAS_CJK.search(a.get("titleZh") or a["title"])]
+    if not todo or not os.environ.get("GROQ_API_KEY"):
+        return
+    lines = "\n".join(f"[{i}] {articles[i]['title']}" for i in todo)
+    prompt = ("把下列英文新聞標題翻成精簡、通順的繁體中文（台灣用語），保留公司與人名的英文原名。"
+              "只輸出 JSON：{\"titles\": [{\"i\": 編號, \"zh\": \"中文標題\"}]}\n\n" + lines)
+    key = os.environ["GROQ_API_KEY"]
+    model = os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b"
+    for _ in range(2):
+        try:
+            data = groq_request("chat/completions", key, {
+                "model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.2,
+                "max_completion_tokens": 8000, "response_format": {"type": "json_object"},
+                **({"reasoning_effort": "low"} if "gpt-oss" in model else {}),
+            })
+            rows = extract_json(data["choices"][0]["message"]["content"]).get("titles", [])
+            n = 0
+            for row in rows:
+                i, zh = row.get("i"), str(row.get("zh") or "")
+                if isinstance(i, int) and 0 <= i < len(articles) and HAS_CJK.search(zh):
+                    articles[i]["titleZh"] = zh
+                    n += 1
+            print(f"Groq 補翻標題 {n}/{len(todo)} 篇", file=sys.stderr)
+            return
+        except (urllib.error.HTTPError, urllib.error.URLError, ValueError, KeyError, TimeoutError) as e:
+            print(f"Groq 補翻標題失敗：{e}", file=sys.stderr)
 
 
 def summarize_claude(prompt):
@@ -341,6 +375,10 @@ def main():
                 articles[i]["titleZh"] = str(row.get("titleZh") or "")
                 articles[i]["takeaway"] = str(row.get("takeaway") or "")
         summary = {"text": ai["summary"], "watch": ai["watch"]}
+        translate_titles_groq(articles)
+    for a in articles:  # 沒翻成中文的就留空，網站直接顯示原文標題
+        if a["titleZh"] and not HAS_CJK.search(a["titleZh"]) and a["titleZh"] == a["title"]:
+            a["titleZh"] = ""
 
     now = datetime.now(TW)
     body = "\n".join([
