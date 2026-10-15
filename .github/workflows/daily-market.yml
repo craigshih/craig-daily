@@ -1,0 +1,57 @@
+# 每天台灣時間 06:00 抓最新市場文章，並部署 GitHub Pages
+# 平常 push 也會走這裡部署（只部署，不抓文章）
+name: daily-market
+
+on:
+  schedule:
+    - cron: "0 22 * * *" # UTC 22:00 = 台灣 06:00
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        if: github.event_name != 'push'
+        with:
+          python-version: "3.12"
+
+      - name: 抓最新文章
+        if: github.event_name != 'push'
+        env:
+          # 選用：在 repo Settings → Secrets 加 ANTHROPIC_API_KEY，就會有中文重點與今日總覽
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          pip install --quiet anthropic certifi
+          python scripts/fetch_market.py
+
+      - name: 提交更新
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/market.js
+          git diff --cached --quiet || (git commit -m "每日市場洞察 $(TZ=Asia/Taipei date +%F)" && git push)
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deploy
+        uses: actions/deploy-pages@v4

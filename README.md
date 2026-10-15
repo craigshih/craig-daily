@@ -6,18 +6,21 @@
 - 本機版：http://localhost:8793/daily-site/（LaunchAgent `com.craig.dailysite` 開機自動啟動）
 
 ## 更新方式
-| 檔案 | 內容 | 更新方式 |
+| 內容 | 檔案 | 怎麼更新 |
 |---|---|---|
-| `data/brief.js` | 每日晨報（Claude /morning 版型） | 對 Claude 說「更新晨報」 |
-| `data/market.js` | 市場先生最新文章、重點、我的心得 | 對 Claude 說「讀市場先生」（來源 rich01.com/feed/） |
-| `data/papers.js` | Notion「📚 論文資料庫」勾選「公開到網站」的論文 | 對 Claude 說「同步論文」 |
-| `data/notes.js`、`data/lab.js` | FinTech Lab 的 Notion 筆記、實驗室行事曆（去掉對話內容） | `node sync.js` |
-| `data/funding.js` | 青年補助・獎學金 | 手動 / 請 Claude 查證更新 |
-| `data/themes.js` | 動漫主題名稱、主視覺網址、標語（配色在 styles.css） | 手動 |
+| 每日市場洞察 | `data/market.js` | **自動**：GitHub Action 每天台灣 06:00 跑 `scripts/fetch_market.py`（市場先生、MacroMicro、HBR、Business Insider、Fast Company、TechCrunch、The Verge、Wired、Springwise、Lenny's Newsletter、Brian Balfour／Reforge、HubSpot、Shopify、Entrepreneur、Small Business Trends）。在 repo 的 Settings → Secrets 加 `ANTHROPIC_API_KEY` 就會多出中文重點與今日總覽 |
+| 每日晨報 | `data/brief.js` | 對 Claude 說「更新晨報」 |
+| 讀過的論文 | `data/papers.js` | 在 Notion「📚 論文資料庫」寫筆記、勾「公開到網站」，再對 Claude 說「同步論文」 |
+| 筆記、實驗室行事曆 | `data/notes.js`、`data/lab.js` | `node sync.js` |
+| 青年補助・獎學金 | `data/funding.js` | 手動（一到兩週一次） |
+| 個人簡介 | `data/profile.js` | 手動 |
+| 動漫主題 | `data/themes.js` | 每天自動輪替，不用選 |
 
-改完 `git push`，GitHub Pages 約一分鐘後更新。改了 CSS / JS 記得把 `index.html` 裡的 `?v=` 版本號加一，避免瀏覽器快取舊檔。
+本機手動抓市場文章：`SSL_CERT_FILE=/etc/ssl/cert.pem python3 scripts/fetch_market.py`
 
-已讀標記、補助的「想申請／已申請」只存在各自瀏覽器的 localStorage。
+改完 `git push`，Action 會自動部署。改了 CSS / JS 記得把 `index.html` 裡的 `?v=` 版本號加一。
+
+動畫用 GSAP + ScrollTrigger（cdnjs），載入失敗時頁面照常顯示。
 
 ## 動漫主視覺
 圖片外連各作品官方網站，不存進這個 repo，版權屬原作者與製作委員會。官方換掉圖片網址時，主視覺會自動退回主題漸層，到 `data/themes.js` 換新網址即可。

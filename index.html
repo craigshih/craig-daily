@@ -4,16 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Craig 的日常</title>
-  <meta name="description" content="Craig 的個人日常網站：每日晨報、市場先生洞察、讀過的論文與筆記、青年補助與獎學金。">
+  <meta name="description" content="Craig 的個人網站：每日晨報、每日市場洞察、碩士班讀過的論文與筆記、青年補助與獎學金。">
   <meta name="referrer" content="no-referrer">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5">
-  <script>
-    // 先套用上次選的主題，避免閃爍
-    try { var t = localStorage.getItem("cd-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <div class="bg-art" aria-hidden="true"><div class="bg-img" id="bg-img"></div></div>
@@ -22,7 +18,7 @@
   <div id="app">
     <header class="topbar">
       <div class="wrap topbar-inner">
-        <a class="brand" href="#top"><span class="brand-motif" data-motif></span>Craig 的日常</a>
+        <a class="brand" href="#top"><span class="brand-motif" data-motif></span><span id="brand-name">Craig Shih</span></a>
         <nav class="nav" aria-label="主選單">
           <div class="nav-scroll">
             <a href="#brief">晨報</a>
@@ -36,14 +32,16 @@
     </header>
 
     <main id="top">
+      <!-- Hero：大字名字 + 今日主視覺 -->
       <section class="hero wrap">
         <div class="hero-text">
           <p class="eyebrow" id="hero-date"></p>
-          <h1 id="hero-title">今天也從一杯咖啡開始。</h1>
-          <p class="lede" id="hero-tagline"></p>
-          <div class="theme-picker">
-            <p class="picker-label">切換今日主題</p>
-            <div class="theme-chips" id="theme-chips" role="radiogroup" aria-label="動漫主題"></div>
+          <h1 class="hero-name" id="hero-name" aria-label="Craig Shih">Craig Shih</h1>
+          <p class="hero-role" id="hero-role"></p>
+          <p class="hero-line" id="hero-line"></p>
+          <div class="hero-cta">
+            <a class="pill solid" href="#market">今日市場洞察</a>
+            <a class="pill" href="#papers">我的論文書架</a>
           </div>
         </div>
         <figure class="kv" id="kv">
@@ -51,45 +49,56 @@
             <img id="kv-img" alt="" referrerpolicy="no-referrer" decoding="async">
             <span class="kv-fallback" data-motif aria-hidden="true"></span>
           </div>
-          <figcaption id="kv-credit"></figcaption>
+          <figcaption>
+            <span class="kv-badge" id="kv-badge"></span>
+            <span class="kv-credit" id="kv-credit"></span>
+          </figcaption>
         </figure>
       </section>
 
-      <section class="wrap stats" id="stats" aria-label="今日總覽"></section>
+      <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+      <!-- Bento：今日總覽 -->
+      <section class="wrap bento" id="bento" aria-label="今日總覽"></section>
 
       <!-- 晨報 -->
       <section class="block wrap" id="brief">
-        <div class="block-head">
-          <div><p class="kicker">Morning Brief</p><h2>每日晨報</h2></div>
+        <div class="block-head reveal">
+          <p class="kicker">01 — Morning Brief</p>
+          <h2>每日晨報</h2>
           <p class="block-sub" id="brief-meta"></p>
         </div>
-        <article class="paper brief" id="brief-body"></article>
+        <article class="paper brief reveal" id="brief-body"></article>
       </section>
 
-      <!-- 市場先生 -->
+      <!-- 市場洞察 -->
       <section class="block wrap" id="market">
-        <div class="block-head">
-          <div><p class="kicker">Mr. Market</p><h2>市場先生洞察</h2></div>
+        <div class="block-head reveal">
+          <p class="kicker">02 — Daily Market Insight</p>
+          <h2>每日市場洞察</h2>
           <p class="block-sub" id="market-meta"></p>
         </div>
-        <div class="market-summary paper" id="market-summary"></div>
+        <div class="market-summary paper reveal" id="market-summary"></div>
+        <div class="tabs" id="market-tabs" role="tablist"></div>
         <div class="grid cards-3" id="market-list"></div>
       </section>
 
       <!-- 論文 -->
       <section class="block wrap" id="papers">
-        <div class="block-head">
-          <div><p class="kicker">Papers</p><h2>讀過的論文</h2></div>
+        <div class="block-head reveal">
+          <p class="kicker">03 — Reading List</p>
+          <h2>讀過的論文</h2>
           <p class="block-sub" id="papers-meta"></p>
         </div>
         <div class="filters" id="papers-filters"></div>
-        <div class="grid cards-2" id="papers-list"></div>
+        <div class="timeline" id="papers-list"></div>
       </section>
 
       <!-- 筆記 -->
       <section class="block wrap" id="notes">
-        <div class="block-head">
-          <div><p class="kicker">Notes</p><h2>整理過的筆記</h2></div>
+        <div class="block-head reveal">
+          <p class="kicker">04 — Notes</p>
+          <h2>整理過的筆記</h2>
           <p class="block-sub" id="notes-meta"></p>
         </div>
         <div class="filters" id="notes-filters"></div>
@@ -98,8 +107,9 @@
 
       <!-- 補助・獎學金 -->
       <section class="block wrap" id="funding">
-        <div class="block-head">
-          <div><p class="kicker">Grants &amp; Scholarships</p><h2>青年補助・獎學金</h2></div>
+        <div class="block-head reveal">
+          <p class="kicker">05 — Grants &amp; Scholarships</p>
+          <h2>青年補助・獎學金</h2>
           <p class="block-sub" id="funding-meta"></p>
         </div>
         <div class="filters" id="funding-filters"></div>
@@ -110,18 +120,25 @@
     </main>
 
     <footer class="footer wrap">
-      <p>Craig 的日常 · 2026</p>
-      <p id="credits"></p>
+      <p class="footer-big reveal">Keep reading, <em>keep growing.</em></p>
+      <div class="footer-row">
+        <p id="footer-links"></p>
+        <p id="credits"></p>
+      </div>
     </footer>
   </div>
 
-  <script src="data/themes.js?v=5"></script>
-  <script src="data/brief.js?v=5"></script>
-  <script src="data/market.js?v=5"></script>
-  <script src="data/papers.js?v=5"></script>
-  <script src="data/notes.js?v=5"></script>
-  <script src="data/lab.js?v=5"></script>
-  <script src="data/funding.js?v=5"></script>
-  <script src="app.js?v=5"></script>
+  <script src="data/profile.js?v=6"></script>
+  <script src="data/themes.js?v=6"></script>
+  <script src="data/brief.js?v=6"></script>
+  <script src="data/market.js?v=6"></script>
+  <script src="data/papers.js?v=6"></script>
+  <script src="data/notes.js?v=6"></script>
+  <script src="data/lab.js?v=6"></script>
+  <script src="data/funding.js?v=6"></script>
+  <!-- 動畫：GSAP + ScrollTrigger（載入失敗時頁面照常顯示，只是沒有動畫） -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>
