@@ -1,6 +1,6 @@
 // 每日市場洞察：由 scripts/fetch_market.py 自動產生（GitHub Action 每天台灣時間 06:00），請不要手動改
 window.CD = window.CD || {};
-window.CD.marketUpdated = "2026-10-15 15:52";
+window.CD.marketUpdated = "2026-10-15 16:06";
 window.CD.marketGroups = [{"id": "tw", "name": "台灣財經"}, {"id": "strategy", "name": "商業與戰略"}, {"id": "tech", "name": "科技・新創・創投"}, {"id": "growth", "name": "行銷・產品・增長"}, {"id": "smb", "name": "創業與中小企業"}];
 window.CD.marketSummary = null;
 window.CD.marketStatus = [{"source": "市場先生", "ok": true, "count": 3}, {"source": "MacroMicro 財經M平方", "ok": true, "count": 2}, {"source": "Harvard Business Review", "ok": true, "count": 3}, {"source": "Business Insider", "ok": true, "count": 3}, {"source": "Fast Company", "ok": true, "count": 3}, {"source": "TechCrunch", "ok": true, "count": 3}, {"source": "The Verge", "ok": true, "count": 2}, {"source": "Wired", "ok": true, "count": 2}, {"source": "Springwise", "ok": true, "count": 2}, {"source": "Lenny's Newsletter", "ok": true, "count": 2}, {"source": "Brian Balfour（Reforge）", "ok": true, "count": 0}, {"source": "HubSpot Blog", "ok": true, "count": 2}, {"source": "Shopify Blog", "ok": true, "count": 2}, {"source": "Entrepreneur", "ok": true, "count": 3}, {"source": "Small Business Trends", "ok": true, "count": 2}];
@@ -88,6 +88,16 @@ window.CD.market = [
   {
     "source": "Business Insider",
     "group": "strategy",
+    "title": "Chinese exports to South Africa jump 29% as Trump’s trade war puts local factories under fresh pressure",
+    "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNWHEwc0J1NU9FT0ZIQTMtZFM3T3ZmamRtN2xBcDk1eUNBSjFuYTBVc2RFNVo5Q3RnbnJGREpNMnhDY3hTMU56S3JtWHdkZkpjc0MtdEtFMV9XNHJyRmtET2xEZ0ZTNnN2ZENKSW9NNm1uVHdSb2pPUVU5elkxZm1lMFpRYWEtVzlRMmFLaUFudFQtbldGTlEtU2prRXByaXJVYzVpUVFrR1hLNHZJZ3hNRHlJVjlnUmJPS2pfRGYtZHV3WTF6dFZZR1hFSDR5a3FSdzBj?oc=5",
+    "date": "2026-10-15",
+    "excerpt": "",
+    "titleZh": "",
+    "takeaway": ""
+  },
+  {
+    "source": "Business Insider",
+    "group": "strategy",
     "title": "Uganda’s shilling leads the world’s currency markets after a major rate hike, giving the East African economy an unexpected financial win",
     "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPWGI0UmxiOUFhZW5tSjllYVN0OVJPYVIwLU9iN3JQMzAzeG5JUjlrVW9PRk5UQUhucko0cDd0dk9jVTlnSVZDZEc0WEpnX2RVVHJ5bUM3RU52UWZpNXRhRXFEemZaMDFxVnpxandEU0J1Y2xrTUdzOV9zQy0wMUM0Nko2dFJjcTgxQkdBNVhMQkIyX0V5cHhsNS01d3J1MnhtNzRuQUxKNHU2QVAtdlFwQkVjdWlaenFUV3VsTzNCNTRaVnAySnNjajJ3anhyeEpOZGI4cG45djR6Zw?oc=5",
     "date": "2026-10-15",
@@ -100,16 +110,6 @@ window.CD.market = [
     "group": "strategy",
     "title": "Anthropic's quarterly revenue leaps to $16.8 billion as IPO looms",
     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObGxFd28tYWotcHdnVnUzVUE2a2xwNUpuU3NiTHFVM0ZhVDc2QW9ZeHlmTjRPU2dIcnVoOE5MMXJ1SmVmY0VTM3NLQnFDc0taR053cGtrZEFORHBudXVtSEpNT2NUWV91eGFTSVAxMG45ZTJLcEdhbFNBcEZJdkJyLUp6R3o4YmdhQUJ5R0MtOTJXazc0OWE4dA?oc=5",
-    "date": "2026-10-15",
-    "excerpt": "",
-    "titleZh": "",
-    "takeaway": ""
-  },
-  {
-    "source": "Business Insider",
-    "group": "strategy",
-    "title": "Late business tycoon Chivayo at the centre of fresh questions as Zimbabwe approves $650 million solar project",
-    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPM0VBblozY1d5ZVNIQkd0LVNyamFLV0pIOV9NS0liN0hBTDZHMnlvV09NZkdOQ01sRGJacjdLeWxQRThIdVlsRDc5QUJpNHAtN2FoYWNaOXBIQXc2dXlLZUxtenVHamlBY0JWTC15RXdrMkZUaHcyWUl3YnBON0dJazhuQXRsaHJmeW5QeUFvUkFDVGttRWRSQTVONDBxLTBkMU1NU2p6dVczWTh0elBSOVlVZGZXZWxqWTRlbUJ2ZzlVZXFyZkNBZHJXTE94SVNQZDFwMnJn?oc=5",
     "date": "2026-10-15",
     "excerpt": "",
     "titleZh": "",
