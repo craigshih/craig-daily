@@ -197,7 +197,7 @@ def build_prompt(articles):
     return (
         "你是一位幫台灣科技管理研究所碩士生整理每日財經與商業洞察的編輯。"
         "讀者關心產業變革、企業策略、金融科技、創新創業、供應鏈與宏觀經濟。\n\n"
-        "以下是今天各網站的最新文章。請用繁體中文（台灣用語）：\n"
+        "以下是今天各網站的最新文章。請用繁體中文（台灣用語與譯名，例如 Trump 譯「川普」）：\n"
         "1. summary：今天整體最值得注意的 2–3 個趨勢，寫成一段 80–120 字的總覽。\n"
         "2. watch：3 個值得持續追蹤的問題，每個 20 字內。\n"
         "3. items：每篇文章一筆，i 對應編號；titleZh 是把標題翻成繁體中文的精簡標題（英文標題一定要翻譯，不可保留英文原文；中文原文就照抄）；"
@@ -272,7 +272,7 @@ def translate_titles_groq(articles):
     if not todo or not os.environ.get("GROQ_API_KEY"):
         return
     lines = "\n".join(f"[{i}] {articles[i]['title']}" for i in todo)
-    prompt = ("把下列英文新聞標題翻成精簡、通順的繁體中文（台灣用語），保留公司與人名的英文原名。"
+    prompt = ("把下列英文新聞標題翻成精簡、通順的繁體中文（台灣用語與譯名，例如 Trump 譯「川普」），保留公司與人名的英文原名。"
               "只輸出 JSON：{\"titles\": [{\"i\": 編號, \"zh\": \"中文標題\"}]}\n\n" + lines)
     key = os.environ["GROQ_API_KEY"]
     model = os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b"
