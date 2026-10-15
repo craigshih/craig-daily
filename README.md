@@ -14,7 +14,7 @@
 | 筆記、實驗室行事曆 | `data/notes.js`、`data/lab.js` | `node sync.js` |
 | 青年補助・獎學金 | `data/funding.js` | 手動（一到兩週一次） |
 | 個人簡介 | `data/profile.js` | 手動 |
-| 動漫主題 | `data/themes.js` | 每天自動輪替一部，當天在多張官方主視覺間輪播；`palette` 是四個霓虹色 |
+| 動漫主題 | `data/themes.js` | 每天自動輪替一部，當天在多張官方主視覺間輪播；`palette` 是四個霓虹色；鼠標與拖尾也跟著換（芙莉蓮花瓣、RE:0 雪花、我推星星、敗北女角太陽）。網址加 `?theme=oshinoko` 可預覽指定主題 |
 
 本機手動抓市場文章：`SSL_CERT_FILE=/etc/ssl/cert.pem python3 scripts/fetch_market.py`
 

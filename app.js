@@ -22,7 +22,9 @@
   /* ---------- 動漫主題：每天自動輪替一部 ---------- */
   const themes = CD.themes || [];
   const dayNo = Math.floor(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()) / 86400000);
-  const theme = themes[dayNo % themes.length] || { images: [], palette: [] };
+  // 網址加 ?theme=oshinoko 可以預覽指定主題
+  const forced = new URLSearchParams(location.search).get("theme");
+  const theme = themes.find((t) => t.id === forced) || themes[dayNo % themes.length] || { images: [], palette: [] };
   const nextTheme = themes[(dayNo + 1) % themes.length] || {};
   const pal = theme.palette.length ? theme.palette : ["#7ee0b5", "#ffd36e", "#b9a6ff", "#7cc7ff"];
   const root = document.documentElement.style;
@@ -390,6 +392,53 @@
       { shape: "zigzag", points: 6, left: "28%", top: "4%", radius: 26, stroke: pal[0], strokeWidth: 3, fill: "none", y: { 0: 14 } }
     ];
     defs.forEach((d, i) => new mojs.Shape({ parent, isShowStart: true, duration: 3200 + i * 300, repeat: 999, isYoyo: true, easing: "sin.inOut", opacity: .85, ...d }).play());
+  }
+
+  /* ---------- 動漫鼠標：每部一種形狀 + 拖尾粒子（觸控裝置不啟用） ---------- */
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (finePointer) {
+    const [a, b, c, d] = pal;
+    const shapes = {
+      // 芙莉蓮：花田魔法的小花
+      frieren: (s) => `<g transform="translate(16 16) scale(${s})">${[0, 72, 144, 216, 288].map((r) => `<ellipse cx="0" cy="-7" rx="4.6" ry="7" fill="${a}" stroke="#fff" stroke-width="1" transform="rotate(${r})"/>`).join("")}<circle r="3.6" fill="${b}" stroke="#fff" stroke-width="1"/></g>`,
+      // RE:0：冰晶雪花
+      rezero: (s) => `<g transform="translate(16 16) scale(${s})" stroke-linecap="round">${[0, 60, 120].map((r) => `<g transform="rotate(${r})"><line y1="-12" y2="12" stroke="#fff" stroke-width="4.5"/><line y1="-12" y2="12" stroke="${a}" stroke-width="2.4"/><path d="M-4 -9 L0 -5 L4 -9 M-4 9 L0 5 L4 9" fill="none" stroke="${d}" stroke-width="2"/></g>`).join("")}<circle r="2.6" fill="${c}"/></g>`,
+      // 我推：星星眼
+      oshinoko: (s) => `<g transform="translate(16 16) scale(${s})"><path d="M0 -13 L3.8 -4.2 L13 -4 L5.8 2 L8.2 11.6 L0 6.2 L-8.2 11.6 L-5.8 2 L-13 -4 L-3.8 -4.2 Z" fill="${a}" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M0 -5 L1.6 -1.6 L5 -1.5 L2.3 .8 L3.2 4.6 L0 2.5 L-3.2 4.6 L-2.3 .8 L-5 -1.5 L-1.6 -1.6 Z" fill="${b}"/></g>`,
+      // 敗北女角：夏天的太陽
+      makeine: (s) => `<g transform="translate(16 16) scale(${s})" stroke-linecap="round">${[0, 45, 90, 135, 180, 225, 270, 315].map((r) => `<line y1="-9.5" y2="-13.5" stroke="${c}" stroke-width="2.6" transform="rotate(${r})"/>`).join("")}<circle r="7" fill="${a}" stroke="#fff" stroke-width="1.6"/><circle cx="-2.2" cy="-2.2" r="2" fill="#fff" opacity=".7"/></g>`
+    };
+    const draw = shapes[theme.id] || shapes.frieren;
+    const url = (s) => `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">${draw(s)}</svg>`)}") 16 16`;
+    const css = document.createElement("style");
+    css.textContent = `html, body { cursor: ${url(0.85)}, auto; }
+      a, button, [role="tab"], .gallery figure, .kv-dots button { cursor: ${url(1.15)}, pointer; }
+      input, textarea { cursor: text; }`;
+    document.head.appendChild(css);
+
+    // 拖尾：花瓣往下飄、冰晶閃爍、星星、陽光碎片；用固定數量的 mo.js 圖形輪流重播
+    if (mojs) {
+      const trailDef = {
+        frieren: { shape: "circle", radius: { 4: 0 }, fall: 28 },
+        rezero: { shape: "cross", radius: { 5: 0 }, rotate: { 0: 90 }, strokeWidth: 2 },
+        oshinoko: { shape: "polygon", points: 5, radius: { 6: 0 }, rotate: { 0: 144 } },
+        makeine: { shape: "circle", radius: { 3.5: 0 }, scale: { 1: 1.6 } }
+      }[theme.id] || { shape: "circle", radius: { 4: 0 } };
+      const { fall = 0, ...shapeDef } = trailDef;
+      const pool = Array.from({ length: 14 }, (_, i) => new mojs.Shape({
+        parent: fx, left: 0, top: 0, duration: 650, easing: "quad.out", opacity: { 1: 0 },
+        fill: shapeDef.shape === "cross" ? "none" : pal[i % pal.length], stroke: pal[i % pal.length], ...shapeDef
+      }));
+      let k = 0, last = 0;
+      window.addEventListener("pointermove", (e) => {
+        if (e.pointerType !== "mouse") return;
+        const now = performance.now();
+        if (now - last < 45) return; // 節流，避免太密
+        last = now;
+        const x = e.clientX + (fall ? Math.random() * 16 - 8 : 0), y = e.clientY;
+        pool[k = (k + 1) % pool.length].tune({ x, y: fall ? { [y]: y + fall } : y }).replay();
+      }, { passive: true });
+    }
   }
 
   /* ---------- GSAP：進場與捲動動畫 ---------- */
