@@ -1,40 +1,10 @@
 // 每日市場洞察：由 scripts/fetch_market.py 自動產生（GitHub Action 每天台灣時間 06:00），請不要手動改
 window.CD = window.CD || {};
-window.CD.marketUpdated = "2026-10-15 15:49";
+window.CD.marketUpdated = "2026-10-15 15:51";
 window.CD.marketGroups = [{"id": "tw", "name": "台灣財經"}, {"id": "strategy", "name": "商業與戰略"}, {"id": "tech", "name": "科技・新創・創投"}, {"id": "growth", "name": "行銷・產品・增長"}, {"id": "smb", "name": "創業與中小企業"}];
 window.CD.marketSummary = null;
-window.CD.marketStatus = [{"source": "市場先生", "ok": true, "count": 3}, {"source": "MacroMicro 財經M平方", "ok": true, "count": 2}, {"source": "Harvard Business Review", "ok": true, "count": 3}, {"source": "Business Insider", "ok": true, "count": 3}, {"source": "Fast Company", "ok": true, "count": 3}, {"source": "TechCrunch", "ok": true, "count": 3}, {"source": "The Verge", "ok": true, "count": 2}, {"source": "Wired", "ok": true, "count": 2}, {"source": "Springwise", "ok": true, "count": 2}, {"source": "Lenny's Newsletter", "ok": true, "count": 2}, {"source": "Brian Balfour（Reforge）", "ok": true, "count": 0}, {"source": "HubSpot Blog", "ok": true, "count": 2}, {"source": "Shopify Blog", "ok": true, "count": 2}, {"source": "Entrepreneur", "ok": true, "count": 3}, {"source": "Small Business Trends", "ok": true, "count": 2}];
+window.CD.marketStatus = [{"source": "市場先生", "ok": false, "error": "HTTP Error 403: Forbidden"}, {"source": "MacroMicro 財經M平方", "ok": true, "count": 2}, {"source": "Harvard Business Review", "ok": true, "count": 3}, {"source": "Business Insider", "ok": true, "count": 3}, {"source": "Fast Company", "ok": true, "count": 3}, {"source": "TechCrunch", "ok": true, "count": 3}, {"source": "The Verge", "ok": true, "count": 2}, {"source": "Wired", "ok": true, "count": 2}, {"source": "Springwise", "ok": true, "count": 2}, {"source": "Lenny's Newsletter", "ok": true, "count": 2}, {"source": "Brian Balfour（Reforge）", "ok": true, "count": 0}, {"source": "HubSpot Blog", "ok": true, "count": 2}, {"source": "Shopify Blog", "ok": true, "count": 2}, {"source": "Entrepreneur", "ok": true, "count": 3}, {"source": "Small Business Trends", "ok": true, "count": 2}];
 window.CD.market = [
-  {
-    "source": "市場先生",
-    "group": "tw",
-    "title": "2026哩程信用卡要選哪張？5張最值得辦的哩程信用卡推薦",
-    "link": "https://rich01.com/creditcard-miles-rewards/",
-    "date": "2026-10-14",
-    "excerpt": "哩程信用卡最大的特色是可透過刷卡消費累積哩程點數，來換免費機票或免費住宿等",
-    "titleZh": "",
-    "takeaway": ""
-  },
-  {
-    "source": "市場先生",
-    "group": "tw",
-    "title": "2026滙豐Live+現金回饋卡值得辦嗎？市場先生信用卡評 滙豐Live+現金回饋卡",
-    "link": "https://rich01.com/hsbc-live-cash-card-review/",
-    "date": "2026-10-14",
-    "excerpt": "滙豐Live+現金回饋卡值得辦嗎？ 市場先生信用卡評測，除了替你整理出滙豐",
-    "titleZh": "",
-    "takeaway": ""
-  },
-  {
-    "source": "市場先生",
-    "group": "tw",
-    "title": "2026滙豐匯鑽卡值得辦嗎？市場先生信用卡評滙豐匯鑽卡",
-    "link": "https://rich01.com/hsbc-cashback-titanium-review/",
-    "date": "2026-10-14",
-    "excerpt": "滙豐匯鑽卡值得辦嗎？市場先生的信用卡評，除了替你整理出滙豐匯鑽卡 最適合的",
-    "titleZh": "",
-    "takeaway": ""
-  },
   {
     "source": "MacroMicro 財經M平方",
     "group": "tw",
@@ -108,8 +78,8 @@ window.CD.market = [
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "Trump destroys the American dream by deporting immigrants to a Caribbean island, but these African countries resist his third-country plan",
-    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQLUxnUEI2MXE3Nl9VQnA5d0hsNjV5d2xhQkhnSTRoNnJaMWxTeU5fdElZbnhmdmhXMkVPeXVRb1NzWU5MdTNjOGRWWWduTDgyRFpqbDNXMUNMZjQxYlF5YUg1amNCSTZoU21qUndiVzBjWjE2NndEVnRtdjNQY0lGd29KZHlKeTVpWmQ5VWkwU3Y3SHFjUGNQX1Y5VUd2dFVVRURTMVlvOEVDMFlhYkw4VVMtY2k0Ukk4M0VPNElITjBYWHEzNTBqbDBVRlM3ZXF5ZVN1OEQzWQ?oc=5",
+    "title": "Late business tycoon Chivayo at the centre of fresh questions as Zimbabwe approves $650 million solar project",
+    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPM0VBblozY1d5ZVNIQkd0LVNyamFLV0pIOV9NS0liN0hBTDZHMnlvV09NZkdOQ01sRGJacjdLeWxQRThIdVlsRDc5QUJpNHAtN2FoYWNaOXBIQXc2dXlLZUxtenVHamlBY0JWTC15RXdrMkZUaHcyWUl3YnBON0dJazhuQXRsaHJmeW5QeUFvUkFDVGttRWRSQTVONDBxLTBkMU1NU2p6dVczWTh0elBSOVlVZGZXZWxqWTRlbUJ2ZzlVZXFyZkNBZHJXTE94SVNQZDFwMnJn?oc=5",
     "date": "2026-10-15",
     "excerpt": "",
     "titleZh": "",
