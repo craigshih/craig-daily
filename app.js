@@ -206,7 +206,7 @@
   function marketCard(m) {
     const items = CD.market || [], read = store.get("cd-market-read", {});
     const i = items.indexOf(m), isRead = read[m.link];
-    const zh = m.titleZh && m.titleZh !== m.title;
+    const zh = m.titleZh && m.titleZh !== m.title && !/[\u4e00-\u9fff]/.test(m.title); // 中文原標題就不重複顯示
     return `
       <article class="card ${isRead ? "read" : ""}">
         <div class="meta">${badge(m.source)}<span>${esc(m.date)}</span></div>
