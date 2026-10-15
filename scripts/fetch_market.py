@@ -40,7 +40,7 @@ GROUPS = [
 
 # (名稱, 分組, 網址, 最多幾篇, 幾天內算新)
 SOURCES = [
-    ("市場先生", "tw", "https://rich01.com/feed/", 3, 7),
+    ("市場先生", "tw", ["https://rich01.com/feed/", gnews("site:rich01.com when:7d", "zh")], 3, 7),
     ("MacroMicro 財經M平方", "tw", gnews("site:macromicro.me/blog when:7d", "zh"), 3, 7),
     ("Harvard Business Review", "strategy", gnews("site:hbr.org/2026 when:7d"), 3, 7),
     ("Business Insider", "strategy", gnews("site:businessinsider.com when:2d"), 3, 3),
@@ -125,12 +125,17 @@ JUNK = re.compile(r"subscription|my library|sign in|log in|coupon|promo code|% o
 def collect():
     now = datetime.now(timezone.utc)
     articles, status = [], []
-    for name, group, url, limit, days in SOURCES:
-        try:
-            entries = list(parse_feed(fetch(url)))
-        except Exception as e:  # 單一網站失敗不影響其他
-            status.append({"source": name, "ok": False, "error": str(e)[:120]})
-            print(f"✗ {name}: {e}", file=sys.stderr)
+    for name, group, urls, limit, days in SOURCES:
+        entries, err = None, None
+        for url in urls if isinstance(urls, list) else [urls]:  # 第一個網址被擋就換備用的
+            try:
+                entries = list(parse_feed(fetch(url)))
+                break
+            except Exception as e:
+                err = e
+        if entries is None:  # 單一網站失敗不影響其他
+            status.append({"source": name, "ok": False, "error": str(err)[:120]})
+            print(f"✗ {name}: {err}", file=sys.stderr)
             continue
         fresh = [e for e in entries if e["date"] and now - e["date"] <= timedelta(days=days) and e["title"] and e["link"]]
         fresh.sort(key=lambda e: e["date"], reverse=True)
@@ -140,7 +145,7 @@ def collect():
             title = e["title"]
             if "news.google.com" in url:  # 可能重複兩次，所以去兩輪
                 for _ in range(3):
-                    title = re.sub(r"\s*[-|｜]\s*[^-|｜]*(Review|Insider|Springwise|Shopify|MacroMicro|部落格|M平方)[^-|｜]*$", "", title, flags=re.I)
+                    title = re.sub(r"\s*[-|｜]\s*[^-|｜]*(Review|Insider|Springwise|Shopify|MacroMicro|部落格|M平方|市場先生|Mr\.Market)[^-|｜]*$", "", title, flags=re.I)
             title = re.sub(r"\s+\^\s*\w+$", "", title).strip(" -|｜")  # HBR 標題尾巴的文章代號
             if title in seen or len(title) < 12 or JUNK.search(title):
                 continue
