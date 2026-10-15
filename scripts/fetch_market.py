@@ -3,7 +3,7 @@
 GitHub Action 每天跑一次（.github/workflows/daily-market.yml），本機也可以手動跑：
     python3 scripts/fetch_market.py
 
-有設定 ANTHROPIC_API_KEY 時，會請 Claude 幫每篇寫一句中文重點、翻譯標題、整理今日總覽；
+有設定 GROQ_API_KEY（或 ANTHROPIC_API_KEY）時，會請 AI 幫每篇寫一句中文重點、翻譯標題、整理今日總覽；
 沒有金鑰就只放原文標題與摘要，網站一樣能看。
 """
 import email.utils
@@ -13,6 +13,7 @@ import os
 import re
 import ssl
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -188,30 +189,59 @@ SUMMARY_SCHEMA = {
 }
 
 
-def summarize(articles):
-    """用 Claude 寫中文重點；沒有金鑰或呼叫失敗時回傳 None，網站改顯示原文。"""
-    if not os.environ.get("ANTHROPIC_API_KEY") or not articles:
-        return None
+def build_prompt(articles):
+    listing = "\n".join(
+        f"[{i}] ({a['source']}) {a['title']}" + (f" — {a['excerpt']}" if a["excerpt"] else "")
+        for i, a in enumerate(articles)
+    )
+    return (
+        "你是一位幫台灣科技管理研究所碩士生整理每日財經與商業洞察的編輯。"
+        "讀者關心產業變革、企業策略、金融科技、創新創業、供應鏈與宏觀經濟。\n\n"
+        "以下是今天各網站的最新文章。請用繁體中文（台灣用語）：\n"
+        "1. summary：今天整體最值得注意的 2–3 個趨勢，寫成一段 80–120 字的總覽。\n"
+        "2. watch：3 個值得持續追蹤的問題，每個 20 字內。\n"
+        "3. items：每篇文章一筆，i 對應編號；titleZh 是精簡的中文標題（中文原文就照抄）；"
+        "takeaway 是一句 30–50 字的重點，說明它對產業或商業決策的意義。只根據標題與摘要，不要編造數字。\n\n"
+        "只輸出 JSON，格式：{\"summary\": \"…\", \"watch\": [\"…\"], \"items\": [{\"i\": 0, \"titleZh\": \"…\", \"takeaway\": \"…\"}]}\n\n"
+        + listing
+    )
+
+
+def summarize_groq(prompt):
+    """Groq（OpenAI 相容 API）。GROQ_MODEL 可指定模型，預設 gpt-oss-120b，失敗時改用 llama-3.3-70b。"""
+    key = os.environ["GROQ_API_KEY"]
+    models = [os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b", "llama-3.3-70b-versatile"]
+    for model in dict.fromkeys(models):
+        body = json.dumps({
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "response_format": {"type": "json_object"},
+            "temperature": 0.3,
+            "max_completion_tokens": 8000,
+        }).encode()
+        req = urllib.request.Request(
+            "https://api.groq.com/openai/v1/chat/completions", data=body,
+            headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json", "User-Agent": UA},
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=120, context=SSL_CTX) as r:
+                data = json.loads(r.read())
+            text = data["choices"][0]["message"]["content"]
+            print(f"Groq {model} 完成中文摘要", file=sys.stderr)
+            return json.loads(text)
+        except urllib.error.HTTPError as e:
+            print(f"Groq {model} 錯誤 {e.code}：{e.read()[:200]!r}", file=sys.stderr)
+        except (urllib.error.URLError, json.JSONDecodeError, KeyError) as e:
+            print(f"Groq {model} 失敗：{e}", file=sys.stderr)
+    return None
+
+
+def summarize_claude(prompt):
     try:
         import anthropic
     except ImportError:
         print("沒有安裝 anthropic，略過中文摘要", file=sys.stderr)
         return None
-
-    listing = "\n".join(
-        f"[{i}] ({a['source']}) {a['title']}" + (f" — {a['excerpt']}" if a["excerpt"] else "")
-        for i, a in enumerate(articles)
-    )
-    prompt = (
-        "你是一位幫台灣科技管理研究所碩士生整理每日財經與商業洞察的編輯。"
-        "讀者關心產業變革、企業策略、金融科技、創新創業、供應鏈與宏觀經濟。\n\n"
-        "以下是今天各網站的最新文章。請用繁體中文：\n"
-        "1. summary：今天整體最值得注意的 2–3 個趨勢，寫成一段 80–120 字的總覽。\n"
-        "2. watch：3 個值得持續追蹤的問題，每個 20 字內。\n"
-        "3. items：每篇文章一筆，i 對應編號；titleZh 是精簡的中文標題（中文原文就照抄）；"
-        "takeaway 是一句 30–50 字的重點，說明它對產業或商業決策的意義。只根據標題與摘要，不要編造數字。\n\n"
-        + listing
-    )
     try:
         client = anthropic.Anthropic()
         resp = client.beta.messages.create(
@@ -235,6 +265,23 @@ def summarize(articles):
     return json.loads(text)
 
 
+def summarize(articles):
+    """有 GROQ_API_KEY 用 Groq，有 ANTHROPIC_API_KEY 用 Claude；都沒有或失敗就回傳 None，網站改顯示原文。"""
+    if not articles:
+        return None
+    prompt = build_prompt(articles)
+    ai = None
+    if os.environ.get("GROQ_API_KEY"):
+        ai = summarize_groq(prompt)
+    if ai is None and os.environ.get("ANTHROPIC_API_KEY"):
+        ai = summarize_claude(prompt)
+    if not ai or not isinstance(ai.get("items"), list):
+        return None
+    ai.setdefault("summary", "")
+    ai.setdefault("watch", [])
+    return ai
+
+
 def main():
     articles, status = collect()
     if not articles:
@@ -244,9 +291,10 @@ def main():
     summary = None
     if ai:
         for row in ai["items"]:
-            if 0 <= row["i"] < len(articles):
-                articles[row["i"]]["titleZh"] = row["titleZh"]
-                articles[row["i"]]["takeaway"] = row["takeaway"]
+            i = row.get("i") if isinstance(row, dict) else None
+            if isinstance(i, int) and 0 <= i < len(articles):
+                articles[i]["titleZh"] = str(row.get("titleZh") or "")
+                articles[i]["takeaway"] = str(row.get("takeaway") or "")
         summary = {"text": ai["summary"], "watch": ai["watch"]}
 
     now = datetime.now(TW)

@@ -8,19 +8,19 @@
 ## 更新方式
 | 內容 | 檔案 | 怎麼更新 |
 |---|---|---|
-| 每日市場洞察 | `data/market.js` | **自動**：GitHub Action 每天台灣 06:00 跑 `scripts/fetch_market.py`（市場先生、MacroMicro、HBR、Business Insider、Fast Company、TechCrunch、The Verge、Wired、Springwise、Lenny's Newsletter、Brian Balfour／Reforge、HubSpot、Shopify、Entrepreneur、Small Business Trends）。在 repo 的 Settings → Secrets 加 `ANTHROPIC_API_KEY` 就會多出中文重點與今日總覽 |
+| 每日市場洞察 | `data/market.js` | **自動**：GitHub Action 每天台灣 06:00 跑 `scripts/fetch_market.py`（市場先生、MacroMicro、HBR、Business Insider、Fast Company、TechCrunch、The Verge、Wired、Springwise、Lenny's Newsletter、Brian Balfour／Reforge、HubSpot、Shopify、Entrepreneur、Small Business Trends）。在 repo 的 Settings → Secrets 加 `GROQ_API_KEY`（或 `ANTHROPIC_API_KEY`）就會多出中文重點與今日總覽；Groq 預設用 `openai/gpt-oss-120b`，可在 Settings → Variables 設 `GROQ_MODEL` 換模型 |
 | 每日晨報 | `data/brief.js` | 對 Claude 說「更新晨報」 |
 | 讀過的論文 | `data/papers.js` | 在 Notion「📚 論文資料庫」寫筆記、勾「公開到網站」，再對 Claude 說「同步論文」 |
 | 筆記、實驗室行事曆 | `data/notes.js`、`data/lab.js` | `node sync.js` |
 | 青年補助・獎學金 | `data/funding.js` | 手動（一到兩週一次） |
 | 個人簡介 | `data/profile.js` | 手動 |
-| 動漫主題 | `data/themes.js` | 每天自動輪替，不用選 |
+| 動漫主題 | `data/themes.js` | 每天自動輪替一部，當天在多張官方主視覺間輪播；`palette` 是四個霓虹色 |
 
 本機手動抓市場文章：`SSL_CERT_FILE=/etc/ssl/cert.pem python3 scripts/fetch_market.py`
 
 改完 `git push`，Action 會自動部署。改了 CSS / JS 記得把 `index.html` 裡的 `?v=` 版本號加一。
 
-動畫用 GSAP + ScrollTrigger（cdnjs），載入失敗時頁面照常顯示。
+動畫：GSAP + ScrollTrigger（cdnjs，捲動進場）、mo.js（jsDelivr，點擊爆破與 Hero 幾何動畫，mojs.io 那套）。載入失敗或系統關閉動態效果時，頁面照常顯示。
 
 ## 動漫主視覺
 圖片外連各作品官方網站，不存進這個 repo，版權屬原作者與製作委員會。官方換掉圖片網址時，主視覺會自動退回主題漸層，到 `data/themes.js` 換新網址即可。

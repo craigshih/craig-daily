@@ -16,62 +16,110 @@
   const today = new Date();
   const todayISO = iso(today);
   const P = CD.profile || {};
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const mojs = !reduce && window.mojs;
 
-  /* ---------- 動漫主題：每天自動輪替 ---------- */
+  /* ---------- 動漫主題：每天自動輪替一部 ---------- */
   const themes = CD.themes || [];
   const dayNo = Math.floor(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()) / 86400000);
-  const theme = themes[dayNo % themes.length] || {};
-  document.documentElement.dataset.theme = theme.id || "frieren";
-  document.documentElement.style.setProperty("--motif", `"${theme.motif || "✿"}"`);
+  const theme = themes[dayNo % themes.length] || { images: [], palette: [] };
+  const nextTheme = themes[(dayNo + 1) % themes.length] || {};
+  const pal = theme.palette.length ? theme.palette : ["#7ee0b5", "#ffd36e", "#b9a6ff", "#7cc7ff"];
+  const root = document.documentElement.style;
+  pal.forEach((c, i) => root.setProperty(`--c${i + 1}`, c));
+  if (theme.bg) { root.setProperty("--bg", theme.bg); document.querySelector('meta[name="theme-color"]').content = theme.bg; }
+  if (theme.bg2) root.setProperty("--bg2", theme.bg2);
   document.querySelectorAll("[data-motif]").forEach((el) => (el.textContent = theme.motif || "✿"));
 
-  const kvImg = $("#kv-img");
-  kvImg.addEventListener("load", () => kvImg.classList.add("ready"));
-  kvImg.addEventListener("error", () => { kvImg.classList.remove("ready"); $("#bg-img").style.backgroundImage = "none"; });
-  if (theme.img) {
-    kvImg.alt = `${theme.name} 主視覺`;
-    kvImg.style.objectPosition = theme.pos || "50% 30%";
-    kvImg.src = theme.img;
-    $("#bg-img").style.backgroundImage = `url("${theme.img}")`;
+  /* ---------- 主視覺輪播：當天動漫的多張圖 ---------- */
+  const frame = $("#kv-frame");
+  let images = [...theme.images];
+  let current = 0, timer = null;
+  const imgEls = images.map((src, i) => {
+    const img = new Image();
+    img.referrerPolicy = "no-referrer";
+    img.decoding = "async";
+    img.alt = `${theme.name} 主視覺 ${i + 1}`;
+    img.addEventListener("load", () => frame.classList.add("has-img"));
+    img.addEventListener("error", () => { // 官方換掉網址就跳過這張
+      const k = imgEls.indexOf(img);
+      if (k < 0) return;
+      imgEls.splice(k, 1); images.splice(k, 1); img.remove(); renderDots();
+      if (current >= imgEls.length) current = 0;
+      if (imgEls.length) show(current, true); else frame.classList.remove("has-img");
+    });
+    img.src = src;
+    frame.appendChild(img);
+    return img;
+  });
+
+  function renderDots() {
+    $("#kv-dots").innerHTML = imgEls.map((_, i) => `<button aria-label="第 ${i + 1} 張" class="${i === current ? "on" : ""}" data-i="${i}"></button>`).join("");
   }
-  const nextTheme = themes[(dayNo + 1) % themes.length] || {};
+  function show(i, silent) {
+    if (!imgEls.length) return;
+    current = (i + imgEls.length) % imgEls.length;
+    imgEls.forEach((el, k) => el.classList.toggle("on", k === current));
+    $("#bg-img").style.backgroundImage = `url("${images[current]}")`;
+    document.querySelectorAll("#kv-dots button").forEach((b, k) => b.classList.toggle("on", k === current));
+    if (window.gsap && !reduce) window.gsap.fromTo(imgEls[current], { scale: 1.12 }, { scale: 1, duration: 5.5, ease: "power1.out" });
+    if (!silent) burstAt(frame, 0.5, 0.15);
+  }
+  function autoplay() { clearInterval(timer); if (imgEls.length > 1) timer = setInterval(() => show(current + 1), 5200); }
+  $("#kv-dots").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (b) { show(+b.dataset.i); autoplay(); } });
+  current = dayNo % Math.max(images.length, 1);
+  renderDots(); show(current, true); autoplay();
+
   $("#kv-badge").textContent = `今日主題｜${theme.name || ""}`;
-  $("#kv-credit").innerHTML = theme.sourceUrl ? `圖 © ${ext(theme.sourceUrl, "官方網站")}` : "";
+  $("#kv-credit").innerHTML = theme.sourceUrl ? `圖片 © ${ext(theme.sourceUrl, esc(theme.source))}，每天自動換一部、每 5 秒換一張` : "";
+
+  // 今日圖鑑：同一部動漫的所有主視覺，點一下換到主視覺
+  const gallery = [...theme.images, ...theme.images];
+  $("#gallery").innerHTML = gallery.map((src, i) => `<figure data-g="${i % theme.images.length}"><img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></figure>`).join("");
+  $("#gallery").addEventListener("click", (e) => {
+    const f = e.target.closest("[data-g]"); if (!f) return;
+    const k = imgEls.findIndex((el) => el.src === theme.images[+f.dataset.g]);
+    if (k >= 0) { show(k); autoplay(); window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); }
+  });
 
   /* ---------- Hero ---------- */
   $("#hero-date").textContent = `${today.getFullYear()} 年 ${fmtDay(todayISO)}`;
   const [first, ...rest] = (P.name || "Craig Shih").split(" ");
-  $("#hero-name").innerHTML = `<span class="w">${esc(first)}</span> <em class="w">${esc(rest.join(" "))}</em>`;
+  $("#hero-name").innerHTML = `<span class="w">${esc(first)}</span> <em class="w grad">${esc(rest.join(" "))}</em>`;
   $("#hero-role").textContent = P.role || "";
   $("#hero-line").innerHTML = `${esc(theme.hero || "")}　<b>${esc(theme.tagline || "")}</b>`;
   $("#brand-name").textContent = P.name || "Craig Shih";
-
   const words = ["Morning Brief", "Market Insight", "Strategy", "Innovation", "Supply Chain", "FinTech", "Papers", "Notes", "Grants"];
   $("#marquee").innerHTML = [...words, ...words].map((w) => `<span>${w}</span>`).join("");
+
+  /* ---------- 平台標記顏色 ---------- */
+  const colorOf = (name) => { let h = 0; for (const ch of name) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return pal[h % pal.length]; };
+  const initial = (name) => (name.match(/[A-Za-z]/) ? name.replace(/[^A-Z]/g, "").slice(0, 2) || name[0].toUpperCase() : name[0]);
+  const badge = (name) => `<span class="src-badge"><i style="--badge:${colorOf(name)}">${esc(initial(name))}</i>${esc(name)}</span>`;
 
   /* ---------- Bento 今日總覽 ---------- */
   function renderBento() {
     const b = CD.brief || {}, market = CD.market || [], papers = CD.papers || [];
-    const groups = CD.marketGroups || [];
     const nSources = new Set(market.map((m) => m.source)).size;
-    const top = market.filter((m) => m.group !== "tw").slice(0, 3);
+    const top = market.filter((m) => m.group !== "tw").slice(0, 4);
     const bySem = (CD.semesters || []).map((s) => `${s} ${papers.filter((p) => p.semester === s).length}`).join("・");
     $("#bento").innerHTML = `
       <div class="tile tile-about reveal">
         <div>
-          <p class="t-label">About</p>
+          <p class="t-label">About me</p>
           <p class="t-title">${esc(P.role || "")}</p>
         </div>
         <p>${esc(P.bio || "")}</p>
-        <div class="tags">${(P.focus || []).map((f) => `<span class="tag line">${esc(f)}</span>`).join("")}</div>
+        <div class="tags">${(P.focus || []).map((f, i) => `<span class="tag ${i % 2 ? "alt" : "hot"}">${esc(f)}</span>`).join("")}</div>
       </div>
-      <a class="tile tile-brief reveal" href="#brief">
+      <a class="tile tile-wide reveal" href="#brief">
         <span class="arrow">↗</span>
         <p class="t-label">今天的晨報</p>
         <p class="t-title">${esc(b.headline || "還沒有晨報")}</p>
         <p>${(b.needs || []).length} 件事需要你處理・${(b.resolved || []).length} 件已經解決</p>
       </a>
-      <div class="tile tile-theme reveal" style="background-image:url('${esc(theme.img || "")}')">
+      <div class="tile tile-theme reveal">
+        <img src="${esc(theme.images[(dayNo + 1) % Math.max(theme.images.length, 1)] || "")}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">
         <div class="shade">
           <p class="t-label">Today's Theme</p>
           <p class="t-title">${esc(theme.name || "")}</p>
@@ -81,10 +129,10 @@
       <a class="tile reveal" href="#market">
         <span class="arrow">↗</span>
         <p class="t-label">市場洞察</p>
-        <p class="t-big" data-count="${market.length}">${market.length}</p>
-        <p>篇今日新文・${nSources} 個來源・${groups.length} 大主題</p>
+        <p class="t-big grad" data-count="${market.length}">${market.length}</p>
+        <p>篇今日新文・${nSources} 個平台</p>
       </a>
-      <a class="tile tile-brief reveal" href="#market">
+      <a class="tile tile-wide reveal" href="#market">
         <span class="arrow">↗</span>
         <p class="t-label">國外今日焦點</p>
         <ul class="mini-list">${top.map((m) => `<li>${esc(m.titleZh || m.title)}</li>`).join("")}</ul>
@@ -92,7 +140,7 @@
       <a class="tile reveal" href="#papers">
         <span class="arrow">↗</span>
         <p class="t-label">論文書架</p>
-        <p class="t-big" data-count="${papers.length}">${papers.length}</p>
+        <p class="t-big grad" data-count="${papers.length}">${papers.length}</p>
         <p>${esc(bySem)}</p>
       </a>`;
   }
@@ -121,8 +169,9 @@
     }
     const yAt = (x) => { const f = (x / W) * (v.length - 1), i = Math.floor(f), t = f - i; const a = v[i], b = v[Math.min(i + 1, v.length - 1)]; return base - (a + (b - a) * t) * (base - top); };
     const dots = [140, 420, 700].map((x) => `<i class="focal" style="left:${(x / W * 100).toFixed(2)}%;top:${((yAt(x) - 12) / H * 100).toFixed(2)}%"></i>`).join("");
+    const stops = pal.map((c, i) => `<stop offset="${(i / (pal.length - 1) * 100).toFixed(0)}%" stop-color="${c}"/>`).join("");
     // 拉伸到容器寬度、高度固定，線寬不跟著變形；焦點用 HTML 疊上去才不會變橢圓
-    return `<div class="terrain" role="img" aria-label="今天的負荷地形"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><path d="${d}" vector-effect="non-scaling-stroke"/></svg>${dots}</div>`;
+    return `<div class="terrain" role="img" aria-label="今天的負荷地形"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><defs><linearGradient id="terrain-grad" gradientUnits="userSpaceOnUse" x1="0" x2="${W}" y1="0" y2="0">${stops}</linearGradient></defs><path d="${d}" vector-effect="non-scaling-stroke"/></svg>${dots}</div>`;
   }
   function renderBrief() {
     const b = CD.brief;
@@ -149,36 +198,58 @@
       ${lab}`;
   }
 
-  /* ---------- 每日市場洞察（GitHub Action 每天自動更新） ---------- */
+  /* ---------- 每日市場洞察：依主題 / 依平台 ---------- */
+  let marketMode = store.get("cd-market-mode", "topic");
   let marketTab = "all";
-  function renderMarket() {
-    const s = CD.marketSummary, items = CD.market || [], groups = CD.marketGroups || [];
-    const read = store.get("cd-market-read", {});
-    const sources = [...new Set(items.map((m) => m.source))];
-    $("#market-meta").textContent = `每天台灣時間 06:00 自動更新・最近一次 ${CD.marketUpdated || "—"}`;
-    $("#market-summary").innerHTML = s ? `
-      <div><p class="label">今日總覽</p><p>${esc(s.text)}</p></div>
-      <div class="watch"><p class="label">值得追的問題</p>${(s.watch || []).map((w) => `<span class="tag alt">${esc(w)}</span>`).join("")}</div>` : `
-      <div><p class="label">今日來源</p><p>從 ${sources.length} 個台灣與國外財經、商業、科技網站抓今天的新文章，依主題分類。</p>
-      <div class="sources">${sources.map((x) => `<span class="tag line">${esc(x)}</span>`).join("")}</div></div>`;
-    $("#market-tabs").innerHTML = [{ id: "all", name: "全部" }, ...groups].map((g) => {
-      const n = g.id === "all" ? items.length : items.filter((m) => m.group === g.id).length;
-      return `<button class="btn ${g.id === marketTab ? "on" : ""}" role="tab" aria-selected="${g.id === marketTab}" data-tab="${g.id}">${esc(g.name)} ${n}</button>`;
-    }).join("");
-    const shown = items.filter((m) => marketTab === "all" || m.group === marketTab);
-    $("#market-list").innerHTML = shown.length ? shown.map((m) => {
-      const i = items.indexOf(m), isRead = read[m.link];
-      const zh = m.titleZh && m.titleZh !== m.title;
-      return `
+  function marketCard(m) {
+    const items = CD.market || [], read = store.get("cd-market-read", {});
+    const i = items.indexOf(m), isRead = read[m.link];
+    const zh = m.titleZh && m.titleZh !== m.title;
+    return `
       <article class="card ${isRead ? "read" : ""}">
-        <div class="meta"><span class="src-name">${esc(m.source)}</span><span>${esc(m.date)}</span></div>
+        <div class="meta">${badge(m.source)}<span>${esc(m.date)}</span></div>
         <h3>${ext(m.link, esc(zh ? m.titleZh : m.title))}</h3>
         ${zh ? `<p class="orig">${esc(m.title)}</p>` : ""}
         ${m.takeaway ? `<p class="insight">${esc(m.takeaway)}</p>` : m.excerpt ? `<p class="excerpt">${esc(m.excerpt)}</p>` : ""}
         <div class="card-foot"><button class="btn ${isRead ? "on" : ""}" data-read="${i}">${isRead ? "已讀 ✓" : "標記已讀"}</button></div>
       </article>`;
-    }).join("") : `<p class="empty">這個主題今天沒有新文章。</p>`;
   }
+  function renderMarket() {
+    const s = CD.marketSummary, items = CD.market || [], groups = CD.marketGroups || [];
+    const sources = [...new Set(items.map((m) => m.source))];
+    const groupName = Object.fromEntries(groups.map((g) => [g.id, g.name]));
+    $("#market-meta").textContent = `每天台灣時間 06:00 自動更新・最近一次 ${CD.marketUpdated || "—"}`;
+    $("#market-summary").innerHTML = s && s.text ? `
+      <div><p class="label">今日總覽</p><p>${esc(s.text)}</p></div>
+      <div class="watch"><p class="label">值得追的問題</p>${(s.watch || []).map((w) => `<span class="tag alt">${esc(w)}</span>`).join("")}</div>` : `
+      <div><p class="label">今日來源</p><p>從 ${sources.length} 個台灣與國外財經、商業、科技平台抓今天的新文章。可以依主題看，也可以切到「依平台」逐站瀏覽。</p></div>`;
+    document.querySelectorAll(".seg button").forEach((b) => b.classList.toggle("on", b.dataset.mode === marketMode));
+
+    const tabs = marketMode === "topic"
+      ? [{ id: "all", name: "全部", n: items.length }, ...groups.map((g) => ({ id: g.id, name: g.name, n: items.filter((m) => m.group === g.id).length }))]
+      : [{ id: "all", name: "全部平台", n: items.length }, ...sources.map((x) => ({ id: x, name: x, n: items.filter((m) => m.source === x).length }))];
+    if (!tabs.some((t) => t.id === marketTab)) marketTab = "all";
+    $("#market-tabs").innerHTML = tabs.map((t) => `<button class="btn ${t.id === marketTab ? "on" : ""}" role="tab" aria-selected="${t.id === marketTab}" data-tab="${esc(t.id)}">${esc(t.name)}<span class="n">${t.n}</span></button>`).join("");
+
+    const box = $("#market-list");
+    if (marketMode === "platform" && marketTab === "all") {
+      // 依平台：每個平台一段，左邊平台名稱、右邊文章
+      box.innerHTML = sources.map((src) => {
+        const list = items.filter((m) => m.source === src);
+        return `<div class="platform-block">
+          <div class="platform-name"><b>${badge(src)}</b><span>${esc(groupName[list[0].group] || "")}・${list.length} 篇</span></div>
+          <div class="platform-cards">${list.map(marketCard).join("")}</div>
+        </div>`;
+      }).join("") || `<p class="empty">今天沒有抓到文章。</p>`;
+      return;
+    }
+    const shown = items.filter((m) => marketTab === "all" || (marketMode === "topic" ? m.group === marketTab : m.source === marketTab));
+    box.innerHTML = shown.length ? shown.map(marketCard).join("") : `<p class="empty">這裡今天沒有新文章。</p>`;
+  }
+  document.querySelector(".seg").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-mode]"); if (!b || b.dataset.mode === marketMode) return;
+    marketMode = b.dataset.mode; marketTab = "all"; store.set("cd-market-mode", marketMode); renderMarket(); burstFrom(e);
+  });
   $("#market-tabs").addEventListener("click", (e) => { const b = e.target.closest("[data-tab]"); if (b) { marketTab = b.dataset.tab; renderMarket(); } });
   $("#market-list").addEventListener("click", (e) => {
     const b = e.target.closest("[data-read]"); if (!b) return;
@@ -201,12 +272,13 @@
         ${p.authors ? `<p>${esc(p.authors)}</p>` : ""}
         ${p.takeaway ? `<p class="takeaway">${esc(p.takeaway)}</p>` : ""}
         ${(p.highlights || []).length ? `<ul>${p.highlights.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>` : ""}
-        <div class="card-foot">${(p.fields || []).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}${p.course ? `<span class="tag line">${esc(p.course)}</span>` : ""}</div>
+        <div class="card-foot">${(p.fields || []).map((t) => `<span class="tag hot">${esc(t)}</span>`).join("")}${p.course ? `<span class="tag">${esc(p.course)}</span>` : ""}</div>
       </article>`;
+    const nowSem = sems.find((s) => all.some((p) => p.semester === s)) && [...sems].reverse().find((s) => all.some((p) => p.semester === s));
     $("#papers-list").innerHTML = sems.map((s, i) => {
       const list = shown.filter((p) => p.semester === s);
       return `
-      <div class="term reveal">
+      <div class="term reveal ${s === nowSem ? "now" : ""}">
         <div class="term-label"><b>${esc(s)}</b><span>${["第一學年・上", "第一學年・下", "第二學年・上", "第二學年・下"][i] || ""}・${list.length} 篇</span></div>
         ${list.length ? `<div class="term-list">${list.map(card).join("")}</div>` : `<p class="term-empty">這學期還沒有論文。在 Notion 新增一筆、選好學期並勾選「公開到網站」。</p>`}
       </div>`;
@@ -245,7 +317,7 @@
     const shown = items.filter((f) => fundFilter === "全部" || f.cat === fundFilter || (fundFilter === "我的清單" && mine[f.name] && mine[f.name] !== "不適合"));
     $("#funding-list").innerHTML = shown.length ? shown.map((f) => `
       <article class="card">
-        <div class="meta"><span class="tag">${esc(f.cat)}</span><span>${esc(f.org)}</span></div>
+        <div class="meta"><span class="tag hot">${esc(f.cat)}</span><span>${esc(f.org)}</span></div>
         <h3>${ext(f.link, esc(f.name))}</h3>
         <p><b>對象</b>　${esc(f.who)}</p>
         <p>${esc(f.what)}</p>
@@ -267,7 +339,7 @@
     const b = e.target.closest("[data-n]"); if (!b) return;
     const mine = store.get("cd-funding", {});
     mine[b.dataset.n] = mine[b.dataset.n] === b.dataset.s ? "" : b.dataset.s;
-    store.set("cd-funding", mine); renderFunding();
+    store.set("cd-funding", mine); renderFunding(); burstFrom(e);
   });
 
   /* ---------- 頁尾 ---------- */
@@ -283,25 +355,69 @@
 
   renderBento(); renderBrief(); renderMarket(); renderPapers(); renderNotes(); renderFunding();
 
-  /* ---------- 動畫（GSAP + ScrollTrigger；沒載到或使用者關閉動態時直接顯示） ---------- */
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* ---------- mo.js：點擊爆破、主視覺換圖爆破、Hero 幾何動畫（mojs.io 風格） ---------- */
+  const fx = $("#fx");
+  let burst = null;
+  if (mojs) {
+    burst = new mojs.Burst({
+      parent: fx, left: 0, top: 0, radius: { 0: 90 }, count: 12, degree: 360,
+      children: { shape: ["circle", "polygon", "rect", "cross"], points: 5, fill: pal, stroke: pal, strokeWidth: { 2: 0 },
+        radius: { 9: 0 }, rotate: { 0: 180 }, duration: 750, delay: "stagger(0, 18)", easing: "quad.out" }
+    });
+    const ring = new mojs.Shape({ parent: fx, left: 0, top: 0, shape: "circle", fill: "none", stroke: pal[1], strokeWidth: { 8: 0 }, radius: { 0: 60 }, duration: 600, easing: "cubic.out" });
+    window.__fx = (x, y) => { burst.tune({ x, y }).replay(); ring.tune({ x, y }).replay(); };
+  }
+  function burstAt(el, fx0 = 0.5, fy0 = 0.5) {
+    if (!window.__fx) return;
+    // #fx 圖層在 #app 外面、不受超大螢幕 zoom 影響；getBoundingClientRect 已經是畫面座標
+    const r = el.getBoundingClientRect();
+    window.__fx(r.left + r.width * fx0, r.top + r.height * fy0);
+  }
+  function burstFrom(e) { if (window.__fx && e.clientX) window.__fx(e.clientX, e.clientY); }
+  document.addEventListener("click", (e) => { if (!e.target.closest("[data-read], .seg, [data-n]")) burstFrom(e); });
+
+  if (mojs) {
+    // Hero 背景的漂浮幾何（圓、星、鋸齒、十字），位置用百分比，跟著版面縮放
+    const parent = $("#hero-shapes");
+    const defs = [
+      { shape: "circle", left: "2%", top: "6%", radius: 28, stroke: pal[0], strokeWidth: 3, fill: "none", scale: { 1: 1.35 } },
+      { shape: "polygon", points: 3, left: "46%", top: "10%", radius: 16, fill: pal[1], rotate: { 0: 360 }, duration: 6000 },
+      { shape: "zigzag", points: 10, left: "52%", top: "86%", radius: 46, stroke: pal[2], strokeWidth: 3, fill: "none", x: { 0: 30 } },
+      { shape: "cross", left: "92%", top: "8%", radius: 12, stroke: pal[3], strokeWidth: 4, rotate: { 0: 180 } },
+      { shape: "rect", left: "46%", top: "97%", radius: 10, fill: pal[3], rotate: { 0: 90 }, y: { 0: -20 } },
+      { shape: "circle", left: "96%", top: "70%", radius: 7, fill: pal[0], scale: { 1: 1.8 } },
+      { shape: "polygon", points: 5, left: "3%", top: "86%", radius: 14, fill: "none", stroke: pal[1], strokeWidth: 3, rotate: { 0: -360 }, duration: 7000 },
+      { shape: "zigzag", points: 6, left: "28%", top: "4%", radius: 26, stroke: pal[0], strokeWidth: 3, fill: "none", y: { 0: 14 } }
+    ];
+    defs.forEach((d, i) => new mojs.Shape({ parent, isShowStart: true, duration: 3200 + i * 300, repeat: 999, isYoyo: true, easing: "sin.inOut", opacity: .85, ...d }).play());
+  }
+
+  /* ---------- GSAP：進場與捲動動畫 ---------- */
   if (window.gsap && !reduce) {
     const gsap = window.gsap;
     if (window.ScrollTrigger) gsap.registerPlugin(window.ScrollTrigger);
     gsap.timeline({ defaults: { ease: "power3.out" } })
       .from(".eyebrow", { y: 16, opacity: 0, duration: .6 })
-      .from("#hero-name .w", { yPercent: 60, opacity: 0, duration: 1, stagger: .12 }, "-=.3")
-      .from([".hero-role", ".hero-line", ".hero-cta"], { y: 20, opacity: 0, duration: .7, stagger: .1 }, "-=.6")
-      .from(".kv-frame", { clipPath: "inset(100% 0 0 0 round 999px 999px 28px 28px)", duration: 1.2, ease: "power4.inOut" }, 0.2)
-      .from(".kv figcaption", { opacity: 0, duration: .6 }, "-=.4");
+      .from("#hero-name .w", { yPercent: 70, rotate: 4, opacity: 0, duration: 1.1, stagger: .14 }, "-=.3")
+      .from([".hero-role", ".hero-line", ".hero-cta"], { y: 20, opacity: 0, duration: .7, stagger: .1 }, "-=.7")
+      .from(".kv-ring", { scale: .7, rotate: -8, opacity: 0, duration: 1.2, ease: "back.out(1.6)" }, 0.15)
+      .add(() => burstAt(frame, .5, .1), 0.9)
+      .from(".kv figcaption", { opacity: 0, y: 10, duration: .6 }, "-=.4");
     if (window.ScrollTrigger) {
-      gsap.to(".kv-frame img", { yPercent: 8, scale: 1.08, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+      gsap.to(".kv-ring", { y: 40, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+      gsap.to(".marquee", { xPercent: -6, ease: "none", scrollTrigger: { trigger: ".marquee", start: "top bottom", end: "bottom top", scrub: true } });
       gsap.utils.toArray(".reveal").forEach((el) => {
-        gsap.from(el, { y: 36, opacity: 0, duration: .9, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%", once: true } });
+        gsap.from(el, { y: 50, opacity: 0, duration: .9, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%", once: true } });
+      });
+      gsap.utils.toArray(".block-head h2").forEach((el) => {
+        window.ScrollTrigger.create({ trigger: el, start: "top 80%", once: true, onEnter: () => setTimeout(() => burstAt(el, 0.08, 0.5), 400) });
+      });
+      gsap.utils.toArray(".block-num").forEach((el) => {
+        gsap.from(el, { x: 80, opacity: 0, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 90%", once: true } });
       });
       document.querySelectorAll("[data-count]").forEach((el) => {
         const n = +el.dataset.count, obj = { v: 0 };
-        gsap.to(obj, { v: n, duration: 1.4, ease: "power2.out", onUpdate: () => (el.textContent = Math.round(obj.v)), scrollTrigger: { trigger: el, start: "top 90%", once: true } });
+        gsap.to(obj, { v: n, duration: 1.6, ease: "power2.out", onUpdate: () => (el.textContent = Math.round(obj.v)), scrollTrigger: { trigger: el, start: "top 90%", once: true } });
       });
     }
   }
