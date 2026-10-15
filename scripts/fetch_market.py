@@ -207,32 +207,58 @@ def build_prompt(articles):
     )
 
 
+def groq_request(path, key, payload=None):
+    req = urllib.request.Request(
+        f"https://api.groq.com/openai/v1/{path}",
+        data=json.dumps(payload).encode() if payload else None,
+        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json", "User-Agent": UA},
+    )
+    with urllib.request.urlopen(req, timeout=180, context=SSL_CTX) as r:
+        return json.loads(r.read())
+
+
+def extract_json(text):
+    """從回覆中取出第一個完整的 JSON 物件（模型偶爾會在前後加說明）。"""
+    text = re.sub(r"^```(?:json)?|```$", "", (text or "").strip(), flags=re.M)
+    start = text.find("{")
+    if start < 0:
+        raise ValueError("沒有 JSON")
+    return json.JSONDecoder().raw_decode(text[start:])[0]
+
+
 def summarize_groq(prompt):
-    """Groq（OpenAI 相容 API）。GROQ_MODEL 可指定模型，預設 gpt-oss-120b，失敗時改用 llama-3.3-70b。"""
+    """Groq（OpenAI 相容 API）。GROQ_MODEL 可指定模型，預設 gpt-oss-120b；
+    失敗時依序重試、改用不強制 JSON 的模式，最後從 Groq 現有模型清單挑其他模型。"""
     key = os.environ["GROQ_API_KEY"]
-    models = [os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b", "llama-3.3-70b-versatile"]
-    for model in dict.fromkeys(models):
-        body = json.dumps({
-            "model": model,
-            "messages": [{"role": "user", "content": prompt}],
-            "response_format": {"type": "json_object"},
-            "temperature": 0.3,
-            "max_completion_tokens": 8000,
-        }).encode()
-        req = urllib.request.Request(
-            "https://api.groq.com/openai/v1/chat/completions", data=body,
-            headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json", "User-Agent": UA},
-        )
+    models = [os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b", "openai/gpt-oss-20b"]
+    try:  # Groq 模型常更換，從即時清單補上可用的備援
+        live = [m["id"] for m in groq_request("models", key).get("data", [])]
+        models = [m for m in models if m in live] + [m for m in live if re.search(r"gpt-oss|qwen|llama-4|kimi", m) and m not in models]
+    except Exception as e:
+        print(f"讀不到 Groq 模型清單：{e}", file=sys.stderr)
+    attempts = [(m, mode) for m in models[:4] for mode in ("json", "json", "text")]
+    for model, mode in attempts:
+        payload = {"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.3, "max_completion_tokens": 16000}
+        if mode == "json":
+            payload["response_format"] = {"type": "json_object"}
+        if "gpt-oss" in model:
+            payload["reasoning_effort"] = "low"  # 推理少一點，把 token 留給輸出
         try:
-            with urllib.request.urlopen(req, timeout=120, context=SSL_CTX) as r:
-                data = json.loads(r.read())
-            text = data["choices"][0]["message"]["content"]
-            print(f"Groq {model} 完成中文摘要", file=sys.stderr)
-            return json.loads(text)
+            data = groq_request("chat/completions", key, payload)
+            result = extract_json(data["choices"][0]["message"]["content"])
+            if isinstance(result.get("items"), list) and result["items"]:
+                print(f"Groq {model}（{mode}）完成中文摘要", file=sys.stderr)
+                return result
+            print(f"Groq {model}（{mode}）回傳格式不完整", file=sys.stderr)
         except urllib.error.HTTPError as e:
-            print(f"Groq {model} 錯誤 {e.code}：{e.read()[:200]!r}", file=sys.stderr)
-        except (urllib.error.URLError, json.JSONDecodeError, KeyError) as e:
-            print(f"Groq {model} 失敗：{e}", file=sys.stderr)
+            body = e.read()[:160]
+            print(f"Groq {model}（{mode}）錯誤 {e.code}：{body!r}", file=sys.stderr)
+            if e.code in (401, 403):
+                return None  # 金鑰問題，重試也沒用
+            if e.code == 404:
+                continue
+        except (urllib.error.URLError, ValueError, KeyError, TimeoutError) as e:
+            print(f"Groq {model}（{mode}）失敗：{e}", file=sys.stderr)
     return None
 
 
@@ -282,6 +308,23 @@ def summarize(articles):
     return ai
 
 
+def reuse_previous(articles):
+    """今天的 AI 摘要失敗時，同一篇文章沿用上一次的中文標題與重點。"""
+    try:
+        with open(OUT, encoding="utf-8") as f:
+            m = re.search(r"window\.CD\.market = (\[.*\]);", f.read(), re.S)
+        old = {a["link"]: a for a in json.loads(m.group(1))} if m else {}
+    except (OSError, ValueError):
+        return
+    n = 0
+    for a in articles:
+        o = old.get(a["link"])
+        if o and o.get("takeaway"):
+            a["titleZh"], a["takeaway"] = o.get("titleZh", ""), o["takeaway"]
+            n += 1
+    print(f"AI 摘要失敗，沿用上一次的中文 {n} 篇", file=sys.stderr)
+
+
 def main():
     articles, status = collect()
     if not articles:
@@ -289,6 +332,8 @@ def main():
         sys.exit(1)
     ai = summarize(articles)
     summary = None
+    if not ai:
+        reuse_previous(articles)
     if ai:
         for row in ai["items"]:
             i = row.get("i") if isinstance(row, dict) else None
