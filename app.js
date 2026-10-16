@@ -293,28 +293,43 @@
     keyDlg.showModal();
     if (!has) setTimeout(() => keyDlg.querySelector("[name=token]").focus(), 50);
   }
+  // 驗證金鑰：對 index.html 送一個「版本不符」的更新。有寫入權限 → GitHub 回 409（什麼都不會改）；
+  // 沒權限 → 401 / 403 / 404，依狀況告訴你要改哪裡
+  async function checkKey(token) {
+    let r;
+    try {
+      r = await fetch(`https://api.github.com/repos/${REPO}/contents/index.html`, {
+        method: "PUT",
+        headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" },
+        body: JSON.stringify({ message: "金鑰檢查", content: "", sha: "0000000000000000000000000000000000000000" })
+      });
+    } catch (err) { throw new Error("連不上 GitHub，檢查一下網路再試一次。"); }
+    if (r.status === 409 || r.status === 422) return;
+    if (r.status === 401) throw new Error("GitHub 說這把金鑰無效：可能沒複製完整，或已經過期／被重新產生。回 GitHub 重新產生一把再貼。");
+    if (r.status === 404) throw new Error("這把金鑰看不到 craig-daily：回 GitHub 打開這把金鑰 → Repository access 選 Only select repositories → 勾 craig-daily → Update。");
+    if (r.status === 403) throw new Error("這把金鑰沒有寫入權限：回 GitHub 打開這把金鑰 → Repository permissions → Contents 改成 Read and write → Update。");
+    throw new Error(`GitHub 回應 ${r.status}，稍等一下再試。`);
+  }
   keyDlg.querySelector("form").addEventListener("submit", async (e) => {
     e.preventDefault();
+    const status = $("#kd-status");
     // 複製時常夾帶空白、換行、零寬字元或全形字，先清掉；金鑰本身只會有英數和底線
     const raw = keyDlg.querySelector("[name=token]").value.normalize("NFKC");
     const token = (raw.match(/(github_pat_|gh[pousr]_)[A-Za-z0-9_]+/) || [""])[0];
-    if (!raw.trim()) return;
-    if (!token) {
-      $("#kd-status").textContent = "這看起來不是 GitHub 金鑰：要貼 github_pat_ 開頭的那串（在 GitHub 產生後畫面上那串，不是金鑰名稱）。";
-      return;
-    }
-    $("#kd-status").textContent = "確認中…";
+    if (!raw.trim()) { status.textContent = "先貼上金鑰。"; return; }
+    if (!token) { status.textContent = "這不是金鑰：要貼 github_pat_ 開頭的那一長串（按 Generate token 後畫面上顯示的），不是金鑰的名稱。"; return; }
+    if (token.length < 40) { status.textContent = "金鑰好像沒複製完整（太短了），用 GitHub 上的複製鈕再複製一次。"; return; }
+    status.textContent = "確認中…";
     try {
-      const r = await fetch(`https://api.github.com/repos/${REPO}`, { headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" } });
-      const data = r.ok ? await r.json() : null;
-      if (!data || !(data.permissions && data.permissions.push)) throw new Error(r.status === 401 ? "金鑰無效" : "這把金鑰沒有 craig-daily 的寫入權限");
-      try { localStorage.setItem("cd-gh-token", token); } catch (err) { throw new Error("這個瀏覽器不允許儲存資料（無痕模式？）"); }
+      await checkKey(token);
+      try { localStorage.setItem("cd-gh-token", token); } catch (err) { throw new Error("這個瀏覽器不允許儲存資料，換一般視窗（不要無痕）再試。"); }
       // 存進瀏覽器的密碼管理（Chrome 會跳出儲存提示），之後被清掉或換裝置都能自動取回
       if (window.PasswordCredential) {
         try { await navigator.credentials.store(new PasswordCredential({ id: "craig-daily", password: token, name: "Craig 的日常・便利貼金鑰" })); } catch (err) {}
       }
-      keyDlg.close(); renderStickies();
-    } catch (err) { $("#kd-status").textContent = `沒設定成功：${err.message}`; }
+      status.textContent = "成功了！";
+      setTimeout(() => { keyDlg.close(); renderStickies(); }, 600);
+    } catch (err) { status.textContent = err.message; }
   });
   $("#kd-forget").addEventListener("click", () => { try { localStorage.removeItem("cd-gh-token"); } catch (e) {} keyDlg.close(); renderStickies(); });
   $("#kd-cancel").addEventListener("click", () => keyDlg.close());

@@ -450,3 +450,12 @@ dialog.sd::backdrop { background: rgba(5, 5, 15, .6); backdrop-filter: blur(6px)
 .tool:hover .tool-go { color: var(--c1); transform: translate(2px, -2px); }
 @media (max-width: 1080px) { .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 680px) { .tool-grid { grid-template-columns: 1fr; } }
+
+/* 金鑰設定步驟 */
+.kd-steps { list-style: none; counter-reset: kd; padding: 0; margin: 0 0 6px; display: grid; gap: 14px; }
+.kd-steps li { counter-increment: kd; position: relative; padding-left: 36px; font-size: 14px; color: var(--ink-soft); display: grid; gap: 8px; }
+.kd-steps li::before { content: counter(kd); position: absolute; left: 0; top: 0; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 13px; background: var(--c1); color: #000; }
+.kd-steps .pill { justify-self: start; }
+.kd-steps small { line-height: 1.6; max-width: 46ch; }
+.kd-steps .field { margin: 0; }
+.kd-steps code { font-size: 13px; }
