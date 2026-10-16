@@ -272,12 +272,26 @@
 
   /* 金鑰設定（只存在這台裝置的瀏覽器） */
   const keyDlg = $("#key-dialog");
-  function openKeyDialog() {
+  // 瀏覽器密碼管理裡有存金鑰就直接取回，不用再貼（Chrome / Edge；Safari 會在輸入框提供鑰匙圈自動填入）
+  async function restoreKey(mediation) {
+    if (ghToken() || !window.PasswordCredential) return false;
+    try {
+      const c = await navigator.credentials.get({ password: true, mediation });
+      if (!c || c.id !== "craig-daily" || !c.password) return false;
+      localStorage.setItem("cd-gh-token", c.password);
+      renderStickies();
+      return true;
+    } catch (e) { return false; }
+  }
+  restoreKey("silent");
+  async function openKeyDialog() {
+    if (await restoreKey("optional")) return;
     const has = !!ghToken();
     keyDlg.querySelector("[name=token]").value = "";
     $("#kd-forget").hidden = !has;
     $("#kd-status").textContent = has ? "這台裝置已設定金鑰，可以直接編輯。" : "";
     keyDlg.showModal();
+    if (!has) setTimeout(() => keyDlg.querySelector("[name=token]").focus(), 50);
   }
   keyDlg.querySelector("form").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -289,6 +303,10 @@
       const data = r.ok ? await r.json() : null;
       if (!data || !(data.permissions && data.permissions.push)) throw new Error(r.status === 401 ? "金鑰無效" : "這把金鑰沒有 craig-daily 的寫入權限");
       try { localStorage.setItem("cd-gh-token", token); } catch (err) { throw new Error("這個瀏覽器不允許儲存資料（無痕模式？）"); }
+      // 存進瀏覽器的密碼管理（Chrome 會跳出儲存提示），之後被清掉或換裝置都能自動取回
+      if (window.PasswordCredential) {
+        try { await navigator.credentials.store(new PasswordCredential({ id: "craig-daily", password: token, name: "Craig 的日常・便利貼金鑰" })); } catch (err) {}
+      }
       keyDlg.close(); renderStickies();
     } catch (err) { $("#kd-status").textContent = `沒設定成功：${err.message}`; }
   });

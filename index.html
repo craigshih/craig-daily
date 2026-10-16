@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20">
+  <link rel="stylesheet" href="styles.css?v=21">
 </head>
 <body>
   <div class="bg-art" aria-hidden="true"><div class="bg-img" id="bg-img"></div></div>
@@ -193,8 +193,9 @@
   <dialog class="sd" id="key-dialog" aria-labelledby="kd-title">
     <form method="dialog">
       <h3 id="kd-title">在網站上編輯便利貼</h3>
-      <p class="sd-help">貼上你的 GitHub 金鑰（只需要 craig-daily 的 Contents 讀寫權限）。金鑰只存在這台裝置的瀏覽器，不會上傳到任何地方；換裝置要再貼一次。</p>
-      <label class="field"><span>GitHub 金鑰</span><input name="token" type="password" autocomplete="off" placeholder="github_pat_…"></label>
+      <p class="sd-help">貼上你的 GitHub 金鑰（只需要 craig-daily 的 Contents 讀寫權限）。金鑰只存在你的瀏覽器，不會上傳到任何地方。確認後讓瀏覽器「儲存密碼」，之後在其他裝置點一下就能自動填入。</p>
+      <input name="username" type="text" autocomplete="username" value="craig-daily" hidden readonly>
+      <label class="field"><span>GitHub 金鑰</span><input name="token" type="password" autocomplete="current-password" placeholder="github_pat_…"></label>
       <p class="sd-status" id="kd-status" role="status"></p>
       <div class="sd-actions">
         <button type="button" class="btn danger" id="kd-forget">從這台裝置移除</button>
@@ -205,20 +206,20 @@
     </form>
   </dialog>
 
-  <script src="data/profile.js?v=20"></script>
-  <script src="data/themes.js?v=20"></script>
-  <script src="data/brief.js?v=20"></script>
-  <script src="data/market.js?v=20"></script>
-  <script src="data/papers.js?v=20"></script>
-  <script src="data/notes.js?v=20"></script>
-  <script src="data/lab.js?v=20"></script>
-  <script src="data/stickies.js?v=20"></script>
-  <script src="data/ai_tools.js?v=20"></script>
-  <script src="data/funding.js?v=20"></script>
+  <script src="data/profile.js?v=21"></script>
+  <script src="data/themes.js?v=21"></script>
+  <script src="data/brief.js?v=21"></script>
+  <script src="data/market.js?v=21"></script>
+  <script src="data/papers.js?v=21"></script>
+  <script src="data/notes.js?v=21"></script>
+  <script src="data/lab.js?v=21"></script>
+  <script src="data/stickies.js?v=21"></script>
+  <script src="data/ai_tools.js?v=21"></script>
+  <script src="data/funding.js?v=21"></script>
   <!-- 動畫：GSAP + ScrollTrigger（捲動進場）、mo.js（mojs.io 的爆破與幾何動畫）；載入失敗時頁面照常顯示 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mojs/core@1.7.1/dist/mo.umd.js"></script>
-  <script src="app.js?v=20"></script>
+  <script src="app.js?v=21"></script>
 </body>
 </html>
