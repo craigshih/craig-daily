@@ -9,8 +9,8 @@
   <meta name="theme-color" content="#0b161b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=16">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=17">
 </head>
 <body>
   <div class="bg-art" aria-hidden="true"><div class="bg-img" id="bg-img"></div></div>
@@ -24,6 +24,7 @@
         <a class="brand" href="#top"><span class="brand-motif" data-motif></span><span id="brand-name">Craig Shih</span></a>
         <nav class="nav" aria-label="主選單">
           <div class="nav-scroll">
+            <a href="#stickies">便利貼</a>
             <a href="#brief">晨報</a>
             <a href="#market">市場洞察</a>
             <a href="#papers">論文</a>
@@ -65,9 +66,21 @@
 
       <section class="wrap bento" id="bento" aria-label="今日總覽"></section>
 
-      <section class="block wrap" id="brief">
+      <section class="block wrap" id="stickies">
         <div class="block-head reveal">
           <span class="block-num" aria-hidden="true">01</span>
+          <p class="kicker">Sticky Notes</p>
+          <h2 class="grad">隨手便利貼</h2>
+          <p class="block-sub" id="stickies-meta"></p>
+        </div>
+        <div class="filters" id="stickies-filters"></div>
+        <div class="sticky-wall" id="stickies-list"></div>
+        <div class="sticky-more" id="stickies-more"></div>
+      </section>
+
+      <section class="block wrap" id="brief">
+        <div class="block-head reveal">
+          <span class="block-num" aria-hidden="true">02</span>
           <p class="kicker">Morning Brief</p>
           <h2 class="grad">每日晨報</h2>
           <p class="block-sub" id="brief-meta"></p>
@@ -77,7 +90,7 @@
 
       <section class="block wrap" id="market">
         <div class="block-head reveal">
-          <span class="block-num" aria-hidden="true">02</span>
+          <span class="block-num" aria-hidden="true">03</span>
           <p class="kicker">Daily Market Insight</p>
           <h2 class="grad">每日市場洞察</h2>
           <p class="block-sub" id="market-meta"></p>
@@ -95,7 +108,7 @@
 
       <section class="block wrap" id="papers">
         <div class="block-head reveal">
-          <span class="block-num" aria-hidden="true">03</span>
+          <span class="block-num" aria-hidden="true">04</span>
           <p class="kicker">Reading List</p>
           <h2 class="grad">讀過的論文</h2>
           <p class="block-sub" id="papers-meta"></p>
@@ -106,7 +119,7 @@
 
       <section class="block wrap" id="notes">
         <div class="block-head reveal">
-          <span class="block-num" aria-hidden="true">04</span>
+          <span class="block-num" aria-hidden="true">05</span>
           <p class="kicker">Notes</p>
           <h2 class="grad">整理過的筆記</h2>
           <p class="block-sub" id="notes-meta"></p>
@@ -117,7 +130,7 @@
 
       <section class="block wrap" id="funding">
         <div class="block-head reveal">
-          <span class="block-num" aria-hidden="true">05</span>
+          <span class="block-num" aria-hidden="true">06</span>
           <p class="kicker">Grants &amp; Scholarships</p>
           <h2 class="grad">青年補助・獎學金</h2>
           <p class="block-sub" id="funding-meta"></p>
@@ -138,18 +151,19 @@
     </footer>
   </div>
 
-  <script src="data/profile.js?v=16"></script>
-  <script src="data/themes.js?v=16"></script>
-  <script src="data/brief.js?v=16"></script>
-  <script src="data/market.js?v=16"></script>
-  <script src="data/papers.js?v=16"></script>
-  <script src="data/notes.js?v=16"></script>
-  <script src="data/lab.js?v=16"></script>
-  <script src="data/funding.js?v=16"></script>
+  <script src="data/profile.js?v=17"></script>
+  <script src="data/themes.js?v=17"></script>
+  <script src="data/brief.js?v=17"></script>
+  <script src="data/market.js?v=17"></script>
+  <script src="data/papers.js?v=17"></script>
+  <script src="data/notes.js?v=17"></script>
+  <script src="data/lab.js?v=17"></script>
+  <script src="data/stickies.js?v=17"></script>
+  <script src="data/funding.js?v=17"></script>
   <!-- 動畫：GSAP + ScrollTrigger（捲動進場）、mo.js（mojs.io 的爆破與幾何動畫）；載入失敗時頁面照常顯示 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mojs/core@1.7.1/dist/mo.umd.js"></script>
-  <script src="app.js?v=16"></script>
+  <script src="app.js?v=17"></script>
 </body>
 </html>

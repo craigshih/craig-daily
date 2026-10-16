@@ -335,3 +335,50 @@ main, .footer { overflow-x: clip; } /* 斜放的跑馬燈與進場動畫不撐�
   .card { padding: 20px 18px 18px; }
   .footer { padding-top: 72px; }
 }
+
+/* ===== 便利貼牆 ===== */
+.sticky-wall { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px 22px; padding: 10px 4px 0; }
+.sticky {
+  --paper: #ffe680; --tape: rgba(255, 255, 255, .45);
+  position: relative; min-height: 190px; padding: 26px 20px 18px; border-radius: 4px 4px 18px 4px;
+  background: linear-gradient(170deg, color-mix(in srgb, var(--paper) 92%, #fff), var(--paper));
+  color: #2b2230; font-family: "LXGW WenKai TC", "Noto Sans TC", sans-serif;
+  box-shadow: 0 2px 0 rgba(0,0,0,.05), 0 18px 30px -14px rgba(0,0,0,.55);
+  transform: rotate(var(--tilt, 0deg)); transition: transform .3s cubic-bezier(.2,.9,.3,1.4), box-shadow .3s;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.sticky::before { /* 紙膠帶 */
+  content: ""; position: absolute; top: -11px; left: 50%; width: 86px; height: 24px; margin-left: -43px;
+  background: var(--tape); border: 1px solid rgba(255,255,255,.35); transform: rotate(calc(var(--tilt, 0deg) * -1.6));
+  backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);
+}
+.sticky::after { /* 右下角翻起來的紙角 */
+  content: ""; position: absolute; right: 0; bottom: 0; width: 26px; height: 26px; border-radius: 0 0 18px 0;
+  background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,.12) 50%);
+}
+.sticky:hover { transform: rotate(0) translateY(-6px) scale(1.03); box-shadow: 0 2px 0 rgba(0,0,0,.05), 0 28px 44px -16px rgba(0,0,0,.6); z-index: 2; }
+.sticky[data-c="粉"] { --paper: #ffb8d6; }
+.sticky[data-c="藍"] { --paper: #a9dcff; }
+.sticky[data-c="綠"] { --paper: #b8f2cb; }
+.sticky[data-c="紫"] { --paper: #d6c6ff; }
+.sticky .s-text { font-size: 19px; line-height: 1.55; font-weight: 700; word-break: break-word; }
+.sticky .s-note { font-size: 15px; line-height: 1.6; color: rgba(43, 34, 48, .78); }
+.sticky .s-foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px; color: rgba(43, 34, 48, .66); }
+.sticky .s-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.sticky .s-tags span { padding: 1px 8px; border-radius: 99px; background: rgba(255,255,255,.55); }
+.sticky a { color: inherit; text-underline-offset: 3px; }
+.sticky .pin { position: absolute; top: -14px; right: 14px; font-size: 22px; filter: drop-shadow(0 3px 3px rgba(0,0,0,.35)); }
+.sticky-add {
+  min-height: 190px; border-radius: 4px 4px 18px 4px; border: 2px dashed var(--line); color: var(--ink-soft);
+  display: grid; place-items: center; text-align: center; gap: 6px; padding: 20px; text-decoration: none;
+  font-family: "LXGW WenKai TC", "Noto Sans TC", sans-serif; font-size: 17px; transition: border-color .2s, color .2s, transform .2s;
+}
+.sticky-add b { display: block; font-size: 42px; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sticky-add:hover { border-color: var(--c1); color: var(--ink); transform: translateY(-4px); }
+.sticky-more { display: flex; justify-content: center; margin-top: 26px; }
+@media (max-width: 1080px) { .sticky-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .sticky-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) {
+  .sticky-wall { grid-template-columns: 1fr; gap: 24px; padding-inline: 6px; }
+  .sticky, .sticky-add { min-height: 150px; }
+}

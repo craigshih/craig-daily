@@ -149,6 +149,36 @@
       </a>`;
   }
 
+  /* ---------- 便利貼（Notion「📌 便利貼」每小時整點同步） ---------- */
+  let stickyTag = "全部", stickyAll = false;
+  const STICKY_COLORS = ["黃", "粉", "藍", "綠", "紫"];
+  function renderStickies() {
+    const all = (CD.stickies || []).slice().sort((a, b) => (b.pinned - a.pinned) || b.date.localeCompare(a.date));
+    const db = CD.stickiesDb || "";
+    $("#stickies-meta").innerHTML = `${all.length} 張・在 Notion 寫、每小時整點同步・最近一次 ${esc(tidy(CD.stickiesSynced) || "—")}`;
+    const tags = ["全部", ...new Set(all.flatMap((s) => s.tags || []))];
+    $("#stickies-filters").innerHTML = tags.length > 2 ? tags.map((t) => `<button class="btn ${t === stickyTag ? "on" : ""}" data-st="${esc(t)}">${esc(t)}</button>`).join("") : "";
+    const shown = all.filter((s) => stickyTag === "全部" || (s.tags || []).includes(stickyTag));
+    const limit = stickyAll ? shown.length : 11;
+    const hash = (id) => { let h = 0; for (const ch of id || "x") h = (h * 31 + ch.charCodeAt(0)) >>> 0; return h; };
+    const card = (s) => {
+      const h = hash(s.id), tilt = ((h % 7) - 3) * 0.9;
+      const color = STICKY_COLORS.includes(s.color) ? s.color : STICKY_COLORS[h % STICKY_COLORS.length];
+      return `<article class="sticky" data-c="${color}" style="--tilt:${tilt}deg">
+        ${s.pinned ? `<span class="pin" aria-label="釘選">📌</span>` : ""}
+        <p class="s-text">${esc(s.text)}</p>
+        ${s.note ? `<p class="s-note">${esc(s.note)}</p>` : ""}
+        <div class="s-foot"><span class="s-tags">${(s.tags || []).map((t) => `<span>${esc(t)}</span>`).join("")}</span>
+          <span>${s.link ? ext(s.link, "來源 ↗") + "・" : ""}${esc(s.date.slice(5).replace("-", "/"))}</span></div>
+      </article>`;
+    };
+    const add = db ? `<a class="sticky-add" href="${esc(db)}" target="_blank" rel="noopener"><span><b>＋</b>到 Notion 寫一張<br><small>整點就會貼到這裡</small></span></a>` : "";
+    $("#stickies-list").innerHTML = add + (shown.length ? shown.slice(0, limit).map(card).join("") : "");
+    $("#stickies-more").innerHTML = shown.length > limit ? `<button class="btn" data-more="1">看全部 ${shown.length} 張</button>` : "";
+  }
+  $("#stickies-filters").addEventListener("click", (e) => { const b = e.target.closest("[data-st]"); if (b) { stickyTag = b.dataset.st; renderStickies(); } });
+  $("#stickies-more").addEventListener("click", (e) => { if (e.target.closest("[data-more]")) { stickyAll = true; renderStickies(); } });
+
   /* ---------- 晨報 ---------- */
   function linkify(item) {
     const src = item.srcLabel ? (item.link ? ext(item.link, esc(item.srcLabel), "src") : `<span>${esc(item.srcLabel)}</span>`) : "";
@@ -355,9 +385,9 @@
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id)); });
   }, { rootMargin: "-40% 0px -55% 0px" });
-  ["brief", "market", "papers", "notes", "funding"].forEach((id) => io.observe(document.getElementById(id)));
+  ["stickies", "brief", "market", "papers", "notes", "funding"].forEach((id) => io.observe(document.getElementById(id)));
 
-  renderBento(); renderBrief(); renderMarket(); renderPapers(); renderNotes(); renderFunding();
+  renderBento(); renderStickies(); renderBrief(); renderMarket(); renderPapers(); renderNotes(); renderFunding();
 
   /* ---------- mo.js：點擊爆破、主視覺換圖爆破、Hero 幾何動畫（mojs.io 風格） ---------- */
   const fx = $("#fx");
