@@ -295,8 +295,14 @@
   }
   keyDlg.querySelector("form").addEventListener("submit", async (e) => {
     e.preventDefault();
-    const token = keyDlg.querySelector("[name=token]").value.trim();
-    if (!token) return;
+    // 複製時常夾帶空白、換行、零寬字元或全形字，先清掉；金鑰本身只會有英數和底線
+    const raw = keyDlg.querySelector("[name=token]").value.normalize("NFKC");
+    const token = (raw.match(/(github_pat_|gh[pousr]_)[A-Za-z0-9_]+/) || [""])[0];
+    if (!raw.trim()) return;
+    if (!token) {
+      $("#kd-status").textContent = "這看起來不是 GitHub 金鑰：要貼 github_pat_ 開頭的那串（在 GitHub 產生後畫面上那串，不是金鑰名稱）。";
+      return;
+    }
     $("#kd-status").textContent = "確認中…";
     try {
       const r = await fetch(`https://api.github.com/repos/${REPO}`, { headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" } });
