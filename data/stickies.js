@@ -1,6 +1,7 @@
 // 便利貼：Notion「📌 便利貼」資料庫的同步副本，由 scripts/sync_stickies.py 每小時整點更新，請在 Notion 編輯
 window.CD = window.CD || {};
 window.CD.stickiesDb = "https://app.notion.com/p/ad81686b08fe4394ac4c3186529a85fe";
+window.CD.stickiesForm = "https://app.notion.com/p/ad81686b08fe4394ac4c3186529a85fe?v=3fb40356b27a8126a2ba000c12eb1e3e";
 window.CD.stickiesSynced = "2026-10-16 11:00";
 window.CD.stickies = [
   {

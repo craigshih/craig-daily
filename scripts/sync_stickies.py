@@ -19,6 +19,7 @@ OUT = os.path.join(ROOT, "data", "stickies.js")
 DATABASE_ID = "ad81686b08fe4394ac4c3186529a85fe"
 DATA_SOURCE_ID = "2d9dba43-0b42-4da1-a27a-75ff0cfdc2a0"
 DB_URL = "https://app.notion.com/p/ad81686b08fe4394ac4c3186529a85fe"
+FORM_URL = DB_URL + "?v=3fb40356b27a8126a2ba000c12eb1e3e"  # ✏️ 快速記一張（表單檢視）
 
 
 def notion(path, token, version, body):
@@ -91,6 +92,7 @@ def main():
         f.write("// 便利貼：Notion「📌 便利貼」資料庫的同步副本，由 scripts/sync_stickies.py 每小時整點更新，請在 Notion 編輯\n"
                 "window.CD = window.CD || {};\n"
                 f"window.CD.stickiesDb = {json.dumps(DB_URL)};\n"
+                f"window.CD.stickiesForm = {json.dumps(FORM_URL)};\n"
                 f"window.CD.stickiesSynced = {json.dumps(now.strftime('%Y-%m-%d %H:%M'))};\n"
                 f"window.CD.stickies = {body};\n")
     print(f"便利貼已更新：{len(stickies)} 張", file=sys.stderr)

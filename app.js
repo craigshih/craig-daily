@@ -154,7 +154,7 @@
   const STICKY_COLORS = ["黃", "粉", "藍", "綠", "紫"];
   function renderStickies() {
     const all = (CD.stickies || []).slice().sort((a, b) => (b.pinned - a.pinned) || b.date.localeCompare(a.date));
-    const db = CD.stickiesDb || "";
+    const db = CD.stickiesForm || CD.stickiesDb || "";
     $("#stickies-meta").innerHTML = `${all.length} 張・在 Notion 寫、每小時整點同步・最近一次 ${esc(tidy(CD.stickiesSynced) || "—")}`;
     const tags = ["全部", ...new Set(all.flatMap((s) => s.tags || []))];
     $("#stickies-filters").innerHTML = tags.length > 2 ? tags.map((t) => `<button class="btn ${t === stickyTag ? "on" : ""}" data-st="${esc(t)}">${esc(t)}</button>`).join("") : "";
