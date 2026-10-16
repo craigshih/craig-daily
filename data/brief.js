@@ -4,7 +4,7 @@ window.CD = window.CD || {};
 window.CD.brief = {
   "date": "2026-10-16",
   "dayType": "NORMAL",
-  "headline": "今天有 1 個排定的時段，Craig——其餘時間留給閱讀。",
+  "headline": "Craig，今天先把數位資產會前準備搞定，午前衝刺！",
   "terrain": [
     0.15,
     0.15,
@@ -27,21 +27,21 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "沒有排定的行程，留給閱讀或整理筆記。"
+      "text": "檢視會前文件，列出未完成項目，先把重點框起來。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "#3 數位資產：完成「第一次會前準備」共編文件裡的任務"
+      "text": "完成『第一次會前準備』的共編任務，確保所有資料都在手。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "沒有排定的行程，留給閱讀或整理筆記。"
+      "text": "放鬆一下，回顧今天的進度，為明天預留空間。"
     }
   ],
   "needs": [
     {
-      "title": "#3 數位資產：完成「第一次會前準備」共編文件裡的任務",
-      "text": "今天 12:59在{src}上的待辦。",
+      "title": "完成數位資產會前準備",
+      "text": "完成『第一次會前準備』文件任務，確保會議順利，來源 {src}",
       "srcLabel": "實驗室行事曆",
       "link": "https://docs.google.com/document/d/1nkxoNHaylQ2oy4aG1THDNZyDO7O8pQ2KLRPEHDL_opU/edit?usp=sharing"
     }
@@ -52,22 +52,22 @@ window.CD.brief = {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "2026 哩程信用卡要選哪張？5 張最值得辦的哩程信用卡推薦",
-          "text": "列出五張回饋哩程最高的卡片，協助消費者在旅遊與商務支出上最大化點數回饋。（{src}）",
-          "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9MN0JocnJYTzlZenV5ZDdPcXJldVdfZnc2Umd5WjFYT01CNVFmU3lxdDlrV2RFY3pFWnJsX01PR2JRWkc1NmxnQVNwTXVja3oyVnBNUGp1bw?oc=5"
+          "title": "台積電上修全年營收成長至 44%！存貨週轉改善、AI 需求持續強勁！",
+          "text": "TSMC 營收上修與 AI 需求，提供產業趨勢與技術應用的參考。（{src}）",
+          "srcLabel": "MacroMicro 財經M平方",
+          "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQVTRZd2JoVXNKNFRZbGpjUVlfUWRLeU5oR1ZBV3NqSVRVc3ZkMlNfM2dSeElVUkRZRERndVZYd1FYNVdOOFRBYU40NC01enM5REJDYVJkLVlxSVZPNkhiaDAxU3Y2UWlqUzc0SUZmLTJ4WDlPdXlGSFI0WFBJM1dRX2ZDWmNSWVhyeURtdXJ0QlhBdjcxSmdFamNEN29QZ1hnVlA3NUJnbW54Q3BaWERVMjViSl9hYWtMZkhKRGFsYjNYY3hPUDY3VXNvS29BMjZ0VHZLaGVNSzF4TklydTZYSzdNQkZiYUlrQWRqalZFOHlPeU12dEdybUR3?oc=5"
         },
         {
-          "title": "新生兒保單怎麼買？新生兒保險規劃重點、投保時機一次看懂",
-          "text": "說明新生兒保險的核心保障與最佳投保時機，幫助家庭提前規劃長期風險管理。（{src}）",
-          "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9SZzdyT2lhNWNMTkM5R3U4MnhjMS0tbEpxOXBpV0JfSmhxczdsN2dHNTdXSkU4NXFCc3NGc1JkLWVHWFJfZWpsVWx5dURZem9ULTBlel9R?oc=5"
+          "title": "油價、利率雙升下的極端分化！五大趨勢與 ETF 配置全解析",
+          "text": "油價、利率雙升下的資產配置解析，對投資與財務規劃很有啟發。（{src}）",
+          "srcLabel": "MacroMicro 財經M平方",
+          "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQV2xxdUQ1SG1LNGJGbnlPOGp0OGsxWkx0QTdON2d1R1BnQWkxdlhpRTB2QTJNdEJmZU9qRGswSkdWRmJQbFdhRERfZzNRWk9KVnJJRktZSFhfSnlSWFhpNnpwd3E1WGRyOERYWkw0YjRwWFhremkxUVYwQ2Z6T0dfRWdHcmRCbmJQNlhLREJIbjNoY3R4eko5TFNnTmVfUGR4LXpyY1pnOWJoWmc5ajRrNXRRekVJQWd2SUFCZjFSZ1JReW5qZmQxX2JHU3BXYnRyLUdrYWV2OVJ0dGgzRUF2bFVUSWx1Z05mTG5CaG9NcjJEMWo4UkpEZFJRNmdjRDQ?oc=5"
         },
         {
-          "title": "2026 沒薪資證明能辦信用卡嗎？5 張沒薪轉可辦的卡片推薦",
-          "text": "提供無薪資證明者可申辦的信用卡選項，降低信用卡門檻，擴大金融服務覆蓋。（{src}）",
-          "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB2OVR0MkU5V1dOV19NSW5DbnN3aXluTDV5SjAtNXpTc1FXc3luYzFMRkVGYXZ4YUY1dlFYQlprWk55VjVqOXJJUmg4ejdyV1NqOXc?oc=5"
+          "title": "10 種定價策略應對持續通膨",
+          "text": "10 種定價策略教你在通膨環境下調整價格，適用於創業與研究案例。（{src}）",
+          "srcLabel": "Harvard Business Review",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNLUY0eDFqbFVkbEUta2E3TkhBbkozUEg0eU1FNFpRNEdodjdBcEt0aDlyX2dDbFBKWEIxOW40RURpOS1kb0FnNG94cV9zSkxiU1ktZ1V2YXR6d1VHWEk0b1l5Snl3aXpsWFhkZHdpUFQ3eEdJd3o3X1pYT2pvLW1fQ3N1U29Cdw?oc=5"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -78,5 +78,5 @@ window.CD.brief = {
       ]
     }
   ],
-  "generated": "template"
+  "generated": "ai"
 };
