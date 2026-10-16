@@ -1,49 +1,82 @@
-// 每日晨報：沿用 Claude 晨報（/morning）的版型——地形線 + 三段時間 + 需要你處理 / 已經解決
-// 在對話裡說「更新晨報」時，由 Claude 依當天行事曆、信箱、Discord 重寫這份檔案
-// 公開網站：提到同學時用「組長」「同學」，不寫名字
-// text 裡的 {src} 會換成可點的來源連結（srcLabel + link）
+// 每日晨報：由 scripts/build_brief.py 自動產生（GitHub Action 每天台灣時間 06:05），請不要手動改
+// 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  date: "2026-10-15",
-  dayType: "NORMAL", // HEAVY | NORMAL | OPEN
-  headline: "早上是你的，Craig——下午兩點台積電法說，晚上把數位資產的會前作業收尾。",
-  // 7:00 到 23:00 的負荷（0–1），畫地形線用；平靜的日子就讓它接近水平
-  terrain: [0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.3, 0.55, 0.62, 0.45, 0.32, 0.3, 0.4, 0.5, 0.46, 0.28, 0.16],
-  acts: [
-    { time: "早上 – 下午 2 點", text: "行事曆空白，適合讀一篇論文或把 KPMG 報告的筆記補完。" },
-    { time: "下午 2 – 5 點", text: "台積電 Q3 法說會，重點聽 AI 供應鏈展望，順手記下對台股的含義。" },
-    { time: "晚上", text: "#3 數位資產的共編任務明天中午截止，今晚挑定方向、找兩個案例。" }
+  "date": "2026-10-16",
+  "dayType": "NORMAL",
+  "headline": "今天有 1 個排定的時段，Craig——其餘時間留給閱讀。",
+  "terrain": [
+    0.15,
+    0.15,
+    0.15,
+    0.15,
+    0.3,
+    0.45,
+    0.3,
+    0.15,
+    0.15,
+    0.15,
+    0.15,
+    0.15,
+    0.15,
+    0.15,
+    0.15,
+    0.15,
+    0.15
   ],
-  needs: [
+  "acts": [
     {
-      title: "交出數位資產專題的第一次會前準備",
-      text: "組長在 {src} 請大家在共編文件挑一個方向、找資料並提出構想；週五 12:59 前要完成，實際期限以文件為準。",
-      srcLabel: "#3-數位資產 頻道", link: ""
+      "time": "早上 – 中午 12 點",
+      "text": "沒有排定的行程，留給閱讀或整理筆記。"
     },
     {
-      title: "決定要不要投區塊鏈協會的研究助理",
-      text: "同學在 {src} 轉貼台灣區塊鏈愛好者協會徵兼任研究助理，題目是 RWA 代幣化、穩定幣與 VASP 監理，跟論文方向高度重疊。",
-      srcLabel: "#資源與機會", link: ""
+      "time": "下午 12 – 6 點",
+      "text": "#3 數位資產：完成「第一次會前準備」共編文件裡的任務"
     },
     {
-      title: "記下虛擬資產子法的公聽時程",
-      text: "{src}說金管會 9 項子法（含穩定幣發行）10 月啟動公聽、11–12 月預告；公聽會正式日期要到金管會法規預告頁確認。",
-      srcLabel: "聯合報報導", link: "https://udn.com/news/story/7239/9771565"
+      "time": "晚上 6 點以後",
+      "text": "沒有排定的行程，留給閱讀或整理筆記。"
     }
   ],
-  resolved: [
+  "needs": [
     {
-      title: "數位資產作業可以週五中午再交",
-      text: "10/14 有同學在 {src} 問能否延到週五 12:59，組長回覆 OK——不用今晚趕到半夜。",
-      srcLabel: "#3-數位資產 頻道", link: ""
+      "title": "#3 數位資產：完成「第一次會前準備」共編文件裡的任務",
+      "text": "今天 12:59在{src}上的待辦。",
+      "srcLabel": "實驗室行事曆",
+      "link": "https://docs.google.com/document/d/1nkxoNHaylQ2oy4aG1THDNZyDO7O8pQ2KLRPEHDL_opU/edit?usp=sharing"
     }
   ],
-  sections: [
+  "resolved": [],
+  "sections": [
     {
-      title: "今天想讀的",
-      items: [
-        { title: "穩定幣與存款爭奪戰", text: "論文筆記還在「閱讀中」，把 {src}的未解問題整理成兩個研究問題。", srcLabel: "Notion 筆記", link: "https://app.notion.com/p/3f540356b27a80dc8592f8932e42dfd9" }
+      "title": "今天值得讀的",
+      "items": [
+        {
+          "title": "2026 哩程信用卡要選哪張？5 張最值得辦的哩程信用卡推薦",
+          "text": "列出五張回饋哩程最高的卡片，協助消費者在旅遊與商務支出上最大化點數回饋。（{src}）",
+          "srcLabel": "市場先生",
+          "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9MN0JocnJYTzlZenV5ZDdPcXJldVdfZnc2Umd5WjFYT01CNVFmU3lxdDlrV2RFY3pFWnJsX01PR2JRWkc1NmxnQVNwTXVja3oyVnBNUGp1bw?oc=5"
+        },
+        {
+          "title": "新生兒保單怎麼買？新生兒保險規劃重點、投保時機一次看懂",
+          "text": "說明新生兒保險的核心保障與最佳投保時機，幫助家庭提前規劃長期風險管理。（{src}）",
+          "srcLabel": "市場先生",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9SZzdyT2lhNWNMTkM5R3U4MnhjMS0tbEpxOXBpV0JfSmhxczdsN2dHNTdXSkU4NXFCc3NGc1JkLWVHWFJfZWpsVWx5dURZem9ULTBlel9R?oc=5"
+        },
+        {
+          "title": "2026 沒薪資證明能辦信用卡嗎？5 張沒薪轉可辦的卡片推薦",
+          "text": "提供無薪資證明者可申辦的信用卡選項，降低信用卡門檻，擴大金融服務覆蓋。（{src}）",
+          "srcLabel": "市場先生",
+          "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB2OVR0MkU5V1dOV19NSW5DbnN3aXluTDV5SjAtNXpTc1FXc3luYzFMRkVGYXZ4YUY1dlFYQlprWk55VjVqOXJJUmg4ejdyV1NqOXc?oc=5"
+        },
+        {
+          "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
+          "text": "這篇還在閱讀中，挑一段整理進 {src}。",
+          "srcLabel": "Notion 論文資料庫",
+          "link": ""
+        }
       ]
     }
-  ]
+  ],
+  "generated": "template"
 };

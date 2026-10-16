@@ -1,10 +1,10 @@
-# 每天台灣時間 06:00 抓最新市場文章，並部署 GitHub Pages
+# 每天台灣時間 06:05 抓最新市場文章、產生每日晨報，並部署 GitHub Pages
 # 平常 push 也會走這裡部署（只部署，不抓文章）
 name: daily-market
 
 on:
   schedule:
-    - cron: "0 22 * * *" # UTC 22:00 = 台灣 06:00
+    - cron: "5 22 * * *" # UTC 22:05 = 台灣 06:05（使用者偏好尾數 :00 / :05 的時間）
   workflow_dispatch:
   push:
     branches: [main]
@@ -43,13 +43,20 @@ jobs:
           pip install --quiet anthropic certifi
           python scripts/fetch_market.py
 
+      - name: 產生每日晨報
+        if: github.event_name != 'push'
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+        run: python scripts/build_brief.py
+
       - name: 提交更新
         if: github.event_name != 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/market.js
-          git diff --cached --quiet || (git commit -m "每日市場洞察 $(TZ=Asia/Taipei date +%F)" && git push)
+          git add data/market.js data/brief.js
+          git diff --cached --quiet || (git commit -m "每日晨報與市場洞察 $(TZ=Asia/Taipei date +%F)" && git push)
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

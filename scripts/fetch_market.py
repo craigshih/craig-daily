@@ -381,8 +381,9 @@ def main():
             a["titleZh"] = ""
 
     now = datetime.now(TW)
+    now = now.replace(minute=now.minute - now.minute % 5)  # 顯示時間取到 :00 / :05
     body = "\n".join([
-        "// 每日市場洞察：由 scripts/fetch_market.py 自動產生（GitHub Action 每天台灣時間 06:00），請不要手動改",
+        "// 每日市場洞察：由 scripts/fetch_market.py 自動產生（GitHub Action 每天台灣時間 06:05），請不要手動改",
         "window.CD = window.CD || {};",
         f"window.CD.marketUpdated = {json.dumps(now.strftime('%Y-%m-%d %H:%M'))};",
         f"window.CD.marketGroups = {json.dumps([{'id': g, 'name': n} for g, n in GROUPS], ensure_ascii=False)};",

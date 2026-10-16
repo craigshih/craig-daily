@@ -16,6 +16,8 @@
   const today = new Date();
   const todayISO = iso(today);
   const P = CD.profile || {};
+  // 顯示的更新時間一律取到 :00 / :05（排程常會晚幾分鐘才跑）
+  const tidy = (t) => String(t || "").replace(/(\d{1,2}):(\d{2})/, (_, h, m) => `${h.padStart(2, "0")}:${String(m - (m % 5)).padStart(2, "0")}`);
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const mojs = !reduce && window.mojs;
 
@@ -178,7 +180,7 @@
   function renderBrief() {
     const b = CD.brief;
     if (!b) { $("#brief-body").innerHTML = `<p class="empty">還沒有晨報。</p>`; return; }
-    $("#brief-meta").textContent = b.date !== todayISO ? `最近一期：${b.date}・說「更新晨報」產生今天的` : `今天 ${b.date}`;
+    $("#brief-meta").textContent = b.date !== todayISO ? `最近一期：${b.date}・每天 06:05 自動更新` : `今天 ${b.date}・每天 06:05 自動更新`;
     const d = new Date(b.date + "T00:00:00");
     const tmr = new Date(d); tmr.setDate(d.getDate() + 1);
     const ev = (CD.lab || []).filter((e) => e.date === b.date || e.date === iso(tmr))
@@ -220,7 +222,7 @@
     const s = CD.marketSummary, items = CD.market || [], groups = CD.marketGroups || [];
     const sources = [...new Set(items.map((m) => m.source))];
     const groupName = Object.fromEntries(groups.map((g) => [g.id, g.name]));
-    $("#market-meta").textContent = `每天台灣時間 06:00 自動更新・最近一次 ${CD.marketUpdated || "—"}`;
+    $("#market-meta").textContent = `每天台灣時間 06:05 自動更新・最近一次 ${tidy(CD.marketUpdated) || "—"}`;
     $("#market-summary").innerHTML = s && s.text ? `
       <div><p class="label">今日總覽</p><p>${esc(s.text)}</p></div>
       <div class="watch"><p class="label">值得追的問題</p>${(s.watch || []).map((w) => `<span class="tag alt">${esc(w)}</span>`).join("")}</div>` : `
@@ -294,7 +296,7 @@
   function renderNotes() {
     if (!notes.length) { $("#notes-list").innerHTML = `<p class="empty">還沒有筆記。執行 <code>node sync.js</code> 從 FinTech Lab 同步。</p>`; return; }
     const types = ["全部", ...new Set(notes.map((n) => n.type).filter(Boolean))];
-    $("#notes-meta").textContent = `${notes.length} 則・同步自 Notion ${CD.notesSynced || ""}`;
+    $("#notes-meta").textContent = `${notes.length} 則・同步自 Notion ${tidy(CD.notesSynced)}`;
     $("#notes-filters").innerHTML = types.map((t) => `<button class="btn ${t === noteFilter ? "on" : ""}" data-f="${esc(t)}">${esc(t)}</button>`).join("");
     const shown = notes.filter((n) => noteFilter === "全部" || n.type === noteFilter)
       .sort((a, b) => (b.pinned - a.pinned) || String(b.updated || b.created).localeCompare(String(a.updated || a.created)));
