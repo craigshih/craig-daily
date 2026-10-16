@@ -1,0 +1,14 @@
+{
+ "v": 1,
+ "note": "Craig 的日常・私人行事曆（已加密）",
+ "keys": [
+  {
+   "kid": "Y6a0QZ+sI8o5xhKZ",
+   "salt": "9OXUWUJUVVkhPHRpO1p5zw==",
+   "iv": "sLYlkEftpi1Dlzqi",
+   "key": "OJlQRu0CiLO5vHDzxWm3ExFS1P1y3CD8ViH4craPgocg1yUlCF/4H06YTswHm9yG"
+  }
+ ],
+ "iv": "ByxBWoiR3i6oHajk",
+ "data": "F1ukpSwDTAhjFLRWwaR9itFlVBiLtaUu5IrkZdJv1Zl7nlpM7lgzlup94msI1I0SJvoLoqhS+sLprPR3r0Ey4/8pX+BHBUGBR6K6BcOk1rzSQuTrCmO1i2/EGz2HdhO/8eDGOq6y7pzCzuWglQ16e7lcNofyy2PXOvpTWZKQt69WeOWTL/POJytnEI6yuDCDgJ1FCt///IkocE8h9PsevaNOyn+1MWT90kUVuEb+ZsQbyxYu3NKo+2LKSMIOPtDCeX/wpOyWgfEcdj5kotBIkH47EFQbawSn0N3h4s5Wt3l1ag=="
+}
