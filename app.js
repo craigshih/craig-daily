@@ -158,26 +158,49 @@
 
   // 網站上的編輯要 1–2 分鐘才會從 Notion 同步回來，這段時間先把送出的編輯疊在畫面上
   const PENDING_KEY = "cd-sticky-pending";
-  const pendingOps = () => store.get(PENDING_KEY, []).filter((o) => Date.now() - o.at < 20 * 60 * 1000);
+  // 已經同步回來（Notion 的內容和送出的一樣）、對不到便利貼、或超過 10 分鐘還沒回來（多半是沒套用成功）的編輯就丟掉
+  const sameAs = (s, f) => ["text", "note", "link", "color"].every((k) => !(k in f) || String(s[k] || "") === String(f[k] || ""))
+    && (!("pinned" in f) || !!s.pinned === !!f.pinned) && (!("tags" in f) || (s.tags || []).join() === (f.tags || []).join());
+  function pendingOps() {
+    const list = CD.stickies || [];
+    const keep = store.get(PENDING_KEY, []).filter((o) => {
+      if (Date.now() - o.at > 10 * 60 * 1000) return false;
+      if (o.op === "create") return !list.some((s) => s.text === o.fields.text);
+      const s = list.find((x) => x.id === o.id);
+      if (!s) return false;
+      return o.op === "delete" || !!o.fields.private || !sameAs(s, o.fields);
+    });
+    store.set(PENDING_KEY, keep);
+    return keep;
+  }
   function mergedStickies() {
     let list = (CD.stickies || []).map((s) => ({ ...s }));
-    const synced = Date.parse((CD.stickiesSynced || "").replace(" ", "T") + ":00+08:00") || 0;
     for (const o of pendingOps()) {
-      if (o.op === "create") {
-        if (o.at < synced - 60000 && list.some((s) => s.text === o.fields.text)) continue; // 已同步回來
-        if (!list.some((s) => s.text === o.fields.text)) list.unshift({ ...o.fields, id: o.tempId, date: todayISO, pending: true });
-      } else if (o.op === "update") {
-        list = list.map((s) => (s.id === o.id ? { ...s, ...o.fields, pending: true } : s));
-      } else if (o.op === "delete") {
-        list = list.filter((s) => s.id !== o.id);
-      }
+      if (o.op === "create") list.unshift({ ...o.fields, id: o.tempId, date: todayISO, pending: true });
+      else if (o.op === "update") list = list.map((s) => (s.id === o.id ? { ...s, ...o.fields, pending: true } : s));
+      else if (o.op === "delete") list = list.filter((s) => s.id !== o.id);
     }
     return list.filter((s) => !s.private);
+  }
+
+  // 有編輯在等同步時，每分鐘重新抓一次便利貼資料，同步回來就自動換成最新內容
+  let stickyPoll = null;
+  function watchPending() {
+    if (stickyPoll || !store.get(PENDING_KEY, []).length) return;
+    stickyPoll = setInterval(() => {
+      if (!pendingOps().length) { clearInterval(stickyPoll); stickyPoll = null; return renderStickies(); }
+      const tag = document.createElement("script");
+      tag.src = `data/stickies.js?t=${Date.now()}`;
+      tag.onload = () => { tag.remove(); renderStickies(); };
+      tag.onerror = () => tag.remove();
+      document.head.appendChild(tag);
+    }, 60 * 1000);
   }
 
   function renderStickies() {
     const all = mergedStickies().sort((a, b) => (b.pinned - a.pinned) || String(b.date).localeCompare(String(a.date)));
     const canEdit = !!ghToken();
+    watchPending();
     const form = CD.stickiesForm || CD.stickiesDb || "";
     $("#stickies-meta").innerHTML = `${all.length} 張・${canEdit ? "這台裝置可以直接編輯" : "在 Notion 寫、每小時整點同步"}・最近一次 ${esc(tidy(CD.stickiesSynced) || "—")}
       <button class="btn key-btn" data-key="1" title="編輯設定">${canEdit ? "🔓 編輯中" : "🔑 在網站上編輯"}</button>`;
