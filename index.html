@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=23">
+  <link rel="stylesheet" href="styles.css?v=26">
 </head>
 <body>
   <div class="bg-art" aria-hidden="true"><div class="bg-img" id="bg-img"></div></div>
@@ -25,6 +25,7 @@
         <nav class="nav" aria-label="主選單">
           <div class="nav-scroll">
             <a href="#stickies">便利貼</a>
+            <a href="#calendar">行事曆</a>
             <a href="#brief">晨報</a>
             <a href="#market">市場洞察</a>
             <a href="#papers">論文</a>
@@ -79,9 +80,19 @@
         <div class="sticky-more" id="stickies-more"></div>
       </section>
 
-      <section class="block wrap" id="brief">
+      <section class="block wrap" id="calendar">
         <div class="block-head reveal">
           <span class="block-num" aria-hidden="true">02</span>
+          <p class="kicker">Calendar</p>
+          <h2 class="grad">私人行事曆</h2>
+          <p class="block-sub" id="cal-meta"></p>
+        </div>
+        <div class="cal" id="cal"></div>
+      </section>
+
+      <section class="block wrap" id="brief">
+        <div class="block-head reveal">
+          <span class="block-num" aria-hidden="true">03</span>
           <p class="kicker">Morning Brief</p>
           <h2 class="grad">每日晨報</h2>
           <p class="block-sub" id="brief-meta"></p>
@@ -91,7 +102,7 @@
 
       <section class="block wrap" id="market">
         <div class="block-head reveal">
-          <span class="block-num" aria-hidden="true">03</span>
+          <span class="block-num" aria-hidden="true">04</span>
           <p class="kicker">Daily Market Insight</p>
           <h2 class="grad">每日市場洞察</h2>
           <p class="block-sub" id="market-meta"></p>
@@ -109,7 +120,7 @@
 
       <section class="block wrap" id="papers">
         <div class="block-head reveal">
-          <span class="block-num" aria-hidden="true">04</span>
+          <span class="block-num" aria-hidden="true">05</span>
           <p class="kicker">Reading List</p>
           <h2 class="grad">讀過的論文</h2>
           <p class="block-sub" id="papers-meta"></p>
@@ -120,7 +131,7 @@
 
       <section class="block wrap" id="notes">
         <div class="block-head reveal">
-          <span class="block-num" aria-hidden="true">05</span>
+          <span class="block-num" aria-hidden="true">06</span>
           <p class="kicker">Notes</p>
           <h2 class="grad">整理過的筆記</h2>
           <p class="block-sub" id="notes-meta"></p>
@@ -131,7 +142,7 @@
 
       <section class="block wrap" id="funding">
         <div class="block-head reveal">
-          <span class="block-num" aria-hidden="true">06</span>
+          <span class="block-num" aria-hidden="true">07</span>
           <p class="kicker">Grants &amp; Scholarships</p>
           <h2 class="grad">青年補助・獎學金</h2>
           <p class="block-sub" id="funding-meta"></p>
@@ -144,7 +155,7 @@
 
       <section class="block wrap" id="ai">
         <div class="block-head reveal">
-          <span class="block-num" aria-hidden="true">07</span>
+          <span class="block-num" aria-hidden="true">08</span>
           <p class="kicker">AI Encyclopedia</p>
           <h2 class="grad">AI 百科全書</h2>
           <p class="block-sub" id="ai-meta"></p>
@@ -190,9 +201,39 @@
     </form>
   </dialog>
 
+  <dialog class="sd" id="cal-dialog" aria-labelledby="cal-title">
+    <form method="dialog">
+      <h3 id="cal-title">新增行程</h3>
+      <label class="field"><span>行程</span><input name="title" type="text" maxlength="120" placeholder="例如：行銷管理 期中報告" required></label>
+      <div class="cal-row">
+        <label class="field"><span id="cal-date-label">日期</span><input name="date" type="date" required></label>
+        <label class="field cal-check"><input type="checkbox" name="allday"> 全天</label>
+      </div>
+      <div class="cal-row" id="cal-times">
+        <label class="field"><span>開始</span><select name="start"></select></label>
+        <label class="field"><span>結束</span><select name="end"></select></label>
+      </div>
+      <div class="field"><span>分類</span><div class="chips" id="cal-cats"></div></div>
+      <label class="field"><span>地點（可留空）</span><input name="place" type="text" maxlength="120"></label>
+      <label class="field"><span>備註（可留空）</span><textarea name="note" rows="2" maxlength="1000"></textarea></label>
+      <div class="cal-row">
+        <label class="field"><span>重複</span><select name="repeat"><option value="">不重複</option><option value="weekly">每週</option></select></label>
+        <label class="field" id="cal-until"><span>重複到（可留空）</span><input name="until" type="date"></label>
+      </div>
+      <p class="sd-help" id="cal-series" hidden>這是每週重複的行程：修改會套用到每一週；只想取消某一週，按「刪除這次」。</p>
+      <p class="sd-status" id="cal-status" role="status"></p>
+      <div class="sd-actions">
+        <span class="cal-dels"><button type="button" class="btn danger" id="cal-del-one">刪除這次</button><button type="button" class="btn danger" id="cal-del">刪除</button></span>
+        <span></span>
+        <button type="button" class="btn" id="cal-cancel">取消</button>
+        <button type="submit" class="pill solid">儲存</button>
+      </div>
+    </form>
+  </dialog>
+
   <dialog class="sd" id="key-dialog" aria-labelledby="kd-title">
     <form method="dialog">
-      <h3 id="kd-title">在網站上編輯便利貼</h3>
+      <h3 id="kd-title">解鎖：便利貼編輯・私人行事曆</h3>
       <ol class="kd-steps">
         <li><a class="pill" id="kd-make" href="https://github.com/settings/personal-access-tokens/new?name=craig-daily%20%E4%BE%BF%E5%88%A9%E8%B2%BC&amp;description=%E5%9C%A8%E7%B6%B2%E7%AB%99%E4%B8%8A%E7%B7%A8%E8%BC%AF%E4%BE%BF%E5%88%A9%E8%B2%BC&amp;target_name=craigshih&amp;expires_in=366&amp;contents=write" target="_blank" rel="noopener">到 GitHub 建立金鑰 ↗</a>
           <small>名稱、期限、Contents 讀寫權限都已經幫你填好。只要把 <b>Repository access</b> 改成 <b>Only select repositories</b>，選 <b>craig-daily</b>，再按最下面的 <b>Generate token</b>。</small></li>
@@ -224,6 +265,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mojs/core@1.7.1/dist/mo.umd.js"></script>
-  <script src="app.js?v=24"></script>
+  <script src="app.js?v=26"></script>
+  <script src="calendar.js?v=26"></script>
 </body>
 </html>

@@ -303,6 +303,7 @@
       if (!c || c.id !== "craig-daily" || !c.password) return false;
       localStorage.setItem("cd-gh-token", c.password);
       renderStickies();
+      document.dispatchEvent(new Event("cd-key"));
       return true;
     } catch (e) { return false; }
   }
@@ -351,10 +352,15 @@
         try { await navigator.credentials.store(new PasswordCredential({ id: "craig-daily", password: token, name: "Craig 的日常・便利貼金鑰" })); } catch (err) {}
       }
       status.textContent = "成功了！";
-      setTimeout(() => { keyDlg.close(); renderStickies(); }, 600);
+      setTimeout(() => { keyDlg.close(); renderStickies(); keyChanged(); }, 600);
     } catch (err) { status.textContent = err.message; }
   });
-  $("#kd-forget").addEventListener("click", () => { try { localStorage.removeItem("cd-gh-token"); } catch (e) {} keyDlg.close(); renderStickies(); });
+  // 金鑰變動時通知行事曆（calendar.js）重新解鎖／上鎖
+  const keyChanged = () => document.dispatchEvent(new Event("cd-key"));
+  $("#kd-forget").addEventListener("click", () => {
+    try { ["cd-gh-token", "cd-cal-dk", "cd-cal-file"].forEach((k) => localStorage.removeItem(k)); } catch (e) {}
+    keyDlg.close(); renderStickies(); keyChanged();
+  });
   $("#kd-cancel").addEventListener("click", () => keyDlg.close());
 
   /* ---------- 晨報 ---------- */
@@ -521,6 +527,12 @@
   /* ---------- 補助・獎學金（手動更新） ---------- */
   let fundFilter = "全部";
   const STATES = ["想申請", "已申請", "不適合"];
+  // 有填 deadline 的補助會顯示倒數，也會自動出現在私人行事曆
+  function deadlineTag(d) {
+    const left = Math.round((Date.parse(d + "T00:00:00Z") - Date.parse(todayISO + "T00:00:00Z")) / 864e5);
+    const text = left < 0 ? "已截止" : left === 0 ? "今天截止" : `還有 ${left} 天`;
+    return `<p class="deadline ${left >= 0 && left <= 14 ? "soon" : ""} ${left < 0 ? "past" : ""}">⏰ 截止 ${esc(d.slice(5).replace("-", "/"))}・${text}</p>`;
+  }
   function renderFunding() {
     const items = CD.funding || [], mine = store.get("cd-funding", {});
     const cats = ["全部", ...new Set(items.map((f) => f.cat)), "我的清單"];
@@ -531,6 +543,7 @@
       <article class="card">
         <div class="meta"><span class="tag hot">${esc(f.cat)}</span><span>${esc(f.org)}</span></div>
         <h3>${ext(f.link, esc(f.name))}</h3>
+        ${f.deadline ? deadlineTag(f.deadline) : ""}
         <p><b>對象</b>　${esc(f.who)}</p>
         <p>${esc(f.what)}</p>
         ${f.verify ? `<p class="insight">內容來自二手整理，申請前請查官方原文</p>` : ""}
@@ -591,7 +604,10 @@
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id)); });
   }, { rootMargin: "-40% 0px -55% 0px" });
-  ["stickies", "brief", "market", "papers", "notes", "funding", "ai"].forEach((id) => io.observe(document.getElementById(id)));
+  ["stickies", "calendar", "brief", "market", "papers", "notes", "funding", "ai"].forEach((id) => io.observe(document.getElementById(id)));
+
+  // 給 calendar.js 用的共用工具
+  window.CDKit = { $, esc, store, ghToken, openKeyDialog, burstAt: (...a) => burstAt(...a), WEEK };
 
   renderBento(); renderStickies(); renderBrief(); renderMarket(); renderPapers(); renderNotes(); renderFunding(); renderAI();
 

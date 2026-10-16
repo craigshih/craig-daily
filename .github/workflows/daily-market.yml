@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths-ignore: ["edits/**"] # 網站編輯便利貼由 sticky-edits.yml 處理並部署
+    paths-ignore: ["edits/**", "vault/**"] # 便利貼編輯由 sticky-edits.yml 處理；vault/ 是加密的行事曆，網站直接讀 GitHub API，不用重新部署
 
 permissions:
   contents: write

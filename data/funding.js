@@ -1,5 +1,6 @@
 // 青年補助・獎學金：只放長期存在的計畫與官方入口，期程與金額每年會變，申請前一定要看官網公告
 // verify: true 代表內容來自二手整理，引用前請查官方原文
+// deadline: "2026-11-30" 可留空；填了之後卡片會顯示倒數，也會自動出現在私人行事曆上
 window.CD = window.CD || {};
 window.CD.fundingUpdated = "2026-10-15";
 window.CD.funding = [
