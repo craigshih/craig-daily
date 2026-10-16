@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=18">
+  <link rel="stylesheet" href="styles.css?v=20">
 </head>
 <body>
   <div class="bg-art" aria-hidden="true"><div class="bg-img" id="bg-img"></div></div>
@@ -30,6 +30,7 @@
             <a href="#papers">論文</a>
             <a href="#notes">筆記</a>
             <a href="#funding">補助・獎學金</a>
+            <a href="#ai">AI 百科</a>
           </div>
         </nav>
       </div>
@@ -140,6 +141,20 @@
         <h3 class="sub-head" id="opps-head">實驗室頻道看到的機會</h3>
         <div class="grid cards-3" id="opps-list"></div>
       </section>
+
+      <section class="block wrap" id="ai">
+        <div class="block-head reveal">
+          <span class="block-num" aria-hidden="true">07</span>
+          <p class="kicker">AI Encyclopedia</p>
+          <h2 class="grad">AI 百科全書</h2>
+          <p class="block-sub" id="ai-meta"></p>
+        </div>
+        <div class="ai-toolbar">
+          <label class="ai-search"><span aria-hidden="true">⌕</span><input id="ai-search" type="search" placeholder="搜尋工具或用途，例如：簡報、逐字稿、論文…" aria-label="搜尋 AI 工具"></label>
+        </div>
+        <div class="tabs" id="ai-tabs" role="tablist"></div>
+        <div id="ai-list"></div>
+      </section>
     </main>
 
     <footer class="footer wrap">
@@ -151,19 +166,59 @@
     </footer>
   </div>
 
-  <script src="data/profile.js?v=18"></script>
-  <script src="data/themes.js?v=18"></script>
-  <script src="data/brief.js?v=18"></script>
-  <script src="data/market.js?v=18"></script>
-  <script src="data/papers.js?v=18"></script>
-  <script src="data/notes.js?v=18"></script>
-  <script src="data/lab.js?v=18"></script>
-  <script src="data/stickies.js?v=18"></script>
-  <script src="data/funding.js?v=18"></script>
+  <!-- 便利貼編輯視窗（只有設定過 GitHub 金鑰的裝置用得到） -->
+  <dialog class="sd" id="sticky-dialog" aria-labelledby="sd-title">
+    <form method="dialog">
+      <h3 id="sd-title">寫一張便利貼</h3>
+      <label class="field"><span>Takeaway</span><textarea name="text" rows="3" maxlength="500" placeholder="今天學到的一句話…" required></textarea></label>
+      <label class="field"><span>補充（可留空）</span><textarea name="note" rows="2" maxlength="2000"></textarea></label>
+      <div class="field"><span>標籤</span><div class="chips" id="sd-tags"></div>
+        <input name="newtag" placeholder="新標籤，用逗號分開（可留空）"></div>
+      <div class="field"><span>顏色</span><div class="swatches" id="sd-colors"></div></div>
+      <label class="field"><span>來源連結（可留空）</span><input name="link" type="url" placeholder="https://"></label>
+      <div class="toggles">
+        <label><input type="checkbox" name="pinned"> 📌 釘選</label>
+        <label><input type="checkbox" name="private"> 🔒 不公開（只留在 Notion）</label>
+      </div>
+      <p class="sd-status" id="sd-status" role="status"></p>
+      <div class="sd-actions">
+        <button type="button" class="btn danger" id="sd-delete">刪除</button>
+        <span></span>
+        <button type="button" class="btn" id="sd-cancel">取消</button>
+        <button type="submit" class="pill solid">儲存</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="sd" id="key-dialog" aria-labelledby="kd-title">
+    <form method="dialog">
+      <h3 id="kd-title">在網站上編輯便利貼</h3>
+      <p class="sd-help">貼上你的 GitHub 金鑰（只需要 craig-daily 的 Contents 讀寫權限）。金鑰只存在這台裝置的瀏覽器，不會上傳到任何地方；換裝置要再貼一次。</p>
+      <label class="field"><span>GitHub 金鑰</span><input name="token" type="password" autocomplete="off" placeholder="github_pat_…"></label>
+      <p class="sd-status" id="kd-status" role="status"></p>
+      <div class="sd-actions">
+        <button type="button" class="btn danger" id="kd-forget">從這台裝置移除</button>
+        <span></span>
+        <button type="button" class="btn" id="kd-cancel">取消</button>
+        <button type="submit" class="pill solid">確認</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="data/profile.js?v=20"></script>
+  <script src="data/themes.js?v=20"></script>
+  <script src="data/brief.js?v=20"></script>
+  <script src="data/market.js?v=20"></script>
+  <script src="data/papers.js?v=20"></script>
+  <script src="data/notes.js?v=20"></script>
+  <script src="data/lab.js?v=20"></script>
+  <script src="data/stickies.js?v=20"></script>
+  <script src="data/ai_tools.js?v=20"></script>
+  <script src="data/funding.js?v=20"></script>
   <!-- 動畫：GSAP + ScrollTrigger（捲動進場）、mo.js（mojs.io 的爆破與幾何動畫）；載入失敗時頁面照常顯示 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mojs/core@1.7.1/dist/mo.umd.js"></script>
-  <script src="app.js?v=18"></script>
+  <script src="app.js?v=20"></script>
 </body>
 </html>

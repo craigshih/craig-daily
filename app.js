@@ -149,35 +149,151 @@
       </a>`;
   }
 
-  /* ---------- 便利貼（Notion「📌 便利貼」每小時整點同步） ---------- */
-  let stickyTag = "全部", stickyAll = false;
+  /* ---------- 便利貼（Notion「📌 便利貼」每小時整點同步；有金鑰的裝置可以直接在網站上編輯） ---------- */
+  const REPO = "craigshih/craig-daily";
   const STICKY_COLORS = ["黃", "粉", "藍", "綠", "紫"];
+  const STICKY_TAGS = ["投資理財", "課堂", "研究", "產業觀察", "靈感", "生活", "金句"];
+  const ghToken = () => { try { return localStorage.getItem("cd-gh-token") || ""; } catch (e) { return ""; } };
+  let stickyTag = "全部", stickyAll = false;
+
+  // 網站上的編輯要 1–2 分鐘才會從 Notion 同步回來，這段時間先把送出的編輯疊在畫面上
+  const PENDING_KEY = "cd-sticky-pending";
+  const pendingOps = () => store.get(PENDING_KEY, []).filter((o) => Date.now() - o.at < 20 * 60 * 1000);
+  function mergedStickies() {
+    let list = (CD.stickies || []).map((s) => ({ ...s }));
+    const synced = Date.parse((CD.stickiesSynced || "").replace(" ", "T") + ":00+08:00") || 0;
+    for (const o of pendingOps()) {
+      if (o.op === "create") {
+        if (o.at < synced - 60000 && list.some((s) => s.text === o.fields.text)) continue; // 已同步回來
+        if (!list.some((s) => s.text === o.fields.text)) list.unshift({ ...o.fields, id: o.tempId, date: todayISO, pending: true });
+      } else if (o.op === "update") {
+        list = list.map((s) => (s.id === o.id ? { ...s, ...o.fields, pending: true } : s));
+      } else if (o.op === "delete") {
+        list = list.filter((s) => s.id !== o.id);
+      }
+    }
+    return list.filter((s) => !s.private);
+  }
+
   function renderStickies() {
-    const all = (CD.stickies || []).slice().sort((a, b) => (b.pinned - a.pinned) || b.date.localeCompare(a.date));
-    const db = CD.stickiesForm || CD.stickiesDb || "";
-    $("#stickies-meta").innerHTML = `${all.length} 張・在 Notion 寫、每小時整點同步・最近一次 ${esc(tidy(CD.stickiesSynced) || "—")}`;
+    const all = mergedStickies().sort((a, b) => (b.pinned - a.pinned) || String(b.date).localeCompare(String(a.date)));
+    const canEdit = !!ghToken();
+    const form = CD.stickiesForm || CD.stickiesDb || "";
+    $("#stickies-meta").innerHTML = `${all.length} 張・${canEdit ? "這台裝置可以直接編輯" : "在 Notion 寫、每小時整點同步"}・最近一次 ${esc(tidy(CD.stickiesSynced) || "—")}
+      <button class="btn key-btn" data-key="1" title="編輯設定">${canEdit ? "🔓 編輯中" : "🔑 在網站上編輯"}</button>`;
     const tags = ["全部", ...new Set(all.flatMap((s) => s.tags || []))];
     $("#stickies-filters").innerHTML = tags.length > 2 ? tags.map((t) => `<button class="btn ${t === stickyTag ? "on" : ""}" data-st="${esc(t)}">${esc(t)}</button>`).join("") : "";
     const shown = all.filter((s) => stickyTag === "全部" || (s.tags || []).includes(stickyTag));
     const limit = stickyAll ? shown.length : 11;
-    const hash = (id) => { let h = 0; for (const ch of id || "x") h = (h * 31 + ch.charCodeAt(0)) >>> 0; return h; };
+    const hash = (id) => { let h = 0; for (const ch of String(id || "x")) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return h; };
     const card = (s) => {
       const h = hash(s.id), tilt = ((h % 7) - 3) * 0.9;
       const color = STICKY_COLORS.includes(s.color) ? s.color : STICKY_COLORS[h % STICKY_COLORS.length];
-      return `<article class="sticky" data-c="${color}" style="--tilt:${tilt}deg">
+      return `<article class="sticky ${s.pending ? "is-pending" : ""}" data-c="${color}" style="--tilt:${tilt}deg">
         ${s.pinned ? `<span class="pin" aria-label="釘選">📌</span>` : ""}
+        ${canEdit && !String(s.id).startsWith("new-") ? `<button class="s-edit" data-edit="${esc(s.id)}" aria-label="編輯這張">✎</button>` : ""}
         <p class="s-text">${esc(s.text)}</p>
         ${s.note ? `<p class="s-note">${esc(s.note)}</p>` : ""}
         <div class="s-foot"><span class="s-tags">${(s.tags || []).map((t) => `<span>${esc(t)}</span>`).join("")}</span>
-          <span>${s.link ? ext(s.link, "來源 ↗") + "・" : ""}${esc(s.date.slice(5).replace("-", "/"))}</span></div>
+          <span>${s.pending ? "同步中…" : (s.link ? ext(s.link, "來源 ↗") + "・" : "") + esc(String(s.date).slice(5).replace("-", "/"))}</span></div>
       </article>`;
     };
-    const add = db ? `<a class="sticky-add" href="${esc(db)}" target="_blank" rel="noopener"><span><b>＋</b>到 Notion 寫一張<br><small>整點就會貼到這裡</small></span></a>` : "";
-    $("#stickies-list").innerHTML = add + (shown.length ? shown.slice(0, limit).map(card).join("") : "");
+    const add = canEdit
+      ? `<button class="sticky-add" data-new="1"><span><b>＋</b>寫一張便利貼<br><small>存檔後約 1–2 分鐘同步到 Notion</small></span></button>`
+      : form ? `<a class="sticky-add" href="${esc(form)}" target="_blank" rel="noopener"><span><b>＋</b>到 Notion 寫一張<br><small>整點就會貼到這裡</small></span></a>` : "";
+    $("#stickies-list").innerHTML = add + shown.slice(0, limit).map(card).join("");
     $("#stickies-more").innerHTML = shown.length > limit ? `<button class="btn" data-more="1">看全部 ${shown.length} 張</button>` : "";
   }
   $("#stickies-filters").addEventListener("click", (e) => { const b = e.target.closest("[data-st]"); if (b) { stickyTag = b.dataset.st; renderStickies(); } });
   $("#stickies-more").addEventListener("click", (e) => { if (e.target.closest("[data-more]")) { stickyAll = true; renderStickies(); } });
+  $("#stickies").addEventListener("click", (e) => {
+    if (e.target.closest("[data-key]")) return openKeyDialog();
+    if (e.target.closest("[data-new]")) return openEditor(null);
+    const b = e.target.closest("[data-edit]");
+    if (b) openEditor(mergedStickies().find((s) => s.id === b.dataset.edit));
+  });
+
+  /* 編輯視窗 */
+  const dlg = $("#sticky-dialog");
+  let editing = null;
+  function openEditor(s) {
+    editing = s;
+    const f = dlg.querySelector("form");
+    f.text.value = s ? s.text : "";
+    f.note.value = s ? s.note || "" : "";
+    f.link.value = s ? s.link || "" : "";
+    f.pinned.checked = !!(s && s.pinned);
+    f.private.checked = false;
+    const tags = new Set(s ? s.tags || [] : []);
+    $("#sd-tags").innerHTML = [...new Set([...STICKY_TAGS, ...tags])].map((t) => `<label class="chip"><input type="checkbox" name="tag" value="${esc(t)}" ${tags.has(t) ? "checked" : ""}><span>${esc(t)}</span></label>`).join("");
+    f.newtag.value = "";
+    const color = s && STICKY_COLORS.includes(s.color) ? s.color : "";
+    $("#sd-colors").innerHTML = ["", ...STICKY_COLORS].map((c) => `<label class="swatch" data-c="${c || "隨機"}" title="${c || "隨機"}"><input type="radio" name="color" value="${c}" ${c === color ? "checked" : ""}><span>${c || "隨"}</span></label>`).join("");
+    $("#sd-title").textContent = s ? "編輯便利貼" : "寫一張便利貼";
+    $("#sd-delete").hidden = !s;
+    $("#sd-status").textContent = "";
+    dlg.showModal();
+    setTimeout(() => f.text.focus(), 50);
+  }
+  async function sendEdit(op) {
+    const f = dlg.querySelector("form");
+    const extra = f.newtag.value.split(/[,，、\s]+/).map((t) => t.trim()).filter(Boolean);
+    const fields = {
+      text: f.text.value.trim(), note: f.note.value.trim(), link: f.link.value.trim(),
+      tags: [...new Set([...[...f.querySelectorAll('input[name="tag"]:checked')].map((i) => i.value), ...extra])],
+      color: (f.querySelector('input[name="color"]:checked') || {}).value || "",
+      pinned: f.pinned.checked, private: f.private.checked
+    };
+    if (op !== "delete" && !fields.text) { $("#sd-status").textContent = "先寫一句 takeaway 再存。"; return; }
+    if (op === "delete" && !confirm("確定刪除這張便利貼？（Notion 會移到垃圾桶，30 天內可以還原）")) return;
+    const at = Date.now();
+    const edit = { op, at, ...(editing ? { id: editing.id } : {}), ...(op === "delete" ? {} : { fields }) };
+    const name = `edits/${at}-${Math.random().toString(36).slice(2, 8)}.json`;
+    $("#sd-status").textContent = "儲存中…";
+    try {
+      const body = { message: `網站編輯便利貼（${op}）`, content: btoa(unescape(encodeURIComponent(JSON.stringify(edit, null, 2)))) };
+      const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${name}`, {
+        method: "PUT", headers: { Authorization: `Bearer ${ghToken()}`, Accept: "application/vnd.github+json" }, body: JSON.stringify(body)
+      });
+      if (!r.ok) throw new Error(r.status === 401 ? "金鑰無效或過期，請重新設定" : r.status === 403 || r.status === 404 ? "金鑰沒有這個 repo 的寫入權限" : `GitHub 回應 ${r.status}`);
+      const ops = pendingOps();
+      ops.push({ ...edit, tempId: `new-${at}`, fields: op === "delete" ? {} : fields });
+      store.set(PENDING_KEY, ops);
+      dlg.close();
+      renderStickies();
+      burstAt($("#stickies-list"), 0.5, 0.2);
+    } catch (err) {
+      $("#sd-status").textContent = `沒存成功：${err.message}`;
+    }
+  }
+  dlg.querySelector("form").addEventListener("submit", (e) => { e.preventDefault(); sendEdit(editing ? "update" : "create"); });
+  $("#sd-delete").addEventListener("click", () => sendEdit("delete"));
+  $("#sd-cancel").addEventListener("click", () => dlg.close());
+
+  /* 金鑰設定（只存在這台裝置的瀏覽器） */
+  const keyDlg = $("#key-dialog");
+  function openKeyDialog() {
+    const has = !!ghToken();
+    keyDlg.querySelector("[name=token]").value = "";
+    $("#kd-forget").hidden = !has;
+    $("#kd-status").textContent = has ? "這台裝置已設定金鑰，可以直接編輯。" : "";
+    keyDlg.showModal();
+  }
+  keyDlg.querySelector("form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const token = keyDlg.querySelector("[name=token]").value.trim();
+    if (!token) return;
+    $("#kd-status").textContent = "確認中…";
+    try {
+      const r = await fetch(`https://api.github.com/repos/${REPO}`, { headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" } });
+      const data = r.ok ? await r.json() : null;
+      if (!data || !(data.permissions && data.permissions.push)) throw new Error(r.status === 401 ? "金鑰無效" : "這把金鑰沒有 craig-daily 的寫入權限");
+      try { localStorage.setItem("cd-gh-token", token); } catch (err) { throw new Error("這個瀏覽器不允許儲存資料（無痕模式？）"); }
+      keyDlg.close(); renderStickies();
+    } catch (err) { $("#kd-status").textContent = `沒設定成功：${err.message}`; }
+  });
+  $("#kd-forget").addEventListener("click", () => { try { localStorage.removeItem("cd-gh-token"); } catch (e) {} keyDlg.close(); renderStickies(); });
+  $("#kd-cancel").addEventListener("click", () => keyDlg.close());
 
   /* ---------- 晨報 ---------- */
   function linkify(item) {
@@ -376,6 +492,34 @@
     store.set("cd-funding", mine); renderFunding(); burstFrom(e);
   });
 
+  /* ---------- AI 百科全書（整理自 104〈AI 工具大全〉） ---------- */
+  let aiCat = "all", aiQuery = "";
+  const favicon = (url) => { try { return `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}&sz=64`; } catch (e) { return ""; } };
+  function renderAI() {
+    const cats = CD.aiTools || [], src = CD.aiToolsSource || {};
+    const total = cats.reduce((n, c) => n + c.tools.length, 0);
+    $("#ai-meta").innerHTML = `${cats.length} 類・${total} 個工具・整理自 ${ext(src.url || "#", esc(src.title || "來源"))}`;
+    $("#ai-tabs").innerHTML = [{ id: "all", icon: "✦", name: "全部", tools: { length: total } }, ...cats]
+      .map((c) => `<button class="btn ${c.id === aiCat ? "on" : ""}" role="tab" aria-selected="${c.id === aiCat}" data-ai="${c.id}">${c.icon} ${esc(c.name)}<span class="n">${c.tools.length}</span></button>`).join("");
+    const q = aiQuery.trim().toLowerCase();
+    const match = (t, c) => !q || [t.name, t.desc, c.name].join(" ").toLowerCase().includes(q);
+    const card = (t) => `
+      <a class="tool" href="${esc(t.url)}" target="_blank" rel="noopener">
+        <img src="${esc(favicon(t.url))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">
+        <span class="tool-body"><b>${esc(t.name)}</b><span>${esc(t.desc)}</span>${t.free ? `<em>${esc(t.free)}</em>` : ""}</span>
+        <span class="tool-go" aria-hidden="true">↗</span>
+      </a>`;
+    const groups = cats.filter((c) => aiCat === "all" || c.id === aiCat)
+      .map((c) => ({ ...c, hits: c.tools.filter((t) => match(t, c)) })).filter((c) => c.hits.length);
+    $("#ai-list").innerHTML = groups.length ? groups.map((c) => `
+      <div class="ai-group">
+        <h3><span>${c.icon}</span>${esc(c.name)}<small>${c.hits.length}</small></h3>
+        <div class="tool-grid">${c.hits.map(card).join("")}</div>
+      </div>`).join("") : `<p class="empty">找不到「${esc(aiQuery)}」相關的工具。</p>`;
+  }
+  $("#ai-tabs").addEventListener("click", (e) => { const b = e.target.closest("[data-ai]"); if (b) { aiCat = b.dataset.ai; renderAI(); } });
+  $("#ai-search").addEventListener("input", (e) => { aiQuery = e.target.value; if (aiQuery) aiCat = "all"; renderAI(); });
+
   /* ---------- 頁尾 ---------- */
   $("#footer-links").innerHTML = (P.links || []).map((l) => ext(l.url, esc(l.label))).join("　·　");
   $("#credits").innerHTML = "動漫主視覺外連自各作品官方網站，版權屬原作者與製作委員會：" + themes.map((t) => ext(t.sourceUrl, esc(t.name))).join("、");
@@ -385,9 +529,9 @@
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id)); });
   }, { rootMargin: "-40% 0px -55% 0px" });
-  ["stickies", "brief", "market", "papers", "notes", "funding"].forEach((id) => io.observe(document.getElementById(id)));
+  ["stickies", "brief", "market", "papers", "notes", "funding", "ai"].forEach((id) => io.observe(document.getElementById(id)));
 
-  renderBento(); renderStickies(); renderBrief(); renderMarket(); renderPapers(); renderNotes(); renderFunding();
+  renderBento(); renderStickies(); renderBrief(); renderMarket(); renderPapers(); renderNotes(); renderFunding(); renderAI();
 
   /* ---------- mo.js：點擊爆破、主視覺換圖爆破、Hero 幾何動畫（mojs.io 風格） ---------- */
   const fx = $("#fx");

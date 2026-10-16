@@ -8,6 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths-ignore: ["edits/**"] # 網站編輯便利貼由 sticky-edits.yml 處理並部署
 
 permissions:
   contents: write

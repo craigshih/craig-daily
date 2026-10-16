@@ -68,7 +68,7 @@ def to_sticky(page):
         "link": (p.get("連結") or {}).get("url") or "",
         "pinned": bool((p.get("釘選") or {}).get("checkbox")),
         "date": created.strftime("%Y-%m-%d"),
-        "id": page["id"].replace("-", "")[:12],
+        "id": page["id"].replace("-", ""),  # 完整頁面 id，網站編輯時要用
     }
 
 
