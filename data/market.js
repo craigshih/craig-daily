@@ -1,9 +1,9 @@
 // 每日市場洞察：由 scripts/fetch_market.py 自動產生（GitHub Action 每天台灣時間 06:00），請不要手動改
 window.CD = window.CD || {};
-window.CD.marketUpdated = "2026-10-15 16:18";
+window.CD.marketUpdated = "2026-10-16 08:02";
 window.CD.marketGroups = [{"id": "tw", "name": "台灣財經"}, {"id": "strategy", "name": "商業與戰略"}, {"id": "tech", "name": "科技・新創・創投"}, {"id": "growth", "name": "行銷・產品・增長"}, {"id": "smb", "name": "創業與中小企業"}];
-window.CD.marketSummary = {"text": "今日焦點聚在 AI 生成與自動化的加速應用、金融服務的客製化與無薪資證明信用卡擴張，以及宏觀層面的油價與利率同步上升導致資產配置分化。企業需關注 AI 在產品設計、創新與資安的雙刃劍效應；金融機構則在多元信用卡方案與新興市場風險管理上尋找機會；投資者則須重新檢視高利率環境下的能源與 ETF 配置。", "watch": ["AI 生成內容如何影響產品生命週期與資安防護", "高油價與高利率環境下的資產配置策略", "無薪資證明信用卡的風險與市場接受度"]};
-window.CD.marketStatus = [{"source": "市場先生", "ok": true, "count": 3}, {"source": "MacroMicro 財經M平方", "ok": true, "count": 2}, {"source": "Harvard Business Review", "ok": true, "count": 3}, {"source": "Business Insider", "ok": true, "count": 3}, {"source": "Fast Company", "ok": true, "count": 3}, {"source": "TechCrunch", "ok": true, "count": 3}, {"source": "The Verge", "ok": true, "count": 2}, {"source": "Wired", "ok": true, "count": 2}, {"source": "Springwise", "ok": true, "count": 2}, {"source": "Lenny's Newsletter", "ok": true, "count": 2}, {"source": "Brian Balfour（Reforge）", "ok": true, "count": 0}, {"source": "HubSpot Blog", "ok": true, "count": 2}, {"source": "Shopify Blog", "ok": true, "count": 2}, {"source": "Entrepreneur", "ok": true, "count": 3}, {"source": "Small Business Trends", "ok": true, "count": 2}];
+window.CD.marketSummary = {"text": "今日焦點聚於 AI 與通膨雙重衝擊下的產業調整：AI 需求持續推升台積電營收、金融服務紛紛推出無薪資證明信用卡與哩程卡；同時通膨與能源成本上升促使企業重新檢視定價與供應鏈策略，並加速創新與成本控管。", "watch": ["AI 需求如何改寫半導體與金融產品設計", "高通膨環境下的定價與成本傳導", "能源與利率雙升對供應鏈與投資配置的長期影響"]};
+window.CD.marketStatus = [{"source": "市場先生", "ok": true, "count": 3}, {"source": "MacroMicro 財經M平方", "ok": true, "count": 3}, {"source": "Harvard Business Review", "ok": true, "count": 3}, {"source": "Business Insider", "ok": true, "count": 3}, {"source": "Fast Company", "ok": true, "count": 3}, {"source": "TechCrunch", "ok": true, "count": 3}, {"source": "The Verge", "ok": true, "count": 2}, {"source": "Wired", "ok": true, "count": 2}, {"source": "Springwise", "ok": true, "count": 2}, {"source": "Lenny's Newsletter", "ok": true, "count": 2}, {"source": "Brian Balfour（Reforge）", "ok": true, "count": 0}, {"source": "HubSpot Blog", "ok": true, "count": 2}, {"source": "Shopify Blog", "ok": true, "count": 2}, {"source": "Entrepreneur", "ok": true, "count": 3}, {"source": "Small Business Trends", "ok": true, "count": 2}];
 window.CD.market = [
   {
     "source": "市場先生",
@@ -13,7 +13,7 @@ window.CD.market = [
     "date": "2026-10-14",
     "excerpt": "",
     "titleZh": "2026 哩程信用卡要選哪張？5 張最值得辦的哩程信用卡推薦",
-    "takeaway": "列出五張回饋哩程最高的卡片，協助消費者在旅遊與商務支出上最大化回饋，對金融行銷策略具參考價值。"
+    "takeaway": "列出五張回饋哩程最高的卡片，協助消費者在旅遊與商務支出上最大化點數回饋。"
   },
   {
     "source": "市場先生",
@@ -23,7 +23,7 @@ window.CD.market = [
     "date": "2026-10-14",
     "excerpt": "",
     "titleZh": "新生兒保單怎麼買？新生兒保險規劃重點、投保時機一次看懂",
-    "takeaway": "說明新生兒保險的核心規劃要點與最佳投保時機，提醒保險業者加強家庭客群的教育與產品設計。"
+    "takeaway": "說明新生兒保險的核心保障與最佳投保時機，幫助家庭提前規劃長期風險管理。"
   },
   {
     "source": "市場先生",
@@ -33,7 +33,17 @@ window.CD.market = [
     "date": "2026-10-13",
     "excerpt": "",
     "titleZh": "2026 沒薪資證明能辦信用卡嗎？5 張沒薪轉可辦的卡片推薦",
-    "takeaway": "提供無薪資證明也能申辦的信用卡選項，顯示金融機構正擴大非傳統收入族群的信用服務。"
+    "takeaway": "提供無薪資證明者可申辦的信用卡選項，降低信用卡門檻，擴大金融服務覆蓋。"
+  },
+  {
+    "source": "MacroMicro 財經M平方",
+    "group": "tw",
+    "title": "【行情快報】台積電上修全年營收成長至 44%！存貨週轉改善、AI 需求持續強勁！",
+    "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQVTRZd2JoVXNKNFRZbGpjUVlfUWRLeU5oR1ZBV3NqSVRVc3ZkMlNfM2dSeElVUkRZRERndVZYd1FYNVdOOFRBYU40NC01enM5REJDYVJkLVlxSVZPNkhiaDAxU3Y2UWlqUzc0SUZmLTJ4WDlPdXlGSFI0WFBJM1dRX2ZDWmNSWVhyeURtdXJ0QlhBdjcxSmdFamNEN29QZ1hnVlA3NUJnbW54Q3BaWERVMjViSl9hYWtMZkhKRGFsYjNYY3hPUDY3VXNvS29BMjZ0VHZLaGVNSzF4TklydTZYSzdNQkZiYUlrQWRqalZFOHlPeU12dEdybUR3?oc=5",
+    "date": "2026-10-15",
+    "excerpt": "",
+    "titleZh": "【行情快報】台積電上修全年營收成長至 44%！存貨週轉改善、AI 需求持續強勁！",
+    "takeaway": "台積電營收預估大幅上修，顯示 AI 晶圓需求持續成長，供應鏈與投資者需關注產能擴張與存貨管理。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -43,7 +53,7 @@ window.CD.market = [
     "date": "2026-10-13",
     "excerpt": "",
     "titleZh": "【行情快報】油價、利率雙升下的極端分化！五大趨勢與 ETF 配置全解析",
-    "takeaway": "解析油價與利率同步上升的市場衝擊，提出五大投資趨勢與 ETF 配置建議，對資產管理決策具指引意義。"
+    "takeaway": "解析油價與利率同步上升的市場分化，提供投資人五大趨勢與相應的 ETF 配置建議。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -53,187 +63,187 @@ window.CD.market = [
     "date": "2026-10-11",
     "excerpt": "",
     "titleZh": "【MM 一週盤前】無懼高利率、台股寫下新高，本週聚焦美國 CPI！",
-    "takeaway": "預測台股在高利率環境仍可創新高，並提醒投資者關注美國 CPI 數據對市場情緒的影響。"
+    "takeaway": "台股在高利率環境仍創新高，提醒投資者關注美國 CPI 數據對資金流向的影響。"
   },
   {
     "source": "Harvard Business Review",
     "group": "strategy",
-    "title": "Managers Need to Get Better at Killing Digital Products",
-    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONU9oajZvV3hpajdpblNCSjZQT0dlZHlMMjRlajNnXzY0VzNMRzlxWWpodjNEcWYyZVFtdHBPTktxTjlKeEFWNWJEV2l6QVZDdnk0RXNIV1AzRmNuNGhUSlZqMU5LeXYyTG9RTWFNVGI2T24zbGFVX3lzRkVNeVQ5cnhhZGFVQQ?oc=5",
-    "date": "2026-10-15",
+    "title": "10 Pricing Strategies to Deal with Persistent Inflation",
+    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNLUY0eDFqbFVkbEUta2E3TkhBbkozUEg0eU1FNFpRNEdodjdBcEt0aDlyX2dDbFBKWEIxOW40RURpOS1kb0FnNG94cV9zSkxiU1ktZ1V2YXR6d1VHWEk0b1l5Snl3aXpsWFhkZHdpUFQ3eEdJd3o3X1pYT2pvLW1fQ3N1U29Cdw?oc=5",
+    "date": "2026-10-16",
     "excerpt": "",
-    "titleZh": "主管要學會果斷收掉數位產品",
-    "takeaway": "指出管理者需提升終止失敗數位產品的能力，以避免資源浪費並聚焦於更具成長潛力的項目。"
+    "titleZh": "10 種定價策略應對持續通膨",
+    "takeaway": "提出十種在通膨環境下的定價技巧，協助企業維持毛利並避免需求流失。"
   },
   {
     "source": "Harvard Business Review",
     "group": "strategy",
-    "title": "How One Company Used Disciplined Chaos to Drive Innovation",
-    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQQkJ5RnF6VW9oUF9mLUEwZWQyU2RpMjVQZmhYVVpCOHE2MEt4dHk1amU1OWF1a21wdTZWcEdYMFNRT3NSY3VsWlZqTW52dTdhZ2V0aVNybGJYWmVvT3ZLSjZMSDJoQzBXQ25oLS1LaGtwNEZEdFI4MmRfdU9ZaGk2LXNVbGtDU2FjVWc?oc=5",
+    "title": "Team Dynamics Weaken When Employees Turn to AI instead of Colleagues",
+    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPSE5qTUpneHFVQzlidjRQaVMteDhlSzBUeEtpTjdwdVI2NmJOVkZGMFNLa21ZdGw2Vm1ubDh0eUZzWkxyNlViZjE4YjRtUVhOMThWdDBJWW9IRElMTVRPWHJ6OXBhcUJTaTJ2Mm1oVDFNZ1A3R0ctSHo2MXRjNG5uSURSdVJDaERibnFoejhCSHgyb0FLN29Z?oc=5",
     "date": "2026-10-15",
     "excerpt": "",
-    "titleZh": "一家公司如何利用有紀律的混沌驅動創新",
-    "takeaway": "分享透過有結構的混沌流程加速創新，為企業提供在快速變動市場中保持競爭力的實務範例。"
+    "titleZh": "員工轉向 AI 而非同事時，團隊動態會削弱",
+    "takeaway": "指出過度依賴 AI 可能削弱團隊合作與創意，提醒管理層平衡技術與人際互動。"
   },
   {
     "source": "Harvard Business Review",
     "group": "strategy",
-    "title": "HBR Virtual Roundtable: How to Prepare for AI-Powered Cyber Threats",
-    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPRDdLNTBsNUU2MVhzSFdnS256NjVXck92Y3RWYlBTTUREYVdMRlFPV3k4Q0VFUjRfT2xNN1E0VGc3aEpkZi1sNVYybE9ILVlhcG5xU0RtUVhFdkxVam9jYk1vcGdFYkdzbzFINkxsSzA3Rm12SERNLXRRTG1Oc1QzeXNBbXludFlwU1lTZ0syWkRqVThw?oc=5",
-    "date": "2026-10-14",
+    "title": "Robinhood’s CEO on Refounding the Business Post-IPO",
+    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9sNVRsNkpta2RkTGVXMzJhajM1dEVDV1BZZ0dTMmlCM2pyWC1mLU8zNVBhTjktUk5BbWxsWDN2cFJYQVVJQnk4eDd2ZkpsQTdEZmdxMlJsVnhGNVF4X2dMbXVjWThGaVQzT2hMZ01xYmtERU1mWlNDZ0RUX1Z2WVU?oc=5",
+    "date": "2026-10-15",
     "excerpt": "",
-    "titleZh": "HBR 虛擬圓桌：如何為 AI 驅動的網路安全威脅做好準備",
-    "takeaway": "探討 AI 技術在網路攻防兩端的應用，提醒企業必須提前布局 AI 安全防護與人才培育。"
+    "titleZh": "Robinhood CEO 談 IPO 後的業務重塑",
+    "takeaway": "Robinhood 重新定位平台策略，聚焦多元金融服務與用戶黏著度，為新創提供轉型參考。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "Meta removes 3.7 million accounts of West African online profiles and pages as US, UK, Nigerian and Ghanaian agencies join forces",
-    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOQzBoZHJ1YVNRVmU0Y28xaUQ3VDBTUkZMN0lfckp0LVdMaUZDbWF2RDg2eUxXWWRlVEV2VDlZZTV1NEUyUXd2VF83SHNBNDdIVTVjX25fM084XzJ2aDFRZ0EtdTJBZWphYTlQNVR5TTAzZ1BJa041S0VZZnpRNXA4a2pjbFVHazA0Y2V1LURrVWQzU0dESktkNDItQndzbTRfMGM5X0JqcUIwcWNuSzR1dU9sdmNpWUxKWEcxVUxWZ1RhakNGTkNJTE1KQ2IwaEd5WVNGRERuOA?oc=5",
-    "date": "2026-10-15",
+    "title": "Katie Zacharia Defends Calling Herself a Lawyer in New Interview",
+    "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOS0FRS0JzTlFjbjlOT2laQjB3TFZ3OXp6MW1ZZ3NrcDA5WE9zcWxkTEQ2Qm5NRVJHNHZ3Z0FsZkxvZGR4MER5WlM4bFZDaEpMdl9pc1BzUWZsdVFJWFBOWU9QRXJOeTBTenZTRFd6OHQ4QkRjYkVyUUZSRDJVRDRhajduU2lUVmlDWmxnWVk5WXRhQW5LMm84c0lIMUw5a2NTa0lVMHloN1Y?oc=5",
+    "date": "2026-10-16",
     "excerpt": "",
-    "titleZh": "Meta 移除 370 萬個西非線上帳號與頁面，跨國機構共同合作",
-    "takeaway": "Meta 大規模清除假帳號，顯示平台治理與跨國監管合作趨勢，對社群媒體風險管理具啟示。"
+    "titleZh": "Katie Zacharia 為自己稱律師辯護的採訪",
+    "takeaway": "探討媒體人物自稱專業身份的爭議，提醒企業在公關與合規上保持透明。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "Chinese exports to South Africa jump 29% as Trump’s trade war puts local factories under fresh pressure",
-    "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNWHEwc0J1NU9FT0ZIQTMtZFM3T3ZmamRtN2xBcDk1eUNBSjFuYTBVc2RFNVo5Q3RnbnJGREpNMnhDY3hTMU56S3JtWHdkZkpjc0MtdEtFMV9XNHJyRmtET2xEZ0ZTNnN2ZENKSW9NNm1uVHdSb2pPUVU5elkxZm1lMFpRYWEtVzlRMmFLaUFudFQtbldGTlEtU2prRXByaXJVYzVpUVFrR1hLNHZJZ3hNRHlJVjlnUmJPS2pfRGYtZHV3WTF6dFZZR1hFSDR5a3FSdzBj?oc=5",
-    "date": "2026-10-15",
+    "title": "The Problem With Katie Zacharia Calling Herself a Lawyer",
+    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPLXlHYzVmQ3ZuR0dCN0FXdlk4aXhKRHloTkQtWUJENTd1NjMyYWc5SUdzQkxtREdVNTFqT29hdTF0a2JJekhjRENCa0lCYTRvU2RTREtua01INmFoWUduMmpreGh6NmNFRGltbUVsU19mS1JOdmlQTjhwbHdwMEZkR01UTGVTLWE2elAtbnNWZVpfd2c1UXA0V2c1bTRwei03dVlfcVBQUERiSWJBYzhQNk1nMnA?oc=5",
+    "date": "2026-10-16",
     "excerpt": "",
-    "titleZh": "中國對南非出口跳升 29%，特朗普貿易戰給當地工廠新壓力",
-    "takeaway": "指出美國貿易政策對非洲供應鏈的間接衝擊，提醒企業在全球佈局時需評估政治風險。"
+    "titleZh": "Katie Zacharia 稱自己是律師的問題點",
+    "takeaway": "指出自稱律師可能涉及法律與信任風險，企業需加強員工聲明審核機制。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "Uganda’s shilling leads the world’s currency markets after a major rate hike, giving the East African economy an unexpected financial win",
-    "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPWGI0UmxiOUFhZW5tSjllYVN0OVJPYVIwLU9iN3JQMzAzeG5JUjlrVW9PRk5UQUhucko0cDd0dk9jVTlnSVZDZEc0WEpnX2RVVHJ5bUM3RU52UWZpNXRhRXFEemZaMDFxVnpxandEU0J1Y2xrTUdzOV9zQy0wMUM0Nko2dFJjcTgxQkdBNVhMQkIyX0V5cHhsNS01d3J1MnhtNzRuQUxKNHU2QVAtdlFwQkVjdWlaenFUV3VsTzNCNTRaVnAySnNjajJ3anhyeEpOZGI4cG45djR6Zw?oc=5",
-    "date": "2026-10-15",
+    "title": "Ukraine's vital access to military-grade Starlink services is coming back after a sudden disruption, sources say",
+    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcU4yZXhNeUY3VHQwR2hicG5hN3NkdXVQLTRHNDY5Y20tcTBIb0lUd3FWMnVQU19lV2tDaWlxdmdQVDNWdE0tUUhXMjE5Vm4wRFFtZVVJX3Ixdmt5d3VuVW5hSDRBb05JcnhhTk9jUXZPQUVzaDhvZ25kRjZJOFJ4Z0o3WU9XMVUzSnE1YktTUE1VOHhVSVpOaA?oc=5",
+    "date": "2026-10-16",
     "excerpt": "",
-    "titleZh": "烏干達先令在全球貨幣市場領先，因大幅升息獲得意外金融勝利",
-    "takeaway": "烏干達因升息使貨幣走強，提供新興市場貨幣政策的成功案例，對投資者與政策制定者具參考價值。"
+    "titleZh": "烏克蘭關鍵軍事級 Starlink 服務在突發中斷後即將恢復",
+    "takeaway": "Starlink 的恢復顯示衛星通訊在戰爭與基礎設施韌性中的關鍵角色，供應鏈與安全企業可關注此類服務。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "Learning faster with AI is making you worse at remembering",
-    "link": "https://www.fastcompany.com/91616878/learning-faster-ai-worse-at-remembering",
-    "date": "2026-10-15",
-    "excerpt": "As artificial intelligence makes it easier to get the answers you want to any question, retaining knowledge is becoming a rare skill. The Ebbinghaus forgetting curve (introduced by psychologist Hermann Ebbinghaus in…",
-    "titleZh": "AI 讓學習更快卻削弱記憶力——人工智慧降低了知識保留的能力",
-    "takeaway": "指出 AI 提供即時答案會削弱長期記憶，提醒教育與企業培訓需平衡即時資訊與深度學習。"
+    "title": "Half of the world’s population has been exposed to heat waves and wildfire smoke at the same time",
+    "link": "https://www.fastcompany.com/91624434/half-of-the-worlds-population-has-been-exposed-to-heat-waves-and-wildfire-smoke-at-the-same-time",
+    "date": "2026-10-16",
+    "excerpt": "Climate change is a global phenomenon, meaning that everyone, in some way, will feel its devastating impacts. And increasingly, those impacts are happening simultaneously: Over the past two decades, more than half of…",
+    "titleZh": "全球超過半人口同時暴露於熱浪與野火煙霧——氣候變遷的全球衝擊",
+    "takeaway": "氣候極端事件同步發生，提醒企業在供應鏈與員工健康管理上加強氣候韌性規劃。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "The 3 skills behind executive presence",
-    "link": "https://www.fastcompany.com/91619217/the-3-skills-behind-executive-presence",
-    "date": "2026-10-15",
-    "excerpt": "If you’ve been told you lack “executive presence” when you’re delivering a presentation, you know that something about how you’re coming across needs to change. What’s less clear is what, specifically, to work on. A…",
-    "titleZh": "打造執行力的三項關鍵技能",
-    "takeaway": "闡述提升領導者在簡報與決策時的存在感的三項技能，對職場發展與管理培訓有實務指導。"
+    "title": "Wholesale inflation reaches levels last seen in 2022 amid soaring energy costs",
+    "link": "https://www.fastcompany.com/91624593/producer-prices-inflation-economy",
+    "date": "2026-10-16",
+    "excerpt": "Wholesale inflation rose more than expected last month on a big jump in fuel costs as rising prices become a bigger economic challenge for millions of Americans, and a growing political problem for Republicans in the…",
+    "titleZh": "批發通膨回到 2022 年水平——能源成本飆升的衝擊",
+    "takeaway": "能源價格推高批發通膨，企業需檢視成本結構與價格傳導機制以維持競爭力。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "Avoiding a promotion? You might be ‘ladderdodging’",
-    "link": "https://www.fastcompany.com/91623676/avoiding-a-promotion-you-might-be-ladderdodging",
-    "date": "2026-10-15",
-    "excerpt": "There’s a new word for those who are apprehensive or outright uninterested in career advancement. Included in a new book of 100 Future Words , “ladderdodging” is defined as “declining or choosing not to seek out a…",
-    "titleZh": "避免升遷？你可能在‘ladderdodging’",
-    "takeaway": "介紹新詞‘ladderdodging’，描述對職涯晉升缺乏興趣的現象，對人力資源管理與員工動機有啟發。"
+    "title": "A timeline of New York City trying to ban horse carriages in Central Park",
+    "link": "https://www.fastcompany.com/91623894/nyc-horse-carriage-ban-timeline-of-central-park-controversy",
+    "date": "2026-10-16",
+    "excerpt": "The iconic but controversial horse-drawn carriage industry in New York City might finally come to an end as Mayor Zohran Mamdani and New York City Council Speaker Julie Menin reached a deal Tuesday to outlaw them. If…",
+    "titleZh": "紐約市禁止中央公園馬車的時間線",
+    "takeaway": "紐約市逐步取締馬車業，顯示城市政策對傳統服務業的影響，相關產業需提前調整營運模式。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "Figma announces new features to define how agents work on its platform",
-    "link": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/",
-    "date": "2026-10-15",
-    "excerpt": "Figma is also releasing its code layers feature in open beta.",
-    "titleZh": "Figma 公布新功能定義平台上代理人的工作方式——同時推出代碼圖層 Beta",
-    "takeaway": "Figma 新增代碼圖層與代理人功能，提升設計與開發協作效率，對 UI/UX 團隊的工作流程具變革意義。"
+    "title": "When it came to Cal AI’s viral success, a small army of influencers paid off",
+    "link": "https://techcrunch.com/2026/10/15/when-it-came-to-cal-ais-viral-success-a-small-army-of-influencers-paid-off/",
+    "date": "2026-10-16",
+    "excerpt": "The company generated over $30 million in revenue in two years and was acquired by MyFitness for an undisclosed amount of money in March.",
+    "titleZh": "Cal AI 病毒式成功背後：小型網紅軍團的效益",
+    "takeaway": "Cal AI 透過網紅行銷在兩年內創造 3000 萬美元營收，證明影響者行銷在 AI 產品推廣的高效能。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "Ricursive Intelligence is betting on AI-designed chips to help solve the compute crisis",
-    "link": "https://techcrunch.com/2026/10/14/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis/",
-    "date": "2026-10-15",
-    "excerpt": "The founders detailed how their startup is developing AI that can design chips, learn from each iteration, and improve subsequent designs, all with the goal of automating and accelerating the chip design process.",
-    "titleZh": "Ricursive Intelligence 以 AI 設計晶片解決運算危機",
-    "takeaway": "該創業公司利用 AI 自動化晶片設計，回應算力短缺問題，為半導體產業的創新路徑提供新方向。"
+    "title": "And the winner of Startup Battlefield at Disrupt 2026 is: Intero Biosystems",
+    "link": "https://techcrunch.com/2026/10/15/and-the-winner-of-startup-battlefield-at-disrupt-2026-is-intero-biosystems/",
+    "date": "2026-10-16",
+    "excerpt": "Intero Biosystems beat out 199 other Startup Battlefield companies to take home the $100,000 grand prize at TechCrunch Disrupt 2026.",
+    "titleZh": "Disrupt 2026 Startup Battlefield 冠軍：Intero Biosystems",
+    "takeaway": "Intero Biosystems 獲得 10 萬美元獎金，顯示生技創新在創投舞台的高關注度。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "Flock CEO defends surveillance technology amid national backlash: ‘We shouldn’t pause progress’",
-    "link": "https://techcrunch.com/2026/10/14/flock-ceo-defends-surveillance-technology-amid-national-backlash-we-shouldnt-pause-progress/",
-    "date": "2026-10-15",
-    "excerpt": "At TechCrunch Disrupt, Flock CEO Garrett Langley defended his company's surveillance technology despite growing privacy concerns, arguing that its crime-fighting benefits outweigh the risks of abuse.",
-    "titleZh": "Flock CEO 為監控技術辯護：‘我們不應暫停進步’",
-    "takeaway": "在隱私爭議下，Flock 仍主張監控技術的公共安全價值，突顯科技倫理與商業推廣的衝突。"
+    "title": "Amazon devices chief Panos Panay on the importance of failure and bouncing back from it",
+    "link": "https://techcrunch.com/2026/10/15/amazon-devices-chief-panos-panay-on-the-importance-of-failure-and-bouncing-back-from-it/",
+    "date": "2026-10-16",
+    "excerpt": "Panay said that it's possible to recover and learn from all sorts of failures, even catastrophic ones, when building products.",
+    "titleZh": "Amazon 設備主管 Panos Panay 談失敗與復原的重要性",
+    "takeaway": "Panay 強調從失敗中快速學習是產品開發的關鍵，對企業創新文化提供實務指引。"
   },
   {
     "source": "The Verge",
     "group": "tech",
-    "title": "McKinsey is making job applicants spar with a fake AI client",
-    "link": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview",
-    "date": "2026-10-15",
-    "excerpt": "Consulting firm McKinsey & Company is going to ask some entry-level candidates to have a 10-minute conversation with an AI simulation of a client as part of the interview process, according to The Wall Street Journal.…",
-    "titleZh": "麥肯錫讓求職者與虛擬 AI 客戶對話測試",
-    "takeaway": "麥肯錫在面試中加入 AI 客戶模擬，測試候選人即時應變與溝通能力，預示招聘流程的 AI 化趨勢。"
+    "title": "Steam can now show game achievements in separate ‘sets’",
+    "link": "https://www.theverge.com/games/1012541/valve-steam-achievement-sets",
+    "date": "2026-10-16",
+    "excerpt": "Valve is introducing a major new feature for Steam achievements called \"achievement sets\" that lets developers list different groups of achievements for a base game and DLCs. \"In games that support sets, you still…",
+    "titleZh": "Steam 可將遊戲成就分成「套組」顯示",
+    "takeaway": "Steam 新增成就套組功能，提升玩家與開發者的互動深度，對遊戲營運與內容更新有正面影響。"
   },
   {
     "source": "The Verge",
     "group": "tech",
-    "title": "The best feature of Apple’s HomeView might be its simplicity",
-    "link": "https://www.theverge.com/tech/1011431/apple-homeview-smart-display-best-feature",
-    "date": "2026-10-15",
-    "excerpt": "I'm just going to come right out and say it. I love the approach Apple has taken with the HomeView. I think it's the shared, always-available household interface that my family might finally use. Is Apple's first smart…",
-    "titleZh": "Apple HomeView 最佳特色：簡潔設計",
-    "takeaway": "評析 Apple HomeView 以簡潔介面提升家庭智能設備使用率，對智慧家庭產品設計提供參考。"
+    "title": "ChatGPT can peek at your Chrome tabs now",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs",
+    "date": "2026-10-16",
+    "excerpt": "OpenAI's ChatGPT Atlas browser is gone, but now ChatGPT's Google Chrome extension is getting some upgrades that allow it to use the browser tabs you already have open. With the extension installed, OpenAI says ChatGPT…",
+    "titleZh": "ChatGPT 現在可窺視你的 Chrome 分頁",
+    "takeaway": "ChatGPT Chrome 擴充功能升級，可讀取使用者開啟的分頁，提升 AI 輔助搜尋與工作效率，同時引發隱私討論。"
   },
   {
     "source": "Wired",
     "group": "tech",
-    "title": "AI Came for Math. Now It’s Chasing the Rest of Science",
-    "link": "https://www.wired.com/story/ai-is-coming-for-science-next-watch-out/",
-    "date": "2026-10-15",
-    "excerpt": "AI may soon be the default way to solve theoretical problems in economics, high-energy physics, and other fields, MIT researchers tell WIRED.",
-    "titleZh": "AI 先攻佔數學，現在正追逐其他科學領域",
-    "takeaway": "AI 正擴展至經濟、物理等理論研究，預示未來科研與產業創新將高度依賴 AI 計算。"
+    "title": "We Got Hot and Heavy With Meta’s Muse—and Baffled by Apple’s HomeView",
+    "link": "https://www.wired.com/story/uncanny-valley-podcast-we-got-hot-and-heavy-with-metas-muse-and-underwhelmed-by-apples-homeview/",
+    "date": "2026-10-16",
+    "excerpt": "This week on “Uncanny Valley,” we dive into an unexpected Muse feature, shadowy spending from the largest pro-AI super PAC, and men’s tendency to lie about how much they know about AI.",
+    "titleZh": "我們與 Meta 的 Muse 互動——以及 Apple HomeView 的疑惑",
+    "takeaway": "節目探討 Meta Muse 的新功能與 AI 超級政治獻金的影響，提醒業界關注 AI 產品的倫理與市場接受度。"
   },
   {
     "source": "Wired",
     "group": "tech",
-    "title": "Men Can’t Stop Faking How Much They Know About AI",
-    "link": "https://www.wired.com/story/men-cant-stop-faking-how-much-they-know-about-ai/",
-    "date": "2026-10-14",
-    "excerpt": "More than half of the men surveyed in a new Harvard study claimed to recognize AI leaders who were, in fact, totally fictional.",
-    "titleZh": "男性無法停止假裝懂 AI——哈佛調查揭露虛構 AI 領袖",
-    "takeaway": "調查顯示男性過度自信於 AI 知識，提醒企業在 AI 教育與溝通上避免性別偏見。"
+    "title": "AI Hacks Leave a Mess That AI Companies Aren’t Paying For",
+    "link": "https://www.wired.com/story/ai-hacks-leave-a-mess-that-ai-companies-arent-cleaning-up/",
+    "date": "2026-10-16",
+    "excerpt": "Powerful AI models continue to cause chaos, but their targets aren’t widely seeking justice. Instead, they’re being encouraged to adopt those same tools.",
+    "titleZh": "AI 駭客留下的混亂——AI 公司未付費修復",
+    "takeaway": "AI 模型濫用造成的損害缺乏賠償機制，呼籲產業建立責任與修復基金以降低風險。"
   },
   {
     "source": "Springwise",
     "group": "tech",
-    "title": "AI-powered construction estimation platform",
-    "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxONTViRDlhQmxSMnplMmpBTFp3S1Joekl5UTlRdFRrZXJmNXo1V0phbEVabDVOTWxpTktIcTZULUN4amY4ZUE4YXY0YU9xWG16cVctV3J6TWt0bm5pR1pmS2xpYUVRZXdId1VBODB6dDEtM1QyX2ItWnMzMHUzZFduOHZSS1ZBR05GWm9PZEhaWUZHZ2pYNE1lWFVB0gGmAUFVX3lxTFBMSTNXdkhKZnhXQnppbVVKVm1UdTd4RHRCeUdGTDFDTUZiUWhraE9sR3hQcVhVdzJGZ3VBZGZHV3c4c1dQaU5fSVBBeGNjbFZWTmxXOEs5czh5SlZmTm5JcC1Gb2FMVWRIR0RZaHA1NURjdXFlOVJCVEhWcWZ0RUxhX0lKTnU4djVoU1EzR0YxOUJGSVBiN2tialJKajFvY2dOanVRWmc?oc=5",
-    "date": "2026-10-14",
+    "title": "New method for monitoring forest health",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNYjdCMnljZ2xNU3phSHFUd2Vfb0xSanNxd1ZPMkFRQ2tRd01nREN0bDZPTVUzVTRtTEhCTDQwb3NHV0lkaUREMlBHZW9vTHR5em1SSUtGUGVLYkVTSlM3cVZpNnVXTXpGQnEzLUgyM3QweHVYZUxrNDJjdUxSV2RWUzlMQ2zSAZABQVVfeXFMTWJmSXg4eDJRNU1Cbkoxb1JfQmhVanl0X0RVUXZrU3FHU2tadU9iM2tPN3ZyWGFUNkowSlhabTl1Zmd2X01SQWg0RmtsYmswSEpwYTVJNGU0cHZCek51Zmd4dDBHVGRGRk83c0dRaE1Gb0lRaVBIR0pLbnp5ZDRKRzZXUGRPVFNiSmRjUGxsRUJl?oc=5",
+    "date": "2026-10-16",
     "excerpt": "",
-    "titleZh": "AI 驅動的建築估價平台",
-    "takeaway": "介紹利用 AI 進行建築成本估算的服務，提升工程預算精準度，對建築業供應鏈管理有正面影響。"
+    "titleZh": "新方法監測森林健康",
+    "takeaway": "介紹一項創新技術可即時監測森林健康，對環保與資源管理提供數據支援。"
   },
   {
     "source": "Springwise",
     "group": "tech",
-    "title": "High-speed optical connectivity for AI data centres",
-    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPbmREWTB4XzJoRmotVUxvUnZ0YXYwTEMxbnppMElVRUJOS1hZWkZ6VENPMU1zM1BQMXhNZ083STc0WTZRdU9FRDJoZFZyS0JQdS1RZ2lkeHpsZG16WVZtVTgzQTkxTDRiTy01bWRLbXBYc29vbkEyTUtnOTMzYmthVmc1cXN5SHpCLVB2YjdHaGJXWTNibUJFZkJXUXpiX2VwVnfSAa4BQVVfeXFMTmV5QVJ3QkVCbHFhLVNjWGVIQ1V0Vk94ckhTcEZNazBTYXZsQ1dWRndkcjYzX3Rlcm1HR25YQlVtT3JLQm5GX2IzTjZwRkJwd210Nm94b2E0SlNUMjJQQVd4UnJ0cm53dV9qRjItQ2dSeUZ3WXJDUlpYOTJWWkQ1OUxBaVhpY3A5VzBhRVBYLS1JbG5zYWxfWW9XdE9hTjVMTWNWcUtTLUxOSGpjMTV3?oc=5",
-    "date": "2026-10-14",
+    "title": "Protein ingredient derived from microalgae",
+    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxObzdIZXN0dkk0Q3p1WW5tQXRlNmFvWFdYLVM2d0wzZEFOcTBzUjhoUHJGRnFWcE1jUGU4Qkw3cy12eW1hVjRWVzdZS3NfM0tiVVBXcXRtTWdmLXVYdTFQRm5yU09SU0h4WkVKb3J0Z3l4WDBBMzBaaC1pVUtaR0JhSVpOdkVDT3NBb0xYTmlUMGgyMHFVdlNXZkRRUdIBmwFBVV95cUxObzdIZXN0dkk0Q3p1WW5tQXRlNmFvWFdYLVM2d0wzZEFOcTBzUjhoUHJGRnFWcE1jUGU4Qkw3cy12eW1hVjRWVzdZS3NfM0tiVVBXcXRtTWdmLXVYdTFQRm5yU09SU0h4WkVKb3J0Z3l4WDBBMzBaaC1pVUtaR0JhSVpOdkVDT3NBb0xYTmlUMGgyMHFVdlNXZkRRUQ?oc=5",
+    "date": "2026-10-16",
     "excerpt": "",
-    "titleZh": "高速光學連接支援 AI 資料中心",
-    "takeaway": "說明新型高速光纖技術滿足 AI 資料中心的巨量傳輸需求，對雲端基礎建設投資具指引。"
+    "titleZh": "微藻衍生的蛋白質成分",
+    "takeaway": "微藻蛋白作為新興食材，具永續與營養雙重優勢，食品產業可探索替代蛋白市場。"
   },
   {
     "source": "Lenny's Newsletter",
@@ -242,8 +252,8 @@ window.CD.market = [
     "link": "https://www.lennysnewsletter.com/p/metas-new-muse-wonder-model-good",
     "date": "2026-10-14",
     "excerpt": "Watch now (24 mins) | 🎙️Meta launched Muse Wonder with claims of frontier agentic performance, so I ran it headlessly through Claude Code against nearly 20 tasks to find out if any of it is true",
-    "titleZh": "Meta 新 ‘Muse Wonder’ 模型：對 AI 代理有利，對設計不利",
-    "takeaway": "評測 Meta Muse Wonder 在代理表現上的突破與對設計創作的限制，提示 AI 產品定位的兩面性。"
+    "titleZh": "Meta 新 Muse Wonder 模型：對 AI 代理有利，對設計不利",
+    "takeaway": "Muse Wonder 在代理任務上表現突出，但可能削弱設計師創意，企業需平衡 AI 助手與人類設計的角色分工。"
   },
   {
     "source": "Lenny's Newsletter",
@@ -252,8 +262,18 @@ window.CD.market = [
     "link": "https://www.lennysnewsletter.com/p/how-to-tell-if-a-startup-has-a-moat",
     "date": "2026-10-13",
     "excerpt": "A framework for assessing whether the company you’re considering joining is built to last",
-    "titleZh": "如何判斷新創公司是否有護城河——評估框架",
-    "takeaway": "提供判斷新創企業長期競爭力的框架，協助投資人與求職者辨識可持續發展的公司。"
+    "titleZh": "如何判斷新創是否有護城河——評估框架",
+    "takeaway": "提供一套判斷新創護城河的框架，協助投資人與求職者評估公司長期競爭力。"
+  },
+  {
+    "source": "HubSpot Blog",
+    "group": "growth",
+    "title": "Transactional email: What it is and how it works",
+    "link": "https://blog.hubspot.com/marketing/best-transactional-email-platforms",
+    "date": "2026-10-16",
+    "excerpt": "Transactional emails are automated messages triggered by a specific action a customer takes, sent to help that person complete or follow up on something already in progress. An order receipt, a password reset…",
+    "titleZh": "交易型電子郵件：是什麼、如何運作",
+    "takeaway": "說明交易型郵件的功能與最佳實踐，幫助企業提升客戶體驗與轉換率。"
   },
   {
     "source": "HubSpot Blog",
@@ -262,18 +282,8 @@ window.CD.market = [
     "link": "https://blog.hubspot.com/marketing/tracking-ai-overviews",
     "date": "2026-10-15",
     "excerpt": "AI Overviews have shifted how audiences discover brands. Gone are the days when users would click through multiple search results until they found what they’re looking for. Now, AI Overviews answers questions directly…",
-    "titleZh": "追蹤 AI 概覽：數據真相是什麼",
-    "takeaway": "說明 AI 概覽功能如何改變品牌被搜尋方式，對行銷策略與 SEO 版圖產生新挑戰。"
-  },
-  {
-    "source": "HubSpot Blog",
-    "group": "growth",
-    "title": "Claude skills vs. plugins vs. MCP connectors: A simple guide",
-    "link": "https://blog.hubspot.com/marketing/claude-skills-plugins-mcp",
-    "date": "2026-10-15",
-    "excerpt": "If you’ve opened Claude’s Customize settings and weren’t sure whether a task called for a Skill, a connector, or a Plugin, you’re not alone.",
-    "titleZh": "Claude 技能、外掛與 MCP 連接器：簡易指南",
-    "takeaway": "比較 Claude 平台的三種擴充方式，協助使用者選擇最適合的 AI 工作流程工具。"
+    "titleZh": "追蹤 AI 概覽：實際數據顯示什麼",
+    "takeaway": "解析 AI 概覽對品牌曝光與搜尋行為的影響，提供行銷人員調整策略的依據。"
   },
   {
     "source": "Shopify Blog",
@@ -282,8 +292,8 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOWnpBOXA0T19HbmJlS1l3NzVVRERlVVVEVmFqQmxsalFoWWdoUml2dHhPdmpMV2taNC0yNUQwTUE3Y1NZdkJzLUhQWFZFY1o5Y1JNX3JlUUVWeExNSWZEclZTZjYwZVJnRExEMHBfX3otY3gwNEVCcENtSXRvTDZDUmZOMGxhQQ?oc=5",
     "date": "2026-10-14",
     "excerpt": "",
-    "titleZh": "Shopify 零售回顧（2026 年 9 月）",
-    "takeaway": "彙整 Shopify 最新零售功能與趨勢，為電商業者提供平台升級與營運優化的參考。"
+    "titleZh": "Shopify 零售總結（2026 年 9 月）",
+    "takeaway": "彙整最新零售趨勢與平台功能更新，協助商家優化線上與實體店鋪營運。"
   },
   {
     "source": "Shopify Blog",
@@ -293,56 +303,56 @@ window.CD.market = [
     "date": "2026-10-14",
     "excerpt": "",
     "titleZh": "從草圖到航空科技：Escapod 高科技露營車革命",
-    "takeaway": "介紹 Escapod 將航空技術應用於露營車設計，展示跨產業創新與高端客製化的商機。"
+    "takeaway": "Escapod 結合航空技術打造高端露營車，展示跨領域創新在旅遊與製造業的商機。"
   },
   {
     "source": "Entrepreneur",
     "group": "smb",
-    "title": "An Introvert’s Case for Skipping Small Talk and Building Real Connections",
-    "link": "https://www.entrepreneur.com/building-a-business/an-introverts-case-for-skipping-small-talk-and-building-real-connections",
-    "date": "2026-10-15",
-    "excerpt": "You don’t need to over-exert yourself developing deep relationships with everyone you meet — especially as an introvert. Here’s why.",
-    "titleZh": "內向者跳過寒暄、建立真實連結的案例",
-    "takeaway": "提供內向型職場人士在建立深度關係上的策略，對人際互動與團隊合作有實務建議。"
+    "title": "Want to Self-Sponsor Your U.S. Visa? Avoid These 3 Common Governance Mistakes",
+    "link": "https://www.entrepreneur.com/building-a-business/want-to-self-sponsor-your-u-s-visa-avoid-these-3-common-governance-mistakes",
+    "date": "2026-10-16",
+    "excerpt": "Here's how founders can avoid the mistakes that may undermine the chance to self-sponsor a U.S. visa while building an investor-ready company.",
+    "titleZh": "想自行贊助美國簽證？避免這三大治理錯誤",
+    "takeaway": "提供創業者在自助贊助美國簽證時常見的治理陷阱，降低簽證失敗風險。"
   },
   {
     "source": "Entrepreneur",
     "group": "smb",
-    "title": "Not Every Boss Deserves a Thank-You Card. Here’s What to Do When Your Boss Is a Bully.",
-    "link": "https://www.entrepreneur.com/building-a-business/not-every-boss-deserves-thank-you-what-to-do-when-boss-is-bully",
-    "date": "2026-10-15",
-    "excerpt": "As some of us celebrate National Boss’s Day, it’s important to remember that not everyone has a good relationship with their boss.",
-    "titleZh": "不是每位老闆都值得感謝卡——面對霸凌老闆的做法",
-    "takeaway": "說明當老闆行為不當時的應對方式，為職場心理安全與管理層溝通提供指引。"
+    "title": "8 Low-Cost Marketing Ideas for Small Businesses",
+    "link": "https://www.entrepreneur.com/building-a-business/marketing/8-low-cost-marketing-ideas-for-small-businesses",
+    "date": "2026-10-16",
+    "excerpt": "Here are the marketing strategies I’ve used to attract customers, build brand visibility and grow businesses without relying on a big advertising budget.",
+    "titleZh": "8 個低成本行銷點子給小企業",
+    "takeaway": "列出八種低預算行銷策略，協助小企業提升曝光與銷售。"
   },
   {
     "source": "Entrepreneur",
     "group": "smb",
-    "title": "The First AI Advantage Was About Productivity. The Next One May Give Entrepreneurs a Bigger Edge.",
-    "link": "https://www.entrepreneur.com/business-news/tech/the-first-ai-advantage-was-about-productivity-the-next-one-may-give-entrepreneurs-a-bigger-edge",
-    "date": "2026-10-15",
-    "excerpt": "The next AI advantage for entrepreneurs isn't about more content or productivity. It's moving from idea to execution faster.",
-    "titleZh": "第一波 AI 優勢在於生產力，下一波將給創業者更大優勢",
-    "takeaway": "預測 AI 從提升生產力轉向加速概念到執行，對創業者的競爭策略與資源配置提出新視角。"
+    "title": "Robinhood CEO Says ‘Everyone’ Should Use This Method to Work While They Sleep",
+    "link": "https://www.entrepreneur.com/business-news/robinhood-ceo-says-everyone-should-use-this-method-to-work-while-they-sleep",
+    "date": "2026-10-16",
+    "excerpt": "Robinhood CEO Vlad Tenev envisions becoming a “24/7 company.”",
+    "titleZh": "Robinhood CEO 認為每個人都應使用的睡眠式工作法",
+    "takeaway": "Robinhood CEO 推廣 24/7 工作模式，暗示自動化與被動收入在金融科技的未來趨勢。"
   },
   {
     "source": "Small Business Trends",
     "group": "smb",
-    "title": "Navigating Employee Terminations: A Step-by-Step Guide",
-    "link": "https://smallbiztrends.com/employee-terminations/",
-    "date": "2026-10-15",
-    "excerpt": "Discover essential strategies for handling employee terminations with our comprehensive step-by-step guide. Learn best practices, legal considerations, and effective communication techniques to ensure a smooth…",
-    "titleZh": "員工解雇全流程指南",
-    "takeaway": "提供解雇程序的步驟與法律注意事項，協助企業在人事管理上降低風險。"
+    "title": "7 Proven Tips to Increase Sales in My Store",
+    "link": "https://smallbiztrends.com/how-can-i-increase-sales-in-my-store/",
+    "date": "2026-10-16",
+    "excerpt": "Discover effective strategies with our article, \"7 Proven Tips to Increase Sales in My Store.\" Learn how you can increase sales in your store with actionable insights and expert advice to boost your revenue and attract…",
+    "titleZh": "提升店鋪銷售的 7 個實證技巧",
+    "takeaway": "提供七項可立即執行的銷售提升方法，適用於實體與線上零售商。"
   },
   {
     "source": "Small Business Trends",
     "group": "smb",
-    "title": "What Is Equipment Lifecycle Management and Why It Matters?",
-    "link": "https://smallbiztrends.com/equipment-lifecycle-management/",
-    "date": "2026-10-15",
-    "excerpt": "Discover the importance of equipment lifecycle management in optimizing asset performance and reducing costs. Learn how effective management of equipment from acquisition to disposal can enhance operational efficiency…",
-    "titleZh": "設備全生命周期管理為何重要",
-    "takeaway": "說明從採購到淘汰的設備管理如何提升資產效能與降低成本，對製造與服務業的營運優化具指導意義。"
+    "title": "How Can Actionable Customer Insights Transform Your Business?",
+    "link": "https://smallbiztrends.com/actionable-customer-insights/",
+    "date": "2026-10-16",
+    "excerpt": "Discover how actionable customer insights can revolutionize your business strategy, enhance customer satisfaction, and drive growth. Unlock the potential of data-driven decision-making to stay ahead of the competition.",
+    "titleZh": "可操作的客戶洞察如何改變你的商業？",
+    "takeaway": "說明數據驅動的客戶洞察如何提升決策品質，幫助企業在競爭中保持領先。"
   }
 ];
