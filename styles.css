@@ -579,3 +579,17 @@ dialog.sd::backdrop { background: rgba(5, 5, 15, .6); backdrop-filter: blur(6px)
 .card .deadline { font-size: 13px; font-weight: 700; color: #ffb27a; }
 .card .deadline.soon { color: #ff7a9a; }
 .card .deadline.past { color: var(--ink-faint); font-weight: 400; text-decoration: line-through; }
+
+/* ===== 每日區塊的新鮮度 ===== */
+.fresh { font-weight: 700; white-space: nowrap; }
+.fresh::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+.fresh.live { color: #7ee0a0; }
+.fresh.live::before { background: #4ade80; box-shadow: 0 0 0 0 rgba(74,222,128,.7); animation: live-pulse 2s infinite; }
+.fresh.stale { color: #ffd36e; white-space: normal; }
+.fresh.stale::before { background: #ffd36e; }
+@keyframes live-pulse { 70% { box-shadow: 0 0 0 8px rgba(74,222,128,0); } 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); } }
+.tag.new { background: rgba(74,222,128,.18); border-color: rgba(74,222,128,.5); color: #a7f3c0; font-weight: 700; }
+.toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 50; padding: 12px 20px; border-radius: 999px; font-size: 14px; font-weight: 700; color: var(--bg); background: var(--grad); box-shadow: 0 16px 40px -12px rgba(0,0,0,.7); animation: toast-in .35s ease; max-width: calc(100vw - 32px); text-align: center; transition: opacity .5s, transform .5s; }
+.toast.out { opacity: 0; transform: translate(-50%, 10px); }
+@keyframes toast-in { from { opacity: 0; transform: translate(-50%, 16px); } }
+@media (prefers-reduced-motion: reduce) { .fresh.live::before, .toast { animation: none; } }

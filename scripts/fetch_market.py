@@ -385,7 +385,7 @@ def main():
     body = "\n".join([
         "// 每日市場洞察：由 scripts/fetch_market.py 自動產生（GitHub Action 每天台灣時間 06:05），請不要手動改",
         "window.CD = window.CD || {};",
-        f"window.CD.marketUpdated = {json.dumps(now.strftime('%Y-%m-%d %H:%M'))};",
+        f"window.CD.marketUpdated = {json.dumps(now.replace(minute=now.minute - now.minute % 5).strftime('%Y-%m-%d %H:%M'))};",  # 取到 :00 / :05
         f"window.CD.marketGroups = {json.dumps([{'id': g, 'name': n} for g, n in GROUPS], ensure_ascii=False)};",
         f"window.CD.marketSummary = {json.dumps(summary, ensure_ascii=False)};",
         f"window.CD.marketStatus = {json.dumps(status, ensure_ascii=False)};",

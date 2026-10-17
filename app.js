@@ -394,7 +394,9 @@
   function renderBrief() {
     const b = CD.brief;
     if (!b) { $("#brief-body").innerHTML = `<p class="empty">還沒有晨報。</p>`; return; }
-    $("#brief-meta").textContent = b.date !== todayISO ? `最近一期：${b.date}・每天 06:05 自動更新` : `今天 ${b.date}・每天 06:05 自動更新`;
+    $("#brief-meta").innerHTML = b.date === todayISO
+      ? `<span class="fresh live">今天${b.updated ? ` ${esc(tidy(b.updated))}` : "的晨報已"}更新</span>・每天 06:00 自動更新`
+      : `<span class="fresh stale">今天的晨報產生中，先顯示 ${esc(b.date.slice(5).replace("-", "/"))} 的</span>・好了會自動換上`;
     const d = new Date(b.date + "T00:00:00");
     const tmr = new Date(d); tmr.setDate(d.getDate() + 1);
     const ev = (CD.lab || []).filter((e) => e.date === b.date || e.date === iso(tmr))
@@ -425,7 +427,7 @@
     const zh = m.titleZh && m.titleZh !== m.title && !/[\u4e00-\u9fff]/.test(m.title); // 中文原標題就不重複顯示
     return `
       <article class="card ${isRead ? "read" : ""}">
-        <div class="meta">${badge(m.source)}<span>${esc(m.date)}</span></div>
+        <div class="meta">${badge(m.source)}<span>${esc(m.date)}</span>${m.date === todayISO ? `<span class="tag new">今天</span>` : ""}</div>
         <h3>${ext(m.link, esc(zh ? m.titleZh : m.title))}</h3>
         ${zh ? `<p class="orig">${esc(m.title)}</p>` : ""}
         ${m.takeaway ? `<p class="insight">${esc(m.takeaway)}</p>` : m.excerpt ? `<p class="excerpt">${esc(m.excerpt)}</p>` : ""}
@@ -436,7 +438,10 @@
     const s = CD.marketSummary, items = CD.market || [], groups = CD.marketGroups || [];
     const sources = [...new Set(items.map((m) => m.source))];
     const groupName = Object.fromEntries(groups.map((g) => [g.id, g.name]));
-    $("#market-meta").textContent = `每天台灣時間 06:05 自動更新・最近一次 ${tidy(CD.marketUpdated) || "—"}`;
+    const mu = String(CD.marketUpdated || "");
+    $("#market-meta").innerHTML = mu.slice(0, 10) === todayISO
+      ? `<span class="fresh live">今天 ${esc(tidy(mu.slice(11)))} 更新</span>・每天 06:00、12:00、18:00 抓新文章`
+      : `<span class="fresh stale">今天的文章抓取中，先顯示 ${esc(mu.slice(5, 10).replace("-", "/") || "上一次")} 的</span>・好了會自動換上`;
     $("#market-summary").innerHTML = s && s.text ? `
       <div><p class="label">今日總覽</p><p>${esc(s.text)}</p></div>
       <div class="watch"><p class="label">值得追的問題</p>${(s.watch || []).map((w) => `<span class="tag alt">${esc(w)}</span>`).join("")}</div>` : `
@@ -605,6 +610,36 @@
     entries.forEach((en) => { if (en.isIntersecting) links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id)); });
   }, { rootMargin: "-40% 0px -55% 0px" });
   ["stickies", "calendar", "brief", "market", "papers", "notes", "funding", "ai"].forEach((id) => io.observe(document.getElementById(id)));
+
+  /* ---------- 每日區塊保持最新：每 5 分鐘、切回這個分頁時檢查有沒有新的晨報與市場文章 ---------- */
+  const loadData = (name) => new Promise((done) => {
+    const tag = document.createElement("script");
+    tag.src = `data/${name}.js?t=${Date.now()}`;
+    tag.onload = tag.onerror = () => { tag.remove(); done(); };
+    document.head.appendChild(tag);
+  });
+  let lastCheck = Date.now();
+  async function refreshDaily() {
+    // 過了午夜就整頁換成新的一天（有編輯視窗開著時先不打擾）
+    if (iso(new Date()) !== todayISO) { if (!document.querySelector("dialog[open]")) location.reload(); return; }
+    if (Date.now() - lastCheck < 60 * 1000) return;
+    lastCheck = Date.now();
+    const stamp = () => `${(CD.brief || {}).date}|${(CD.brief || {}).updated}|${CD.marketUpdated}`;
+    const before = stamp();
+    await Promise.all(["brief", "market"].map(loadData));
+    if (stamp() === before) return;
+    renderBento(); renderBrief(); renderMarket();
+    toast("已換上最新的晨報與市場洞察");
+  }
+  function toast(text) {
+    const t = document.createElement("div");
+    t.className = "toast"; t.setAttribute("role", "status"); t.textContent = text;
+    document.body.appendChild(t);
+    setTimeout(() => t.classList.add("out"), 4000);
+    setTimeout(() => t.remove(), 4600);
+  }
+  setInterval(refreshDaily, 5 * 60 * 1000);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) refreshDaily(); });
 
   // 給 calendar.js 用的共用工具
   window.CDKit = { $, esc, store, ghToken, openKeyDialog, burstAt: (...a) => burstAt(...a), WEEK };
