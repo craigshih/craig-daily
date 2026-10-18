@@ -395,7 +395,7 @@
     const b = CD.brief;
     if (!b) { $("#brief-body").innerHTML = `<p class="empty">還沒有晨報。</p>`; return; }
     $("#brief-meta").innerHTML = b.date === todayISO
-      ? `<span class="fresh live">今天${b.updated ? ` ${esc(tidy(b.updated))}` : "的晨報已"}更新</span>・每天 08:30 自動更新`
+      ? `<span class="fresh live">今天${b.updated ? ` ${esc(tidy(b.updated))} ` : "的晨報已"}更新</span>・每天 08:30 自動更新`
       : `<span class="fresh stale">今天的晨報產生中，先顯示 ${esc(b.date.slice(5).replace("-", "/"))} 的</span>・好了會自動換上`;
     const d = new Date(b.date + "T00:00:00");
     const tmr = new Date(d); tmr.setDate(d.getDate() + 1);
