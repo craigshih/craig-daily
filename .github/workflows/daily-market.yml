@@ -1,5 +1,5 @@
 # 每日晨報與市場洞察：抓最新文章、產生晨報，並部署 GitHub Pages
-# - 主要：每天台灣時間 06:00 由 Mac 的 LaunchAgent（com.craig.dailysite-daily）用 workflow_dispatch 觸發，準時
+# - 主要：每天台灣時間 08:30 由 Mac 的 LaunchAgent（com.craig.dailysite-daily）用 workflow_dispatch 觸發，準時
 # - 備援：GitHub 排程常會晚 1–2 小時才跑，所以排程只當作 Mac 沒開機時的保險
 # - 中午 12:05、傍晚 18:05 再抓一次市場文章；晨報一天只產生一次（build_brief.py 會略過）
 # 平常 push 也會走這裡部署（只部署，不抓文章）
@@ -7,7 +7,7 @@ name: daily-market
 
 on:
   schedule: # 使用者偏好尾數 :00 / :05 的時間
-    - cron: "5 22 * * *" # 台灣 06:05（備援）
+    - cron: "35 0 * * *" # 台灣 08:35（備援）
     - cron: "5 4 * * *" # 台灣 12:05
     - cron: "5 10 * * *" # 台灣 18:05
   workflow_dispatch:

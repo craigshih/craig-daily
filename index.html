@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=27">
+  <link rel="stylesheet" href="styles.css?v=28">
 </head>
 <body>
   <div class="bg-art" aria-hidden="true"><div class="bg-img" id="bg-img"></div></div>
@@ -29,6 +29,7 @@
             <a href="#brief">晨報</a>
             <a href="#market">市場洞察</a>
             <a href="#papers">論文</a>
+            <a href="#stats">量化入門</a>
             <a href="#notes">筆記</a>
             <a href="#funding">補助・獎學金</a>
             <a href="#ai">AI 百科</a>
@@ -129,9 +130,28 @@
         <div class="timeline" id="papers-list"></div>
       </section>
 
-      <section class="block wrap" id="notes">
+      <section class="block wrap" id="stats">
         <div class="block-head reveal">
           <span class="block-num" aria-hidden="true">06</span>
+          <p class="kicker">Quant Lab</p>
+          <h2 class="grad">量化研究入門</h2>
+          <p class="block-sub" id="stats-meta"></p>
+        </div>
+        <div class="stats-top">
+          <article class="paper stats-today" id="stats-today" aria-live="polite"></article>
+          <aside class="paper stats-picker" id="stats-picker" aria-live="polite"></aside>
+        </div>
+        <h3 class="stats-h">學習路線<small>從零開始，照順序一階段一階段來</small></h3>
+        <div class="stats-road" id="stats-road"></div>
+        <h3 class="stats-h">工具<small>建議：先用 jamovi 把概念實際跑一次，寫論文時再依方法選 SmartPLS 或 R</small></h3>
+        <div class="grid stats-tools" id="stats-tools"></div>
+        <h3 class="stats-h">推薦資源<small>全部免費</small></h3>
+        <div class="stats-res" id="stats-res"></div>
+      </section>
+
+      <section class="block wrap" id="notes">
+        <div class="block-head reveal">
+          <span class="block-num" aria-hidden="true">07</span>
           <p class="kicker">Notes</p>
           <h2 class="grad">整理過的筆記</h2>
           <p class="block-sub" id="notes-meta"></p>
@@ -142,7 +162,7 @@
 
       <section class="block wrap" id="funding">
         <div class="block-head reveal">
-          <span class="block-num" aria-hidden="true">07</span>
+          <span class="block-num" aria-hidden="true">08</span>
           <p class="kicker">Grants &amp; Scholarships</p>
           <h2 class="grad">青年補助・獎學金</h2>
           <p class="block-sub" id="funding-meta"></p>
@@ -155,7 +175,7 @@
 
       <section class="block wrap" id="ai">
         <div class="block-head reveal">
-          <span class="block-num" aria-hidden="true">08</span>
+          <span class="block-num" aria-hidden="true">09</span>
           <p class="kicker">AI Encyclopedia</p>
           <h2 class="grad">AI 百科全書</h2>
           <p class="block-sub" id="ai-meta"></p>
@@ -256,7 +276,7 @@
   <script>
     (function () {
       var t = Math.floor(Date.now() / 300000);
-      ["profile", "themes", "brief", "market", "papers", "notes", "lab", "stickies", "ai_tools", "funding"].forEach(function (n) {
+      ["profile", "themes", "brief", "market", "papers", "notes", "lab", "stickies", "ai_tools", "funding", "stats"].forEach(function (n) {
         document.write('<script src="data/' + n + '.js?t=' + t + '"><\/script>');
       });
     })();
@@ -265,7 +285,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mojs/core@1.7.1/dist/mo.umd.js"></script>
-  <script src="app.js?v=27"></script>
-  <script src="calendar.js?v=27"></script>
+  <script src="app.js?v=28"></script>
+  <script src="calendar.js?v=28"></script>
+  <script src="stats.js?v=28"></script>
 </body>
 </html>

@@ -395,7 +395,7 @@
     const b = CD.brief;
     if (!b) { $("#brief-body").innerHTML = `<p class="empty">還沒有晨報。</p>`; return; }
     $("#brief-meta").innerHTML = b.date === todayISO
-      ? `<span class="fresh live">今天${b.updated ? ` ${esc(tidy(b.updated))}` : "的晨報已"}更新</span>・每天 06:00 自動更新`
+      ? `<span class="fresh live">今天${b.updated ? ` ${esc(tidy(b.updated))}` : "的晨報已"}更新</span>・每天 08:30 自動更新`
       : `<span class="fresh stale">今天的晨報產生中，先顯示 ${esc(b.date.slice(5).replace("-", "/"))} 的</span>・好了會自動換上`;
     const d = new Date(b.date + "T00:00:00");
     const tmr = new Date(d); tmr.setDate(d.getDate() + 1);
@@ -440,7 +440,7 @@
     const groupName = Object.fromEntries(groups.map((g) => [g.id, g.name]));
     const mu = String(CD.marketUpdated || "");
     $("#market-meta").innerHTML = mu.slice(0, 10) === todayISO
-      ? `<span class="fresh live">今天 ${esc(tidy(mu.slice(11)))} 更新</span>・每天 06:00、12:00、18:00 抓新文章`
+      ? `<span class="fresh live">今天 ${esc(tidy(mu.slice(11)))} 更新</span>・每天 08:30、12:00、18:00 抓新文章`
       : `<span class="fresh stale">今天的文章抓取中，先顯示 ${esc(mu.slice(5, 10).replace("-", "/") || "上一次")} 的</span>・好了會自動換上`;
     $("#market-summary").innerHTML = s && s.text ? `
       <div><p class="label">今日總覽</p><p>${esc(s.text)}</p></div>
@@ -609,7 +609,7 @@
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id)); });
   }, { rootMargin: "-40% 0px -55% 0px" });
-  ["stickies", "calendar", "brief", "market", "papers", "notes", "funding", "ai"].forEach((id) => io.observe(document.getElementById(id)));
+  ["stickies", "calendar", "brief", "market", "papers", "stats", "notes", "funding", "ai"].forEach((id) => io.observe(document.getElementById(id)));
 
   /* ---------- 每日區塊保持最新：每 5 分鐘、切回這個分頁時檢查有沒有新的晨報與市場文章 ---------- */
   const loadData = (name) => new Promise((done) => {

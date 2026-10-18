@@ -123,7 +123,7 @@ needs 只放真的需要他今天動手的事（待辦、截止、要準備的�
 def main():
     now = datetime.now(TW)
     today = now.date()
-    # 一天只產生一次：06:00 那次成功（AI 版）之後，中午、傍晚的市場更新不會改掉晨報；
+    # 一天只產生一次：08:30 那次成功（AI 版）之後，中午、傍晚的市場更新不會改掉晨報；
     # 如果早上只做出模板版（Groq 失敗），之後的排程會再試一次。FORCE_BRIEF=1 可以強制重做。
     old = load("brief.js", "brief").get("brief") or {}
     if old.get("date") == str(today) and old.get("generated") == "ai" and not os.environ.get("FORCE_BRIEF"):
@@ -172,7 +172,7 @@ def main():
         "updated": now.replace(minute=now.minute - now.minute % 5).strftime("%H:%M"),  # 顯示時間取到 :00 / :05
     }
     with open(OUT, "w", encoding="utf-8") as f:
-        f.write("// 每日晨報：由 scripts/build_brief.py 自動產生（每天台灣時間 06:00 由本機觸發 GitHub Action，06:05 排程備援），請不要手動改\n"
+        f.write("// 每日晨報：由 scripts/build_brief.py 自動產生（每天台灣時間 08:30 由本機觸發 GitHub Action，08:35 排程備援），請不要手動改\n"
                 "// 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字\n"
                 "window.CD = window.CD || {};\n"
                 f"window.CD.brief = {json.dumps(brief, ensure_ascii=False, indent=2)};\n")
