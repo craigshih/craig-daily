@@ -116,7 +116,7 @@
   function renderStatic() {
     $("#stats-tools").innerHTML = (CD.statsTools || []).map((t) => `
       <article class="card stool">
-        <div class="meta"><span class="tag ${t.kind === "點選式" ? "hot" : "alt"}">${esc(t.kind)}</span><span>${esc(t.cost)}</span></div>
+        <div class="meta"><span class="tag ${t.kind === "點選式" ? "hot" : "alt"}">${esc(t.kind)}</span>${t.os ? `<span class="tag os ${/Windows/.test(t.os) && !/Mac/.test(t.os) ? "win" : ""}">${esc(t.os)}</span>` : ""}<span>${esc(t.cost)}</span></div>
         <h3>${ext(t.link, esc(t.name))}</h3>
         <p class="stool-level">${esc(t.level)}</p>
         <p>${esc(t.desc)}</p>

@@ -412,14 +412,18 @@ window.CD.statsPicker = [
 ];
 
 window.CD.statsTools = [
-  { name: "jamovi", kind: "點選式", cost: "免費", level: "新手第一步", desc: "介面像簡化版的 SPSS，點選就能跑分析，結果直接是 APA 格式表格。有很多擴充模組（中介、調節、SEM）。", link: "https://www.jamovi.org/" },
-  { name: "JASP", kind: "點選式", cost: "免費", level: "新手", desc: "和 jamovi 很像，另外有貝氏統計。兩個選一個熟悉就好。", link: "https://jasp-stats.org/" },
-  { name: "G*Power", kind: "點選式", cost: "免費", level: "研究設計", desc: "收資料前計算需要多少樣本，口試時常被問。", link: "https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower" },
-  { name: "SPSS", kind: "點選式", cost: "付費（學校通常有授權）", level: "很多老師在用", desc: "傳統主流，學校電腦教室常有。搭配 Hayes 的 PROCESS 外掛做中介、調節。", link: "https://www.ibm.com/products/spss-statistics" },
-  { name: "SmartPLS", kind: "點選式", cost: "學生版有限制", level: "問卷研究", desc: "PLS-SEM 專用，畫出研究架構就能跑，商管問卷研究非常常見。", link: "https://www.smartpls.com/" },
-  { name: "R + RStudio", kind: "寫程式", cost: "免費", level: "長期必學", desc: "學術界主流之一，套件最多：lavaan（SEM）、seminr（PLS-SEM）、fixest（追蹤資料、DID）。可以先用 Posit Cloud 免安裝。", link: "https://posit.co/download/rstudio-desktop/" },
-  { name: "Python + Colab", kind: "寫程式", cost: "免費", level: "資料處理", desc: "抓資料、清資料、機器學習很強；統計用 statsmodels、scipy。Google Colab 開瀏覽器就能寫。", link: "https://colab.research.google.com/" },
-  { name: "Stata", kind: "寫程式", cost: "付費", level: "財經實證", desc: "經濟、財務、會計的追蹤資料與 DID 研究很常用，語法簡潔。", link: "https://www.stata.com/" }
+  { name: "jamovi", os: "Mac・Windows", kind: "點選式", cost: "免費", level: "新手第一步", desc: "介面像簡化版的 SPSS，點選就能跑分析，結果直接是 APA 格式表格。有很多擴充模組（中介、調節、SEM）。", link: "https://www.jamovi.org/" },
+  { name: "JASP", os: "Mac・Windows", kind: "點選式", cost: "免費", level: "新手", desc: "和 jamovi 很像，另外有貝氏統計。兩個選一個熟悉就好。", link: "https://jasp-stats.org/" },
+  { name: "G*Power", os: "Mac・Windows", kind: "點選式", cost: "免費", level: "研究設計", desc: "收資料前計算需要多少樣本，口試時常被問。", link: "https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower" },
+  { name: "SPSS", os: "Mac・Windows", kind: "點選式", cost: "付費（學校通常有授權）", level: "很多老師在用", desc: "傳統主流，學校電腦教室常有。搭配 Hayes 的 PROCESS 外掛做中介、調節。", link: "https://www.ibm.com/products/spss-statistics" },
+  { name: "SmartPLS", os: "Mac・Windows", kind: "點選式", cost: "學生版有限制", level: "問卷研究", desc: "PLS-SEM 專用，畫出研究架構就能跑，商管問卷研究非常常見。", link: "https://www.smartpls.com/" },
+  { name: "IBM SPSS AMOS", os: "只有 Windows", kind: "點選式", cost: "付費（學校可能有授權）", level: "問卷研究", desc: "CB-SEM 最常見的點選式軟體，畫路徑圖就能跑，很多商管老師習慣用。和 SmartPLS 擇一，看指導教授習慣。", link: "https://www.ibm.com/products/structural-equation-modeling-sem" },
+  { name: "R + RStudio", os: "Mac・Windows", kind: "寫程式", cost: "免費", level: "長期必學", desc: "學術界主流之一，套件最多：lavaan（SEM）、seminr（PLS-SEM）、fixest（追蹤資料、DID）。可以先用 Posit Cloud 免安裝。", link: "https://posit.co/download/rstudio-desktop/" },
+  { name: "Python + Colab", os: "瀏覽器", kind: "寫程式", cost: "免費", level: "資料處理", desc: "抓資料、清資料、機器學習很強；統計用 statsmodels、scipy。Google Colab 開瀏覽器就能寫。", link: "https://colab.research.google.com/" },
+  { name: "Stata", os: "Mac・Windows", kind: "寫程式", cost: "付費", level: "財經實證", desc: "經濟、財務、會計的追蹤資料與 DID 研究很常用，語法簡潔。", link: "https://www.stata.com/" },
+  { name: "EViews", os: "只有 Windows", kind: "點選式", cost: "付費（有學生版）", level: "財經實證", desc: "時間序列與計量經濟學常用，例如利率、匯率、總體經濟資料。", link: "https://www.eviews.com/" },
+  { name: "TEJ 資料庫", os: "Excel 外掛以 Windows 為主", kind: "資料庫", cost: "學校圖書館授權", level: "次級資料", desc: "台灣上市櫃公司財務、股價資料的主要來源，做固定效果、事件研究法幾乎都會用到。先問圖書館怎麼使用。", link: "https://www.tej.com.tw/" },
+  { name: "Power BI Desktop", os: "只有 Windows", kind: "點選式", cost: "免費", level: "商業分析", desc: "微軟的資料視覺化與儀表板工具，把分析結果做成互動圖表，實習與求職很加分。", link: "https://www.microsoft.com/zh-tw/power-platform/products/power-bi/desktop" }
 ];
 
 window.CD.statsResources = [

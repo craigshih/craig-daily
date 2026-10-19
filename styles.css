@@ -683,3 +683,5 @@ dialog.sd::backdrop { background: rgba(5, 5, 15, .6); backdrop-filter: blur(6px)
   .st-one { font-size: 16px; }
   .st-opt { flex: 1 1 100%; text-align: left; }
 }
+.tag.os { background: transparent; color: var(--ink-soft); }
+.tag.os.win { color: #9cd2ff; border-color: rgba(124,199,255,.55); background: rgba(124,199,255,.12); font-weight: 700; }
