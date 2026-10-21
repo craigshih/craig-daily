@@ -1,6 +1,6 @@
 #!/bin/zsh
-# 每天 08:15（LaunchAgent com.craig.dailysite-sync）把 FinTech Lab 的筆記與實驗室行事曆同步到 GitHub，
-# 讓 08:30 的 GitHub Action 產生晨報時用到最新的行程。Mac 睡著時錯過的那次，醒來會補跑。
+# 每天 08:30 後由 scripts/daily_guard.sh 呼叫一次（網路好了才跑），把 FinTech Lab 的筆記與實驗室行事曆同步到 GitHub，
+# 讓接著觸發的 GitHub Action 產生晨報時用到最新的行程。也可以手動執行。
 set -e
 export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:$HOME/.local/bin"
 cd "$HOME/個人學習/daily-site"
