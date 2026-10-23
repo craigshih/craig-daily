@@ -32,7 +32,7 @@ def gnews(query, lang="en"):
 
 
 GROUPS = [
-    ("tw", "台灣財經"),
+    ("tw", "財經・台股美股"),
     ("strategy", "商業與戰略"),
     ("tech", "科技・新創・創投"),
     ("growth", "行銷・產品・增長"),
@@ -43,6 +43,8 @@ GROUPS = [
 SOURCES = [
     ("市場先生", "tw", ["https://rich01.com/feed/", gnews("site:rich01.com when:7d", "zh")], 3, 7),
     ("MacroMicro 財經M平方", "tw", gnews("site:macromicro.me/blog when:7d", "zh"), 3, 7),
+    # 大叔美股筆記：Substack 電子報，多數文章付費，網站只放標題與免費開頭的重點
+    ("大叔美股筆記", "tw", ["https://unclestocknotes.substack.com/feed", gnews("site:unclestocknotes.substack.com when:7d", "zh")], 3, 4),
     ("Harvard Business Review", "strategy", gnews("site:hbr.org/2026 when:7d"), 3, 7),
     ("Business Insider", "strategy", gnews("site:businessinsider.com when:2d"), 3, 3),
     ("Fast Company", "strategy", "https://www.fastcompany.com/latest/rss", 3, 3),
@@ -146,7 +148,7 @@ def collect():
             title = e["title"]
             if "news.google.com" in url:  # 可能重複兩次，所以去兩輪
                 for _ in range(3):
-                    title = re.sub(r"\s*[-|｜]\s*[^-|｜]*(Review|Insider|Springwise|Shopify|MacroMicro|部落格|M平方|市場先生|Mr\.Market)[^-|｜]*$", "", title, flags=re.I)
+                    title = re.sub(r"\s*[-|｜]\s*[^-|｜]*(Review|Insider|Springwise|Shopify|MacroMicro|部落格|M平方|市場先生|Mr\.Market|大叔美股筆記|Uncle Stock Notes)[^-|｜]*$", "", title, flags=re.I)
             title = re.sub(r"\s+\^\s*\w+$", "", title).strip(" -|｜")  # HBR 標題尾巴的文章代號
             if title in seen or len(title) < 12 or JUNK.search(title):
                 continue
