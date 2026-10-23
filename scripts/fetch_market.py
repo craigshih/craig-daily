@@ -150,6 +150,9 @@ def collect():
                 for _ in range(3):
                     title = re.sub(r"\s*[-|｜]\s*[^-|｜]*(Review|Insider|Springwise|Shopify|MacroMicro|部落格|M平方|市場先生|Mr\.Market|大叔美股筆記|Uncle Stock Notes)[^-|｜]*$", "", title, flags=re.I)
             title = re.sub(r"\s+\^\s*\w+$", "", title).strip(" -|｜")  # HBR 標題尾巴的文章代號
+            if name == "大叔美股筆記":  # Google News 版標題尾巴會帶「- by 作者」，日期代號前後空白也不一致
+                title = re.sub(r"\s*-\s*by\s+.*$", "", title)
+                title = re.sub(r"每日重點\s*(\d{6})\s*", r"每日重點 \1 ", title).strip(" -|｜✨")
             if title in seen or len(title) < 12 or JUNK.search(title):
                 continue
             seen.add(title)
