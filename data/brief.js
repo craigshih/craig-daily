@@ -2,24 +2,24 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-10-22",
-  "dayType": "OPEN",
-  "headline": "Craig，今天雖然沒什麼行程，但先把眼睛給市場文章充電，為明天的金融科技展做好預熱！",
+  "date": "2026-10-23",
+  "dayType": "NORMAL",
+  "headline": "Craig，今天FinTech Taipei熱鬧開幕，抓緊機會玩轉金融科技！",
   "terrain": [
     0.15,
     0.15,
     0.15,
+    0.38,
+    0.6,
+    0.38,
     0.15,
     0.15,
     0.15,
     0.15,
     0.15,
-    0.15,
-    0.15,
-    0.15,
-    0.15,
-    0.15,
-    0.15,
+    0.38,
+    0.6,
+    0.38,
     0.15,
     0.15,
     0.15
@@ -27,18 +27,31 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "悠閒喝咖啡，快速瀏覽 1-2 篇市場文章，抓住關鍵資訊。"
+      "text": "先喝杯咖啡，快速瀏覽問卷與身分組訊息，確保不漏掉重要通知。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "整理明天 FinTech Taipei 活動的議程與可能的交流對象，寫下重點問題。"
+      "text": "參加FinTech Taipei展覽與高峰論壇，記得筆記關鍵議題，為晚上的Web3課程做預習。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "放鬆一下，閱讀正在看的論文《穩定幣與存款爭奪戰》，做好筆記。"
+      "text": "上Web3跨域實戰課程，將今天學到的金融科技概念實作，並整理筆記。"
     }
   ],
-  "needs": [],
+  "needs": [
+    {
+      "title": "填問卷回饋",
+      "text": "完成10/21 Canton特別社課回饋問卷，讓組長了解你的參與情況 {src}",
+      "srcLabel": "實驗室行事曆",
+      "link": "https://forms.gle/Q1gjPLbBA33uLZ3d9"
+    },
+    {
+      "title": "領取身分組",
+      "text": "在Carl-bot公告中點表情，領取Web3研究小組身分組，方便後續討論 {src}",
+      "srcLabel": "實驗室行事曆",
+      "link": ""
+    }
+  ],
   "resolved": [],
   "sections": [
     {
@@ -46,21 +59,21 @@ window.CD.brief = {
       "items": [
         {
           "title": "穩定幣從消費支付走進中小企業財務：Mastercard Dreamonomics 2026報告閱讀心得",
-          "text": "第 1 篇深入探討穩定幣在中小企業財務的應用，對你研究金融科技很有啟發。（{src}）",
+          "text": "穩定幣報告提供最新支付與企業財務應用，對你的FinTech研究很有幫助。（{src}）",
           "srcLabel": "市場先生",
           "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAtMkJjTWVNOEZXMHVMNnpLXzhaSVpKSEVDR09TTWFaSnd5Y3MtYXpXQ3ZqdGRTTGoxSU1OMVBzR055U1VxSk1pZXg3bnVqOVNtSkR3Q0lQeEJfYWNa?oc=5"
         },
         {
-          "title": "【行情快報】台積電上修全年營收成長至 44%！存貨週轉改善、AI 需求持續強勁！",
-          "text": "第 5 篇台積電營收上修與 AI 需求，提供台灣半導體產業最新脈動。（{src}）",
-          "srcLabel": "MacroMicro 財經M平方",
-          "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQVTRZd2JoVXNKNFRZbGpjUVlfUWRLeU5oR1ZBV3NqSVRVc3ZkMlNfM2dSeElVUkRZRERndVZYd1FYNVdOOFRBYU40NC01enM5REJDYVJkLVlxSVZPNkhiaDAxU3Y2UWlqUzc0SUZmLTJ4WDlPdXlGSFI0WFBJM1dRX2ZDWmNSWVhyeURtdXJ0QlhBdjcxSmdFamNEN29QZ1hnVlA3NUJnbW54Q3BaWERVMjViSl9hYWtMZkhKRGFsYjNYY3hPUDY3VXNvS29BMjZ0VHZLaGVNSzF4TklydTZYSzdNQkZiYUlrQWRqalZFOHlPeU12dEdybUR3?oc=5"
+          "title": "a16z Crypto改名為a16z Frontier，擴大投資範圍",
+          "text": "a16z Frontier的轉型說明了加密投資新趨勢，能啟發你的Web3課程想法。（{src}）",
+          "srcLabel": "TechCrunch",
+          "link": "https://techcrunch.com/2026/10/22/as-blockchain-investing-falls-out-of-vogue-a16z-crypto-rebrands-as-a16z-frontier/"
         },
         {
-          "title": "當限制性資安政策適得其反時",
-          "text": "第 6 篇探討資安政策的反效果，對金融科技的合規與風險管理很重要。（{src}）",
-          "srcLabel": "Harvard Business Review",
-          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1Od0p6cUQwUThkd3dxTG9SRzlLa2VtWFFuRDQxRGVFbmNUeGwxY2FxT01XUG9HcXVEMmhER3l3YWNiQnNRNFRvN0c3ME9OdHRBcTM4amYteUc3QWRXeGtYVDNKWmZtNnVraXljUVgyemFUYTMwR01DcFZPaVg?oc=5"
+          "title": "【行情快報】5%殖利率吸走資金？AI行情迎來壓力測試！",
+          "text": "5%殖利率與AI行情壓力測試，讓你了解當前市場波動，對投資分析有參考價值。（{src}）",
+          "srcLabel": "MacroMicro 財經M平方",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxObUZqeDZWNk1lM3FJNGhINXBaM2hRcUJELWhzYmpKNFU1U2VELWpibzBUcUc4NTFETzgxSFY3TEdYS1E1LXNtaGR4bVhTMUFHaDY0aGZQaThYR3NyZDkwWVplcWtaaTNXMkJ4ZUp3clZQUTdZejN5Q3l4bmNadjBJU3k1dnFoUTJsc2RHZEZRVzFmbmQ1emNpeHhMU0Z2VElsQnhnbmJsQzZ0MlY3UTNlTg?oc=5"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
