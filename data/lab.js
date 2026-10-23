@@ -1,7 +1,52 @@
 // 實驗室行事曆公開版，由 node sync.js 從 fintech-hub/data/events.js 產生（已去掉 note 欄位）
 window.CD = window.CD || {};
-window.CD.labUpdated = "2026-10-15 14:11";
+window.CD.labUpdated = "2026-10-22 12:45";
 window.CD.lab = [
+  {
+    "date": "2026-11-06",
+    "time": "12:00",
+    "type": "todo",
+    "domain": "",
+    "source": "web",
+    "title": "報名：2026 全國金融科技校園創新創意競賽（韌性金融－AI × 永續 × 治理）",
+    "link": "https://forms.gle/zg5a4ncsVYP4YCCr7"
+  },
+  {
+    "date": "2026-10-23",
+    "time": "",
+    "type": "todo",
+    "domain": "digital-assets",
+    "source": "discord",
+    "title": "填 10/21 Canton 特別社課回饋問卷（若有出席）",
+    "link": "https://forms.gle/Q1gjPLbBA33uLZ3d9"
+  },
+  {
+    "date": "2026-10-26",
+    "time": "22:30",
+    "type": "event",
+    "domain": "digital-assets",
+    "source": "discord",
+    "title": "#3 數位資產 週會（推測每週一 22:30，語音討論室 1）",
+    "link": ""
+  },
+  {
+    "date": "2026-11-02",
+    "time": "",
+    "type": "info",
+    "domain": "digital-assets",
+    "source": "discord",
+    "title": "#3 候選競賽：Concordium Trusted Agents Hackathon（Plan A）/ AI 金融科技創新創意競賽（Plan B）",
+    "link": "https://www.encodeclub.com/programmes/concordium-trusted-agents-hackathon"
+  },
+  {
+    "date": "2026-10-22",
+    "time": "",
+    "type": "info",
+    "domain": "",
+    "source": "discord",
+    "title": "金融研訓院 2026 TABF 區塊鏈研究計畫（NCCU）PDF",
+    "link": ""
+  },
   {
     "date": "2026-10-16",
     "time": "12:59",
@@ -84,12 +129,12 @@ window.CD.lab = [
     "link": "https://www.accupass.com/event/2610050842082018972071"
   },
   {
-    "date": "2026-10-12",
+    "date": "2026-10-23",
     "time": "",
     "type": "todo",
     "domain": "digital-assets",
     "source": "discord",
-    "title": "加入 Web3 研究小組（#公告 那則訊息按表情報名）",
+    "title": "領取 Web3 研究小組身分組（#公告 Carl-bot 訊息按表情）",
     "link": ""
   },
   {
