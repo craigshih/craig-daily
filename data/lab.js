@@ -3,6 +3,33 @@ window.CD = window.CD || {};
 window.CD.labUpdated = "2026-10-22 12:45";
 window.CD.lab = [
   {
+    "date": "2026-10-23",
+    "time": "23:59",
+    "type": "todo",
+    "domain": "digital-assets",
+    "source": "discord",
+    "title": "Web3 研究小組：每週貼一篇區塊鏈新聞到共用新聞資料庫（每週五 23:59 前）",
+    "link": ""
+  },
+  {
+    "date": "2026-10-24",
+    "time": "",
+    "type": "todo",
+    "domain": "digital-assets",
+    "source": "discord",
+    "title": "Web3 研究小組：在頻道按表情選方向（區塊鏈金融 / 區塊鏈科技，可複選）",
+    "link": ""
+  },
+  {
+    "date": "2026-11-05",
+    "time": "20:00",
+    "type": "event",
+    "domain": "digital-assets",
+    "source": "discord",
+    "title": "Web3 研究小組 第一次週會（暫定每週四 20:00，約 1 小時）",
+    "link": ""
+  },
+  {
     "date": "2026-11-06",
     "time": "12:00",
     "type": "todo",
@@ -127,15 +154,6 @@ window.CD.lab = [
     "source": "accupass",
     "title": "Web3 課程第 1 堂前：手機裝好 ACCUPASS App 並確認票券",
     "link": "https://www.accupass.com/event/2610050842082018972071"
-  },
-  {
-    "date": "2026-10-23",
-    "time": "",
-    "type": "todo",
-    "domain": "digital-assets",
-    "source": "discord",
-    "title": "領取 Web3 研究小組身分組（#公告 Carl-bot 訊息按表情）",
-    "link": ""
   },
   {
     "date": "2026-10-12",
