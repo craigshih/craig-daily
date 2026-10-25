@@ -1,7 +1,25 @@
 // 實驗室行事曆公開版，由 node sync.js 從 fintech-hub/data/events.js 產生（已去掉 note 欄位）
 window.CD = window.CD || {};
-window.CD.labUpdated = "2026-10-22 12:45";
+window.CD.labUpdated = "2026-10-24 23:14";
 window.CD.lab = [
+  {
+    "date": "2026-10-30",
+    "time": "",
+    "type": "todo",
+    "domain": "digital-assets",
+    "source": "discord",
+    "title": "#3：完成企畫書第 1–6 節初版＋準備 5–10 分鐘提案簡報，交簡報連結或檔案",
+    "link": "https://docs.google.com/document/d/1KmdRwlXLtNWksY-M6ex8wUhtTQ4cpjPcPrUfl1TfVwk/edit"
+  },
+  {
+    "date": "2026-11-02",
+    "time": "22:30",
+    "type": "event",
+    "domain": "digital-assets",
+    "source": "discord",
+    "title": "#3 數位資產 會議：每人 5–10 分鐘提案簡報",
+    "link": ""
+  },
   {
     "date": "2026-10-23",
     "time": "23:59",
@@ -46,15 +64,6 @@ window.CD.lab = [
     "source": "discord",
     "title": "填 10/21 Canton 特別社課回饋問卷（若有出席）",
     "link": "https://forms.gle/Q1gjPLbBA33uLZ3d9"
-  },
-  {
-    "date": "2026-10-26",
-    "time": "22:30",
-    "type": "event",
-    "domain": "digital-assets",
-    "source": "discord",
-    "title": "#3 數位資產 週會（推測每週一 22:30，語音討論室 1）",
-    "link": ""
   },
   {
     "date": "2026-11-02",
