@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-10-24",
+  "date": "2026-10-25",
   "dayType": "OPEN",
-  "headline": "Craig，今天全日聚焦 Web3 方向投票，快把選項敲定！",
+  "headline": "Craig，今天資訊滿載，先挑出重點文章，輕鬆掌握全局",
   "terrain": [
     0.15,
     0.15,
@@ -27,47 +27,40 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "先檢查頻道投票說明，確定表情對應的方向，避免混淆。"
+      "text": "快速瀏覽三篇精選市場文章，做好簡短筆記，為下午的思考鋪路"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "根據同學回應統計，初步整理出區塊鏈金融與科技的優先議題。"
+      "text": "整理筆記，思考哪些觀點可應用在研究或課題上，若有靈感可即時寫下"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "把投票結果彙整成簡報，分享給組長與同學，確定下一步行動。"
+      "text": "放鬆一下，回顧今天的收穫，規劃明天的閱讀或寫作方向"
     }
   ],
-  "needs": [
-    {
-      "title": "投票選方向",
-      "text": "在頻道按表情選擇區塊鏈金融或科技，確保小組有明確方向，來源 {src}",
-      "srcLabel": "實驗室行事曆",
-      "link": ""
-    }
-  ],
+  "needs": [],
   "resolved": [],
   "sections": [
     {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "穩定幣從消費支付走進中小企業財務：Mastercard Dreamonomics 2026報告閱讀心得",
-          "text": "穩定幣報告提供金融層面的洞見，對 Web3 金融研究很有幫助。（{src}）",
-          "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAtMkJjTWVNOEZXMHVMNnpLXzhaSVpKSEVDR09TTWFaSnd5Y3MtYXpXQ3ZqdGRTTGoxSU1OMVBzR055U1VxSk1pZXg3bnVqOVNtSkR3Q0lQeEJfYWNa?oc=5"
-        },
-        {
-          "title": "【行情快報】5% 殖利率吸走資金？AI 行情迎來壓力測試！",
-          "text": "AI 行情壓力測試說明市場波動，能啟發區塊鏈科技的應用場景。（{src}）",
+          "title": "【MM一週盤前】通膨超預期、費半罕見八連跌，台積電法說優於預期！",
+          "text": "AI 行情壓力測試提醒你關注新興技術投資風險，對未來研究很有啟發（{src}）",
           "srcLabel": "MacroMicro 財經M平方",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxObUZqeDZWNk1lM3FJNGhINXBaM2hRcUJELWhzYmpKNFU1U2VELWpibzBUcUc4NTFETzgxSFY3TEdYS1E1LXNtaGR4bVhTMUFHaDY0aGZQaThYR3NyZDkwWVplcWtaaTNXMkJ4ZUp3clZQUTdZejN5Q3l4bmNadjBJU3k1dnFoUTJsc2RHZEZRVzFmbmQ1emNpeHhMU0Z2VElsQnhnbmJsQzZ0MlY3UTNlTg?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPV2JBaXowdm95WHJjMTR1dUhMbmZzOHlYclJPcjFEc09pZnUxTnR1LXBrTnJabGlHZjVsbWVSUldoYU5lR3ZmUkg0VW5SbG1Vc1dFaGFUTWJhQjFlRVIzTFl2LW5wYlRSenV0LXRmWERucGVNS3Y0VTlMT0dzazZ4VVhPZHloMkIxMTMyZjIwZE9KOEVzWHpBUnB6Uzh2Rnk3Y1k5N1B4bTNCV0lPdkFNeDIzdzFUNXdaRlIyVTZ4UWUyN204enNOMFA1RHloLWE5YlVMOHQ2T2hBZEttV3F1am04VmZRTW9UQmtDNDhNRmVMeTYwSDNWc3B3NlF3ZENZVDBfTDdsNlUwdkpYVUpxMWRDRkNmZw?oc=5"
         },
         {
-          "title": "台積電 TSMC $TSM 2026 年第三季財報分析",
-          "text": "TSMC 第三季財報解析展示大型企業的技術佈局，對區塊鏈基礎設施有參考價值。（{src}）",
-          "srcLabel": "大叔美股筆記",
-          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9OTkwtcUVTYXp3SVRCZVpZMGlDQjBUZWVIUFNENmV4aHV0OVU5NF9YWFV2dnR3Qkw3SU81STRxMmdTNjRJaWdsQUxnanRtd3F5VnJmc0R1WWZYbmxWWUtFbzFB?oc=5"
+          "title": "【行情快報】好財報換不到掌聲？寫在台積法說後的關鍵三問！",
+          "text": "台積電法說後的關鍵三問提供產業趨勢洞見，適合金融與經濟相關課題（{src}）",
+          "srcLabel": "MacroMicro 財經M平方",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNVjh4dGJRY09naWJSektlcVVjYlVLVnhKOEswV0xqYnlob3kyeHRSSUJlajFnMmo2T2poTkl6WjRha1NERk8wc3pZRmxSMEJpZUFacVZGUjBTUWE3TWt5WGtfV0Y2eUxZMzNTSENiNmpKOGtBdGVuVWJYQzgxT3dvMjdfX2xhM2pfWkJkclBHVjNMU0hrUGswXzZkQWppR3FTR1A5bG1DNGgzVWRjbTdrd1JpUFNldGg0OGpGUEc5aFVWd29yNW54a213QmI3Y0tjZnc?oc=5"
+        },
+        {
+          "title": "阻礙 AI 轉型的高層行為",
+          "text": "阻礙 AI 轉型的高層行為揭示組織管理挑戰，對你的管理學研究很有幫助（{src}）",
+          "srcLabel": "Harvard Business Review",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZTU1SVNLRXhYRklrSWZDUVJrS2FBaG9PYkhLNTI3RVl0RjY3bXlady0tZnNlSFg5OFpmQ3NRckQzMEwwMW9jQjlfV1lkTFNIbWJqOHRRc2VJMC1QeXJXX2dOLUVoQXE0dW5lQzhyWDljSnlWVkVoWEd5dkc1dGMzUg?oc=5"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
