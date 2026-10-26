@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-10-25",
+  "date": "2026-10-26",
   "dayType": "OPEN",
-  "headline": "Craig，今天資訊滿載，先挑出重點文章，輕鬆掌握全局",
+  "headline": "Craig，今天先把美債拍賣和AI財報的脈動抓起來，讓腦袋充電！",
   "terrain": [
     0.15,
     0.15,
@@ -27,15 +27,15 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "快速瀏覽三篇精選市場文章，做好簡短筆記，為下午的思考鋪路"
+      "text": "快速瀏覽美債拍賣（0）與AI財報概況（3），了解市場資金流向。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "整理筆記，思考哪些觀點可應用在研究或課題上，若有靈感可即時寫下"
+      "text": "深入閱讀AI疑慮與財報分析（4），思考對你研究的啟發。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "放鬆一下，回顧今天的收穫，規劃明天的閱讀或寫作方向"
+      "text": "放鬆一下，看看Meta CEO 討論IPO後策略（9），汲取創業觀點。"
     }
   ],
   "needs": [],
@@ -45,22 +45,22 @@ window.CD.brief = {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "【MM一週盤前】通膨超預期、費半罕見八連跌，台積電法說優於預期！",
-          "text": "AI 行情壓力測試提醒你關注新興技術投資風險，對未來研究很有啟發（{src}）",
-          "srcLabel": "MacroMicro 財經M平方",
-          "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPV2JBaXowdm95WHJjMTR1dUhMbmZzOHlYclJPcjFEc09pZnUxTnR1LXBrTnJabGlHZjVsbWVSUldoYU5lR3ZmUkg0VW5SbG1Vc1dFaGFUTWJhQjFlRVIzTFl2LW5wYlRSenV0LXRmWERucGVNS3Y0VTlMT0dzazZ4VVhPZHloMkIxMTMyZjIwZE9KOEVzWHpBUnB6Uzh2Rnk3Y1k5N1B4bTNCV0lPdkFNeDIzdzFUNXdaRlIyVTZ4UWUyN204enNOMFA1RHloLWE5YlVMOHQ2T2hBZEttV3F1am04VmZRTW9UQmtDNDhNRmVMeTYwSDNWc3B3NlF3ZENZVDBfTDdsNlUwdkpYVUpxMWRDRkNmZw?oc=5"
+          "title": "美國公債拍賣是什麼？拍賣結果與美債需求強弱怎麼看",
+          "text": "美債拍賣說明資金成本與市場情緒，對宏觀經濟研究很重要。（{src}）",
+          "srcLabel": "市場先生",
+          "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBNNnJvZGtZVjBiQzVYYnUtM0ltV3R6ZlkwaF80bkl0bzZTU0RqdjBHUzJraElrdkJodXZPeHByNmRGeXdQRDRyUkxhQXU?oc=5"
         },
         {
-          "title": "【行情快報】好財報換不到掌聲？寫在台積法說後的關鍵三問！",
-          "text": "台積電法說後的關鍵三問提供產業趨勢洞見，適合金融與經濟相關課題（{src}）",
+          "title": "AI 疑慮仍未退燒，本週巨頭財報、央行會議接力登場！",
+          "text": "AI財報與央行會議交錯，提供產業趨勢與政策影響的案例。（{src}）",
           "srcLabel": "MacroMicro 財經M平方",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNVjh4dGJRY09naWJSektlcVVjYlVLVnhKOEswV0xqYnlob3kyeHRSSUJlajFnMmo2T2poTkl6WjRha1NERk8wc3pZRmxSMEJpZUFacVZGUjBTUWE3TWt5WGtfV0Y2eUxZMzNTSENiNmpKOGtBdGVuVWJYQzgxT3dvMjdfX2xhM2pfWkJkclBHVjNMU0hrUGswXzZkQWppR3FTR1A5bG1DNGgzVWRjbTdrd1JpUFNldGg0OGpGUEc5aFVWd29yNW54a213QmI3Y0tjZnc?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPUUZ0Q3FCNDMyMlJ6bjFac3Y5SHhNQWF5THpabXhaRFZONWdtckpGdnNqTUJvdHpoUlY3Q1NEZVJWcnRFZTdDcFhkVHhGNXI2clp2UHZKQTdlOWN4SWFBc210dklLVkJVRzc0eC1xSjdzUUhGc0NGcVFsSEZiLXlGY1Bka2RQV3ZwV09wM201X3hwSXpXZVBOMmFWX3daVHQ5bGVhbHhEUXdZUk0zYUt5SjNzUklTaGNtMFo0WkVlNERZaGs2TXBsSVFKeGliR2hfMTJtd05EM0R4OHRMWDhVVlpYNUJWckZCeUlj?oc=5"
         },
         {
-          "title": "阻礙 AI 轉型的高層行為",
-          "text": "阻礙 AI 轉型的高層行為揭示組織管理挑戰，對你的管理學研究很有幫助（{src}）",
+          "title": "Robinhood 的 CEO 談 IPO 後的業務重塑",
+          "text": "Meta CEO 的IPO後布局揭示企業轉型思路，對商業模式分析有啟發。（{src}）",
           "srcLabel": "Harvard Business Review",
-          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZTU1SVNLRXhYRklrSWZDUVJrS2FBaG9PYkhLNTI3RVl0RjY3bXlady0tZnNlSFg5OFpmQ3NRckQzMEwwMW9jQjlfV1lkTFNIbWJqOHRRc2VJMC1QeXJXX2dOLUVoQXE0dW5lQzhyWDljSnlWVkVoWEd5dkc1dGMzUg?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9sNVRsNkpta2RkTGVXMzJhajM1dEVDV1BZZ0dTMmlCM2pyWC1mLU8zNVBhTjktUk5BbWxsWDN2cFJYQVVJQnk4eDd2ZkpsQTdEZmdxMlJsVnhGNVF4X2dMbXVjWThGaVQzT2hMZ01xYmtERU1mWlNDZ0RUX1Z2WVU?oc=5"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -72,5 +72,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "08:45"
+  "updated": "08:30"
 };
