@@ -1,8 +1,8 @@
 // 每日市場洞察：由 scripts/fetch_market.py 自動產生（每天台灣時間 08:30，中午、傍晚各再抓一次），請不要手動改
 window.CD = window.CD || {};
-window.CD.marketUpdated = "2026-10-26 17:55";
+window.CD.marketUpdated = "2026-10-27 00:40";
 window.CD.marketGroups = [{"id": "tw", "name": "財經・台股美股"}, {"id": "strategy", "name": "商業與戰略"}, {"id": "tech", "name": "科技・新創・創投"}, {"id": "growth", "name": "行銷・產品・增長"}, {"id": "smb", "name": "創業與中小企業"}];
-window.CD.marketSummary = {"text": "今日焦點集中在AI熱度持續升溫與財報季交織的市場波動、資金流向與供應鏈挑戰，以及新興永續與創新商業模式的崛起。美國公債拍賣與標普500 ETF受關注，企業財報與央行政策成為投資決策關鍵；同時，從塑膠回收到油井廢棄物再利用的創新案例顯示綠色供應鏈的商機。", "watch": ["AI 產業需求是否會因高殖利率資金流出而受壓", "美國公債拍賣結果對全球資金成本的影響", "永續材料與再循環技術的商業化進度"]};
+window.CD.marketSummary = {"text": "今日焦點集中在AI產業的資本動態與企業組織調整。Anthropic 連續登上多家媒體，宣布 IPO 計畫，顯示生成式 AI 仍是資金熱點；同時微軟大規模提供自願離職金，顯示大型科技公司正透過人力結構優化降低成本。供應鏈方面，智慧倉儲機器人與客製化材料自動化技術持續突破，預示製造與物流將加速數位化轉型。", "watch": ["Anthropic IPO 進度與後續估值走向", "微軟大規模裁員方案對產業人才供給的衝擊", "AI 驅動的客製化材料與倉儲機器人商業化速度"]};
 window.CD.marketStatus = [{"source": "市場先生", "ok": true, "count": 3}, {"source": "MacroMicro 財經M平方", "ok": true, "count": 3}, {"source": "大叔美股筆記", "ok": true, "count": 3}, {"source": "Harvard Business Review", "ok": true, "count": 3}, {"source": "Business Insider", "ok": true, "count": 3}, {"source": "Fast Company", "ok": true, "count": 3}, {"source": "TechCrunch", "ok": true, "count": 3}, {"source": "The Verge", "ok": true, "count": 2}, {"source": "Wired", "ok": true, "count": 2}, {"source": "Springwise", "ok": true, "count": 2}, {"source": "Lenny's Newsletter", "ok": true, "count": 2}, {"source": "Brian Balfour（Reforge）", "ok": true, "count": 0}, {"source": "HubSpot Blog", "ok": true, "count": 2}, {"source": "Shopify Blog", "ok": true, "count": 2}, {"source": "Entrepreneur", "ok": true, "count": 3}, {"source": "Small Business Trends", "ok": true, "count": 2}];
 window.CD.market = [
   {
@@ -13,7 +13,7 @@ window.CD.market = [
     "date": "2026-10-26",
     "excerpt": "",
     "titleZh": "I500值得投資嗎？市場先生完整評價I500 / iShares標普500 UCITS ETF (累積型)",
-    "takeaway": "評估標普500 ETF的成本與績效，協助投資人判斷是否適合作為長期資產配置工具。"
+    "takeaway": "評估標普500 ETF的投資價值，協助投資人判斷美股指數基金在當前市場環境下的配置適宜性。"
   },
   {
     "source": "市場先生",
@@ -23,7 +23,7 @@ window.CD.market = [
     "date": "2026-10-25",
     "excerpt": "",
     "titleZh": "美國公債拍賣是什麼？拍賣結果與美債需求強弱怎麼看",
-    "takeaway": "解說美債拍賣機制與需求指標，為企業與投資者提供利率走向的參考依據。"
+    "takeaway": "解析美債拍賣機制與需求指標，提供企業與投資者判斷利率走勢與資金成本的參考。"
   },
   {
     "source": "市場先生",
@@ -33,7 +33,7 @@ window.CD.market = [
     "date": "2026-10-24",
     "excerpt": "",
     "titleZh": "安養信託是什麼？費用、優缺點、適合誰一次看懂",
-    "takeaway": "說明安養信託的結構與成本，協助高齡族群與財務規劃師選擇合適的資產保護方案。"
+    "takeaway": "說明安養信託的運作與成本，協助高資產族群規劃長期照護與資產傳承。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -43,7 +43,7 @@ window.CD.market = [
     "date": "2026-10-25",
     "excerpt": "",
     "titleZh": "AI 疑慮仍未退燒，本週巨頭財報、央行會議接力登場！",
-    "takeaway": "提醒投資者關注AI相關企業財報與央行政策，判斷市場情緒與資金流向。"
+    "takeaway": "概覽本週大型科技財報與央行政策，提醒投資人關注AI相關風險與宏觀經濟互動。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -53,7 +53,7 @@ window.CD.market = [
     "date": "2026-10-22",
     "excerpt": "",
     "titleZh": "好財報換不到掌聲？寫在台積法說後的關鍵三問！",
-    "takeaway": "聚焦台積電法說重點，提供投資人檢視營運與技術布局的三個關鍵問題。"
+    "takeaway": "從台積電法說中抽取三個關鍵問題，指引半導體投資者評估成長與風險。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -63,7 +63,7 @@ window.CD.market = [
     "date": "2026-10-20",
     "excerpt": "",
     "titleZh": "5% 殖利率吸走資金？AI 行情迎來壓力測試！",
-    "takeaway": "分析高殖利率資產對AI股價的資金分流效應，提醒風險管理需求。"
+    "takeaway": "探討高殖利率債券對AI資金流的衝擊，提醒資金配置需平衡收益與成長風險。"
   },
   {
     "source": "大叔美股筆記",
@@ -73,7 +73,7 @@ window.CD.market = [
     "date": "2026-10-26",
     "excerpt": "",
     "titleZh": "每日重點 261024 -1025 Substack 大叔留言重點",
-    "takeaway": "每日美股要點整理，提供快速掌握市場變化的資訊摘要。"
+    "takeaway": "彙整當日美股市場要點，提供快速掌握市場動向的資訊摘要。"
   },
   {
     "source": "大叔美股筆記",
@@ -83,7 +83,7 @@ window.CD.market = [
     "date": "2026-10-26",
     "excerpt": "",
     "titleZh": "週報 2026.10.24",
-    "takeaway": "本週美股與宏觀經濟概況回顧，協助讀者制定短期投資策略。"
+    "takeaway": "每週回顧重要財經與科技新聞，協助讀者形成系統化的投資與策略觀點。"
   },
   {
     "source": "大叔美股筆記",
@@ -93,7 +93,27 @@ window.CD.market = [
     "date": "2026-10-26",
     "excerpt": "",
     "titleZh": "Meta Platforms $META 2026 年第三季財報分析",
-    "takeaway": "解析Meta第三季營收與廣告收入走勢，評估其在元宇宙布局的成效。"
+    "takeaway": "解析Meta第三季營收與廣告收入走勢，為社群平台投資決策提供依據。"
+  },
+  {
+    "source": "Harvard Business Review",
+    "group": "strategy",
+    "title": "3 Paths to Delivering Shareholder Returns with AI",
+    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9kaEI0NTl2Yjd1MWVUb192ckpMb3pDNFFaSXN0WkNxSlRRamh0S1QwWEp2WUR3aWxPOHN6MkREdjBkSlk5N09KVGJnSExCbWlMOHBzOWMyMU9IaUNzOEQ1bU9uVTVQM05Mejd4TG9jeWM0b08zeWY5akJFejVXQQ?oc=5",
+    "date": "2026-10-26",
+    "excerpt": "",
+    "titleZh": "AI 助力股東回報的三條路徑",
+    "takeaway": "提出三條利用AI提升股東回報的路徑，指導企業在AI投資與營運效益間取得平衡。"
+  },
+  {
+    "source": "Harvard Business Review",
+    "group": "strategy",
+    "title": "To Build Effective Cyber Resilience, Invest in Trust",
+    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxORzBISUVmY1NEcFcxWlFCbVNPcmFvZzViRnNKa2d3RmxBQTRzNFl1bFlOZHhLSVhvLXlFQVpHLWxPazJpUGNRMy1SN19US2Q1UVN1WGNQVHFCTXRwV05hMF9NejNCdXZmaWU1c1hJREtxSHdtVm16WGxkQzBYbGhjRldmWk9SaXFsclpHdFdPQ3I4YmFCVVQ0azdjMA?oc=5",
+    "date": "2026-10-26",
+    "excerpt": "",
+    "titleZh": "打造有效的資安韌性，必須投資信任",
+    "takeaway": "強調建立網路韌性需先投資信任機制，對金融與科技公司的資安策略具有指導意義。"
   },
   {
     "source": "Harvard Business Review",
@@ -102,198 +122,188 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9sNVRsNkpta2RkTGVXMzJhajM1dEVDV1BZZ0dTMmlCM2pyWC1mLU8zNVBhTjktUk5BbWxsWDN2cFJYQVVJQnk4eDd2ZkpsQTdEZmdxMlJsVnhGNVF4X2dMbXVjWThGaVQzT2hMZ01xYmtERU1mWlNDZ0RUX1Z2WVU?oc=5",
     "date": "2026-10-26",
     "excerpt": "",
-    "titleZh": "Robinhood的CEO談IPO後的業務重塑",
-    "takeaway": "CEO分享平台在上市後的策略調整，對零售金融科技公司的發展方向具啟示。"
-  },
-  {
-    "source": "Harvard Business Review",
-    "group": "strategy",
-    "title": "Visions of Geopolitical Stability",
-    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBHZHBYU2tfaUlHdGRaeXpZcEJ0TENTTlVVYlEwemFvTm4zSTdjbUJ5ckNGYWtfU3BvaGF6N0RDY2R4NVBUMVAzNXJ0cHdoTjNiYzNHY091OWRsYm9hWU9vd0xFU3pjUVcy?oc=5",
-    "date": "2026-10-23",
-    "excerpt": "",
-    "titleZh": "地緣政治穩定的願景",
-    "takeaway": "探討全球政治環境對供應鏈與跨國投資的長期影響，提供決策者風險觀點。"
-  },
-  {
-    "source": "Harvard Business Review",
-    "group": "strategy",
-    "title": "The C-Suite Behaviors That Stall AI Transformations",
-    "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZTU1SVNLRXhYRklrSWZDUVJrS2FBaG9PYkhLNTI3RVl0RjY3bXlady0tZnNlSFg5OFpmQ3NRckQzMEwwMW9jQjlfV1lkTFNIbWJqOHRRc2VJMC1QeXJXX2dOLUVoQXE0dW5lQzhyWDljSnlWVkVoWEd5dkc1dGMzUg?oc=5",
-    "date": "2026-10-23",
-    "excerpt": "",
-    "titleZh": "阻礙AI轉型的高階主管行為",
-    "takeaway": "指出企業領導層在AI導入上的常見盲點，提醒管理者調整決策流程以加速數位化。"
+    "titleZh": "Robinhood CEO 談 IPO 後的業務重塑",
+    "takeaway": "Robinhood CEO 討論IPO後的重組方向，提供新興金融平台在監管與成長間的平衡參考。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "Nvidia's sales and marketing leadership is seeing a changing of the guard — and new faces are gaining influence",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOcWxYaWtYNkFJOENxNHpLTEtqdlozV3hTdnBHNXZGdUhvMjIwbkp0NUhZTXlNQkh3anZHRTRKWlBwOHBzMVVuRVc1UC03aXBmWWtXZDlCWmdXUGZHcldLV2NnOFAycUNHbnVHSExfckFXS1NjVHRVTWJuWUtUdU85Um0tT25tcE45WWZMRDRBWVhycGhMamtJOG9OS0gzQQ?oc=5",
-    "date": "2026-10-26",
+    "title": "Anthropic's S-1 paperwork reveals the stunning finances behind its meteoric rise ahead of its IPO",
+    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOOThqUENCQk01SlhUVE1PZDc1aDBaWEhiaXJ2RFFPc21fZUhxRFlxR1EwZVBDZGhrWlMwbzJOVlhkSkw2QjYydVZMLTdENmYzam1lNG1QMlFHZ2VfWFJIY0VqQ1E1U2ZuUGlMRHgxaXpzMG9ERU1KNF9QOHRBQjFjd1B3Qm5Gd0RBUFdPV0xyWHE1UzVt?oc=5",
+    "date": "2026-10-27",
     "excerpt": "",
-    "titleZh": "Nvidia 銷售與行銷領導層換血，新面孔崛起",
-    "takeaway": "說明Nvidia組織變動對產品推廣與市場策略的可能影響，對競爭者與合作夥伴具參考價值。"
+    "titleZh": "Anthropic S‑1 文件揭露其 IPO 前驚人財務",
+    "takeaway": "從S-1文件看Anthropic的財務結構與成長速度，說明AI新創在資本市場的估值驅動因素。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "Hollywood's uncanny evolution of evil billionaire tech bros, from \"The Spy Who Loved Me\" to \"Musk.\"",
-    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPVUZielhCazVWa2FPU3UyMnBuOEpwbnN5Yl8zZ01kREh0VzdoRUpCd0tJT2dESjFEZ2k4TXdxQXJMTTExdWdjLUJuM1RmYlpUcTR0Y196SFVEaGlOc0c5Ym4tVUM5c0tiRjRXcXlHMV9ZVVhWZkt6ZU1tTUpCUGVQLUxTQXJvQ0NCelRpcE96NlUwektBLVE5Zm9vdw?oc=5",
-    "date": "2026-10-26",
+    "title": "Microsoft is offering buyouts to around 60,000 employees. Read the memo.",
+    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPckFnM05JREJ4Tm5KQUppZldkTkZxWG9CUWVFcHItZmdnSlc4Mi0tVWVlZE1KaW9qV2FYTXJSUGN3SnhjVkdxa3hXZm5yZnFndHYyNWpQQkg4bWRBOG9aRkhaaDJweDZkOElTY1NRdXluM3JEYi05S1lzMkhIdldFNFU3MGQ1V3gyWFlj?oc=5",
+    "date": "2026-10-27",
     "excerpt": "",
-    "titleZh": "好萊塢惡霸科技大亨形象的演變",
-    "takeaway": "從影視作品觀察科技巨頭形象變化，反映大眾對科技權力的社會心理。"
+    "titleZh": "Microsoft 向約 6 萬名員工提供自願離職金",
+    "takeaway": "微軟提供自願離職金給約6萬名員工，顯示大型科技公司正透過人力調整降低營運成本。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "Elon Musk Says Neoclouds Are Cooked, and SpaceX Won't Be Buying Them",
-    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOdEpWNklXOC11OFYyYk5Pbzd3aDAtMExoQ2NQVW9WMWdIa3VWRDBES0x4TWx0WTJyUFJiNTFOMXZWTm9vSDVRS2VxeGo2QmR2dWJLMlVORWJ3Q2diUFkyZG9lZzg4WnZjbkd3dXZwVi16X2RIb1pVcldBWjJLbFlCNUtsU0YzLUpXYUpHUQ?oc=5",
+    "title": "Ukraine's been waiting almost a month for Hegseth to sign off on Patriot missiles, Zelenskyy says",
+    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQTmNXM2o2YVE1aUtVME0zREkwTkdtNTY1Z1J5a2FvTzh2bTJ3VHVidTVhREdRdHRmdjMzdkd6eDgxcW92eEMwSEpGWFF1OEo3NVJaZFBMcFZPUXVmV3ZqcExTV1BmdFhhbU55RmFKMlZqSFF3c1RsekRBQl9yMmc3dU1pcEZsaHZmTGxXZGVoM3RDRTZtVTlTeDdjTXI3YzgydzRBTmJYRnAtTjRJYWxfXzlJVEE?oc=5",
     "date": "2026-10-26",
     "excerpt": "",
-    "titleZh": "Elon Musk 表示 Neoclouds 已失效，SpaceX 不會購買",
-    "takeaway": "Musk 對雲端服務的評價暗示未來太空產業的技術選擇與供應鏈方向。"
+    "titleZh": "烏克蘭總統澤連斯基稱已等近一月 Hegseth 批准愛國者導彈",
+    "takeaway": "烏克蘭等待美國批准愛國者導彈，突顯地緣政治與防務供應鏈的時間敏感性。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "‘Mesoamerican Modern’ redefines how we understand Mexican architecture",
-    "link": "https://www.fastcompany.com/91628207/mesoamerican-modern-book-su-wu-phaidon",
+    "title": "Anthropic IPO: AI giant is preparing for blockbuster stock listing. Here’s what the SEC filing reveals",
+    "link": "https://www.fastcompany.com/91629844/anthropic-ipo-stock-listing-date-nears-ai-giant-sec-filing-public",
     "date": "2026-10-26",
-    "excerpt": "To walk through Mexico City is to stroll down centuries at once. The ruins of the Aztec empire are exposed on the ground beside colonial structures built from the same stones that once made up the ancient temples. A few…",
-    "titleZh": "《中美洲現代》重新定義墨西哥建築",
-    "takeaway": "透過建築案例說明文化與創新交叉，啟發設計產業的跨領域合作可能。"
+    "excerpt": "For months, the tech world has been waiting with bated breath for news of a prospectus from the AI giant Anthropic. Now, the company has officially announced its plans for an initial public offering (IPO). On October…",
+    "titleZh": "Anthropic IPO：AI 巨頭籌備重磅上市，SEC 文件透露細節",
+    "takeaway": "Anthropic正式申請IPO，SEC文件顯示其營收與風險敞口，提醒投資者評估AI企業的財務健康度。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "This Texas startup is turning oil well waste into EV batteries",
-    "link": "https://www.fastcompany.com/91628438/this-texas-startup-is-turning-oil-well-waste-into-ev-batteries",
+    "title": "What we learned from 250,000 public workers about AI adoption",
+    "link": "https://www.fastcompany.com/91628634/how-the-public-sector-is-using-ai",
     "date": "2026-10-26",
-    "excerpt": "Across the Permian Basin, the vast, mineral-rich swath of land in West Texas that supplies much of the nation’s crude oil, derricks pump out massive amounts of oil, roughly 6 million barrels a day. But that amount pales…",
-    "titleZh": "德州新創將油井廢棄物轉化為電池材料",
-    "takeaway": "展示油氣產業副產品的循環利用模式，為能源與電動車供應鏈提供新商機。"
+    "excerpt": "As generative AI sweeps across industries, some workers using it are reporting increases in productivity . But inside government, where those benefits could translate into better public services, many employees are…",
+    "titleZh": "從 25 萬名公務員看 AI 推廣的啟示",
+    "takeaway": "從25萬名公務員的AI使用情況看，生成式AI在提升生產力上仍受組織文化與流程限制。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "Are boards preparing to fight the last war?",
-    "link": "https://www.fastcompany.com/91626966/boards-preparing-to-fight-the-last-war",
+    "title": "Kevin O’Leary has one rule for giving money to family. It works at any income",
+    "link": "https://www.fastcompany.com/91626003/kevin-oleary-one-rule-giving-money-family-works-any-income",
     "date": "2026-10-26",
-    "excerpt": "In the 1930s, France built the Maginot Line . This was a series of fortifications—fortresses, weapons, and various obstacles to invasion—that was more than 200 miles long. The Line was built for a world of static…",
-    "titleZh": "董事會是否在為最後一戰做準備？",
-    "takeaway": "以歷史防禦工事比喻企業治理，提醒董事會需前瞻風險與創新策略。"
+    "excerpt": "It’s pretty hard to feel bad for billionaires , but according to a host of incredibly wealthy people there’s one aspect of being filthy rich that is no fun at all : deciding what to do when friends and family ask you…",
+    "titleZh": "Kevin O’Leary 給家人金錢的唯一規則，任何收入都適用",
+    "takeaway": "Kevin O’Leary分享家庭資金分配原則，提供不同收入層級的財富管理思考。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "The best apps for tracking your reading and discovering new books",
-    "link": "https://techcrunch.com/2026/10/25/5-best-apps-track-reading-discover-new-books/",
+    "title": "Microsoft offers buyouts to around 60,000 employees, reports say",
+    "link": "https://techcrunch.com/2026/10/26/microsoft-offers-buyouts-to-around-60000-employees-reports-say/",
     "date": "2026-10-26",
-    "excerpt": "There are numerous apps on the market that promise to do just that, so we’ve compiled a list of some of the best ones to help you pick the right one for you.",
-    "titleZh": "最佳閱讀追蹤與新書發掘 App 推薦",
-    "takeaway": "整理數位閱讀工具，協助知識工作者提升資訊管理與學習效率。"
+    "excerpt": "The buyout offers mark Microsoft's latest efforts to cut costs and rework its workforce.",
+    "titleZh": "報導稱 Microsoft 向約 6 萬名員工提供自願離職金",
+    "takeaway": "微軟以自願離職金方式削減人力，顯示大型企業在成本控制上的新策略。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "Grok releases the first seven minutes of its AI-generated ‘Odyssey’",
-    "link": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
+    "title": "Anthropic officially files for its public debut",
+    "link": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
     "date": "2026-10-26",
-    "excerpt": "The footage looks okay, as long as you're not seeking artistry, inspiration, or human interest.",
-    "titleZh": "Grok 首次釋出 AI 生成《奧德賽》前七分鐘",
-    "takeaway": "展示AI影像創作的初步成果，提示娛樂產業的內容製作新趨勢。"
+    "excerpt": "Anthropic has officially filed for an IPO, revealing soaring revenue, mounting losses, major enterprise adoption, and an unusual governance structure designed to preserve founder control and its AI safety mission.",
+    "titleZh": "Anthropic 正式提交上市申請",
+    "takeaway": "Anthropic正式提交IPO文件，透露營收快速成長與虧損擴大，同時維持創辦人治理與AI安全使命。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "‘Cyberselfish’ author takes aim at techno-libertarianism as her book returns from the dead",
-    "link": "https://techcrunch.com/2026/10/25/cyberselfish-author-takes-aim-at-techno-libertarianism-as-her-book-returns-from-the-dead/",
+    "title": "Apple unveils new iPad mini with OLED display and faster A20 Pro chip",
+    "link": "https://techcrunch.com/2026/10/26/apple-unveils-new-ipad-mini-with-oled-display-and-faster-a20-pro-chip/",
     "date": "2026-10-26",
-    "excerpt": "\"That's a 12-year-old view of the world.\"",
-    "titleZh": "《Cyberselfish》作者批評科技自由主義",
-    "takeaway": "透過書評探討技術哲學與政策辯論，對科技公司治理具啟發。"
+    "excerpt": "The new iPad mini features a thinner and lighter design than its predecessor.",
+    "titleZh": "Apple 發表搭載 OLED 螢幕與 A20 Pro 晶片的新款 iPad mini",
+    "takeaway": "Apple推出配備OLED螢幕與A20 Pro晶片的iPad mini，顯示高階行動裝置在效能與輕薄化的持續競爭。"
   },
   {
     "source": "The Verge",
     "group": "tech",
-    "title": "iFixit’s look inside the iPhone Duo may explain those broken screens and hinges",
-    "link": "https://www.theverge.com/tech/1018233/ifixit-iphone-duo-teardown-repairability-hinge",
-    "date": "2026-10-26",
-    "excerpt": "As is tradition, iFixit has torn open the latest iPhone and laid its parts bare on a table. It found some interesting details about how Apple might be hiding the crease on the Duo's folding screen and gave it a 5/10…",
-    "titleZh": "iFixit 拆解 iPhone Duo 揭示螢幕與鉸鏈設計",
-    "takeaway": "深入硬體結構分析，提供供應鏈與維修市場的產品可靠性資訊。"
+    "title": "Instagram chases YouTube with a push for longer, widescreen videos",
+    "link": "https://www.theverge.com/tech/1018688/instagram-longform-widescreen-video-features-youtube",
+    "date": "2026-10-27",
+    "excerpt": "Instagram is announcing a big push into longform horizontal video, which the platform is calling \"Features.\" Instagram boss Adam Mosseri has been against doing longform video on the platform \"for a long time,\" he says…",
+    "titleZh": "Instagram 以長片、寬螢幕影片向 YouTube 進軍",
+    "takeaway": "Instagram開始推長片橫向影片，意圖搶佔YouTube市場，顯示社群平台內容形態的多元化趨勢。"
   },
   {
     "source": "The Verge",
     "group": "tech",
-    "title": "Scott Walker’s The Drift will get under your skin",
-    "link": "https://www.theverge.com/entertainment/1018300/scott-walker-the-drift-music-album-review",
+    "title": "Microsoft offers buyouts to 60,000 employees",
+    "link": "https://www.theverge.com/tech/1018666/microsoft-expands-buyouts-60000-employees-eligible",
     "date": "2026-10-26",
-    "excerpt": "In my mind, Spooky Season music comes in two distinct flavors. There are the fun, occasionally goofy songs like \"The Monster Mash\" and John Carpenter's \"Halloween Theme.\" Then there is the genuinely terrifying:…",
-    "titleZh": "Scott Walker 的《The Drift》帶來不安感",
-    "takeaway": "以音樂評論切入文化氛圍，間接反映消費者情緒與市場趨勢。"
+    "excerpt": "Microsoft is offering voluntary buyouts to up to 60,000 employees across the US, UK, Canada, and India. In a message to employees, Microsoft chief people officer Amy Coleman writes that this gives staff members \"the…",
+    "titleZh": "Microsoft 向 6 萬名員工提供自願離職金",
+    "takeaway": "微軟在多國提供自願離職金，顯示全球化企業在組織調整上的同步性與成本考量。"
   },
   {
     "source": "Wired",
     "group": "tech",
-    "title": "Meet the AI Agents Trying to Be Real-Life Journalists",
-    "link": "https://www.wired.com/story/ai-agents-are-trying-to-be-journalists-now/",
-    "date": "2026-10-26",
-    "excerpt": "Jayden, Sam, and Zack are eagerly pitching editors on reported stories and investigative features. The catch? They're all AI agents.",
-    "titleZh": "AI 代理人嘗試成為真實記者",
-    "takeaway": "探討AI在新聞採訪與寫作的應用，對媒體產業的勞動結構產生衝擊。"
+    "title": "The Anthropic IPO Is Also a Doomsday Primer",
+    "link": "https://www.wired.com/story/the-anthropic-ipo-is-also-a-doomsday-primer/",
+    "date": "2026-10-27",
+    "excerpt": "Anthropic thinks “closing the loop” is the best path to AI triumph—and a recipe for “existential” threats to humanity.",
+    "titleZh": "Anthropic IPO 亦是末日預警指南",
+    "takeaway": "評論Anthropic IPO同時提出AI安全與倫理風險，提醒投資者關注技術治理的長期影響。"
   },
   {
     "source": "Wired",
     "group": "tech",
-    "title": "What the US Movement Against Data Centers Can Learn From Abroad",
-    "link": "https://www.wired.com/story/what-the-us-anti-data-center-movement-can-learn-from-everywhere-else/",
-    "date": "2026-10-25",
-    "excerpt": "Paris Marx, author of Hyperscale, has been tracking global data center development for years. The US has a lot to learn from what’s happened everywhere from Ireland to New Zealand.",
-    "titleZh": "美國資料中心運營可向國外學習的經驗",
-    "takeaway": "比較全球資料中心發展，提供美國在能源與政策層面的改進方向。"
+    "title": "Anthropic’s IPO Prospectus Reveals What’s Under the Hood",
+    "link": "https://www.wired.com/story/anthropic-ipo-filings-reveal-finances-risks-strategy/",
+    "date": "2026-10-26",
+    "excerpt": "Anthropic on Monday filed documents ahead of a blockbuster IPO that offers insight into the company’s financials, risk factors, and views on the future of AI.",
+    "titleZh": "Anthropic IPO 招股說明書揭示背後技術",
+    "takeaway": "從招股說明書看Anthropic的財務與風險敞口，為AI投資決策提供具體數據。"
   },
   {
     "source": "Springwise",
     "group": "tech",
-    "title": "Waste plastics transformed into water-capturing sponges",
-    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOMGNBaGZCYk05S1YzYUZYc3Iyc3lDSW1sVTZLVU8xeE52Zk9LQ1lSYmtpOVpFcElmTm1lMTBKSDczOEFvMU1GaC0xY2E1ODhUYk1QRl9yRDdLWDE0SU1MTHh6NDFPc29mOWJwdzluSGI3bEdRcWEwMkZIY0d4SUVqbXpTQ19TenpzR1BTV0NTSGdzQlZXczM1NUxkM0jSAagBQVVfeXFMTlgtdHNna0R0VmcyeGZBSEUydTVYckxUZlJIN2lnUHpaU1NtSzF5TGFQS1FnQUVrZVMycURsOWFVRFVhMjVVZWxxMDVhcWpoZlRqZTJDcHpCQ1FhN1VQQUhnTnlGQ2NnOVY3WTJrbUFzNWZNU2lhdm5OYUFKZVMxcDR0OGN5VE5La2E5bElsd1hDaXd4VnlwVjd0MXNxYmRYRmdvY2cyWWxm?oc=5",
-    "date": "2026-10-23",
+    "title": "AI automates the creation of custom materials",
+    "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOdm91cDItUkswaE0wUGw1V0t4SWNFWHljdHV0MjA0VHN0WHNxaER2aEhEZWdKOWVVejVHVHhrQ2NPREpPMjVxcWVDQXVON2Jab0NOVzJPd210b09EVDl6QXpBVVJsSEM0eGt2Q05XRWVUaU9zdktQckFlQ0Z3NzVXSWs5UTFUSVktQVNBakRpalloUkl4WVlUMnRR0gGmAUFVX3lxTE5sa05fQ3U2NzBtSnBNbEcwbktRb0dGRGZfTzZ3US1IUzJGRGM2RTUxcDhGMFR2UGNlRHJiWDVDcW9tcjlOY0w3TzYzWmI0akdBWGZCYVlBVlJfNzBkdm4xZnN2ZUo2bjJ4aWh4c2lJWmVVeXFEUEFEclA3T3N5TFJfc3VJUnd5eUdRLW5hSUM1V0lTVk96NE9FamtyeVgzOTFqT1U2UkE?oc=5",
+    "date": "2026-10-26",
     "excerpt": "",
-    "titleZh": "廢棄塑膠變身吸水海綿",
-    "takeaway": "介紹塑膠回收新技術，為農業與環保產業提供可行的材料替代方案。"
+    "titleZh": "AI 自動化客製化材料的製作",
+    "takeaway": "AI自動化客製化材料製程，預示製造業在研發與供應鏈彈性上將大幅提升。"
   },
   {
     "source": "Springwise",
     "group": "tech",
-    "title": "Electric vehicles for consumer and commercial use",
-    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOT3VycEp2WFIzNG9iWnY5R0tYT2NTUmNaa1Nac2UxOEREdnpqdVhYLThKOEZ5cS1HMUNNRXl3TXYwWlphMmU4OG1ocjlIRWNqN2ZjZUFIajVVaDk5Z1JzWGJsUmhjWVRLc1JmZXY1UERNN2ZpbUNUMV8ydmVtVjBiTXFqbWV4Z1hDMHVEXzhJYXZUSnFrQk8xLUYwNDlwOHB1V0HSAa4BQVVfeXFMT2stcnQxQ1ZER0IzN1VVcGFjSm1LSTFpRW9xS2laUjc4YUhOWmVfczl1X2xYWkd0dTBmb3pXRDktanoySVBWcExrNlh2UHNXQVdXdnZBbVVWTjVXY3lOVGVvOFItZWloeFk1eE5iQnV3OFlVa1UwS3NWWGx2eHQ3SG9YeWxXR1cwTmhNUnpidHVsdmJxX3pmc00xbEVSWEM1ZFc2UEdCTlNuLU5nM3Zn?oc=5",
-    "date": "2026-10-23",
+    "title": "Intelligent coordination for warehouse robotics",
+    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPSVd2b1BOZnVzLUI2NDBFR3Vwb3ZjRXNialluVUJEZUZRcUxYWWxncExWUThJTnRURTl1REFuNmJEYnZNYlFqcWc4NG0yTFVxdUkxTGJkOUpKQ2pYVUFjQWF1TTJYMlYwWGkwTkVXdTBabmItVFZwc1RYSnhwWEUwREN1ZmR5aVJ1cnk2N1QyVmhjRWpvUjlnT21kai3SAagBQVVfeXFMTTlZS0xzbGtJb1pod3NwVUgza0NmSnAxZ3kzLXlBNk5iYlFxWEhzSlZranV3dzIzUmNkdDhUSkVwZFFrcTd2aVRaSHNiYXBCNDlHNHlKZjAtU1dpMHlDQUxEQmFyM2JQVU1mV2xjcVFsYmplN2hUZmNRdzJkazdvWl9XS1FJZXFoNHVQU0VqY0tVaDBWeUJLV1MyQVAwU09oUUpBNjFEV0E0?oc=5",
+    "date": "2026-10-26",
     "excerpt": "",
-    "titleZh": "電動車應用於消費與商用領域",
-    "takeaway": "概述EV在不同市場的發展趨勢，協助企業規劃車隊與物流轉型。"
+    "titleZh": "倉儲機器人智能協調系統",
+    "takeaway": "智慧協調技術提升倉儲機器人效率，對物流自動化與成本控制具重要意義。"
   },
   {
     "source": "Lenny's Newsletter",
     "group": "growth",
-    "title": "An 86-minute guide to finding PMF | Rob Snyder (Author, The Power of Pull)",
-    "link": "https://www.lennysnewsletter.com/p/an-86-minute-guide-to-finding-pmf",
-    "date": "2026-10-25",
-    "excerpt": "Listen now (86 mins) | The founder who helped over 50 startups hit $1M ARR shares his PULL framework for finding real product-market fit",
-    "titleZh": "86 分鐘找出產品市場適配的指南",
-    "takeaway": "提供創業者快速驗證PMF的方法框架，提升新創產品的市場成功率。"
+    "title": "🎙️ How I AI: Claude Duet honest review + Why Reddit built its own AI prototyping tool",
+    "link": "https://www.lennysnewsletter.com/p/how-i-ai-claude-duet-honest-review",
+    "date": "2026-10-26",
+    "excerpt": "Your weekly listens from How I AI, part of the Lenny’s Podcast Network",
+    "titleZh": "🎙️ How I AI：Claude Duet 誠實評測 + Reddit 為何自建 AI 原型工具",
+    "takeaway": "評測Claude Duet與Reddit自建AI原型工具，說明開源與內部化AI開發的成本與創新考量。"
   },
   {
     "source": "Lenny's Newsletter",
     "group": "growth",
-    "title": "🧠 Community Wisdom: Negotiating a lowball offer, designers earning a seat in product decisions, resources for building an MCP server, and more",
-    "link": "https://www.lennysnewsletter.com/p/community-wisdom-negotiating-a-lowball",
-    "date": "2026-10-24",
-    "excerpt": "Community Wisdom 303",
-    "titleZh": "社群智慧：談判低報價、設計師參與產品決策、MCP 伺服器資源等",
-    "takeaway": "彙整多元職場議題與工具，為團隊協作與談判提供實務建議。"
+    "title": "Why Reddit built its own AI prototyping tool | Blair Metcalf",
+    "link": "https://www.lennysnewsletter.com/p/why-reddit-built-its-own-ai-prototyping",
+    "date": "2026-10-26",
+    "excerpt": "Watch now (30 mins) | 🎙️ Reddit’s principal UX engineer shows how a custom Figma MCP and Cursor pipeline takes any designer from blank slate to shareable, production-shaped prototype in minutes—no Git required",
+    "titleZh": "Reddit 為何自建 AI 原型工具 | Blair Metcalf",
+    "takeaway": "Reddit自建AI原型工具加速設計流程，展示平台在產品迭代速度上的競爭優勢。"
+  },
+  {
+    "source": "HubSpot Blog",
+    "group": "growth",
+    "title": "How to create Claude skills: What your team actually needs",
+    "link": "https://blog.hubspot.com/marketing/create-claude-skills",
+    "date": "2026-10-26",
+    "excerpt": "Claude skills help teams save repeatable workflows as instructions that apply automatically — without pasting a long prompt into every chat. A team writes the workflow once, and Claude applies the skill every time.",
+    "titleZh": "如何打造 Claude 技能：團隊真正需要什麼",
+    "takeaway": "介紹Claude技能的建立方式，協助團隊自動化重複性工作，提高生產力。"
   },
   {
     "source": "HubSpot Blog",
@@ -302,18 +312,8 @@ window.CD.market = [
     "link": "https://blog.hubspot.com/marketing/profound-vs-bluefish",
     "date": "2026-10-24",
     "excerpt": "Profound and Bluefish AI both help marketing teams measure how brands appear in AI-generated answers, including visibility, citations, and competitive presence. Profound and Bluefish AI differ in their approach to…",
-    "titleZh": "Profound vs. Bluefish AI：哪個工具更適合行銷人員？",
-    "takeaway": "比較兩款AI行銷工具的功能與效能，協助行銷團隊選擇最佳平台。"
-  },
-  {
-    "source": "HubSpot Blog",
-    "group": "growth",
-    "title": "How to identify content gaps for AI visibility",
-    "link": "https://blog.hubspot.com/marketing/ai-content-gaps",
-    "date": "2026-10-23",
-    "excerpt": "Learning how to identify content gaps for AI visibility starts with a question that traditional content gap analysis doesn’t always answer: where could a brand contribute something useful to an AI-generated answer, but…",
-    "titleZh": "如何辨識 AI 可見性的內容缺口",
-    "takeaway": "教導品牌發掘AI回答中未被覆蓋的主題，提升搜尋與曝光機會。"
+    "titleZh": "Profound vs. Bluefish AI 於 AEO 應用：哪個更適合行銷人員？",
+    "takeaway": "比較Profound與Bluefish AI在品牌可見度測量上的差異，為行銷決策提供工具選擇參考。"
   },
   {
     "source": "Shopify Blog",
@@ -322,8 +322,8 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBZcDI4a2NEQ0x3Mm9jRTZVakpZZzY5VW5kNWRYUnFrRG1LQ0YxdnNScFh6MzBlckloRWRXNkVQUExnd2pPNW1DeE1rMXBBMkRlTFBxNXpXMVYtRTNfNjZB?oc=5",
     "date": "2026-10-23",
     "excerpt": "",
-    "titleZh": "小企業補助金：40+ 免費資金選項（2026）",
-    "takeaway": "彙整各類補助資源，協助中小企業取得資金支持與成長。"
+    "titleZh": "小企業補助：40+ 免費資金選項（2026）",
+    "takeaway": "彙整2026年超過40項小企業補助資源，協助創業者快速找到可行的資金來源。"
   },
   {
     "source": "Shopify Blog",
@@ -332,8 +332,8 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5MREoxSnlhSlNkZ0Nua3BoTldWWEkteDA1U3ZxTlJWcGtrZFFEazE5SXJUcU9FNlBaSDMxZkVKMEdzVWVFOTl5WWxxRGNNT3pENmlETGlOTWx0QQ?oc=5",
     "date": "2026-10-23",
     "excerpt": "",
-    "titleZh": "最小最大庫存公式與設定方法（2026）",
-    "takeaway": "提供庫存管理的數學模型與實務操作指南，提升供應鏈效率。"
+    "titleZh": "最小最大庫存：公式與設定方法（2026）",
+    "takeaway": "提供最小最大庫存計算公式與設定方法，幫助企業優化庫存成本與供應鏈彈性。"
   },
   {
     "source": "Entrepreneur",
@@ -342,8 +342,8 @@ window.CD.market = [
     "link": "https://www.entrepreneur.com/building-a-business/she-bootstrapped-her-way-to-7-figures-heres-how-a-big-nordstrom-win-signaled-it-was-time-to-raise",
     "date": "2026-10-26",
     "excerpt": "After bootstrapping holiCHIC for years, and building it into a seven-figure business, the brand raised their first $1.5 million seed round in May 2026. Since then, sales are up 47%. Here are three questions Megha Rao…",
-    "titleZh": "她自助創業至七位數營收，Nordstrom 標誌暗示該募資時機",
-    "takeaway": "分享從自助成長到首次募資的案例，啟發創業者判斷資金需求的時機點。"
+    "titleZh": "她靠自助創業賺到七位數，Nordstrom 大幅贊助標誌成為她募資的轉捩點",
+    "takeaway": "從holiCHIC自助成長到首次募資案例，說明何時適合從自籌轉向外部資金。"
   },
   {
     "source": "Entrepreneur",
@@ -352,8 +352,8 @@ window.CD.market = [
     "link": "https://www.entrepreneur.com/building-a-business/your-teams-mistakes-may-start-with-you-ask-these-3-questions-before-assigning-blame",
     "date": "2026-10-25",
     "excerpt": "Most owners treat accountability as something that flows down the chart. Real accountability starts with the conditions the leader created.",
-    "titleZh": "團隊錯誤可能源自領導者，指派責任前先問這三個問題",
-    "takeaway": "提醒領導者檢視自身行為對團隊績效的影響，提升組織問責文化。"
+    "titleZh": "團隊錯誤可能源自領導，指派責任前先問這三個問題",
+    "takeaway": "提醒領導者檢視自身行為，避免將團隊錯誤歸咎於下屬，提升組織責任文化。"
   },
   {
     "source": "Entrepreneur",
@@ -362,27 +362,27 @@ window.CD.market = [
     "link": "https://www.entrepreneur.com/business-news/nvidia-vs-amd-vs-apple-heres-what-the-numbers-actually-say-about-which-ai-machine-is-right-for-you",
     "date": "2026-10-24",
     "excerpt": "Before you buy a local AI machine, know what you're actually optimizing for. Here's a breakdown of NVIDIA, AMD and Apple.",
-    "titleZh": "NVIDIA、AMD、Apple：AI 機器實測數據比較",
-    "takeaway": "以實測數據說明不同平台的AI效能，協助企業選擇最適合的硬體方案。"
+    "titleZh": "NVIDIA、AMD、Apple — 數據告訴你哪款 AI 機器最適合",
+    "takeaway": "比較NVIDIA、AMD與Apple的AI硬體規格與效能，協助企業選擇最適合的運算平台。"
   },
   {
     "source": "Small Business Trends",
     "group": "smb",
-    "title": "U.S. Refineries Hit Highest Utilization Rates Since 1998 Amid Global Demand",
-    "link": "https://smallbiztrends.com/u-s-refineries-hit-highest-utilization-rates-since-1998-amid-global-demand/",
+    "title": "Four Companies Report Major Time Savings with NetSuite AI",
+    "link": "https://smallbiztrends.com/four-companies-report-major-time-savings-with-netsuite-ai/",
     "date": "2026-10-26",
-    "excerpt": "Explore how U.S. refineries are achieving their highest utilization rates since 1998, driven by surging global demand for oil and petroleum products. Discover the implications for the energy market and what this means…",
-    "titleZh": "美國煉油廠利用率創1998年以來最高",
-    "takeaway": "說明煉油產能提升對全球能源供應與油價的潛在影響。"
+    "excerpt": "Four companies report major time and cost savings using NetSuite AI to automate workflows, streamline operations, and improve financial reporting.",
+    "titleZh": "四家公司報告使用 NetSuite AI 大幅節省時間",
+    "takeaway": "四家公司使用NetSuite AI實現顯著時間與成本節省，顯示企業ERP AI化的實務效益。"
   },
   {
     "source": "Small Business Trends",
     "group": "smb",
-    "title": "7 Essential Questions for Yearly Performance Reviews",
-    "link": "https://smallbiztrends.com/yearly-performance-review-questions/",
+    "title": "NetSuite Unveils AI Construction Tools to Cut Costs, Improve Cash Flow",
+    "link": "https://smallbiztrends.com/netsuite-unveils-ai-construction-tools-to-cut-costs-improve-cash-flow/",
     "date": "2026-10-26",
-    "excerpt": "Discover the 7 essential yearly performance review questions that can enhance employee feedback and drive growth. Improve your review process and foster a culture of continuous improvement with these key insights.",
-    "titleZh": "年度績效評估的七個關鍵問題",
-    "takeaway": "提供績效面談的核心問題，幫助企業建立持續改進的回饋機制。"
+    "excerpt": "Oracle NetSuite introduces AI-powered construction accounting tools to help contractors manage job costs, streamline billing, and improve cash flow.",
+    "titleZh": "NetSuite 推出 AI 建築工具，降低成本、改善現金流",
+    "takeaway": "NetSuite推出AI建築會計工具，協助承包商降低成本、加速現金流回收。"
   }
 ];
