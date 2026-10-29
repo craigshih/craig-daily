@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "dayType": "OPEN",
-  "headline": "Craig，今天先放空充電，明天全力衝刺企畫書初版！",
+  "headline": "Craig，今天全力衝刺企畫書初版，別忘了提案簡報！",
   "terrain": [
     0.15,
     0.15,
@@ -27,23 +27,23 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "悠閒喝杯咖啡，整理一下腦中想法，為明天的提案鋪路。"
+      "text": "先把第1–3節的核心框架寫好，列出關鍵數據，讓下午的簡報更有說服力。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "稍作運動或散步，讓思緒保持清新，避免久坐影響創意。"
+      "text": "完成第4–6節的細部內容，開始製作5–10分鐘的提案投影片，確保每張投影片只傳遞一個重點。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "輕鬆閱讀或看部短劇，讓大腦放鬆，為明天的早起做好準備。"
+      "text": "檢查整份企畫書的邏輯流暢度，練習簡報講稿，確保時間控制在5分鐘內。"
     }
   ],
   "needs": [
     {
-      "title": "完成企畫書初版",
-      "text": "依照 {src} 的指示，完成第1–6節初稿並準備5–10分鐘提案簡報。",
+      "title": "完成企畫書初版並製作提案簡報",
+      "text": "今天要完成企畫書第1–6節初版，並準備5–10分鐘的提案簡報，因為{src}是今天的關鍵交付。",
       "srcLabel": "實驗室行事曆",
-      "link": ""
+      "link": "https://docs.google.com/document/d/1KmdRwlXLtNWksY-M6ex8wUhtTQ4cpjPcPrUfl1TfVwk/edit"
     }
   ],
   "resolved": [],
@@ -52,22 +52,22 @@ window.CD.brief = {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "AI 疑慮仍未退燒，本週巨頭財報、央行會議接力登場！",
-          "text": "AI 疑慮仍未退燒，了解產業趨勢有助於提案時的市場分析。（{src}）",
+          "title": "【行情快報】聯準會暫停升息，宣布明年起減少利率決策場次！",
+          "text": "第3篇說明聯準會暫停升息，對宏觀環境的判斷很重要，能幫你在企畫書裡加入利率預期。（{src}）",
           "srcLabel": "MacroMicro 財經M平方",
-          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPUUZ0Q3FCNDMyMlJ6bjFac3Y5SHhNQWF5THpabXhaRFZONWdtckpGdnNqTUJvdHpoUlY3Q1NEZVJWcnRFZTdDcFhkVHhGNXI2clp2UHZKQTdlOWN4SWFBc210dklLVkJVRzc0eC1xSjdzUUhGc0NGcVFsSEZiLXlGY1Bka2RQV3ZwV09wM201X3hwSXpXZVBOMmFWX3daVHQ5bGVhbHhEUXdZUk0zYUt5SjNzUklTaGNtMFo0WkVlNERZaGs2TXBsSVFKeGliR2hfMTJtd05EM0R4OHRMWDhVVlpYNUJWckZCeUlj?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxNNUxUa1NKQ1ZXS3BLbWR0ZExHU2NMTkpmMjFzdmJsMmhKOHZZdldJby1GX19LeEgydHZZU19Xb1hVRkFVcDZfMHdha0huVzlsVW92eGlUMW1FbXk3WVNLVUF1MDNiX1pqTkhpRkVjOU9Wc19mRTZQUmllRFdkSE9jcGhoTzFGZ1BMeUpGR3k5NE9ydFIwZUJvald1RWtqRkM4WUt2emVwSEM3b2NDRWU5VEd1b21HVkVqRy1GWVFnTEc4SElraE8zQlFPd2VPajdXRmx4ZGVkdHhMYy11SXNMdEIyOE5JZjZ5eEREeFpkRW5HcTRjbzYzQm92U2ItbHE2X1hKQV9vaThwS0w5TUZrczZ5empwZ0h3eFBodERZVVM?oc=5"
         },
         {
-          "title": "打造贏家組織",
-          "text": "打造贏家組織，提供組織管理與領導力的實務觀點，可應用於企畫書的執行策略。（{src}）",
+          "title": "要讓新策略落實，主管需共享情感投資",
+          "text": "第9篇探討主管共享情感投資，提供領導與團隊合作的觀點，可提升提案說服力。（{src}）",
           "srcLabel": "Harvard Business Review",
-          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9zanlIUnRRY2xza3VOTS0zRm5Xcl9PQmpzWWItZUpKYThUSk1XRjlFS0NkdjVYVl9VSTlHU2R3ZzlWLWdkaTNOcUNRWXBac25XTThoWG5RYVA5cFNKcDdwMzFad2hUUQ?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQMENZNUJ3N3FxclRsR2VJRzV3SGZVUy1jUk9LeHpQalFCR3lCTmhqYmk5OFh3NmFqWVUxaTc4UUlKc2JCWTBYdDJMMFJpendxSGJhTVRiRC14RW93YTY2cS14TlVIel9TWFQ0UWlIM1psQWZjaE1nWnNNdmgwSXJiVEt1U2xEY0hCYzlpazNtZ0w2NUZxWDQ0bHdabDA?oc=5"
         },
         {
-          "title": "Google 的 AI 晶片業務讓 Nvidia 難以忽視",
-          "text": "Google 的 AI 晶片業務讓 Nvidia 難以忽視，掌握最新 AI 硬體動向，提升提案的技術說服力。（{src}）",
-          "srcLabel": "Business Insider",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQRnlfNWZHWG1qTGlIS3RYdFpDRXAySTlOeTRrakdlTm1iT2twOU9BcTJCSzE5YjA1c1EwRzBsQ1UtSjBDN2xndHBvT3hHWmgyb1c4SEVDdXJHV21XdHdNdmZheV9jcFNpdElidGJDWndjak5jMVhlV2NoY1NSY1VaVER1OHd5ekFJVHNYcVpRU1VTZWFpMkxTWnpIaHQwQUlkU3hsQ0JnYjg4QQ?oc=5"
+          "title": "微軟AI未來將減少工作機會",
+          "text": "第21篇分析微軟AI對工作機會的影響，讓你在報告中加入未來技術趨勢的洞見。（{src}）",
+          "srcLabel": "The Verge",
+          "link": "https://www.theverge.com/tech/1022023/microsoft-exit-offer-layoffs-notepad"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -79,5 +79,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "00:30"
+  "updated": "00:50"
 };

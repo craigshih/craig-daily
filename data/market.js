@@ -1,8 +1,8 @@
 // 每日市場洞察：由 scripts/fetch_market.py 自動產生（每天台灣時間 08:30，中午、傍晚各再抓一次），請不要手動改
 window.CD = window.CD || {};
-window.CD.marketUpdated = "2026-10-29 18:45";
+window.CD.marketUpdated = "2026-10-30 00:50";
 window.CD.marketGroups = [{"id": "tw", "name": "財經・台股美股"}, {"id": "strategy", "name": "商業與戰略"}, {"id": "tech", "name": "科技・新創・創投"}, {"id": "growth", "name": "行銷・產品・增長"}, {"id": "smb", "name": "創業與中小企業"}];
-window.CD.marketSummary = {"text": "今日焦點聚於 AI 於企業與法律層面的滲透、雲端服務競爭格局以及美聯儲暫停升息的宏觀衝擊。AI 代理人與司法應用引發治理與效率討論；微軟公開 Azure 美元營收顯示雲端市場競爭加劇；聯準會暫緩加息則可能緩解資金成本，影響投資與供應鏈決策。", "watch": ["AI 代理人與司法決策的法律與倫理界線", "雲端服務營收透明化對市場競爭的影響", "美聯儲利率政策變動對企業融資成本"]};
+window.CD.marketSummary = {"text": "今日焦點聚於美聯儲暫停升息、AI 產業持續升溫與供應鏈創新。美聯儲宣布明年減少利率決策場次，暗示貨幣政策寬鬆趨勢；AI 相關投資與應用從建築模型到金融平台持續擴散，企業需關注技術落地與競爭格局；同時，清潔能源與再循環技術在中國創新出口，顯示供應鏈綠色轉型的商機。", "watch": ["美聯儲利率政策變動對企業融資成本的長期影響", "AI 模型在建築與軟體驗證領域的商業化進度", "清潔能源與再生聚酯的全球供應鏈布局"]};
 window.CD.marketStatus = [{"source": "市場先生", "ok": true, "count": 3}, {"source": "MacroMicro 財經M平方", "ok": true, "count": 2}, {"source": "大叔美股筆記", "ok": true, "count": 3}, {"source": "Harvard Business Review", "ok": true, "count": 3}, {"source": "Business Insider", "ok": true, "count": 3}, {"source": "Fast Company", "ok": true, "count": 3}, {"source": "TechCrunch", "ok": true, "count": 3}, {"source": "The Verge", "ok": true, "count": 2}, {"source": "Wired", "ok": true, "count": 2}, {"source": "Springwise", "ok": true, "count": 2}, {"source": "Lenny's Newsletter", "ok": true, "count": 2}, {"source": "Brian Balfour（Reforge）", "ok": true, "count": 0}, {"source": "HubSpot Blog", "ok": true, "count": 2}, {"source": "Shopify Blog", "ok": true, "count": 2}, {"source": "Entrepreneur", "ok": true, "count": 3}, {"source": "Small Business Trends", "ok": true, "count": 2}];
 window.CD.market = [
   {
@@ -12,8 +12,8 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9UdWZzTWFfUFhxSGdENWNxT0FBQ2NkcnNPUHdfWWRGRXV4cFM2OWdZS29kZVlpVWJlbXFOLUl1ZFY5Z0p1eHBIUHpJa0JfTUhNa2IyRHdsQnJIZw?oc=5",
     "date": "2026-10-28",
     "excerpt": "",
-    "titleZh": "地價稅信用卡推薦‑行動支付優惠比較／銀行0利率分期整理",
-    "takeaway": "比較不同信用卡與分期方案，協助企業與個人降低資金成本。"
+    "titleZh": "地價稅信用卡推薦-行動支付優惠比較/銀行0利率分期整理",
+    "takeaway": "提供最新行動支付與分期優惠資訊，協助企業與個人優化資金流動與稅務規劃。"
   },
   {
     "source": "市場先生",
@@ -22,8 +22,8 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9yLVRmNHZpOU4xVER4R0M1ZFJ5ekdZUTdOMUk4RnB4VzhfWXdpRFBqWkM5NHRyMUJhUktOS1VYa2FSRFBDRXRCejFMS2NGY0lzNEE?oc=5",
     "date": "2026-10-27",
     "excerpt": "",
-    "titleZh": "日本為何愛存錢，而不是持有資產？從日本與台灣的理財觀念差異，反思自己的投資習慣",
-    "takeaway": "探討日本儲蓄文化，提醒投資人檢視資產配置與風險承受度。"
+    "titleZh": "日本為何愛存錢，而不是持有資產？從日本與台灣的理財觀念差異，反思自已的投資習慣",
+    "takeaway": "比較日台理財心態，提醒投資人檢視過度保守的資產配置，提升風險分散與收益。"
   },
   {
     "source": "市場先生",
@@ -32,8 +32,8 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE45OU0yV0dsU1E0ZVIwc1BRenZieVFXN3VpYW5uUjh4ellwTEJPd1JpZWcwSGZ3dDBiY2dLanpBcGxMUEFEaXZFcWl0ZnNEQQ?oc=5",
     "date": "2026-10-26",
     "excerpt": "",
-    "titleZh": "I500值得投資嗎？市場先生完整評價I500／iShares標普500 UCITS ETF（累積型）",
-    "takeaway": "提供標普500 ETF 評估，協助投資決策與資產配置。"
+    "titleZh": "I500值得投資嗎？市場先生完整評價I500 / iShares標普500 UCITS ETF (累積型)",
+    "takeaway": "解析I500 ETF 表現與成本，協助投資者判斷是否納入投資組合以捕捉美股成長。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -43,7 +43,7 @@ window.CD.market = [
     "date": "2026-10-29",
     "excerpt": "",
     "titleZh": "【行情快報】聯準會暫停升息，宣布明年起減少利率決策場次！",
-    "takeaway": "美聯儲政策轉向，預示資金成本可能下降，影響企業融資與消費。"
+    "takeaway": "美聯儲暫停升息並減少決策次數，預示利率環境將趨於穩定，企業可重新評估資金成本與投資時機。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -53,7 +53,7 @@ window.CD.market = [
     "date": "2026-10-25",
     "excerpt": "",
     "titleZh": "【MM一週盤前】AI 疑慮仍未退燒，本週巨頭財報、央行會議接力登場！",
-    "takeaway": "AI 風險持續受關注，結合財報與央行動向，提示投資者風險管理。"
+    "takeaway": "AI 風險仍受關注，結合即將公布的財報與央行政策，投資者需同時評估技術與宏觀風險。"
   },
   {
     "source": "大叔美股筆記",
@@ -63,7 +63,7 @@ window.CD.market = [
     "date": "2026-10-29",
     "excerpt": "",
     "titleZh": "每日重點 261029 早上 Substack 大叔留言重點",
-    "takeaway": "彙整美股市場要點，提供投資人快速資訊。"
+    "takeaway": "彙整美股市場當日關鍵訊息，提供投資決策的快速參考。"
   },
   {
     "source": "大叔美股筆記",
@@ -73,7 +73,7 @@ window.CD.market = [
     "date": "2026-10-29",
     "excerpt": "",
     "titleZh": "每日重點 261028 Substack 大叔留言重點",
-    "takeaway": "每日美股觀察，協助決策者掌握市場脈動。"
+    "takeaway": "每日美股要點回顧，協助讀者捕捉短線交易機會。"
   },
   {
     "source": "大叔美股筆記",
@@ -83,7 +83,27 @@ window.CD.market = [
     "date": "2026-10-28",
     "excerpt": "",
     "titleZh": "每日重點 261027 Substack 大叔留言重點",
-    "takeaway": "持續追蹤美股動態，為投資策略提供參考。"
+    "takeaway": "提供前一天的市場觀察與投資建議，幫助讀者調整持倉策略。"
+  },
+  {
+    "source": "Harvard Business Review",
+    "group": "strategy",
+    "title": "The 10 Most Popular HBR Articles of October 2026",
+    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9WbG1JOEdZX3dRMEIzbGVhOXJOZWpBbDJBMWFpdUNkSFh5V0NDRkVoTzBWSVVNUVJhcDIxd3d6R0phYlg5d2U4ZEdKYjlfSlJpd19XWkFFMmFndkxvUndmR0c1UDJqVWdCdnNBQm5QajhHcUI4VjBZUmhJbW0?oc=5",
+    "date": "2026-10-29",
+    "excerpt": "",
+    "titleZh": "2026年10月最受歡迎的10篇HBR文章",
+    "takeaway": "列出本月最熱的管理與策略洞見，供領導者快速掌握最新思潮。"
+  },
+  {
+    "source": "Harvard Business Review",
+    "group": "strategy",
+    "title": "To Make a New Strategy Stick, Executives Need Shared Emotional Investment",
+    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQMENZNUJ3N3FxclRsR2VJRzV3SGZVUy1jUk9LeHpQalFCR3lCTmhqYmk5OFh3NmFqWVUxaTc4UUlKc2JCWTBYdDJMMFJpendxSGJhTVRiRC14RW93YTY2cS14TlVIel9TWFQ0UWlIM1psQWZjaE1nWnNNdmgwSXJiVEt1U2xEY0hCYzlpazNtZ0w2NUZxWDQ0bHdabDA?oc=5",
+    "date": "2026-10-29",
+    "excerpt": "",
+    "titleZh": "要讓新策略落實，主管需共享情感投資",
+    "takeaway": "強調情感共鳴在策略執行中的重要性，提醒領導者打造內部認同以提升執行力。"
   },
   {
     "source": "Harvard Business Review",
@@ -92,28 +112,18 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9sNVRsNkpta2RkTGVXMzJhajM1dEVDV1BZZ0dTMmlCM2pyWC1mLU8zNVBhTjktUk5BbWxsWDN2cFJYQVVJQnk4eDd2ZkpsQTdEZmdxMlJsVnhGNVF4X2dMbXVjWThGaVQzT2hMZ01xYmtERU1mWlNDZ0RUX1Z2WVU?oc=5",
     "date": "2026-10-29",
     "excerpt": "",
-    "titleZh": "Robinhood CEO 談 IPO 後的企業重塑",
-    "takeaway": "說明平台在上市後如何重新定位與增長。"
+    "titleZh": "Robinhood CEO談IPO後的重塑業務",
+    "takeaway": "CEO分享平台在上市後的轉型方向，對金融科技公司如何在監管與成長間平衡提供參考。"
   },
   {
-    "source": "Harvard Business Review",
+    "source": "Business Insider",
     "group": "strategy",
-    "title": "Empower Your Most Curious Employees to Drive Your Digital Transformation",
-    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbnlBcldhMDVuZmlVUkloVTNxYkRybzFmWGVneFN1RWNNakxVWFJIUm1rMjJtVTQ0N0dNM09QUVBRME84U0Q2RXBDZXNLV3RrYjBUXzFVSzBKVlJTa0VlZXM5NFRWck1reElHR3NCSld2RFNYQXVvRlRKc3U2QkZYSFEyZFU3OFFuVV9xM2VENlYyVHV2cFF6V0ZsMUs?oc=5",
+    "title": "We live on a 'family compound' with my parents and siblings. These 7 things have surprised me most about the arrangement.",
+    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSVFwWHl4a1VSeFhNZGxlS3lXU3p1Z1RzSzhfWWJaMkE3bTVnck80VDRRUndQTzhhZGVGc3FmSTlGNmhXQUczVTc0anFzbENIdDBaamIxbENGZzlLdExJNDR4NmRWS0JzUnlLSFBlQ2tlYTcwdm4wT3FyOFBOV1lDZXNxYTVGSUthTzlsdkhKbFBXRGZoNFB1Tmd6ekd4ZzB4cHZmVDJaaWNRNUVLRGpZSjJR?oc=5",
     "date": "2026-10-29",
     "excerpt": "",
-    "titleZh": "激發最具好奇心員工，推動數位轉型",
-    "takeaway": "鼓勵員工探索創新，提升企業數位化速度。"
-  },
-  {
-    "source": "Harvard Business Review",
-    "group": "strategy",
-    "title": "Building a Winning Organization",
-    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9zanlIUnRRY2xza3VOTS0zRm5Xcl9PQmpzWWItZUpKYThUSk1XRjlFS0NkdjVYVl9VSTlHU2R3ZzlWLWdkaTNOcUNRWXBac25XTThoWG5RYVA5cFNKcDdwMzFad2hUUQ?oc=5",
-    "date": "2026-10-28",
-    "excerpt": "",
-    "titleZh": "打造贏家組織",
-    "takeaway": "提供組織設計與領導力要點，助企業建立競爭優勢。"
+    "titleZh": "與父母同住的家庭式住宅：7件讓我驚訝的事",
+    "takeaway": "探討多代同堂的生活模式，對住宅市場與共享經濟的需求提供新視角。"
   },
   {
     "source": "Business Insider",
@@ -122,128 +132,118 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNTmdVZ1ItUkJxSWJaMDI5ZmExSUMxdzBSSldoRWpYMGNYb1BjZndXdC1jMDlVcnZ6UzMzd0hRMjZPeEN6SnJqVUotZGtjSk5kZlhUd3pHN2tITUFRUXdYOTVaaFI2SHBTNU5CeEE5THo3UDNneGdXVzZNQnBZaktZbGVkY3k0TFhXVjFWQkpkTlMzSWt5MFFLaVUydkN0YzQtLWc?oc=5",
     "date": "2026-10-29",
     "excerpt": "",
-    "titleZh": "永無止境的郵輪創辦人自述：我是故事中的反派，但我盡全力",
-    "takeaway": "揭示創業失敗與危機管理的實務教訓。"
+    "titleZh": "永無止境的郵輪創辦人自白：我是故事中的反派，但我全力以赴",
+    "takeaway": "創業者面對失敗與公眾形象的挑戰，提醒企業在危機公關與品牌重塑上的重要性。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "Meet Ahmed Mohamed Yusuf, the camel herder’s son who built a telecom giant serving 4 million Somalis, with 11 data centres and a growing 5G network",
-    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQU2N5RUw0ODhleDBvbzYyLVJzb2I0WnJJYU9DcXpHZTRVTDg4ZEwyaXFReTZxMUJBTllYQXZRc0RhcUllbG4ycjdKNXpHd1BqX0h5dnhRQ3ltUk5BUElGOUhOZVNDOEtLNGRfVkhoV2FUVUNPWDZ5WTZMSXFna2lMVV83ekFhV2owenVwb1pmTWxpZTZkQlhfay1iOWxQSFRJMG1qdWYzdk5QeGtBX1NtLVNNUFpYdHpaT185b1NlYWVWSzllZm9DemVsYkFLbGcxbEI2M2J3?oc=5",
+    "title": "U.S., UK, Canada and EU turn up pressure on North Korea to surrender nuclear arms; 2 African nations have also condemned Pyongyang",
+    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQNnU3dF9MVjFVZmxsQURsX08yOWw4VW9UYWFuelNpOW5mYkhZV2F4SWd3MVhxTXJPenNTVEZNQ25pRU9pODZ1dExSYzIzMV9OODI5V0NzTENtS2NUaEFPMHNuMnNuWVVsSERhUkVIbHU3bnZGdFJwbEx1NGM0Q1pkSXEtVDBwYnNFTjRsV2JidmVUcFdiN2hHaEljUWNyUHg1UVdOa3lVQklwMVpkSWI2SzJ1U1lEY0YwcTFGU3ZhTzB1MDEtRkt6aWY3eERwREJ4SHl5eFZB?oc=5",
     "date": "2026-10-29",
     "excerpt": "",
-    "titleZh": "認識阿曼·穆罕默德·尤素夫：從駱駝牧民之子到索馬里電信巨頭",
-    "takeaway": "說明在資源匱乏環境下打造大型電信基礎建設的路徑。"
-  },
-  {
-    "source": "Business Insider",
-    "group": "strategy",
-    "title": "Google has a plan to keep ads alive even when AI agents do the shopping",
-    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPdVQzYlI1V1RhN2UwS1hadVViWEJuTWd3TzBET0lLRHo3LTlHdWJ3TkxaZ1NBTDFmdkVDcFlpM1NRcjB0LUhDeHIydnF6MnlPVjdmZnNBZ3VkbHRqZFNIQjVZUHJsVTBvNjhfNlcxOS02bjZTdWhWX0VSU3pPTm5hQ2lzUktvSUt2bWgySzBBNHBVYU44UkF6V3NWbUhWQ0hmcVE?oc=5",
-    "date": "2026-10-29",
-    "excerpt": "",
-    "titleZh": "Google 讓廣告在 AI 代理人購物時仍能存活的計畫",
-    "takeaway": "探討 AI 代理人對廣告生態的衝擊與新商業模式。"
+    "titleZh": "美、英、加、歐對北韓核武施壓；2個非洲國家亦譴責",
+    "takeaway": "國際政治緊張升溫，可能影響能源與原物料供應鏈的地緣風險。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "Most companies are planning their workforce backward. Here’s a better way",
-    "link": "https://www.fastcompany.com/91628818/most-companies-are-planning-their-workforce-backward-heres-a-better-way",
-    "date": "2026-10-29",
-    "excerpt": "Every leadership team is wrestling with the same questions right now. How will AI impact our organization, and what type of workforce will we need in the future? These aren’t easy questions to answer. Only 19% of…",
-    "titleZh": "大多數公司倒推規劃人力，這裡有更好方法",
-    "takeaway": "提出以未來 AI 影響為基礎的人力規劃框架。"
+    "title": "Anthropic’s IPO is selling investors a story. The numbers tell another one",
+    "link": "https://www.fastcompany.com/91631570/anthropics-ipo-is-selling-investors-a-story-the-numbers-tell-another-one",
+    "date": "2026-10-30",
+    "excerpt": "Welcome to AI Decoded, Fast Company’s weekly newsletter that breaks down the most important news in the world of AI . I’m Mark Sullivan, a senior writer at Fast Company, covering emerging tech, AI, and tech policy. Sign…",
+    "titleZh": "Anthropic IPO的敘事與實際數字不符",
+    "takeaway": "揭露AI IPO背後的財務真相，提醒投資者審慎評估AI公司估值。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "Europe has a weapon to wield against Chinese carmakers: its design history",
-    "link": "https://www.fastcompany.com/91629033/europe-has-a-weapon-to-wield-against-chinese-carmakers-its-design-history",
-    "date": "2026-10-29",
-    "excerpt": "Walk around any city today and try to tell the cars apart. Go ahead, just try. They’re all smooth, rounded, anonymous blobs, shaped by the same wind tunnels and the same cost spreadsheets. But something is happening in…",
-    "titleZh": "歐洲以設計歷史抗衡中國車廠：設計成為武器",
-    "takeaway": "強調設計差異化在汽車產業的競爭優勢。"
+    "title": "China’s record-breaking clean tech exports offer signs of hope in the fight against emissions",
+    "link": "https://www.fastcompany.com/91632218/chinas-record-breaking-clean-tech-exports-offer-signs-hope-fight-against-emissions",
+    "date": "2026-10-30",
+    "excerpt": "China is exporting a record amount of clean energy technology and equipment as the energy crisis from the Iran war drives surging demand for renewables , and that will help reduce global emissions , according to a…",
+    "titleZh": "中國清潔能源技術出口創紀錄，助全球減排",
+    "takeaway": "中國清潔科技出口激增，為全球供應鏈帶來綠色商機與競爭。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "Our world runs on satellites. What happens when we can’t launch more?",
-    "link": "https://www.fastcompany.com/91620887/the-global-economy-relies-on-satellites-with-falcon-9-no-longer-taking-reservations-can-launches-keep-up-aerospace-spacex-technology",
+    "title": "Want to reach Gen Z? Don’t spend a dollar until you ask this",
+    "link": "https://www.fastcompany.com/91632364/want-to-reach-gen-z-dont-spend-a-dollar-until-you-ask-this",
     "date": "2026-10-29",
-    "excerpt": "“Like riding a broomstick in a hurricane.” This is reportedly how one SpaceX engineer described the intense atmospheric reentry of the first Falcon 9 rocket to go to space and then successfully land back here. That…",
-    "titleZh": "全球依賴衛星，若無法再發射會怎樣？",
-    "takeaway": "警示太空發射瓶頸對通訊與服務的長期影響。"
+    "excerpt": "Ziad Ahmed started his first nonprofit in eighth grade, focused on social equality and acceptance. After seeing how often young people were talked about rather than talked to, he founded Juve Consulting, a Gen Z agency…",
+    "titleZh": "想打動Z世代？先問他們的需求再花錢",
+    "takeaway": "以Z世代需求為出發點設計行銷，提升品牌在年輕族群的接受度。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "Upwind raises $400M after walking away from Datadog acquisition offer",
-    "link": "https://techcrunch.com/2026/10/28/upwind-raises-400m-after-walking-away-from-datadog-acquisition-offer/",
-    "date": "2026-10-29",
-    "excerpt": "The cloud security startup raised a Series C at a $3.8B valuation, instead of selling itself for the same price.",
-    "titleZh": "Upwind 退出 Datadog 收購提案，募資 4 億美元估值 38 億美元",
-    "takeaway": "說明雲端安全新創選擇獨立成長的策略意義。"
+    "title": "U.S. investigated Chinese spy plot aimed at Nvidia CEO",
+    "link": "https://techcrunch.com/2026/10/29/u-s-investigated-chinese-spy-plot-aimed-at-nvidia-ceo/",
+    "date": "2026-10-30",
+    "excerpt": "A top executive of a Singapore AI cloud company that was accused of illegally selling Nvidia chips to China could also have been a Chinese spy, sources have told the New York Times.",
+    "titleZh": "美國調查中國間諜針對Nvidia CEO的陰謀",
+    "takeaway": "高階科技領導人面臨間諜威脅，凸顯資訊安全與國際政治對企業治理的影響。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "Apple’s touchscreen MacBook Pro pushes laptop pricing to a new extreme",
-    "link": "https://techcrunch.com/2026/10/28/apples-touchscreen-macbook-pro-pushes-laptop-pricing-to-a-new-extreme/",
-    "date": "2026-10-29",
-    "excerpt": "Prepare to cough up around $14,549 if you want the new touchscreen MacBook Pro to have every upgrade.",
-    "titleZh": "Apple 觸控式 MacBook Pro 推高筆記型電腦價格至新高",
-    "takeaway": "高階硬體創新提升利潤，同時挑戰市場接受度。"
+    "title": "Ex-Palantir execs launch Dream with $17M from a16z to build AI world models for construction",
+    "link": "https://techcrunch.com/2026/10/29/ex-palantir-execs-launch-dream-with-17m-from-a16z-to-build-ai-world-models-for-construction/",
+    "date": "2026-10-30",
+    "excerpt": "rained on 100 million square feet of building permits, dream wants to disrupt Autodesk with AI.",
+    "titleZh": "前Palantir高管創Dream獲a16z 1700萬美元投資，打造建築AI世界模型",
+    "takeaway": "AI模型應用於建築許可與設計，可能顛覆傳統CAD與Autodesk市場。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "Microsoft just shared Azure’s actual revenue in dollars: $33.2 billion",
-    "link": "https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion/",
-    "date": "2026-10-29",
-    "excerpt": "Microsoft has never disclosed Azure's quarterly revenue in dollars. But for the first time, we can see just how close it is getting to besting the biggest competitor in the market, AWS.",
-    "titleZh": "Microsoft 首次以美元公布 Azure 營收 332 億美元",
-    "takeaway": "顯示 Azure 營收逼近 AWS，雲端市場競爭加劇。"
+    "title": "SuperMe raises $20M for its network of AI expert profiles",
+    "link": "https://techcrunch.com/2026/10/29/superme-raises-20m-for-its-network-of-ai-expert-profiles/",
+    "date": "2026-10-30",
+    "excerpt": "SuperMe is a network of AI profiles built from the knowledge of real-life experts. When you ask a question, the platform determines which experts are best suited to answer and creates a group chat with their AI profiles.",
+    "titleZh": "SuperMe籌集2000萬美元打造AI專家網路",
+    "takeaway": "結合真人專家與AI，提供即時諮詢平台，對顧問服務與知識付費產業具衝擊。"
   },
   {
     "source": "The Verge",
     "group": "tech",
-    "title": "AI has come for Arizona’s water",
-    "link": "https://www.theverge.com/cs/features/1016650/arizona-water-data-center-tsmc",
-    "date": "2026-10-29",
-    "excerpt": "A hulking gray giant rises from the desert. Inside, engineers create the force behind our phones and computers and appliances, our streaming services and search engines and chatbots and vibe-coded apps and websites. The…",
-    "titleZh": "AI 侵入亞利桑那州水資源管理",
-    "takeaway": "AI 應用於公共基礎設施，顯示跨領域創新潛力。"
+    "title": "Joshua Kushner’s Thrive Holdings is acquiring ADT for $7.6 billion",
+    "link": "https://www.theverge.com/tech/1022295/joshua-kushner-thrive-holdings-adt-acquisition",
+    "date": "2026-10-30",
+    "excerpt": "The Joshua Kushner-led Thrive Holdings is acquiring ADT in an all-cash deal valued at $7.6 billion. The deal is expected to close in the first quarter of 2027 and will take ADT private, as reported earlier by Bloomberg.…",
+    "titleZh": "Joshua Kushner的Thrive Holdings以76億美元收購ADT",
+    "takeaway": "大型併購將安防與智慧家居整合，預示物聯網服務的集中化趨勢。"
   },
   {
     "source": "The Verge",
     "group": "tech",
-    "title": "Anduril now says its BlueChip laptop will meet Buy American standards at launch",
-    "link": "https://www.theverge.com/policy/1021554/anduril-bluechip-65-percent-domestic-buy-american",
-    "date": "2026-10-29",
-    "excerpt": "On Tuesday, defense contractor Anduril and chipmaker Qualcomm announced a partnership to build laptops entirely in the United States, starting with a single model in 2027. They also announced a \"long-term goal\" of…",
-    "titleZh": "Anduril 與 Qualcomm 合作，2027 年推出符合美國採購標準的 BlueChip 筆電",
-    "takeaway": "國產高科技硬體供應鏈布局，回應政策與安全需求。"
+    "title": "Microsoft’s AI future has fewer jobs",
+    "link": "https://www.theverge.com/tech/1022023/microsoft-exit-offer-layoffs-notepad",
+    "date": "2026-10-30",
+    "excerpt": "To anyone listening closely to what Microsoft CEO Satya Nadella has been saying over the past couple of years, this week felt like the clearest sign yet that AI is about to fundamentally change the size of Microsoft's…",
+    "titleZh": "微軟AI未來將減少工作機會",
+    "takeaway": "微軟高層暗示AI將裁減職位，企業需規劃人才再培訓與組織轉型。"
   },
   {
     "source": "Wired",
     "group": "tech",
-    "title": "I Put a Bunch of AI Agents in Charge of a Fantasy Soccer Team. They’re Not Better Than Humans—Yet",
-    "link": "https://www.wired.com/story/i-put-ai-agents-in-charge-of-a-fantasy-team/",
+    "title": "The ‘Pain in the Ass’ Math That Could Save Vibe Coding From Itself",
+    "link": "https://www.wired.com/story/software-verification-is-the-hot-new-answer-to-the-ai-safety-crisis/",
     "date": "2026-10-29",
-    "excerpt": "To experiment with AI’s predictive skills, I let Codex loose on a fantasy team. It tried to bench Erling Haaland at first, but it soon learned the error of its ways.",
-    "titleZh": "我讓多個 AI 代理人管理幻想足球隊，結果還不如人類",
-    "takeaway": "AI 在預測與決策上仍有局限，提醒企業慎用。"
+    "excerpt": "A new startup called &Truth is joining the race to automate formal verification, a painstaking process that uses math to prove software works as intended.",
+    "titleZh": "‘痛苦的數學’或拯救Vibe Coding的自動驗證",
+    "takeaway": "自動化形式驗證技術可降低軟體錯誤，對開發流程與品質保證有重大效益。"
   },
   {
     "source": "Wired",
     "group": "tech",
-    "title": "Should AI Decide Your Court Case? This Judge Says Yes",
-    "link": "https://www.wired.com/story/geoffrey-vos-uk-judge-ai-legal-profession-challenges/",
-    "date": "2026-10-28",
-    "excerpt": "One of England’s top judges, Geoffrey Vos, believes that AI could adjudicate plenty of civil cases. The question, he says, is where the line should be drawn.",
-    "titleZh": "AI 應否裁決法院案件？英國法官認為可以",
-    "takeaway": "探討司法 AI 應用的合法性與倫理挑戰。"
+    "title": "Mistral Says Its AI Model ‘Le Chonk’ Has Leapfrogged China in the Open-Weight Race",
+    "link": "https://www.wired.com/story/mistral-says-le-chonk-surpasses-chinese-models-cybersecurity/",
+    "date": "2026-10-29",
+    "excerpt": "The French AI lab claims its latest release matches or outperforms even the best models from DeepSeek and Z.ai in coding and cybersecurity.",
+    "titleZh": "Mistral稱其AI模型‘Le Chonk’在開放權重比賽中超越中國",
+    "takeaway": "法國AI模型在編碼與資安領域表現突出，提升歐洲在AI競爭中的話語權。"
   },
   {
     "source": "Springwise",
@@ -253,7 +253,7 @@ window.CD.market = [
     "date": "2026-10-29",
     "excerpt": "",
     "titleZh": "創新生物技術提升土壤表現",
-    "takeaway": "新型生物肥料可增產並降低環境負擔。"
+    "takeaway": "新型生物製劑改善土壤健康，為農業供應鏈帶來產量與永續雙贏。"
   },
   {
     "source": "Springwise",
@@ -263,7 +263,7 @@ window.CD.market = [
     "date": "2026-10-29",
     "excerpt": "",
     "titleZh": "重新染色聚酯以提升回收效率",
-    "takeaway": "改良聚酯回收技術降低資源浪費，助永續供應鏈。"
+    "takeaway": "改良聚酯回收工藝降低成本，推動紡織產業循環經濟。"
   },
   {
     "source": "Lenny's Newsletter",
@@ -272,8 +272,8 @@ window.CD.market = [
     "link": "https://www.lennysnewsletter.com/p/grok-vs-dot-vs-muse-vs-claude-duet",
     "date": "2026-10-28",
     "excerpt": "Listen now | 🎙️ I ranked Grok Bot, Dot, Muse, and Claude Duet across 9 real tasks—and the scores told me which agent runs my work and which runs my life",
-    "titleZh": "Grok、Dot、Muse、Claude Duet 比較：誰最強？",
-    "takeaway": "評估多款 AI 助手在工作任務上的表現，指導工具選型。"
+    "titleZh": "Grok、Dot、Muse、Claude Duet比拼：誰最強？",
+    "takeaway": "多款AI助手性能比較，協助企業選擇最適合的自動化工具。"
   },
   {
     "source": "Lenny's Newsletter",
@@ -282,8 +282,18 @@ window.CD.market = [
     "link": "https://www.lennysnewsletter.com/p/how-i-ai-claude-duet-honest-review",
     "date": "2026-10-26",
     "excerpt": "Your weekly listens from How I AI, part of the Lenny’s Podcast Network",
-    "titleZh": "Claude Duet 誠實評測 + Reddit 自建 AI 原型工具分享",
-    "takeaway": "提供 AI 模型實測與開源工具資訊，助企業技術選擇。"
+    "titleZh": "Claude Duet誠實評測與Reddit自建AI工具分享",
+    "takeaway": "深入評測Claude Duet，提供企業在AI選型與內部工具開發的參考。"
+  },
+  {
+    "source": "HubSpot Blog",
+    "group": "growth",
+    "title": "ChatGPT Ads vs. Google Search ads: 5 differences to consider in your strategy",
+    "link": "https://blog.hubspot.com/marketing/chatgpt-ads-vs-google-search-ads",
+    "date": "2026-10-29",
+    "excerpt": "It’s hard to believe anything could rival Google’s impact on our digital lives and habits, but ChatGPT is on its tail — especially now that it shows ads. For many marketers and businesses, this means debating ChatGPT…",
+    "titleZh": "ChatGPT廣告與Google搜尋廣告的5大差異",
+    "takeaway": "比較兩大平台的廣告策略，幫助行銷人調整預算與投放方式。"
   },
   {
     "source": "HubSpot Blog",
@@ -292,28 +302,8 @@ window.CD.market = [
     "link": "https://blog.hubspot.com/marketing/claude-marketing-plugin",
     "date": "2026-10-29",
     "excerpt": "Claude marketing plugins extend Claude into workflows for content creation, campaign planning, brand management, reporting, and publishing. The best options connect Claude with the tools and business data marketers…",
-    "titleZh": "Claude 行銷插件 2026 年值得加入你的技術堆疊",
-    "takeaway": "介紹 AI 行銷插件提升內容與活動效率的應用。"
-  },
-  {
-    "source": "HubSpot Blog",
-    "group": "growth",
-    "title": "How often to run AEO prompt tracking: A cadence guide",
-    "link": "https://blog.hubspot.com/marketing/how-often-to-run-prompt-tracking",
-    "date": "2026-10-28",
-    "excerpt": "There’s no single right answer to how often you should run AEO prompt tracking, because the answer depends on what you’re trying to detect. But the question has two parts that people often blur together: how often data…",
-    "titleZh": "AEO 提示追蹤頻率指南：最佳節奏如何決定？",
-    "takeaway": "說明 AEO 監測頻率的決策因素，優化風險偵測。"
-  },
-  {
-    "source": "Shopify Blog",
-    "group": "growth",
-    "title": "A More Complete View of Your Business in Shopify Analytics (2026)",
-    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9RWjJYbnFkcHc1STVmNngwcGpCclJRRWNmQUNWc1BiSVB0eWlaaWFQY2kyZjBYQ0RfQ2lYZ1VlbWEwbVhvQ3JubVAwcWdVWWJzRHZQa1V5cEZ2Mkxf?oc=5",
-    "date": "2026-10-29",
-    "excerpt": "",
-    "titleZh": "2026 年 Shopify Analytics 提供更完整的業務視圖",
-    "takeaway": "新分析功能幫助電商更精準掌握營運狀況。"
+    "titleZh": "2026年值得加入的Claude行銷插件",
+    "takeaway": "介紹Claude AI的行銷插件，提升內容創作與數據分析效率。"
   },
   {
     "source": "Shopify Blog",
@@ -322,8 +312,38 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQbUFrb1hrd3VCd1hCZHQ5X3NhMmN5d3VOMXlieDUxdThGZ1ZUWnJZUXNZVVF1OEF6QWdlNkRoQ3A5NU5CT253YUc1RWVQdGRHczRxSWtHUEd0LWZtN2g3eFFIQTlnRE5iM2N3NHdsNXc2RXBBcGRSTDFJX3hQb0NBNQ?oc=5",
     "date": "2026-10-29",
     "excerpt": "",
-    "titleZh": "識別更多你的 In（未完整標題）",
-    "takeaway": "預估此篇將探討客戶洞察或數據標籤的應用。"
+    "titleZh": "辨識更多您的 In",
+    "takeaway": "（標題資訊不足，無法提供具體重點）"
+  },
+  {
+    "source": "Shopify Blog",
+    "group": "growth",
+    "title": "Now Your Shop Store and Online Store Stay in Sync (2026)",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFAzN3ZJMHlEV0F4TE1QUWpjNUliZGFGWUdtd0cxZjRuTmxNdmVSS09Vd1RtWXJRME5MYy1HQm9YZmNHdHFYNXJNMFBpXzhQWkFST0VQWi1hcw?oc=5",
+    "date": "2026-10-28",
+    "excerpt": "",
+    "titleZh": "現在你的Shop Store與Online Store保持同步（2026）",
+    "takeaway": "Shopify同步功能提升多渠道營運效率，減少庫存與訂單錯誤。"
+  },
+  {
+    "source": "Entrepreneur",
+    "group": "smb",
+    "title": "Mark Cuban Says AI Will Mint the Next ‘Trillionaire in the Basement’",
+    "link": "https://www.entrepreneur.com/business-news/mark-cuban-says-ai-will-mint-the-next-trillionaire-in-the-basement",
+    "date": "2026-10-29",
+    "excerpt": "Slow-moving companies are handing AI-savvy founders a huge opening, according to the billionaire investor.",
+    "titleZh": "Mark Cuban說AI將在地下孕育下一位兆億富翁",
+    "takeaway": "AI創業機會在傳統產業中孕育，投資者可關注底層技術與垂直應用。"
+  },
+  {
+    "source": "Entrepreneur",
+    "group": "smb",
+    "title": "Inspired By a Girls’ Weekend, She Started a ‘Celebratory’ Side Hustle. It Hit $250K Fast and Is a No. 1 Seller at Total Wine.",
+    "link": "https://www.entrepreneur.com/side-hustle/inspired-by-a-girls-weekend-she-started-a-celebratory-side-hustle-it-hit-250k-fast-and-is-a-no-1-seller-at-total-wine",
+    "date": "2026-10-29",
+    "excerpt": "Laura Taylor returned from her trip and began working on a business plan.",
+    "titleZh": "受女生週末啟發，她創立慶祝主題副業，快速達到25萬美元銷售",
+    "takeaway": "小眾市場與社群驅動的副業模式證明快速成長的可能性。"
   },
   {
     "source": "Entrepreneur",
@@ -332,47 +352,27 @@ window.CD.market = [
     "link": "https://www.entrepreneur.com/building-a-business/3-timing-problems-with-your-feedback-structure-and-how-to-fix-them",
     "date": "2026-10-29",
     "excerpt": "I held a Disneyland pass for eight years. The email asking me to renew reminded me why teams often stop providing feedback.",
-    "titleZh": "回饋結構的三個時機問題與解決方案",
-    "takeaway": "提供改善團隊回饋流程的實務建議。"
-  },
-  {
-    "source": "Entrepreneur",
-    "group": "smb",
-    "title": "Should Entrepreneurs Go to Business School? The Answer Isn’t as Straightforward As You Think",
-    "link": "https://www.entrepreneur.com/building-a-business/should-entrepreneurs-go-to-business-school-the-answer-isnt-as-straightforward-as-you-think",
-    "date": "2026-10-29",
-    "excerpt": "Networks can be built from scratch, and AI can close the skills gaps a budding entrepreneur needs. But an MBA can still offer something else.",
-    "titleZh": "創業者是否該讀商學院？答案不那麼簡單",
-    "takeaway": "分析 MBA 與自學、AI 補足的利弊，助創業者決策。"
-  },
-  {
-    "source": "Entrepreneur",
-    "group": "smb",
-    "title": "This Company Gives Employees an Unlimited Candy Buying Perk — Here’s Why That Is Healthy for Business",
-    "link": "https://www.entrepreneur.com/business-news/this-company-gives-employees-an-unlimited-candy-buying-perk-heres-why-that-is-healthy-for-business",
-    "date": "2026-10-29",
-    "excerpt": "Unreal Snack’s Kevin McCarthy on building America's biggest better-for-you candy brand",
-    "titleZh": "公司提供無限糖果購買福利，為何對商業健康有益",
-    "takeaway": "探討員工福利與品牌形象的正向關聯。"
+    "titleZh": "回饋結構的3個時機問題與解決方案",
+    "takeaway": "改善團隊回饋機制可提升績效與創新，對管理層具實務指引。"
   },
   {
     "source": "Small Business Trends",
     "group": "smb",
-    "title": "Google Launches Connected Apps Platform to Simplify Daily Tasks",
-    "link": "https://smallbiztrends.com/google-launches-connected-apps-platform-to-simplify-daily-tasks/",
+    "title": "Shopify’s Fall ’26 Update Enhances Merchant Capabilities with AI and Security",
+    "link": "https://smallbiztrends.com/shopifys-fall-26-update-enhances-merchant-capabilities-with-ai-and-security/",
     "date": "2026-10-29",
-    "excerpt": "Discover how Google's new Connected Apps Platform is designed to simplify your daily tasks, enhancing productivity and streamlining workflows with seamless app integration.",
-    "titleZh": "Google 推出 Connected Apps 平台簡化日常任務",
-    "takeaway": "新平台整合應用，提高工作效率與自動化程度。"
+    "excerpt": "Discover how Shopify's Fall '26 Update empowers merchants with advanced AI features and enhanced security measures, transforming online retail experiences and boosting business growth.",
+    "titleZh": "Shopify 2026秋季更新強化AI與安全功能",
+    "takeaway": "新功能提升商家AI應用與平台安全，助力電商成長與風險管理。"
   },
   {
     "source": "Small Business Trends",
     "group": "smb",
-    "title": "Plain-English Analytics Gives Small Businesses Answers Without an Analyst on Payroll",
-    "link": "https://smallbiztrends.com/plain-english-analytics-gives-small-businesses-answers-without-an-analyst-on-payroll/",
+    "title": "Shopify Expands Developer Platform for Seamless Shopping Apps and Security",
+    "link": "https://smallbiztrends.com/shopify-expands-developer-platform-for-seamless-shopping-apps-and-security/",
     "date": "2026-10-29",
-    "excerpt": "Discover how AI-powered, plain-English analytics helps small businesses analyze data, uncover insights, and make smarter decisions without hiring an analyst.",
-    "titleZh": "Plain‑English Analytics 為小企業提供無需分析師的洞見",
-    "takeaway": "AI 文字化分析降低小企業數據門檻，提升決策速度。"
+    "excerpt": "Discover how Shopify is enhancing its developer platform to create seamless shopping experiences and bolster security for applications. Explore the latest features and benefits for developers and merchants alike.",
+    "titleZh": "Shopify擴大開發者平台以打造無縫購物應用與安全性",
+    "takeaway": "開發者工具升級促進生態系統創新，對第三方應用供應商是利好。"
   }
 ];
