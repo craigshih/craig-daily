@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "dayType": "OPEN",
-  "headline": "Craig，今天全日關注虛擬資產服務法子法公聽，掌握最新進度",
+  "headline": "今天沒行程，Craig 可以好好整理讀書筆記，為明天的提案做準備。",
   "terrain": [
     0.15,
     0.15,
@@ -27,23 +27,29 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "先快速瀏覽今天的市場文章，挑出與虛擬資產法規相關的重點，為公聽做預備。"
+      "text": "喝杯咖啡，快速瀏覽今天的市場文章，挑出最關鍵的資訊。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "參與虛擬資產服務法子法公聽，做好觀察筆記，留意監管方向。"
+      "text": "整理筆記，開始構思明天數位資產會議的提案重點。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "整理公聽筆記，寫下自己的觀點，並在明天的待辦中標註需要追蹤的議題。"
+      "text": "放鬆一下，檢查明天的行程與需要準備的材料。"
     }
   ],
   "needs": [
     {
-      "title": "記錄公聽要點",
-      "text": "將公聽內容整理成筆記，方便後續研究，來源為 {src}",
+      "title": "準備提案簡報",
+      "text": "完成數位資產會議的 5–10 分鐘提案簡報，使用 {src} 作為資訊來源。",
       "srcLabel": "實驗室行事曆",
-      "link": "https://udn.com/news/story/7239/9805542"
+      "link": ""
+    },
+    {
+      "title": "檢視競賽規則",
+      "text": "確認 Concordium Trusted Agents Hackathon（Plan A）與 AI 金融科技創新創意競賽（Plan B）的參賽要點，參考 {src}。",
+      "srcLabel": "實驗室行事曆",
+      "link": "https://www.encodeclub.com/programmes/concordium-trusted-agents-hackathon"
     }
   ],
   "resolved": [],
@@ -52,22 +58,22 @@ window.CD.brief = {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "AI 與區塊鏈、加密資產的關聯性：3 大應用、穩定幣支付與風險整理",
-          "text": "AI與區塊鏈文章提供法規與技術交叉的視角，對你的資產課題有啟發。（{src}）",
+          "title": "AI 與區塊鏈有什麼關聯性？3大應用與穩定幣支付與風險整理",
+          "text": "AI 與區塊鏈的關聯與應用，直接切合你的數位資產研究。（{src}）",
           "srcLabel": "市場先生",
           "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9BRmJSXzhLdFdHOThxYXBRQWl0bDN6dW9od284Z2Jqbl93U3l2UldYcnVDWVE2UWJsLVY2NXh0d19ZeEIxYXpjQm54UVN4Z1pha2c?oc=5"
         },
         {
-          "title": "大賣空者 Michael Burry 如何評論比特幣與加密貨幣？他的評論準確嗎？",
-          "text": "Michael Burry對比特幣的評論可作為市場情緒的對照，幫助你評估風險。（{src}）",
-          "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5ZVTFzZUxJMWxvSjJPOG9RVWNsbDFYM0JKcFB1SkhQMjJvR1JTN2ZPeVNnX19PcFJESGZMNWxieU1jVjAxdHM1V3pkS0RFN1VsZWp5cWpFaDd5OThJ?oc=5"
-        },
-        {
           "title": "【行情快報】聯準會暫停升息，宣布明年起減少利率決策場次！",
-          "text": "聯準會暫停升息報導揭示宏觀環境變化，對虛擬資產市場走向有直接影響。（{src}）",
+          "text": "市場壓力測試與 AI 超級循環的分析，提供宏觀視角助你掌握趨勢。（{src}）",
           "srcLabel": "MacroMicro 財經M平方",
           "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxNNUxUa1NKQ1ZXS3BLbWR0ZExHU2NMTkpmMjFzdmJsMmhKOHZZdldJby1GX19LeEgydHZZU19Xb1hVRkFVcDZfMHdha0huVzlsVW92eGlUMW1FbXk3WVNLVUF1MDNiX1pqTkhpRkVjOU9Wc19mRTZQUmllRFdkSE9jcGhoTzFGZ1BMeUpGR3k5NE9ydFIwZUJvald1RWtqRkM4WUt2emVwSEM3b2NDRWU5VEd1b21HVkVqRy1GWVFnTEc4SElraE8zQlFPd2VPajdXRmx4ZGVkdHhMYy11SXNMdEIyOE5JZjZ5eEREeFpkRW5HcTRjbzYzQm92U2ItbHE2X1hKQV9vaThwS0w5TUZrczZ5empwZ0h3eFBodERZVVM?oc=5"
+        },
+        {
+          "title": "如何準備 AI 驅動的網路安全威脅",
+          "text": "AI 驅動的網路安全威脅防護，對未來的技術開發與風險管理很有幫助。（{src}）",
+          "srcLabel": "Harvard Business Review",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBpSk9kUkJ1dFQyXzNUaFFZUXRiRlh2ZDBnMkZsLTVMWUlWNDFrNWZKY2kxeUgtZkM0dXQ2T0lVZnBQek02azJRVzBnM0p4TEtTU2ZLYldwSEFCdXYyZG9IaDhfOHRjWlQ3QW9UVS0tdEZtMWJlalE?oc=5"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -79,5 +85,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "00:40"
+  "updated": "08:30"
 };
