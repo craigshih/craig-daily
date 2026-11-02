@@ -572,6 +572,64 @@
     store.set("cd-funding", mine); renderFunding(); burstFrom(e);
   });
 
+  /* ---------- 業師・職涯資源（以 OSAAS 為主，每週手動更新） ---------- */
+  let mentorFilter = "報名中";
+  const M_STATES = ["想參加", "已報名", "不適合"];
+  // 依今天日期算狀態：報名中 / 即將開放 / 待公布 / 已截止
+  function mentorStatus(m) {
+    if (m.regStart && todayISO < m.regStart) return "soon";
+    if (m.regEnd && todayISO > m.regEnd) return "closed";
+    if (m.status === "tbd") return "tbd";
+    return "open";
+  }
+  const M_LABEL = { open: "報名中", soon: "即將開放", tbd: "待公布", closed: "已截止" };
+  const M_ORDER = { open: 0, soon: 1, tbd: 2, closed: 3 };
+  function renderMentors() {
+    const mine = store.get("cd-mentors", {});
+    const items = (CD.mentors || []).map((m) => ({ ...m, st: mentorStatus(m) }))
+      .sort((a, b) => M_ORDER[a.st] - M_ORDER[b.st] || (a.regEnd || "9999").localeCompare(b.regEnd || "9999") || b.fintech - a.fintech);
+    const tabs = ["報名中", "全部", "金融科技相關", ...["商學院", "職涯中心", "校內其他", "校外"].filter((c) => items.some((m) => m.cat === c)), "我的清單"];
+    const openN = items.filter((m) => m.st === "open").length;
+    $("#mentors-meta").textContent = `以政大商學院 OSAAS 為主・每週手動更新・最近更新 ${CD.mentorsUpdated || ""}・目前 ${openN} 項可報名`;
+    $("#mentors-filters").innerHTML = tabs.map((c) => `<button class="btn ${c === mentorFilter ? "on" : ""}" data-m="${esc(c)}">${esc(c)}</button>`).join("");
+    const shown = items.filter((m) => mentorFilter === "全部"
+      || (mentorFilter === "報名中" && m.st === "open")
+      || (mentorFilter === "金融科技相關" && m.fintech >= 3)
+      || (mentorFilter === "我的清單" && mine[m.id] && mine[m.id] !== "不適合")
+      || m.cat === mentorFilter);
+    $("#mentors-list").innerHTML = shown.length ? shown.map((m) => `
+      <article class="card mentor ${m.st === "closed" ? "is-closed" : ""}">
+        <div class="meta"><span class="tag m-${m.st}">${M_LABEL[m.st]}</span><span class="tag alt">${esc(m.cat)}</span><span>${esc(m.org)}</span></div>
+        <h3>${ext(m.link, esc(m.name))}</h3>
+        ${m.regEnd && m.st !== "closed" && m.st !== "tbd" ? deadlineTag(m.regEnd) : ""}
+        <p class="m-when">${esc(m.when || "")}</p>
+        <p>${esc(m.what)}</p>
+        ${m.who ? `<p><b>可以找</b>　${esc(m.who)}</p>` : ""}
+        <p class="m-facts"><span>碩士生：<b>${esc(m.grad)}</b></span><span>金融科技 <b class="m-fit" aria-label="關聯度 ${m.fintech}／3">${"●".repeat(m.fintech)}${"○".repeat(3 - m.fintech)}</b></span></p>
+        ${m.contact ? `<p class="m-contact">☎ ${esc(m.contact)}</p>` : ""}
+        ${m.verify ? `<p class="insight">內容來自二手整理，報名前請查官方原文</p>` : ""}
+        <div class="card-foot">${M_STATES.map((s) => `<button class="btn ${mine[m.id] === s ? "on" : ""}" data-mid="${esc(m.id)}" data-s="${s}">${s}</button>`).join("")}</div>
+      </article>`).join("") : `<p class="empty">${mentorFilter === "我的清單" ? "清單是空的——在卡片上按「想參加」或「已報名」就會出現在這裡。" : "目前沒有符合的項目。"}</p>`;
+
+    const news = (CD.osaasNews || []).filter((n) => !n.end || n.end >= todayISO).sort((a, b) => (a.end || "9999").localeCompare(b.end || "9999"));
+    $("#osaas-head").hidden = !news.length;
+    $("#osaas-list").innerHTML = news.map((n) => {
+      const left = n.end ? Math.round((Date.parse(n.end + "T00:00:00Z") - Date.parse(todayISO + "T00:00:00Z")) / 864e5) : null;
+      return `<a class="osaas-item" href="${esc(n.link)}" target="_blank" rel="noopener">
+        <span class="tag ${n.kind === "說明會" ? "alt" : "hot"}">${esc(n.kind)}</span>
+        <span class="osaas-title">${esc(n.title)}</span>
+        <span class="osaas-end ${left !== null && left <= 7 ? "soon" : ""}">${n.end ? `${esc(n.end.slice(5).replace("-", "/"))}${left === 0 ? "・今天" : `・${left} 天`}` : ""}</span>
+      </a>`;
+    }).join("");
+  }
+  $("#mentors-filters").addEventListener("click", (e) => { const b = e.target.closest("[data-m]"); if (b) { mentorFilter = b.dataset.m; renderMentors(); } });
+  $("#mentors-list").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-mid]"); if (!b) return;
+    const mine = store.get("cd-mentors", {});
+    mine[b.dataset.mid] = mine[b.dataset.mid] === b.dataset.s ? "" : b.dataset.s;
+    store.set("cd-mentors", mine); renderMentors(); burstFrom(e);
+  });
+
   /* ---------- AI 百科全書（整理自 104〈AI 工具大全〉） ---------- */
   let aiCat = "all", aiQuery = "";
   const favicon = (url) => { try { return `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}&sz=64`; } catch (e) { return ""; } };
@@ -609,7 +667,7 @@
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id)); });
   }, { rootMargin: "-40% 0px -55% 0px" });
-  ["stickies", "calendar", "brief", "market", "papers", "stats", "notes", "funding", "ai"].forEach((id) => io.observe(document.getElementById(id)));
+  ["stickies", "calendar", "brief", "market", "papers", "stats", "notes", "funding", "mentors", "ai"].forEach((id) => io.observe(document.getElementById(id)));
 
   /* ---------- 每日區塊保持最新：每 5 分鐘、切回這個分頁時檢查有沒有新的晨報與市場文章 ---------- */
   const loadData = (name) => new Promise((done) => {
@@ -644,7 +702,7 @@
   // 給 calendar.js 用的共用工具
   window.CDKit = { $, esc, store, ghToken, openKeyDialog, burstAt: (...a) => burstAt(...a), WEEK };
 
-  renderBento(); renderStickies(); renderBrief(); renderMarket(); renderPapers(); renderNotes(); renderFunding(); renderAI();
+  renderBento(); renderStickies(); renderBrief(); renderMarket(); renderPapers(); renderNotes(); renderFunding(); renderMentors(); renderAI();
 
   /* ---------- mo.js：點擊爆破、主視覺換圖爆破、Hero 幾何動畫（mojs.io 風格） ---------- */
   const fx = $("#fx");

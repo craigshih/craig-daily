@@ -3,7 +3,7 @@
  * - 資料金鑰（隨機產生）再用「由 GitHub 金鑰推導出的金鑰」包起來存在檔案裡；換新金鑰時，只要任一台裝置
  *   還記得資料金鑰（localStorage 的 cd-cal-dk），打開網站就會自動幫新金鑰補上一份。
  * - 讀寫都直接走 GitHub API，不經過 GitHub Pages 部署，存檔後其他裝置重新整理就看得到。
- * - 補助・獎學金（data/funding.js）有填 deadline 的會自動出現在行事曆上，任何人都看得到（本來就是公開資料）。
+ * - 補助・獎學金（data/funding.js）有填 deadline、業師・職涯資源（data/mentors.js）有填 regEnd 的，會自動出現在行事曆上，任何人都看得到（本來就是公開資料）。
  */
 (function () {
   const K = window.CDKit;
@@ -173,6 +173,12 @@
     for (const f of CD.funding || []) {
       if (f.deadline && f.deadline >= from && f.deadline <= to && mine[f.name] !== "不適合") {
         out.push({ id: "fund", title: `截止｜${f.name}`, on: f.deadline, start: "", end: "", link: f.link, deadline: true, want: !!mine[f.name] });
+      }
+    }
+    const mineM = store.get("cd-mentors", {});
+    for (const m of CD.mentors || []) {
+      if (m.regEnd && m.regEnd >= from && m.regEnd <= to && mineM[m.id] !== "不適合") {
+        out.push({ id: "mentor", title: `截止｜${m.name}`, on: m.regEnd, start: "", end: "", link: m.link, deadline: true, want: !!mineM[m.id] });
       }
     }
     return out.sort((a, b) => a.on.localeCompare(b.on) || (a.start || "").localeCompare(b.start || "") || a.title.localeCompare(b.title));

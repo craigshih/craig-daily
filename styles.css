@@ -685,3 +685,26 @@ dialog.sd::backdrop { background: rgba(5, 5, 15, .6); backdrop-filter: blur(6px)
 }
 .tag.os { background: transparent; color: var(--ink-soft); }
 .tag.os.win { color: #9cd2ff; border-color: rgba(124,199,255,.55); background: rgba(124,199,255,.12); font-weight: 700; }
+
+/* ---------- 業師・職涯資源 ---------- */
+.tag.m-open { background: rgba(74,222,128,.18); border-color: rgba(74,222,128,.5); color: #a7f3c0; font-weight: 700; }
+.tag.m-soon { background: rgba(124,199,255,.14); border-color: rgba(124,199,255,.5); color: #9cd2ff; font-weight: 700; }
+.tag.m-tbd { color: var(--ink-soft); }
+.tag.m-closed { color: var(--ink-faint); }
+.card.mentor.is-closed { opacity: .62; }
+.card.mentor .m-when { font-size: 14px; font-weight: 600; color: var(--ink); }
+.card.mentor .m-facts { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; }
+.card.mentor .m-fit { letter-spacing: 2px; color: var(--c1); }
+.card.mentor .m-contact { font-size: 13px; color: var(--ink-faint); overflow-wrap: anywhere; }
+.osaas-news { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; }
+.osaas-item { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); text-decoration: none; color: var(--ink); transition: border-color .2s, transform .2s; }
+.osaas-item:hover { border-color: var(--c1); transform: translateY(-2px); }
+.osaas-title { font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.osaas-end { font-size: 13px; color: var(--ink-soft); white-space: nowrap; }
+.osaas-end.soon { color: #ff7a9a; font-weight: 700; }
+@media (max-width: 860px) { .osaas-news { grid-template-columns: 1fr; } }
+@media (max-width: 520px) {
+  .osaas-item { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 10px; }
+  .osaas-item .tag { grid-column: 1 / -1; justify-self: start; }
+  .osaas-title { white-space: normal; }
+}
