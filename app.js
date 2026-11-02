@@ -572,7 +572,7 @@
     store.set("cd-funding", mine); renderFunding(); burstFrom(e);
   });
 
-  /* ---------- 業師・職涯資源（以 OSAAS 為主，每週手動更新） ---------- */
+  /* ---------- 業師・職涯・學程（以 OSAAS 為主，每週手動更新；學程與業師共用狀態與「我的清單」） ---------- */
   let mentorFilter = "報名中";
   const M_STATES = ["想參加", "已報名", "不適合"];
   // 依今天日期算狀態：報名中 / 即將開放 / 待公布 / 已截止
@@ -611,6 +611,26 @@
         <div class="card-foot">${M_STATES.map((s) => `<button class="btn ${mine[m.id] === s ? "on" : ""}" data-mid="${esc(m.id)}" data-s="${s}">${s}</button>`).join("")}</div>
       </article>`).join("") : `<p class="empty">${mentorFilter === "我的清單" ? "清單是空的——在卡片上按「想參加」或「已報名」就會出現在這裡。" : "目前沒有符合的項目。"}</p>`;
 
+    const progs = (CD.programs || []).map((p) => ({ ...p, st: mentorStatus(p) }))
+      .sort((a, b) => M_ORDER[a.st] - M_ORDER[b.st] || b.fit - a.fit);
+    $("#programs-head").hidden = !progs.length;
+    $("#programs-meta").innerHTML = progs.length ? `只列科智所（商學院碩士班）符合資格的・完整清單見 ${ext(CD.programsSource || "#", "商學院特色學分學程總表")}` : "";
+    $("#programs-list").innerHTML = progs.map((p) => `
+      <article class="card mentor program ${p.st === "closed" ? "is-closed" : ""}">
+        <div class="meta"><span class="tag m-${p.st}">${M_LABEL[p.st]}</span><span class="tag alt">${esc(p.school)}</span><span>${esc(p.org)}</span></div>
+        <h3>${ext(p.link, esc(p.name))}</h3>
+        ${p.regEnd && p.st !== "closed" && p.st !== "tbd" ? deadlineTag(p.regEnd) : ""}
+        <p class="m-when">${esc(p.when || "")}</p>
+        <p>${esc(p.what)}</p>
+        ${p.perks ? `<p class="perk">🎁 ${esc(p.perks)}</p>` : ""}
+        <p class="m-facts"><span>學分：<b>${esc(p.credits)}</b></span><span>資格：<b>${esc(p.grad)}</b></span><span>契合度 <b class="m-fit" aria-label="契合度 ${p.fit}／3">${"●".repeat(p.fit)}${"○".repeat(3 - p.fit)}</b></span></p>
+        ${p.contact ? `<p class="m-contact">☎ ${esc(p.contact)}</p>` : ""}
+        ${p.verify ? `<p class="insight">內容來自舊資料，申請前請查官方原文</p>` : ""}
+        <div class="card-foot">${M_STATES.map((s) => `<button class="btn ${mine[p.id] === s ? "on" : ""}" data-mid="${esc(p.id)}" data-s="${s}">${s}</button>`).join("")}</div>
+      </article>`).join("");
+    const line = (title, list) => list && list.length ? `<p><b>${title}</b>${list.map((x) => ext(x.link, `${esc(x.name)}<small>${esc(x.org)}</small>`)).join("")}</p>` : "";
+    $("#programs-other").innerHTML = line("只收學士班，不符合", CD.programsIneligible) + line("資格還沒查", CD.programsUnchecked);
+
     const news = (CD.osaasNews || []).filter((n) => !n.end || n.end >= todayISO).sort((a, b) => (a.end || "9999").localeCompare(b.end || "9999"));
     $("#osaas-head").hidden = !news.length;
     $("#osaas-list").innerHTML = news.map((n) => {
@@ -623,6 +643,12 @@
     }).join("");
   }
   $("#mentors-filters").addEventListener("click", (e) => { const b = e.target.closest("[data-m]"); if (b) { mentorFilter = b.dataset.m; renderMentors(); } });
+  $("#programs-list").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-mid]"); if (!b) return;
+    const mine = store.get("cd-mentors", {});
+    mine[b.dataset.mid] = mine[b.dataset.mid] === b.dataset.s ? "" : b.dataset.s;
+    store.set("cd-mentors", mine); renderMentors(); burstFrom(e);
+  });
   $("#mentors-list").addEventListener("click", (e) => {
     const b = e.target.closest("[data-mid]"); if (!b) return;
     const mine = store.get("cd-mentors", {});

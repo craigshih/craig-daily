@@ -708,3 +708,11 @@ dialog.sd::backdrop { background: rgba(5, 5, 15, .6); backdrop-filter: blur(6px)
   .osaas-item .tag { grid-column: 1 / -1; justify-self: start; }
   .osaas-title { white-space: normal; }
 }
+.card.program .perk { font-size: 14px; color: #ffd36e; }
+.prog-other { margin-top: 18px; display: grid; gap: 10px; }
+.prog-other p { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-soft); }
+.prog-other b { margin-right: 4px; color: var(--ink); }
+.prog-other a { display: inline-flex; gap: 6px; align-items: baseline; padding: 4px 12px; border: 1px dashed var(--line); border-radius: 999px; text-decoration: none; color: var(--ink-soft); }
+.prog-other a:hover { border-color: var(--c1); color: var(--ink); }
+.prog-other small { font-size: 12px; color: var(--ink-faint); }
+#programs-meta { text-align: left; margin: -6px 0 16px; }

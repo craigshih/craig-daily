@@ -176,7 +176,7 @@
       }
     }
     const mineM = store.get("cd-mentors", {});
-    for (const m of CD.mentors || []) {
+    for (const m of [...(CD.mentors || []), ...(CD.programs || [])]) {
       if (m.regEnd && m.regEnd >= from && m.regEnd <= to && mineM[m.id] !== "不適合") {
         out.push({ id: "mentor", title: `截止｜${m.name}`, on: m.regEnd, start: "", end: "", link: m.link, deadline: true, want: !!mineM[m.id] });
       }

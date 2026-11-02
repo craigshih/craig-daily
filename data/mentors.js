@@ -123,3 +123,54 @@ window.CD.osaasNews = [
   { title: "中國信託 Rising Star 學期實習計畫", kind: "徵才", end: "2027-02-28", link: "https://osaas.commerce.nccu.edu.tw/news/view/523" },
   { title: "星展儲備幹部實習計畫（學期實習制）", kind: "徵才", end: "2027-01-31", link: "https://osaas.commerce.nccu.edu.tw/news/view/522" }
 ];
+
+// 學分／專長學程：只放碩士生（科智所，屬商學院）能申請的；ineligible 是查過只收學士班的，unchecked 是還沒查資格的
+// 欄位同上：regStart / regEnd / status: "tbd"；credits 學分數；fit 1–3 跟目前規劃（金融科技 × 供應鏈 × 行銷）的契合度
+window.CD.programs = [
+  {
+    id: "p-fintech", name: "金融科技專長學程", org: "商學院・金融科技研究中心", school: "商學院",
+    credits: "21 學分（舊報導，待確認）", grad: "可", fit: 3, status: "tbd",
+    when: "115-2 申請時程待確認", what: "跨資訊、資管、財管、金融、統計等系所開課，會結合業界提供實習機會。",
+    link: "https://stat.nccu.edu.tw/uploads/asset/data/66ada370311fc8225895c7fe/6-3%E5%9C%8B%E7%AB%8B%E6%94%BF%E6%B2%BB%E5%A4%A7%E5%AD%B8%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80%E5%B0%88%E9%95%B7%E5%AD%B8%E7%A8%8B.pdf", verify: true
+  },
+  {
+    id: "p-scm", name: "供應鏈管理專長學程（碩士班）", org: "商學院", school: "商學院",
+    credits: "9 學分（五門選三）", grad: "可（全校碩一、碩二）", fit: 3, status: "tbd",
+    when: "115 學年報名已在 6/29 截止，可以問 115-2 能不能補申請",
+    what: "課程有作業管理、策略性生產與作業管理、供應鏈整合、供應鏈管理實務、供應鏈管理，五門選三。",
+    perks: "學程生可申請大聯大獎學金 10 萬元，附大聯大控股實習；每年第二學期公告，大學部、碩士班各 1 名。",
+    contact: "scm@nccu.edu.tw", link: "https://commerce.nccu.edu.tw/zh_tw/feature/feature6/DProgram2"
+  },
+  {
+    id: "p-sustain", name: "企業永續經營與永續金融專長學程", org: "商學院", school: "商學院",
+    credits: "待確認", grad: "商學院碩士生可", fit: 3, status: "tbd",
+    when: "每年 4 月中–5 月下旬報名（2026 年是 4/13–5/22），6 月公布錄取",
+    what: "永續金融和金融科技互補，ESG 也能接上原本的研究方向。資格寫「本校大學部及商學院碩士生」，送件前跟承辦人確認。",
+    link: "https://sp.nccu.edu.tw/"
+  },
+  {
+    id: "p-marketing", name: "行銷學程（碩士班）", org: "企管系", school: "商學院",
+    credits: "18 學分（必修行銷管理、消費者行為、行銷研究）", grad: "可（各系所碩士班）", fit: 2, status: "tbd",
+    when: "每學期初受理，最快 115-2（2027 年 2 月）",
+    what: "選修有數位與社群媒體行銷、大數據品牌行銷、Google 數位行銷，廣告背景最好上手。結業要學分平均 80 分以上，還要參加 5 場行銷演講。",
+    link: "https://ba.nccu.edu.tw/zh_tw/Programs/Programs102/SCMPROG108"
+  },
+  {
+    id: "p-ccis", name: "創新與創造力學分學程", org: "創新與創造力研究中心", school: "其他學院",
+    credits: "15 學分（必修「X 創業家」）", grad: "可（學士班、碩士班，不分院系）", fit: 2, status: "tbd",
+    when: "每年 10 月招生；115 學年的招生公告還沒找到，可能剛截止",
+    what: "每學年約收 40 人；群修「跨界專題–X 計畫」或「新媒體與創業」擇一。",
+    contact: "ccis@nccu.edu.tw・02-2939-3091 #65771", link: "https://ccis.nccu.edu.tw/PageDoc?fid=13582"
+  }
+];
+window.CD.programsIneligible = [
+  { name: "創新創業學程", org: "商院創新創業辦公室", link: "https://oie.nccu.edu.tw/program/about" },
+  { name: "營運與供應鏈管理學程", org: "企管系", link: "https://ba.nccu.edu.tw/zh_tw/programs/Programs105" },
+  { name: "巨量資料分析學程", org: "統計系", link: "https://stat.nccu.edu.tw/zh_tw/Program/BigData/programmethod2" }
+];
+window.CD.programsUnchecked = [
+  { name: "商業分析微學程", org: "國貿系", link: "https://ib.nccu.edu.tw/zh_tw/Programs/Microprogram/BusinessAnalysis" },
+  { name: "CFA 核心學程", org: "商學院", link: "https://commerce.nccu.edu.tw/zh_tw/feature" },
+  { name: "管理會計（CIMA）學程", org: "商學院", link: "https://commerce.nccu.edu.tw/zh_tw/feature" }
+];
+window.CD.programsSource = "https://commerce.nccu.edu.tw/zh_tw/feature";
