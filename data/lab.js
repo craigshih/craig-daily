@@ -48,15 +48,6 @@ window.CD.lab = [
     "link": ""
   },
   {
-    "date": "2026-11-06",
-    "time": "12:00",
-    "type": "todo",
-    "domain": "",
-    "source": "web",
-    "title": "報名：2026 全國金融科技校園創新創意競賽（韌性金融－AI × 永續 × 治理）",
-    "link": "https://forms.gle/zg5a4ncsVYP4YCCr7"
-  },
-  {
     "date": "2026-10-23",
     "time": "",
     "type": "todo",
