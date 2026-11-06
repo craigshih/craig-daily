@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "dayType": "OPEN",
-  "headline": "Craig，今天資訊滿載，先挑出重點文章再規劃一天吧",
+  "headline": "Craig，今天是悠閒的空白一天，適合深度閱讀市場文章。",
   "terrain": [
     0.15,
     0.15,
@@ -27,18 +27,25 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "快速瀏覽市場快報，了解美股與 AI 近期走向，為接下來的閱讀做鋪墊。"
+      "text": "利用早晨的清新頭腦，先快速瀏覽三大法人與 AI 相關文章，為一天定調。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "深入閱讀挑選的三篇文章，做筆記並思考如何應用於課題或投資觀點。"
+      "text": "午后可挑選兩篇最關鍵的報導深入閱讀，並思考如何應用於你的研究。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "整理筆記，寫下當天的學習收穫，為明天的研究做好預備。"
+      "text": "放鬆一下，整理今天的閱讀筆記，為明天的報名做最後檢查。"
     }
   ],
-  "needs": [],
+  "needs": [
+    {
+      "title": "報名星展儲備幹部計畫",
+      "text": "趕快完成報名，確保參與星展銀行 2027 儲備幹部計畫 {src}",
+      "srcLabel": "實驗室行事曆",
+      "link": "https://go.dbs.com/4mn9y5s"
+    }
+  ],
   "resolved": [],
   "sections": [
     {
@@ -46,21 +53,21 @@ window.CD.brief = {
       "items": [
         {
           "title": "三大法人是什麼意思？外資/投信/自營商如何影響股市漲跌？",
-          "text": "了解外資、投信、自營商的操作機制，對金融市場分析很有幫助。（{src}）",
+          "text": "了解外資、投信、自營商的操作機制，有助於你分析台股波動與投資策略。（{src}）",
           "srcLabel": "市場先生",
           "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9wRXN4ZWxVYWtTUE9xSWlMc01YaUhoYlJ6Y0tPcllldTFMSFNNdk1fdmhkdlprNHFRckR6WHlvYUVtdl9VS1J4WEVDTkJ5Y0VtcE5oSEd0bTlKR2ZacWVkOUhB?oc=5"
         },
         {
-          "title": "美金定存利率比較：35間銀行美元定存排名與優惠整理 (2026/11月更新)",
-          "text": "掌握美元定存利率，可作為資產配置與匯率風險管理的參考。（{src}）",
-          "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9Sck1LR3BQclFSalZHTGdBRXJxSTZwS1QzYzdpTHZ6RVdoczVibThTN2JzVVBNMmxTOE15dTNxcTlfNTNWd1lTWkVLUQ?oc=5"
+          "title": "【行情快報】科技股失寵、非 AI 股翻身 ? 三大防禦配置策略一次看！",
+          "text": "防禦型配置策略提供了非 AI 股的投資視角，適合課題中探討風險分散。（{src}）",
+          "srcLabel": "MacroMicro 財經M平方",
+          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOU1VtUmFEM28wWnlncXVuNjVTaUdPNTZSeThMc2t2RVJXM0k5T21wdHhzdGxtSTd2Z245Y1Bpa3ZMRFYxdVhOa25odVZZR21oWThmVzZqdTA0SEZxdU13VG1HOGtHSGpnV3dMaU1sTWh4RmZPenUwbGhVQXhTdkdodVg2WFdoS2xGc05ZSEhxdGVONlp2ZEl1S2ZZcVBQZ0pxWGJtYld0NlJfQ09sNEgwVnREeXBNY3R3dTNnbmtscGJPaW9ZX2lGLVZMNVRJTF83alFPaHFEUTBiUGpUNVE?oc=5"
         },
         {
-          "title": "【行情快報】國會變天、藍色浪潮再現！選後美股與 AI 怎麼看？",
-          "text": "選後美股與 AI 動態直接影響科技股走勢，對你的投資與研究議題都很關鍵。（{src}）",
-          "srcLabel": "MacroMicro 財經M平方",
-          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNeHV1TFF1dDh0OG1LT00zUDkxdExDWm0zWGtmWEJ6N1duNFAxS3RJTTVKQndGN0V6eE53VS1za3dWWG0tcUFOdXJQRUE2bUduckN0OHFueUZWMkRMdzFfOGMzSElBTjdHMEpKR0R0eXVpZnVkT0VNY2JJalk3UDdvOEVCaV9SZGlqZjlZZmFuR3BCZ2dpeGVWZVNuOExaRTBHM1ZYTEg4b1JWZ3ltMlVGTzJtc0JSZmJwdzRKeFZTdVhyRzZBZmQzdW5FTzZIbnJxQmtjNg?oc=5"
+          "title": "科技股在 AI 恐慌後反彈",
+          "text": "科技股在 AI 恐慌後的反彈案例，可作為你研究科技產業循環的實例。（{src}）",
+          "srcLabel": "Business Insider",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUDMyY0tpSE1fMmxhck5mVkNXaVZQOHV3dnl5YTktS1NyRE5aS2ROWXF0eWJ4M2xCVzdOUmZYWmFXZ0N3aDFrSG1FSWQ2R1NNaTdsTnNOQ2g5X2hiNU1qNHRBMExKS21OUjFkV0xqM3RqYlFoVWh1X1NNbWRaWVhHUndtb3RQS0EydVZKcTItLWw4bHpNUkwtaTdEMEZJNjU3djVDcg?oc=5"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -72,5 +79,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "01:55"
+  "updated": "01:20"
 };
