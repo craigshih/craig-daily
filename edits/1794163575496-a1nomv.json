@@ -1,0 +1,16 @@
+{
+  "op": "create",
+  "at": 1794163575496,
+  "fields": {
+    "text": "簡報美編prompt",
+    "note": "",
+    "link": "",
+    "tags": [
+      "靈感",
+      "訓練AＩ"
+    ],
+    "color": "紫",
+    "pinned": false,
+    "private": false
+  }
+}
