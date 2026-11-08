@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-11-08",
-  "dayType": "OPEN",
-  "headline": "Craig，今天全力衝刺報名星展銀行 2027 儲備幹部計畫，抓住機會！",
+  "date": "2026-11-09",
+  "dayType": "NORMAL",
+  "headline": "Craig，今晚的 Web3 跨域實戰課程是今天的關鍵，別忘了準備！",
   "terrain": [
     0.15,
     0.15,
@@ -17,9 +17,9 @@ window.CD.brief = {
     0.15,
     0.15,
     0.15,
-    0.15,
-    0.15,
-    0.15,
+    0.38,
+    0.6,
+    0.38,
     0.15,
     0.15,
     0.15
@@ -27,23 +27,23 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "先檢查報名資格與所需文件，確保資料完整再提交。"
+      "text": "先檢視昨天的筆記，整理重點，為下午的學習打基礎。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "完成報名後，稍作休息，閱讀一篇關於金融市場的文章，保持資訊敏銳。"
+      "text": "完成課前閱讀或練習，讓概念先在腦中走一遍。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "整理明天的 Web3 課程筆記重點，預先思考可以提問的問題。"
+      "text": "參加 19:00 的 Web3 跨域實戰人才認證課程，第 3 堂，實作數位身分卡。"
     }
   ],
   "needs": [
     {
-      "title": "報名星展儲備幹部",
-      "text": "立即完成報名，因為 {src} 提醒今天是最後提交日。",
+      "title": "參加 Web3 課程",
+      "text": "今晚 19:00 參加 {src}，掌握數位身分新趨勢。",
       "srcLabel": "實驗室行事曆",
-      "link": "https://go.dbs.com/4mn9y5s"
+      "link": "https://www.accupass.com/event/2610050842082018972071"
     }
   ],
   "resolved": [],
@@ -52,22 +52,22 @@ window.CD.brief = {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "三大法人是什麼意思？外資/投信/自營商如何影響股市漲跌？",
-          "text": "了解法人資金流向，有助於你金融相關研究的市場背景分析。（{src}）",
+          "title": "三大法人是什麼意思？外資／投信／自營商如何影響股市漲跌？",
+          "text": "了解法人操作有助於解讀股市波動，對你的金融研究很實用。（{src}）",
           "srcLabel": "市場先生",
           "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9wRXN4ZWxVYWtTUE9xSWlMc01YaUhoYlJ6Y0tPcllldTFMSFNNdk1fdmhkdlprNHFRckR6WHlvYUVtdl9VS1J4WEVDTkJ5Y0VtcE5oSEd0bTlKR2ZacWVkOUhB?oc=5"
         },
         {
-          "title": "【行情快報】科技股失寵、非 AI 股翻身 ? 三大防禦配置策略一次看！",
-          "text": "防禦型配置策略提供投資思路，對課題中的風險管理有啟發。（{src}）",
-          "srcLabel": "MacroMicro 財經M平方",
-          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOU1VtUmFEM28wWnlncXVuNjVTaUdPNTZSeThMc2t2RVJXM0k5T21wdHhzdGxtSTd2Z245Y1Bpa3ZMRFYxdVhOa25odVZZR21oWThmVzZqdTA0SEZxdU13VG1HOGtHSGpnV3dMaU1sTWh4RmZPenUwbGhVQXhTdkdodVg2WFdoS2xGc05ZSEhxdGVONlp2ZEl1S2ZZcVBQZ0pxWGJtYld0NlJfQ09sNEgwVnREeXBNY3R3dTNnbmtscGJPaW9ZX2lGLVZMNVRJTF83alFPaHFEUTBiUGpUNVE?oc=5"
+          "title": "AI 輔助董事會的承諾與危機",
+          "text": "探討 AI 在董事會的應用與風險，啟發你的組織治理思考。（{src}）",
+          "srcLabel": "Harvard Business Review",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE95dlBaVE9zZngyaGYyUXhmYlNTSUR3RjdISW04WG5KYXVuY3JGejhOREs2a2xoWDdLQV8wQnNpemVQazk2aTMwRDk3aHl0ak9iZ01aQTNnbTVXVWFBMV9Ed0tUdlJrMko2R1BURk1qN3U3S2Q5RnNQcQ?oc=5"
         },
         {
-          "title": "$AMD 2026 年第三季財報深分析 (附力成分析)",
-          "text": "AMD 財報深度解析可作為科技產業財務分析的實例參考。（{src}）",
-          "srcLabel": "大叔美股筆記",
-          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE40bjNmYWh3MlowS01wRFE1R0tiWllhMGVjcmNBZllqRzJ4VU93UVUxQXpVRU5kQmlsVFZRQmRON0VBZWZFaGR1WVBNNHhDTE4tZlhGWHREMU5CMEU?oc=5"
+          "title": "企業 AI 正在等待其 Transformer 時刻",
+          "text": "企業 AI 的發展階段提供未來技術趨勢，對課題選題有參考價值。（{src}）",
+          "srcLabel": "Fast Company",
+          "link": "https://www.fastcompany.com/91634049/enterprise-ai-waiting-transformer-moment"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -79,5 +79,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "00:15"
+  "updated": "00:35"
 };
