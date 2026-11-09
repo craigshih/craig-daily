@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-11-09",
-  "dayType": "NORMAL",
-  "headline": "Craig，今晚的 Web3 跨域實戰課程是今天的關鍵，別忘了準備！",
+  "date": "2026-11-10",
+  "dayType": "OPEN",
+  "headline": "Craig，今天沒有行程，適合整理閱讀與思考市場趨勢。",
   "terrain": [
     0.15,
     0.15,
@@ -17,9 +17,9 @@ window.CD.brief = {
     0.15,
     0.15,
     0.15,
-    0.38,
-    0.6,
-    0.38,
+    0.15,
+    0.15,
+    0.15,
     0.15,
     0.15,
     0.15
@@ -27,47 +27,40 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "先檢視昨天的筆記，整理重點，為下午的學習打基礎。"
+      "text": "利用早晨的清新，先瀏覽三篇精選文章，為一天奠定宏觀視野。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "完成課前閱讀或練習，讓概念先在腦中走一遍。"
+      "text": "午后可稍作休息，回顧上午的重點，思考如何應用於你的研究。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "參加 19:00 的 Web3 跨域實戰人才認證課程，第 3 堂，實作數位身分卡。"
+      "text": "晚上整理筆記，為明天的虛擬資產論壇做好預備。"
     }
   ],
-  "needs": [
-    {
-      "title": "參加 Web3 課程",
-      "text": "今晚 19:00 參加 {src}，掌握數位身分新趨勢。",
-      "srcLabel": "實驗室行事曆",
-      "link": "https://www.accupass.com/event/2610050842082018972071"
-    }
-  ],
+  "needs": [],
   "resolved": [],
   "sections": [
     {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "三大法人是什麼意思？外資／投信／自營商如何影響股市漲跌？",
-          "text": "了解法人操作有助於解讀股市波動，對你的金融研究很實用。（{src}）",
+          "title": "三大法人是什麼意思？外資/投信/自營商如何影響股市漲跌？",
+          "text": "了解外資、投信、自營商的操作機制，有助於解讀台股波動，對你的金融研究很實用。（{src}）",
           "srcLabel": "市場先生",
           "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9wRXN4ZWxVYWtTUE9xSWlMc01YaUhoYlJ6Y0tPcllldTFMSFNNdk1fdmhkdlprNHFRckR6WHlvYUVtdl9VS1J4WEVDTkJ5Y0VtcE5oSEd0bTlKR2ZacWVkOUhB?oc=5"
         },
         {
-          "title": "AI 輔助董事會的承諾與危機",
-          "text": "探討 AI 在董事會的應用與風險，啟發你的組織治理思考。（{src}）",
-          "srcLabel": "Harvard Business Review",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE95dlBaVE9zZngyaGYyUXhmYlNTSUR3RjdISW04WG5KYXVuY3JGejhOREs2a2xoWDdLQV8wQnNpemVQazk2aTMwRDk3aHl0ak9iZ01aQTNnbTVXVWFBMV9Ed0tUdlJrMko2R1BURk1qN3U3S2Q5RnNQcQ?oc=5"
+          "title": "【MM一週盤前】民主黨橫掃國會血洗科技股，本週 CPI 即將登場！",
+          "text": "CPI 走勢與美股表現的關聯，提供宏觀經濟背景，能補強你的經濟學課題。（{src}）",
+          "srcLabel": "MacroMicro 財經M平方",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdkdwcmloaFI5YUNWN2xtSmVqdGxsU3AxX3pQb2lobWQ5VXB3Y2RUYWc5dkNzZ3M5VFlPR0FHR0VockF2bjFaVDRINFlyVW1VbFhYS3dpZFNWNDlpX1VRR0hIaE44dmYyWU5ZcXNZYUJBNEZJM3pORjZWQlBOaTNyQVlna2s2TmVLODFRMmdzd1pvQ3RYUzZwSWI0TEp5OEk?oc=5"
         },
         {
-          "title": "企業 AI 正在等待其 Transformer 時刻",
-          "text": "企業 AI 的發展階段提供未來技術趨勢，對課題選題有參考價值。（{src}）",
-          "srcLabel": "Fast Company",
-          "link": "https://www.fastcompany.com/91634049/enterprise-ai-waiting-transformer-moment"
+          "title": "升息何時代表經濟強勁，何時顯示風險",
+          "text": "升息時機的判斷說明經濟強弱的訊號，對研究貨幣政策與資產配置有直接幫助。（{src}）",
+          "srcLabel": "Harvard Business Review",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdEVVVHVIdUdmTDVkU3ByN1A4Z21QbkllUVBleTlBNEVDNmc0c0ZlWlN1M2JSX2VGa3IteDEyQXZfTDBMWFBVUFd4MGRobkg2NnFOOXppbTI0d3RRM3lpQ1ZtYTBGazIzVnhDamgtZVJfSTNFVTlXd0t6VW1MdVAxUU9MZnp5cmhxdUFOUXNBVzZINF9pWDdsa1BmamN1dWtTRmlZ?oc=5"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -79,5 +72,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "00:35"
+  "updated": "04:35"
 };
