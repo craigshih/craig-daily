@@ -2,14 +2,14 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-11-10",
-  "dayType": "OPEN",
-  "headline": "Craig，今天沒有行程，適合整理閱讀與思考市場趨勢。",
+  "date": "2026-11-11",
+  "dayType": "NORMAL",
+  "headline": "Craig，今天上午別錯過櫃買中心的虛擬資產論壇，掌握監管與風險要點",
   "terrain": [
     0.15,
-    0.15,
-    0.15,
-    0.15,
+    0.38,
+    0.6,
+    0.38,
     0.15,
     0.15,
     0.15,
@@ -27,18 +27,25 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "利用早晨的清新，先瀏覽三篇精選文章，為一天奠定宏觀視野。"
+      "text": "先喝杯咖啡，快速瀏覽今天的市場文章，挑出與虛擬資產或 AI 相關的重點。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "午后可稍作休息，回顧上午的重點，思考如何應用於你的研究。"
+      "text": "參與論壇後，整理筆記，思考如何把監管資訊應用到你的研究題目。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "晚上整理筆記，為明天的虛擬資產論壇做好預備。"
+      "text": "放鬆一下，閱讀一篇輕鬆的科技新聞，為明天充電。"
     }
   ],
-  "needs": [],
+  "needs": [
+    {
+      "title": "參加論壇",
+      "text": "提前閱讀會議議程，了解監管與風險，{src} 有助於課題",
+      "srcLabel": "實驗室行事曆",
+      "link": "https://luma.com/1iz4oj05"
+    }
+  ],
   "resolved": [],
   "sections": [
     {
@@ -46,21 +53,21 @@ window.CD.brief = {
       "items": [
         {
           "title": "三大法人是什麼意思？外資/投信/自營商如何影響股市漲跌？",
-          "text": "了解外資、投信、自營商的操作機制，有助於解讀台股波動，對你的金融研究很實用。（{src}）",
+          "text": "了解外資、投信、自營商如何影響股市，對你的金融市場模型很有幫助。（{src}）",
           "srcLabel": "市場先生",
           "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9wRXN4ZWxVYWtTUE9xSWlMc01YaUhoYlJ6Y0tPcllldTFMSFNNdk1fdmhkdlprNHFRckR6WHlvYUVtdl9VS1J4WEVDTkJ5Y0VtcE5oSEd0bTlKR2ZacWVkOUhB?oc=5"
         },
         {
-          "title": "【MM一週盤前】民主黨橫掃國會血洗科技股，本週 CPI 即將登場！",
-          "text": "CPI 走勢與美股表現的關聯，提供宏觀經濟背景，能補強你的經濟學課題。（{src}）",
+          "title": "展望 2027 系列一：美債破 40 兆、AI 狂發債！2027 年債市還撐得住嗎？",
+          "text": "預測 2027 年債市走向，提供宏觀經濟背景，適合你的經濟學研究。（{src}）",
           "srcLabel": "MacroMicro 財經M平方",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdkdwcmloaFI5YUNWN2xtSmVqdGxsU3AxX3pQb2lobWQ5VXB3Y2RUYWc5dkNzZ3M5VFlPR0FHR0VockF2bjFaVDRINFlyVW1VbFhYS3dpZFNWNDlpX1VRR0hIaE44dmYyWU5ZcXNZYUJBNEZJM3pORjZWQlBOaTNyQVlna2s2TmVLODFRMmdzd1pvQ3RYUzZwSWI0TEp5OEk?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNcDBUTVI4ejdyVGZDYWJmMThyZzBwdEFySkhEdFFMWHYyYkQyR0czMjZjUDZ2aV8zWm80b1FkQm9iSF9XNjFESkxXanhIRHhxeG9zcTNBRGpBaGMzaVRKblhmUDRqNUpOVUFpTU1FT1FwRDl6UFhMVlA4amlSVFBxdEtndWFQWU1JNkYyUnJZcEdKM2ZfREphMkV0ZmZNTlRDZ25peGsyakc3ZVR3aDQwNDVVZnY1bFUtY01qcWhVWTlsSW9LRzJXcWNYVVhlT3FETnY5cXdqMlFzNzdUXzJkekJzN19EOEFIT3JoQkxlb3dIYjJkcnFlVzFIS2VlaEpEZnV1Y1dBOUw?oc=5"
         },
         {
-          "title": "升息何時代表經濟強勁，何時顯示風險",
-          "text": "升息時機的判斷說明經濟強弱的訊號，對研究貨幣政策與資產配置有直接幫助。（{src}）",
-          "srcLabel": "Harvard Business Review",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdEVVVHVIdUdmTDVkU3ByN1A4Z21QbkllUVBleTlBNEVDNmc0c0ZlWlN1M2JSX2VGa3IteDEyQXZfTDBMWFBVUFd4MGRobkg2NnFOOXppbTI0d3RRM3lpQ1ZtYTBGazIzVnhDamgtZVJfSTNFVTlXd0t6VW1MdVAxUU9MZnp5cmhxdUFOUXNBVzZINF9pWDdsa1BmamN1dWtTRmlZ?oc=5"
+          "title": "$MSFT FY2027 Q1：用八個指標，把 AI 帳本攤開來算",
+          "text": "MSFT AI 財報解析提供具體指標，能補充你在 AI 產業分析的實證資料。（{src}）",
+          "srcLabel": "大叔美股筆記",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5nclE4M2dVSjgzUEEyUllZSm4yVUhoN21UaTFpLUdwVmdUQ09MdlpYaTZzVnpqZkFqX0VmWVd2bGhTSnpkd1QySXM0V2ZJZ3hqbTdqLU1EbW93LUM3SGpGNWFHeE9TbkE1cVBYXw?oc=5"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -72,5 +79,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "04:35"
+  "updated": "01:35"
 };
