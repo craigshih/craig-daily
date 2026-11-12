@@ -1,8 +1,8 @@
 // 每日市場洞察：由 scripts/fetch_market.py 自動產生（每天台灣時間 08:30，中午、傍晚各再抓一次），請不要手動改
 window.CD = window.CD || {};
-window.CD.marketUpdated = "2026-11-12 20:20";
+window.CD.marketUpdated = "2026-11-13 02:05";
 window.CD.marketGroups = [{"id": "tw", "name": "財經・台股美股"}, {"id": "strategy", "name": "商業與戰略"}, {"id": "tech", "name": "科技・新創・創投"}, {"id": "growth", "name": "行銷・產品・增長"}, {"id": "smb", "name": "創業與中小企業"}];
-window.CD.marketSummary = {"text": "今日焦點聚於 AI 風險與治理：Nvidia 連續高層醜聞與可能的 CEO 交接，引發產業安全與投資者信心警訊；美國政局轉變，民主黨掌權後川普的建築專案面臨審查，顯示政策變動對大型基建與房地產的衝擊；同時，宏觀層面看 2027 年美債規模逼近 40 兆，AI 發債熱潮持續，市場需評估長期債務承受度。這三大趨勢共同提醒企業在技術創新、政策風險與資金成本間取得平衡。", "watch": ["Nvidia 高層醜聞是否導致治理改革？", "民主黨執政後川普建築專案的法律挑戰", "AI 大規模發債對未來債市流動性的影響"]};
+window.CD.marketSummary = {"text": "今日焦點集中在AI產業的領導危機與市場波動。Nvidia創辦人黃仁勳辭職引發連鎖反應，從高層接任到股價大幅縮水，成為產業信任與治理的警訊；同時，美國軍方與企業加速AI應用與安全防護，顯示AI商業化與風險管理同步升溫；最後，債市與供應鏈議題持續受宏觀經濟與能源成本影響，投資人需關注長期資金流向與成本結構。", "watch": ["Nvidia領導層變動對AI供應鏈的衝擊", "AI應用安全與軍事採購的政策走向", "美債規模與AI資金需求的互動"]};
 window.CD.marketStatus = [{"source": "市場先生", "ok": true, "count": 2}, {"source": "MacroMicro 財經M平方", "ok": true, "count": 2}, {"source": "大叔美股筆記", "ok": true, "count": 3}, {"source": "Harvard Business Review", "ok": true, "count": 3}, {"source": "Business Insider", "ok": true, "count": 3}, {"source": "Fast Company", "ok": true, "count": 3}, {"source": "TechCrunch", "ok": true, "count": 3}, {"source": "The Verge", "ok": true, "count": 2}, {"source": "Wired", "ok": true, "count": 2}, {"source": "Springwise", "ok": true, "count": 2}, {"source": "Lenny's Newsletter", "ok": true, "count": 2}, {"source": "Brian Balfour（Reforge）", "ok": true, "count": 0}, {"source": "HubSpot Blog", "ok": true, "count": 2}, {"source": "Shopify Blog", "ok": true, "count": 2}, {"source": "Entrepreneur", "ok": true, "count": 3}, {"source": "Small Business Trends", "ok": true, "count": 2}];
 window.CD.market = [
   {
@@ -13,7 +13,7 @@ window.CD.market = [
     "date": "2026-11-12",
     "excerpt": "",
     "titleZh": "元大證券複委託 使用心得分享：特色與介面圖解",
-    "takeaway": "說明複委託平台功能，協助投資人提升下單效率與風險管理。"
+    "takeaway": "說明元大證券複委託平台功能與介面，對投資人選擇交易工具提供實務參考。"
   },
   {
     "source": "市場先生",
@@ -23,7 +23,7 @@ window.CD.market = [
     "date": "2026-11-11",
     "excerpt": "",
     "titleZh": "企業可以在創新板上市嗎？有哪些條件與資格？",
-    "takeaway": "解析創新板門檻，指引新創企業規劃上市路徑。"
+    "takeaway": "解析創新板上市門檻，協助企業評估是否符合條件以取得資本市場新資金。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -32,8 +32,8 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNcDBUTVI4ejdyVGZDYWJmMThyZzBwdEFySkhEdFFMWHYyYkQyR0czMjZjUDZ2aV8zWm80b1FkQm9iSF9XNjFESkxXanhIRHhxeG9zcTNBRGpBaGMzaVRKblhmUDRqNUpOVUFpTU1FT1FwRDl6UFhMVlA4amlSVFBxdEtndWFQWU1JNkYyUnJZcEdKM2ZfREphMkV0ZmZNTlRDZ25peGsyakc3ZVR3aDQwNDVVZnY1bFUtY01qcWhVWTlsSW9LRzJXcWNYVVhlT3FETnY5cXdqMlFzNzdUXzJkekJzN19EOEFIT3JoQkxlb3dIYjJkcnFlVzFIS2VlaEpEZnV1Y1dBOUw?oc=5",
     "date": "2026-11-10",
     "excerpt": "",
-    "titleZh": "展望 2027 系列一：美債破 40 兆、AI 狂發債！2027 年債市還撐得住嗎？",
-    "takeaway": "探討美債規模與 AI 發債潮，提醒投資人關注長期利率風險。"
+    "titleZh": "【展望 2027 系列一】 美債破 40 兆、AI 狂發債！2027 年債市還撐得住嗎？",
+    "takeaway": "探討美國債務規模與AI相關發債趨勢，提醒投資人關注債市流動性與風險。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -42,8 +42,18 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdkdwcmloaFI5YUNWN2xtSmVqdGxsU3AxX3pQb2lobWQ5VXB3Y2RUYWc5dkNzZ3M5VFlPR0FHR0VockF2bjFaVDRINFlyVW1VbFhYS3dpZFNWNDlpX1VRR0hIaE44dmYyWU5ZcXNZYUJBNEZJM3pORjZWQlBOaTNyQVlna2s2TmVLODFRMmdzd1pvQ3RYUzZwSWI0TEp5OEk?oc=5",
     "date": "2026-11-08",
     "excerpt": "",
-    "titleZh": "MM 一週盤前：民主黨橫掃國會血洗科技股，本週 CPI 即將登場！",
-    "takeaway": "預測美國政治與通膨數據對科技股短期波動的影響。"
+    "titleZh": "【MM一週盤前】民主黨橫掃國會血洗科技股，本週 CPI 即將登場！",
+    "takeaway": "預測美國政治變化對科技股衝擊，並提醒本週通膨數據可能影響市場波動。"
+  },
+  {
+    "source": "大叔美股筆記",
+    "group": "tw",
+    "title": "黃仁勳辭職之後：輝達最壞情境",
+    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1BZ0c0RjBvd3FpWjYyWllpcldqX1FzR0I3ZTNhNVo5cERVQlVEZWRJVlllN2tlcDBGUWhkdmNld256TGx2S2tPR1paWkN0TVU1VWNCWg?oc=5",
+    "date": "2026-11-12",
+    "excerpt": "",
+    "titleZh": "黃仁勳辭職之後：輝達最壞情境",
+    "takeaway": "分析黃仁勳離任後Nvidia最悲觀情境，供投資人評估風險敞口。"
   },
   {
     "source": "大叔美股筆記",
@@ -53,7 +63,7 @@ window.CD.market = [
     "date": "2026-11-12",
     "excerpt": "",
     "titleZh": "每日重點 261111 Substack 大叔留言重點",
-    "takeaway": "彙整當日美股要點，提供投資人快速資訊抓取。"
+    "takeaway": "彙整當日美股與宏觀要點，提供快速資訊給讀者。"
   },
   {
     "source": "大叔美股筆記",
@@ -62,198 +72,188 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE14ZDZPeDd5Vnptdm1OMzNPazlWU1J6QWxSTDJaX04yR2xkTVBodkpueHc0QXg3MXQtWlFZOUtYb0puWm1YR0M0UlZtdjliMHdOMWJsN0NhdnlmNVE?oc=5",
     "date": "2026-11-11",
     "excerpt": "",
-    "titleZh": "輝達跌下神壇？黃仁勳風暴後，NVDA 是機會還是危機？",
-    "takeaway": "分析黃仁勳醜聞對 Nvidia 股價與產業地位的衝擊。"
-  },
-  {
-    "source": "大叔美股筆記",
-    "group": "tw",
-    "title": "每日重點 261110 Substack 大叔留言重點",
-    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBPc2lRWmR3Rl9oS0ZnT1BNVXN4c28yMFQ4SmV3aE1MeERMbE9IeWplSzc2QVk2YlZSY1E4T0h4TE9Nd09aU0gzS3dkQzVjRlpPRzFGRm9JblBqOTdPNEFiWTQ1bGs?oc=5",
-    "date": "2026-11-11",
-    "excerpt": "",
-    "titleZh": "每日重點 261110 Substack 大叔留言重點",
-    "takeaway": "提供前一天美股市場概覽，協助投資決策。"
+    "titleZh": "輝達跌下神壇？黃仁勳風暴後，$NVDA 是機會還是危機？",
+    "takeaway": "評估Nvidia股價下跌後的投資機會與潛在危機，協助決策者判斷持股策略。"
   },
   {
     "source": "Harvard Business Review",
     "group": "strategy",
-    "title": "Research: The Risks of Rewarding Top Employees with Better Schedules",
-    "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQX1lOUVVjRGxOVEZKNVJZal9FNW5DXzkwWEF5MnIwYm8tQWJQMFlMM0dvaVFSdEVNdUpYR3VvLXdxdlRhQlp4UktqWUtwb3ZCWDJHajBibmMwdVd5SmViNm0zYWtCcXhzMkFmcnJVZ2hFRk5YTndOTzhjMUx5a2o5eFNpdnJxYXY0S1poMU4xZUtGS01RMWc?oc=5",
-    "date": "2026-11-12",
+    "title": "Jensen Huang Has Resigned. How Will Nvidia Replace Him?",
+    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQQkl2cllkWjFacWp1NVlqNU9KdHBfLVBBbW1EN0NEN0JfdzBHSlV2M1VfQ3FkVFMwdmhOaGdtYUJXZG00NlY5Zy1Kb25WM0xBVkoxMEdLbDRLUVRPem10WXJoa1lvRHJBSFlscnVxMGtlY0JTSjFZRkhhTGJleDRSRGswcw?oc=5",
+    "date": "2026-11-13",
     "excerpt": "",
-    "titleZh": "研究：以更好排班獎勵頂尖員工的風險",
-    "takeaway": "指出彈性排班獎勵可能產生公平與效率問題。"
+    "titleZh": "Jensen Huang 辭職，Nvidia 將如何接任？",
+    "takeaway": "探討Nvidia接任者的挑戰與公司未來策略走向，對產業供應鏈有重要影響。"
   },
   {
     "source": "Harvard Business Review",
     "group": "strategy",
-    "title": "The Hidden Costs of Delegating to AI",
-    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5VWEtvaE95cFlqT3RCR1U2V0FHUE4xOU1KblVwRmpfR2V2SGJjRk9NRWtURGd4UUFfa3lXVWdpX0dmM1cwVUJMeGRxSEEtNEZJZWJ0SWtTQ3pDclQzMWFwTFhPX25LdlgzU0xZYw?oc=5",
-    "date": "2026-11-11",
+    "title": "Leaders Shouldn’t Underestimate Time-Based Rewards",
+    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1rUkRCUC1DUy1UMXdSSk5mSGdGNUcweGUyUkZpZ0RSX1VZRWpkbHRPRHNLWmN4RkVEd25HQ3pRRGExYjJVZVI1NGdfTURoRGpfZ3VnWHVmeTgwM1JoVnVuOUI5b0w1Z1h1eVJ2dDNubnNkYWg1ZE5oMWkwbTZLUQ?oc=5",
+    "date": "2026-11-12",
     "excerpt": "",
-    "titleZh": "委派給 AI 的隱藏成本",
-    "takeaway": "提醒企業在導入 AI 時考量隱性支出與治理挑戰。"
+    "titleZh": "領導者不應低估時間型獎勵",
+    "takeaway": "提醒管理者重視時間型獎勵機制，提升員工動機與生產力。"
   },
   {
     "source": "Harvard Business Review",
     "group": "strategy",
-    "title": "The Paradox of AI-Designed Green Products",
-    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBvd1hXbmdMaEJqMUF1eTdwTlZZRUxacWRGMTd1Y1EzSEVuN3ROTVNaR09pbGd5XzN5Ujl2NTVZY185cHpPcTZ5cTZJeXZiaXBCYTZUdnNwRHJMYk9yb01sYm5LbUZBQUZWc1lhVHJyT3NPbXc?oc=5",
-    "date": "2026-11-11",
+    "title": "How AI Erodes People’s Sense of Value at Work",
+    "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFA4dldNUlR0YTNibnZFcWxHTU9nakZnUldoMi16NFhpbmRyeE84bUhpN2MtVUp0U0EwU0o5MmdqUV9tUWJMVTdTN1c4cW11UFAtSTNmcklOblNpU2xtMk1Qa1J2Vkk1X3E4dW4zU3BPcDdQMzgxNk1n?oc=5",
+    "date": "2026-11-12",
     "excerpt": "",
-    "titleZh": "AI 設計的綠色產品悖論",
-    "takeaway": "探討 AI 產生的環保產品是否真能降低碳足跡。"
+    "titleZh": "AI 如何侵蝕員工的工作價值感",
+    "takeaway": "說明AI導入可能削弱員工價值感，企業需設計適當激勵與文化。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "Deloitte is cutting GLP-1 coverage for weight loss and raising health insurance costs for US staff",
-    "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOajBRYjl4MWEwN05YWmNfYU9Pel90Wi1nN2dKUVA1ZzNJT2hqYkJIbkYwOTdldWNlSE1VWHhmVUVNeEFJeVRTZzVtcGNGSTBuREowalZJUWhxdmtyZHhRQnhkZUpzUEtKTzROSGExdVNpUUtwNTZ3YmtoNUVSX0FZU3ZVZmsweEtvRVphekFhMmJWaUdudHdWQ09OcVFlOFcy?oc=5",
-    "date": "2026-11-12",
+    "title": "The US Army is putting money on AI drones that can find hidden threats and protect its Abrams tanks",
+    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNX3JBZTdEaEFpbWJNMm1paVVYRzdDbnlndENHX1RvQlJ3VDYtMVEzaTVKVnZsczVEUXJnQm01WjJoaG90djcxdThGRDN1M29xSG1uZ0tDOHZRRFdPUU5SQ2w5aVFQRlJZLUNYVU5NdF82M2lJbEk3dllqSUwtYUROeHVLQ0JRclNKYU9vNVY4Z3VKUkJfUHNzY2Z3LTF5dmxHeTkw?oc=5",
+    "date": "2026-11-13",
     "excerpt": "",
-    "titleZh": "Deloitte 削減 GLP-1 減重覆蓋，提升美國員工健康保險成本",
-    "takeaway": "說明保險政策變動對企業福利支出的影響。"
+    "titleZh": "美軍投入資金研發能偵測隱蔽威脅、保護 Abrams 戰車的 AI 無人機",
+    "takeaway": "美軍投入AI無人機提升戰場偵測與防護，顯示軍事AI商機快速成長。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "What sets exceptional software engineers apart, according to AWS's AI and tech chief",
-    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQaS05NjcyZDI5V1lIbHpoUmxIalRnZnUyb0hfMU1lQ0NRbVpOOVFTYkVEakVrU1UyZVEwT0w2NWcyTHJ3WkE5Si1jUTU0SVVUMjZ0X2p1QVZDbVRCNkctc3lZRTU5Ynhtelk3MTc2NlIxd2xVNzR5dFVscTktWVFaRWNSbmpiaUhKbjZZaHBBajVwcHJsUjc5Rg?oc=5",
-    "date": "2026-11-12",
+    "title": "All the Characters Being Talked About in the Jensen Huang Scandal",
+    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQ2lCRlBNUWUwbnFYU3lhZTlUQUtfR2ZtTjFndXZpdUkyTVViSy1ES0w3OGJ3RmNBcVU0N28xYkJ1djNqanBxUHdxQk5Fd1h5VGxEZWgtVHhoUmpXWjh0UGtheFU5dTJuZVBWaDJLQmhMT1R5ZzVhSWRvYi1BMFJ1OVg4d0tsTnhRWHRRaGhOU3BGaG5LeWN2aGFVU2pEQmlQX3JzOGZQdE1tRURFdlFSTEZzRHA?oc=5",
+    "date": "2026-11-13",
     "excerpt": "",
-    "titleZh": "AWS AI 與技術主管說：卓越軟體工程師的關鍵特質",
-    "takeaway": "列出頂尖工程師的能力，協助招聘與培訓策略。"
+    "titleZh": "Jensen Huang 醜聞中被討論的所有角色",
+    "takeaway": "整理黃仁勳醜聞相關人物，幫助讀者快速了解事件全貌。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "I landed 2 job offers within 60 days of my layoff. Here's how I found them and decided on the best fit.",
-    "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQYmtGNnVoQ1Q2WU4xUzFwTGUyWmlTZXRJVURRZFNhZ1BaRjdUS2h6NW5wdllWczd3aHliTzR2c3ROMnVSdWNwaGpYMExBVFQ0aVFUMC1IdHoyZGRBcjZ4N1RJbXhyWE1LOExQWVBHQmh4QWp4cm9GRFl1ZjRSU3FmUGFTS2RtU3lBaTNSc2NydDEtbWdlaVE?oc=5",
+    "title": "Read the memos sent to Nvidia employees after Jensen Huang's resignation",
+    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNTlNDTWJxWGFucXlLalJFd2dkY3BxTlZrQzN0VnN3WXFzN2FGZW9vUnoxdmxUYy1nRGhSSURaTUxxSWhjMGZsZ3U0d0pEbld6OEtvODdSbkxTbmFwU0k0a0pFeW9KQWwyendJa1B2azMwWk5BWnJPaDRaaXd1bUhlY0pGS3ZFUVZzVEo1Y25hclJFalFhLTlVUDByVVVSa0ZGYWc?oc=5",
     "date": "2026-11-12",
     "excerpt": "",
-    "titleZh": "我在被裁員後 60 天內拿到兩份工作，分享找工作與決策過程",
-    "takeaway": "提供求職者快速獲得 Offer 的實務技巧與選擇框架。"
+    "titleZh": "閱讀 Jensen Huang 辭職後 Nvidia 員工收到的備忘錄",
+    "takeaway": "揭示Nvidia內部溝通內容，顯示公司危機管理與員工情緒掌控。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "Democrats won Congress. What might happen to Trump’s construction projects now?",
-    "link": "https://www.fastcompany.com/91638576/democrats-won-congress-what-might-happen-to-trumps-construction-projects-now",
-    "date": "2026-11-12",
-    "excerpt": "The future of President Donald Trump’s construction and renovation projects in Washington, D.C., could soon come into question, after Democrats take control of Congress in January. Trump has powered his pet projects…",
-    "titleZh": "民主黨贏得國會，川普的建築專案未來會怎樣？",
-    "takeaway": "分析政治更迭對川普在華盛頓建設項目的法律與資金風險。"
+    "title": "Can we please stop calling it a ‘honey trap’?",
+    "link": "https://www.fastcompany.com/91640992/can-we-please-stop-calling-it-a-honey-trap",
+    "date": "2026-11-13",
+    "excerpt": "When Jensen Huang told Nvidia employees on November 8 that he had been “unfaithful” to his wife , there’s a phrase that quickly became omnipresent in the media: Huang had been the victim of a “honey trap”, laid by Alice…",
+    "titleZh": "能否請別再稱之為「甜蜜陷阱」？",
+    "takeaway": "批判媒體用語，提醒企業危機敘事的語言影響與公關策略。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "A design legend’s oddball watches are back and cooler than ever",
-    "link": "https://www.fastcompany.com/91639546/tibor-kalman-watches-m-co-labs",
-    "date": "2026-11-12",
-    "excerpt": "Tibor Kalman, the graphic designer, was known for confrontational stances; a “self-styled bad boy” of his profession, as The New York Times once described him. But Kalman—who was the editor in chief of Colors magazine…",
-    "titleZh": "設計傳奇的怪異手錶回歸且更酷——Tibor Kalman",
-    "takeaway": "介紹 Kalman 作品的設計精神，啟發品牌創意方向。"
+    "title": "Burnout is a workplace safety hazard. It’s time to start treating it like one",
+    "link": "https://www.fastcompany.com/91640516/burnout-is-a-workplace-safety-hazard-its-time-to-start-treating-it-like-one",
+    "date": "2026-11-13",
+    "excerpt": "Burnout is a huge workplace issue: the low engagement that comes with it costs every business affected a fortune. Worse yet, its effects on workers are deleterious to the point where it can literally lead to death. Yet…",
+    "titleZh": "職場倦怠是安全隱患，應視同處理",
+    "takeaway": "將職場倦怠視為安全風險，呼籲企業落實預防與健康管理。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "Tag yourself as one of USPS’s new cryptid stamps",
-    "link": "https://www.fastcompany.com/91639737/usps-cryptid-stamps-2027-nat-power",
-    "date": "2026-11-12",
-    "excerpt": "At the annual Mothman Festival in Point Pleasant, West Virginia, tens of thousands of visitors gather in their finest cosplay to commemorate the 1966 day that the “ Mothman ”—a 7-foot moth creature with bright red…",
-    "titleZh": "在 USPS 新的神祕生物郵票上標記自己",
-    "takeaway": "說明新郵票主題與收藏市場的行銷效應。"
+    "title": "Why Anthropic’s IPO could put OpenAI at a disadvantage",
+    "link": "https://www.fastcompany.com/91640632/why-anthropics-ipo-could-put-openai-at-a-disadvantage",
+    "date": "2026-11-13",
+    "excerpt": "Welcome to AI Decoded, Fast Company ‘s weekly newsletter that breaks down the most important news in the world of AI. I’m Mark Sullivan, a senior writer at Fast Company , covering emerging tech, AI, and tech policy.…",
+    "titleZh": "Anthropic IPO 可能讓 OpenAI 失去競爭優勢",
+    "takeaway": "Anthropic上市可能改變AI競爭格局，對OpenAI市場領先地位構成挑戰。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "Who could replace Jensen Huang? A highly unscientific list of possible successors",
-    "link": "https://techcrunch.com/2026/11/11/who-could-replace-jensen-huang-a-highly-unscientific-list-of-possible-successors/",
-    "date": "2026-11-12",
-    "excerpt": "Nvidia has no succession plan and a CEO in hot water, so we’ve drafted a shortlist.",
-    "titleZh": "誰能接替黃仁勳？非科學性的可能接班人名單",
-    "takeaway": "列舉潛在繼任者，提醒投資人關注領導層變動。"
+    "title": "Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang’s exit",
+    "link": "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit/",
+    "date": "2026-11-13",
+    "excerpt": "Hugging Face's CEO pledged to keep fighting for open-source AI after Huang's exit, raising questions about Nvidia's $12.9B acquisition.",
+    "titleZh": "Hugging Face CEO 表示 Jensen Huang 離職後仍將持續推動開源 AI",
+    "takeaway": "開源AI領袖表態抗衡Nvidia收購，暗示產業生態可能分化。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "The unfolding Jensen Huang scandal: a timeline",
-    "link": "https://techcrunch.com/2026/11/11/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
-    "date": "2026-11-12",
-    "excerpt": "The affair could have ramifications for national security as the U.S. and China race to develop the most advanced AI infrastructure.",
-    "titleZh": "黃仁勳醜聞時間線",
-    "takeaway": "梳理事件發展，評估對 Nvidia 形象與股價的長期衝擊。"
+    "title": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
+    "link": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
+    "date": "2026-11-13",
+    "excerpt": "The airline said it will not allow customers to use AI agents to book flights and manage reservations.",
+    "titleZh": "聯合航空因資安風險阻止 AI 代理人訂票",
+    "takeaway": "聯航因資安疑慮禁止AI訂票，突顯AI應用的合規與風險挑戰。"
   },
   {
     "source": "TechCrunch",
     "group": "tech",
-    "title": "Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang",
-    "link": "https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/",
-    "date": "2026-11-12",
-    "excerpt": "As soon as Wednesday evening, Nvidia's board could decide to remove its founder and CEO of 33 years.",
-    "titleZh": "Nvidia 股價下跌，董事會可能罷免黃仁勳",
-    "takeaway": "報導董事會動向，提示市場對公司治理的關注。"
+    "title": "SoftBank’s billion-dollar loss may have put a cap on AI’s natural gas ambitions",
+    "link": "https://techcrunch.com/2026/11/12/softbanks-billion-dollar-loss-may-have-put-a-cap-on-ais-natural-gas-ambitions/",
+    "date": "2026-11-13",
+    "excerpt": "SoftBank lost over $3 billion pre-ordering natural gas turbines to power AI data centers. Here's what the loss means to power markets.",
+    "titleZh": "SoftBank 千億虧損或限制 AI 天然氣野心",
+    "takeaway": "軟銀巨額虧損限制AI資料中心能源布局，影響能源市場與AI成本。"
   },
   {
     "source": "The Verge",
     "group": "tech",
-    "title": "Ring confirms its camera drone won’t have manual controls after crashing on CBS News",
-    "link": "https://www.theverge.com/tech/1031817/ring-drone-cam-manual-flight-controls",
-    "date": "2026-11-12",
-    "excerpt": "When (or if) Ring's security camera drone flies into our homes in January, you won't get the option to pilot it yourself. The Ring Drone Cam relies entirely on an \"AI Pilot\" system to follow pre-programmed routes and…",
-    "titleZh": "Ring 確認其相機無人機不會有手動控制功能",
-    "takeaway": "說明產品設計決策對使用者體驗與安全的影響。"
+    "title": "The Jensen Huang scandal is hardly over",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/1032069/jensen-huang-resignation-affair-chips-smuggling",
+    "date": "2026-11-13",
+    "excerpt": "I was certain, until the story of Jensen Huang's second affair hit, that Huang was bulletproof. After all, why wouldn't he be? He's placed himself indispensably at the center of the AI industry and famously had no…",
+    "titleZh": "Jensen Huang 醜聞遠未結束",
+    "takeaway": "持續追蹤黃仁勳醜聞發展，提醒投資者關注公司治理與聲譽風險。"
   },
   {
     "source": "The Verge",
     "group": "tech",
-    "title": "Nvidia is reportedly preparing to fire Jensen Huang",
-    "link": "https://www.theverge.com/tech/1031652/jensen-huang-rumor",
-    "date": "2026-11-12",
-    "excerpt": "Nvidia's board is preparing to dismiss CEO Jensen Huang following a report from The New York Times about a second alleged extramarital affair, just days after he admitted to a separate affair with a woman alleged to be…",
-    "titleZh": "Nvidia 正在準備解雇黃仁勳",
-    "takeaway": "揭露高層變動傳聞，提醒投資者關注公司未來領導。"
+    "title": "‘The end of Tesla!’: Cybertruck diehards turn on Elon Musk after he pulls the plug",
+    "link": "https://www.theverge.com/transportation/1031991/elon-musk-cancels-cybertruck-tesla-fans-backlash",
+    "date": "2026-11-13",
+    "excerpt": "The Cybertruck is heading to that shiny cyber-dumpster in the sky, leaving the folks who built online identities around Elon Musk's polarizing pickup feeling bereft. Usually, Musk's fanbase treads lightly around their…",
+    "titleZh": "「特斯拉終結！」：Cybertruck 死忠粉在 Elon Musk 停產後翻臉",
+    "takeaway": "Tesla因停產Cybertruck引發粉絲不滿，顯示品牌決策與忠誠度的脆弱性。"
   },
   {
     "source": "Wired",
     "group": "tech",
-    "title": "Alex Karp Said He’s a ‘Progressive.’ OK! Here’s Some Other Stuff He’s Said Recently",
-    "link": "https://www.wired.com/story/alex-karp-said-hes-a-progressive-ok-heres-some-other-stuff-hes-said-recently/",
-    "date": "2026-11-12",
-    "excerpt": "The Palantir CEO touted his “progressive” worldview in a recent interview. Let’s see how that lines up with his comments during the company’s earnings call two weeks ago.",
-    "titleZh": "Alex Karp 稱自己是『進步派』——他最近又說了什麼",
-    "takeaway": "檢視 Palantir CEO 的言論與公司策略的一致性。"
+    "title": "Jensen Huang Basically Lit More Than $1 Trillion on Fire in Less Than a Month",
+    "link": "https://www.wired.com/story/jensen-huang-tanked-a-trillion-dollars-in-less-than-a-month/",
+    "date": "2026-11-13",
+    "excerpt": "Since the scandal involving an alleged Chinese spy began, Nvidia has lost an eye-watering sum from its market value.",
+    "titleZh": "Jensen Huang 在不到一個月內讓超過 1 兆美元的市值化為烏有",
+    "takeaway": "黃仁勳醜聞導致Nvidia市值蒸發逾1兆美元，凸顯高科技公司市值波動風險。"
   },
   {
     "source": "Wired",
     "group": "tech",
-    "title": "I Saw the Future of Robotics in a Virtual Duck That Chases My Cat",
-    "link": "https://www.wired.com/story/i-trained-a-microduck-to-be-my-cats-butler/",
+    "title": "Meet Colette Kress, Nvidia’s New Interim CEO",
+    "link": "https://www.wired.com/story/who-is-colette-kress-the-woman-who-could-succeed-jensen-huang/",
     "date": "2026-11-12",
-    "excerpt": "An OpenAI model helped me teach the Microduck to waddle and moonlight as a tiny cat butler.",
-    "titleZh": "我在虛擬鴨子裡看到機器人未來",
-    "takeaway": "展示 AI 生成虛擬角色的創新應用與未來可能性。"
+    "excerpt": "Nvidia’s longtime chief financial officer helped transform the company into an AI powerhouse. Now she’s taking the reins following Jensen Huang’s resignation on Thursday.",
+    "titleZh": "認識 Colette Kress，Nvidia 新任臨時執行長",
+    "takeaway": "介紹Nvidia臨時CEO Colette Kress背景，預示公司短期治理與策略延續性。"
   },
   {
     "source": "Springwise",
     "group": "tech",
-    "title": "AI technology for data compression and security",
-    "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdlh1SFlZdEQ4WGllUmxjejZ6VlpidlBVMW0wZFpPeTVsSkMwT2YxWnk4Q2xHbWdoa3JUeGxjWVh6OFdpcy1pUkRaUVVZMkpvVUdkbURUSEgzUzkxRXhDcS1wOE5haUhoMUhLQldwV2dqUTA3RHJId3g2NmJpMHlHRmcxSGk2NkVJcDFMTXVpQ3NWSlEySUUxMWtEZk9NcnZCMDRJVXlsbFfSAagBQVVfeXFMUHZYdUhZWXREOFhpZVJsY3o2elZaYnZQVTFtMGRaT3k1bEpDME9mMVp5OENsR21naGtyVHhsY1lYejhXaXMtaVJEWlFVWTJKb1VHZG1EVEhIM1M5MUV4Q3EtcDhOYWlIaDFIS0JXcFdnalEwN0RySHd4NjZiaTB5R0ZnMUhpNjZFSXAxTE11aUNzVkpRMklFMTFrRGZPTXJ2QjA0SVV5bGxX?oc=5",
-    "date": "2026-11-11",
+    "title": "Food ingredients from brewer’s yeast",
+    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNRkpJWXVpYng3OFNzMjNKNXNUQ0xYeWhfOEp5VVZLd29jMjdfXzJYYVU3eUZYMkdnemI4R212QnFfSmhvZ2ZkdU5qd2tLT05sUmlGZ0gyeE1XcFhSS2pOWmRvQUNwLWVac1g2bkF1czNmSWwzbUQ3TDE2aTFJbUg5dVlR0gGOAUFVX3lxTFBEdXJzUVFkeFZXaUlQT0RDQl9tSjVXNHVLbjJEU0RwaHZDVGpJUW5XTzNGYmJtWTdUcEVIM3JRSG9GSXZrbVVEbXBvaFRGMGFNWFRKUnBWM1U3WGp4dzh6T0ZXa0lubS1WN1lLVDJLWnlRWFpYNk9rQ25QZEM2bjh3aE12WlFGejAzZERGVEE?oc=5",
+    "date": "2026-11-12",
     "excerpt": "",
-    "titleZh": "AI 技術用於資料壓縮與安全",
-    "takeaway": "說明 AI 在提升資料傳輸效率與防護上的新方案。"
+    "titleZh": "來自釀酒酵母的食品成分",
+    "takeaway": "介紹以釀酒酵母製作的食品成分，提供食品創新與永續供應鏈的案例。"
   },
   {
     "source": "Springwise",
     "group": "tech",
-    "title": "Affordable smart water metering solutions",
-    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQZ3lCc2IwUkFINTVFcEJTdGY1eEo2ZWRFcE1zVlZwNjZKeTdtOHJ3R3V2cGo0X25yX25PWGFNZFh3ZUltLXhaaG9ycHFwUU0zeE9YMTBuTFloenBLQ3BWeHJvazNnRDl5bHpleFRpNkh4QkdBMXJnSU02YkpMN24ybTZEalFOOU40TVRaUU4tNTVVVGZXdXhuaV9KcDB2bXdBd0Nj0gGjAUFVX3lxTFBneUJzYjBSQUg1NUVwQlN0ZjV4SjZlZEVwTXNWVnA2Nkp5N204cndHdXZwajRfbnJfbk9YYU1kWHdlSW0teFpob3JwcXBRTTN4T1gxMG5MWWh6cEtDcFZ4cm9rM2dEOXlsemV4VGk2SHhCR0ExcmdJTTZiSkw3bjJtNkRqUU45TjRNVFpRTi01NVVUZld1eG5pX0pwMHZtd0F3Q2M?oc=5",
-    "date": "2026-11-11",
+    "title": "Self-powered fibres using spray coating process",
+    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQNWdMZ0JwRmYzdkxJNEJOczFlZDdJamdudzI0TG1lejE1U1k1cVl6OGVsZTJHYVNmR3RYWVJfRnBYQ1MzUUxJUUo0RkdkRFg1OVRpUkxuRUd5TGczNjF2MFBlc0RXTFpFUURxdEw0YmxYZ2NhdFRnYTVEUXQyTWFfdmRGNEY3SFBHYVpqUTVGLVZuRGNrMlpOY0c2RmzSAagBQVVfeXFMTmhEU2pSZElIMldBNnRZRkNZQWJhLS03enExM2xZQ1dqcXlhN0NYcmhOQXY4c3ktQ0VwX09NUWhGeEZlWTRMMmpuMlNIeWNxYjk1blUweGtsZU9Kcmx1WUwyN2lBa2tlWWIwWWxDb3IxaWxZXzZZbWpDd3dfYWdfUzh0T09JU2o2SXlKLW14aUlrQ2JIVXRuaUxUNXo1Q1VlMFI1V3Y5WDZY?oc=5",
+    "date": "2026-11-12",
     "excerpt": "",
-    "titleZh": "可負擔的智慧水表解決方案",
-    "takeaway": "介紹低成本智慧計量技術，助力城市水資源管理。"
+    "titleZh": "使用噴塗工藝的自供能纖維",
+    "takeaway": "說明噴塗工藝製造自供電纖維，對智慧穿戴與能源紡織具商業潛力。"
   },
   {
     "source": "Lenny's Newsletter",
@@ -262,8 +262,8 @@ window.CD.market = [
     "link": "https://www.lennysnewsletter.com/p/claude-code-obsidian-my-familys-ai",
     "date": "2026-11-11",
     "excerpt": "Watch now (34 mins) | 🎙️ Scott Farrar walks through the Claude Code and Obsidian system he built to track appliances, chase insurance quotes, and keep household projects moving",
-    "titleZh": "Claude Code + Obsidian：我的家庭 AI 大腦",
-    "takeaway": "分享個人化 AI 知識管理系統，啟發企業內部資訊整合。"
+    "titleZh": "Claude Code + Obsidian：我家的 AI 大腦 | Scott Farrar",
+    "takeaway": "分享個人AI工具整合案例，啟發家庭與小型企業的自動化應用。"
   },
   {
     "source": "Lenny's Newsletter",
@@ -272,8 +272,8 @@ window.CD.market = [
     "link": "https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late",
     "date": "2026-11-10",
     "excerpt": "PMs are winning, engineers are plateauing, designers are hurting, and the biggest AI hiring boom isn’t in software",
-    "titleZh": "2026 年末科技職場狀況——產品經理勝出、工程師停滯、設計師受挫，AI 招募熱潮不在軟體",
-    "takeaway": "概括職位需求變化，協助人資制定招聘與培訓策略。"
+    "titleZh": "2026 年末科技職缺市場概況",
+    "takeaway": "概述2026年科技人才市場變化，指出產品經理需求上升與設計師壓力增大。"
   },
   {
     "source": "HubSpot Blog",
@@ -282,8 +282,8 @@ window.CD.market = [
     "link": "https://blog.hubspot.com/marketing/aeo-benchmarking",
     "date": "2026-11-10",
     "excerpt": "AEO benchmarking measures your brand’s AI search visibility against competitors and market trends. It tells you whether a change in your visibility comes from the market or from your own brand, so you can prove…",
-    "titleZh": "AEO 基準測量：AI 搜尋可見度市場數據揭示",
-    "takeaway": "說明 AI 搜尋可見度指標，幫助品牌優化搜尋策略。"
+    "titleZh": "AEO 基準測試：市場數據揭示 AI 搜尋現況",
+    "takeaway": "說明AI搜尋能見度基準測量，協助品牌評估搜尋表現與競爭對手差距。"
   },
   {
     "source": "HubSpot Blog",
@@ -292,8 +292,18 @@ window.CD.market = [
     "link": "https://blog.hubspot.com/marketing/how-to-use-ai-to-write-a-blog-post",
     "date": "2026-11-10",
     "excerpt": "Like a hammer or even a hair dryer, AI is just a tool. It needs to be wielded skillfully by an expert to achieve greatness. And in a world increasingly full of “AI slop,” this is especially true when exploring how to…",
-    "titleZh": "如何使用 AI 撰寫不爛的部落格文章",
-    "takeaway": "提供 AI 文案技巧，避免產出低質內容。"
+    "titleZh": "如何利用 AI 撰寫不爛的部落格文章",
+    "takeaway": "提供AI寫作實務技巧，避免產出低質內容，提升行銷效率。"
+  },
+  {
+    "source": "Shopify Blog",
+    "group": "growth",
+    "title": "22 Small Business Tips To Grow Your Business (2027)",
+    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9VR3hFNGllckVVak1jajczWjdKblVnaDFGc2k4N0xXS3k3TnlQX1c4UE8wTzI2QlNZamQ3ZEdaWHJuNTJiYllRdnRSRUF2QnE3cTlTbm9PT0NnWW85?oc=5",
+    "date": "2026-11-10",
+    "excerpt": "",
+    "titleZh": "2027 年小企業成長 22 個技巧",
+    "takeaway": "列出2027年小企業成長策略，涵蓋數位行銷與資金管理。"
   },
   {
     "source": "Shopify Blog",
@@ -302,18 +312,8 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5Ua0R5WFJFQlZ5SjFsZHJEQWR2MldHc1BKd1dBazVUbEgxLXVBWlpkLVRBbTUxaE8xb3cyMVcxbDZoRnFtdy1GZ0l3QUR1UU9aeng0SlRKVV93QQ?oc=5",
     "date": "2026-11-08",
     "excerpt": "",
-    "titleZh": "Facebook 廣告成本多少？2026 年 CPC、CPM 與預算",
-    "takeaway": "列出最新廣告價格指標，協助行銷預算規劃。"
-  },
-  {
-    "source": "Shopify Blog",
-    "group": "growth",
-    "title": "How To Create Gift Cards for Your Business (2026)",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1XM091cThIc0wxempGQXdKSFhZaUozbXJLZ3l6SmQ5ckgtLTRXcTF1dkVORkxvN2tVcktUNjJCaUNSVnZWYmhpZG1rQnVVdlRTd080SWFKdw?oc=5",
-    "date": "2026-11-08",
-    "excerpt": "",
-    "titleZh": "如何為你的業務建立禮品卡（2026）",
-    "takeaway": "說明禮品卡設計與實作步驟，提升客戶黏著度。"
+    "titleZh": "Facebook 廣告費用多少？2026 年 CPC、CPM 與預算",
+    "takeaway": "解析2026年Facebook廣告成本指標，協助廣告主預算規劃。"
   },
   {
     "source": "Entrepreneur",
@@ -322,8 +322,8 @@ window.CD.market = [
     "link": "https://www.entrepreneur.com/business-news/i-looked-beyond-silicon-valley-found-new-playbook-building-startups",
     "date": "2026-11-12",
     "excerpt": "Founders in small countries can't rely on abundant capital or elite networks. Here's what startups in big markets can learn from them.",
-    "titleZh": "我看見超越矽谷的新創業手冊——小國創業者的啟示",
-    "takeaway": "分享小市場創業策略，提供資源有限企業的參考。"
+    "titleZh": "我走出矽谷，找到打造新創的全新手冊",
+    "takeaway": "分享非矽谷創業新模式，對資源有限的創業者提供可行策略。"
   },
   {
     "source": "Entrepreneur",
@@ -332,8 +332,8 @@ window.CD.market = [
     "link": "https://www.entrepreneur.com/business-news/can-you-be-too-honest-at-work-here-are-3-questions-to-ask-before-giving-feedback",
     "date": "2026-11-12",
     "excerpt": "It is possible to be too honest in the workplace.",
-    "titleZh": "在職場過於誠實會怎樣？給予回饋前的 3 個問題",
-    "takeaway": "提醒管理者在給予意見時平衡誠實與關係。"
+    "titleZh": "在職場過於誠實會有問題嗎？給予回饋前先問自己三個問題",
+    "takeaway": "提醒職場溝通的界線，提供三個自我檢視問題以避免過度直率。"
   },
   {
     "source": "Entrepreneur",
@@ -342,27 +342,27 @@ window.CD.market = [
     "link": "https://www.entrepreneur.com/building-a-business/this-28-year-old-started-a-caffeinated-side-hustle-it-made-125k-in-year-1",
     "date": "2026-11-12",
     "excerpt": "Rosie Goldwasser wanted to create a product delivering calm, focused energy without the crash.",
-    "titleZh": "28 歲創業者的咖啡因副業——首年營收 12.5 萬美元",
-    "takeaway": "展示低成本副業模式，啟發企業內部創新。"
+    "titleZh": "28 歲女子創立含咖啡因副業，首年賺 12.5 萬美元，遂辭職全職經營",
+    "takeaway": "展示咖啡因副業成功案例，說明利基市場與品牌差異化的重要性。"
   },
   {
     "source": "Small Business Trends",
     "group": "smb",
-    "title": "Adobe Debuts AI System That Learns Brand Judgment, Not Just Rules",
-    "link": "https://smallbiztrends.com/adobe-debuts-ai-system-that-learns-brand-judgment-not-just-rules/",
+    "title": "7 Best Low Investment Franchises to Kickstart Your Business Journey",
+    "link": "https://smallbiztrends.com/low-investment-franchises/",
     "date": "2026-11-12",
-    "excerpt": "Discover how Adobe's new AI system goes beyond traditional rule-based learning by understanding brand judgment. Explore its implications for creative industries and marketing strategies in our in-depth article.",
-    "titleZh": "Adobe 推出學會品牌判斷的 AI 系統",
-    "takeaway": "說明新 AI 能理解品牌感知，影響創意產業工作流程。"
+    "excerpt": "Discover the top 7 low investment franchises that can help you kickstart your business journey. Explore affordable opportunities that offer great potential for success and entrepreneurship without breaking the bank.",
+    "titleZh": "7 大低投入加盟方案，助你啟動創業之路",
+    "takeaway": "列出低投入加盟方案，為創業者提供成本可控的起步選項。"
   },
   {
     "source": "Small Business Trends",
     "group": "smb",
-    "title": "Oracle Breaks Ground on New Global Headquarters in Nashville, Promising Jobs and Investment",
-    "link": "https://smallbiztrends.com/oracle-breaks-ground-on-new-global-headquarters-in-nashville-promising-jobs-and-investment/",
+    "title": "eBay Revamps Selling with AI-Driven Photo-to-Listing Technology",
+    "link": "https://smallbiztrends.com/ebay-revamps-selling-with-ai-driven-photo-to-listing-technology/",
     "date": "2026-11-12",
-    "excerpt": "Discover how Oracle's new global headquarters in Nashville is set to create thousands of jobs and boost local investment, marking a significant milestone for the tech giant and the community.",
-    "titleZh": "Oracle 在納什維爾新全球總部破土動工，帶來就業與投資",
-    "takeaway": "報導大型企業擴張對地方經濟與供應鏈的正面效應。"
+    "excerpt": "Discover how eBay is transforming the selling experience with its innovative AI-driven photo-to-listing technology, streamlining the process for sellers and enhancing the buyer experience.",
+    "titleZh": "eBay 以 AI 影像轉列表技術全面升級販售功能",
+    "takeaway": "eBay導入AI影像自動上架，提升賣家效率與購物體驗，示範電商AI應用趨勢。"
   }
 ];
