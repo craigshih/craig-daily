@@ -2,14 +2,14 @@
 window.CD = window.CD || {};
 window.CD.stickiesDb = "https://app.notion.com/p/ad81686b08fe4394ac4c3186529a85fe";
 window.CD.stickiesForm = "https://app.notion.com/p/ad81686b08fe4394ac4c3186529a85fe?v=3fb40356b27a8126a2ba000c12eb1e3e";
-window.CD.stickiesSynced = "2026-11-09 02:45";
+window.CD.stickiesSynced = "2026-11-14 02:55";
 window.CD.stickies = [
   {
     "text": "簡報美編prompt",
     "note": "",
     "tags": [
       "靈感",
-      "訓練AＩ"
+      "訓練AI"
     ],
     "color": "紫",
     "link": "",
