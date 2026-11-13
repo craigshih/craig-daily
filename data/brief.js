@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-11-13",
-  "dayType": "NORMAL",
-  "headline": "Craig，今天晚上有 Web3 跨域實戰課程，抓緊時間充電吧！",
+  "date": "2026-11-14",
+  "dayType": "OPEN",
+  "headline": "Craig，今天放慢腳步，先把穩定幣閱讀完，為下週研究打基礎。",
   "terrain": [
     0.15,
     0.15,
@@ -17,9 +17,9 @@ window.CD.brief = {
     0.15,
     0.15,
     0.15,
-    0.38,
-    0.6,
-    0.38,
+    0.15,
+    0.15,
+    0.15,
     0.15,
     0.15,
     0.15
@@ -27,47 +27,40 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "快速瀏覽今天的市場文章，挑出與區塊鏈或金融科技相關的，為課程做點預備。"
+      "text": "喝杯咖啡，快速掃描今天的市場文章，挑出最相關的三篇。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "整理課前筆記，列出資產上鏈的關鍵概念，並寫下兩個想在課堂上提問的問題。"
+      "text": "深入閱讀《穩定幣與存款爭奪戰》，做筆記，思考可應用於論文的角度。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "參加 Web3 跨域實戰人才認證課程第 4 堂，記得把重點寫進筆記本。"
+      "text": "整理筆記，寫下明天的閱讀計畫，讓研究更有條理。"
     }
   ],
-  "needs": [
-    {
-      "title": "準備Web3課程",
-      "text": "檢查課程教材並預習資產上鏈相關內容，{src} 讓你上課更得心應手",
-      "srcLabel": "實驗室行事曆",
-      "link": "https://www.accupass.com/event/2610050842082018972071"
-    }
-  ],
+  "needs": [],
   "resolved": [],
   "sections": [
     {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "【展望 2027 系列一】 美債破 40 兆、AI 狂發債！2027 年債市還撐得住嗎？",
-          "text": "第 2 篇探討 2027 年債市與 AI 發債，提供宏觀金融視野，對資產上鏈的資金來源有啟發。（{src}）",
-          "srcLabel": "MacroMicro 財經M平方",
-          "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNcDBUTVI4ejdyVGZDYWJmMThyZzBwdEFySkhEdFFMWHYyYkQyR0czMjZjUDZ2aV8zWm80b1FkQm9iSF9XNjFESkxXanhIRHhxeG9zcTNBRGpBaGMzaVRKblhmUDRqNUpOVUFpTU1FT1FwRDl6UFhMVlA4amlSVFBxdEtndWFQWU1JNkYyUnJZcEdKM2ZfREphMkV0ZmZNTlRDZ25peGsyakc3ZVR3aDQwNDVVZnY1bFUtY01qcWhVWTlsSW9LRzJXcWNYVVhlT3FETnY5cXdqMlFzNzdUXzJkekJzN19EOEFIT3JoQkxlb3dIYjJkcnFlVzFIS2VlaEpEZnV1Y1dBOUw?oc=5"
+          "title": "企業可以在創新板上市嗎？有哪些條件與資格？",
+          "text": "創新板上市條件直接關聯你對金融創新制度的研究。（{src}）",
+          "srcLabel": "市場先生",
+          "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBEVzJxb2FzMjI0STNWUlNPekY4Q3VfY2lTbTkyUFE3c0oxRnpjLWxXbzFiWlNkX182YV9aaWdDb3gxcEc4Q290WndIYzEtbnk5X2E2bDFEbw?oc=5"
         },
         {
-          "title": "黃仁勳辭職之後：輝達最壞情境",
-          "text": "第 4 篇分析黃仁勳辭職後 Nvidia 前景，讓你了解區塊鏈與 AI 交叉產業的風險與機會。（{src}）",
-          "srcLabel": "大叔美股筆記",
-          "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1BZ0c0RjBvd3FpWjYyWllpcldqX1FzR0I3ZTNhNVo5cERVQlVEZWRJVlllN2tlcDBGUWhkdmNld256TGx2S2tPR1paWkN0TVU1VWNCWg?oc=5"
+          "title": "了解您下一位高階主管的真實情況",
+          "text": "了解高階主管真實情況，提供論文中組織行為的實務案例。（{src}）",
+          "srcLabel": "Harvard Business Review",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE50VTkxSkdOLTFZR2VqTHlhT0VOSDlpYVZuLW1VWndPVGU2MDhLbWcySFl6dGxIVXljSFU0Wk5iZnlWOU0xUV9jUE1mMUcxOHRYaUZLNWJheDNwdkNCeU4wWVdLdlh1WDE0VnlmdFl1bWE1dnM?oc=5"
         },
         {
-          "title": "輝達跌下神壇？黃仁勳風暴後，$NVDA 是機會還是危機？",
-          "text": "第 6 篇討論 NVDA 股價波動，說明高科技股在資產上鏈時的估值挑戰。（{src}）",
-          "srcLabel": "大叔美股筆記",
-          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE14ZDZPeDd5Vnptdm1OMzNPazlWU1J6QWxSTDJaX04yR2xkTVBodkpueHc0QXg3MXQtWlFZOUtYb0puWm1YR0M0UlZtdjliMHdOMWJsN0NhdnlmNVE?oc=5"
+          "title": "2026年底科技職缺市場概況",
+          "text": "2026 年底科技職缺概況可作為你未來職涯規劃與產業趨勢分析的參考。（{src}）",
+          "srcLabel": "Lenny's Newsletter",
+          "link": "https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -79,5 +72,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "02:05"
+  "updated": "01:35"
 };
