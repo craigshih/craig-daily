@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-11-14",
+  "date": "2026-11-15",
   "dayType": "OPEN",
-  "headline": "Craig，今天放慢腳步，先把穩定幣閱讀完，為下週研究打基礎。",
+  "headline": "Craig，今天沒行程，輕鬆瀏覽市場新知，抓住三篇關鍵資訊",
   "terrain": [
     0.15,
     0.15,
@@ -27,15 +27,15 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "喝杯咖啡，快速掃描今天的市場文章，挑出最相關的三篇。"
+      "text": "喝杯咖啡，快速掃描新聞頭條，挑出最吸睛的三篇文章"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "深入閱讀《穩定幣與存款爭奪戰》，做筆記，思考可應用於論文的角度。"
+      "text": "找個安靜角落，深入閱讀挑選的文章，做筆記整理要點"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "整理筆記，寫下明天的閱讀計畫，讓研究更有條理。"
+      "text": "回顧今天的閱讀，思考如何把新知應用到你的研究或課題"
     }
   ],
   "needs": [],
@@ -46,19 +46,19 @@ window.CD.brief = {
       "items": [
         {
           "title": "企業可以在創新板上市嗎？有哪些條件與資格？",
-          "text": "創新板上市條件直接關聯你對金融創新制度的研究。（{src}）",
+          "text": "創新板上市條件解析，對你未來可能的創業或投資規劃很實用（{src}）",
           "srcLabel": "市場先生",
           "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBEVzJxb2FzMjI0STNWUlNPekY4Q3VfY2lTbTkyUFE3c0oxRnpjLWxXbzFiWlNkX182YV9aaWdDb3gxcEc4Q290WndIYzEtbnk5X2E2bDFEbw?oc=5"
         },
         {
-          "title": "了解您下一位高階主管的真實情況",
-          "text": "了解高階主管真實情況，提供論文中組織行為的實務案例。（{src}）",
+          "title": "Nvidia 如何在無創辦人情況下前進",
+          "text": "Nvidia 無創辦人如何持續創新，提供 AI 產業發展的案例參考（{src}）",
           "srcLabel": "Harvard Business Review",
-          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE50VTkxSkdOLTFZR2VqTHlhT0VOSDlpYVZuLW1VWndPVGU2MDhLbWcySFl6dGxIVXljSFU0Wk5iZnlWOU0xUV9jUE1mMUcxOHRYaUZLNWJheDNwdkNCeU4wWVdLdlh1WDE0VnlmdFl1bWE1dnM?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1qUHZ6NWlIVjZLZ2VSRVB4QUdOZkZiT1hkaHVueVFtcXRCYjRSV0UwU3dVWFRjOE9mUnhsVWhqVWZ3c1g5bkZrMXg2bVlFNVVjVXpBdUduNWxzN2VHWW9wUkE1YTBNZTNIZWhzUTgtMTJmOHJ6ODhPd1I0NA?oc=5"
         },
         {
-          "title": "2026年底科技職缺市場概況",
-          "text": "2026 年底科技職缺概況可作為你未來職涯規劃與產業趨勢分析的參考。（{src}）",
+          "title": "2026 年後期科技職位市場狀況——產品經理受惠，工程師停滯，設計師受衝擊，AI 招募熱潮不在軟體領域",
+          "text": "2026 後期科技職位市場趨勢，幫助你規劃職涯方向與技能提升（{src}）",
           "srcLabel": "Lenny's Newsletter",
           "link": "https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late"
         },
@@ -72,5 +72,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "01:35"
+  "updated": "00:30"
 };
