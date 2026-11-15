@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "dayType": "OPEN",
-  "headline": "Craig，今天沒行程，輕鬆瀏覽市場新知，抓住三篇關鍵資訊",
+  "headline": "Craig，今天先把市場脈動梳理清楚，迎向新的一週。",
   "terrain": [
     0.15,
     0.15,
@@ -27,15 +27,15 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "喝杯咖啡，快速掃描新聞頭條，挑出最吸睛的三篇文章"
+      "text": "快速瀏覽今日重點文章，抓住關鍵資訊。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "找個安靜角落，深入閱讀挑選的文章，做筆記整理要點"
+      "text": "整理筆記，思考如何應用於課題或投資。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "回顧今天的閱讀，思考如何把新知應用到你的研究或課題"
+      "text": "放鬆一下，回顧今天收穫，為明天做好準備。"
     }
   ],
   "needs": [],
@@ -45,22 +45,22 @@ window.CD.brief = {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "企業可以在創新板上市嗎？有哪些條件與資格？",
-          "text": "創新板上市條件解析，對你未來可能的創業或投資規劃很實用（{src}）",
+          "title": "2026王道銀行新戶活動介紹｜存款、刷卡、台股交易優惠整理",
+          "text": "王道銀行新戶活動整理有實務案例，適合研究金融產品設計。（{src}）",
           "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBEVzJxb2FzMjI0STNWUlNPekY4Q3VfY2lTbTkyUFE3c0oxRnpjLWxXbzFiWlNkX182YV9aaWdDb3gxcEc4Q290WndIYzEtbnk5X2E2bDFEbw?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBRZnNhOUtDdGdFNm9pbmoxS0F6LW41UGtsSzBIRldVVzJCQkpHb3RPXzRxSzZnbHNIVHZTMFM1WkVkclhOeTlmQmx0U2tCbkNSaHQ1TUYzeXA?oc=5"
         },
         {
-          "title": "Nvidia 如何在無創辦人情況下前進",
-          "text": "Nvidia 無創辦人如何持續創新，提供 AI 產業發展的案例參考（{src}）",
-          "srcLabel": "Harvard Business Review",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1qUHZ6NWlIVjZLZ2VSRVB4QUdOZkZiT1hkaHVueVFtcXRCYjRSV0UwU3dVWFRjOE9mUnhsVWhqVWZ3c1g5bkZrMXg2bVlFNVVjVXpBdUduNWxzN2VHWW9wUkE1YTBNZTNIZWhzUTgtMTJmOHJ6ODhPd1I0NA?oc=5"
+          "title": "I500值得投資嗎？市場先生完整評價I500 / iShares標普500 UCITS ETF (累積型)",
+          "text": "I500 ETF 評價深入，能幫助你了解指數基金的選擇與風險。（{src}）",
+          "srcLabel": "市場先生",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1RdW1xVEVvU3ZIcEFnOUZiaWdGV2dNTGFGVi1yTE44eWxqNHplYlRvOE1GbTc4elhTd3p2OEdsSm05cnprTkkxbkJWWjI0UkV4QmRF?oc=5"
         },
         {
-          "title": "2026 年後期科技職位市場狀況——產品經理受惠，工程師停滯，設計師受衝擊，AI 招募熱潮不在軟體領域",
-          "text": "2026 後期科技職位市場趨勢，幫助你規劃職涯方向與技能提升（{src}）",
-          "srcLabel": "Lenny's Newsletter",
-          "link": "https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late"
+          "title": "美債破 40 兆、AI 狂發債！2027 年債市還撐得住嗎？",
+          "text": "美債與 AI 發債趨勢解析，提供宏觀經濟視角，對課題研究很有價值。（{src}）",
+          "srcLabel": "MacroMicro 財經M平方",
+          "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNcDBUTVI4ejdyVGZDYWJmMThyZzBwdEFySkhEdFFMWHYyYkQyR0czMjZjUDZ2aV8zWm80b1FkQm9iSF9XNjFESkxXanhIRHhxeG9zcTNBRGpBaGMzaVRKblhmUDRqNUpOVUFpTU1FT1FwRDl6UFhMVlA4amlSVFBxdEtndWFQWU1JNkYyUnJZcEdKM2ZfREphMkV0ZmZNTlRDZ25peGsyakc3ZVR3aDQwNDVVZnY1bFUtY01qcWhVWTlsSW9LRzJXcWNYVVhlT3FETnY5cXdqMlFzNzdUXzJkekJzN19EOEFIT3JoQkxlb3dIYjJkcnFlVzFIS2VlaEpEZnV1Y1dBOUw?oc=5"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -72,5 +72,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "00:30"
+  "updated": "00:55"
 };
