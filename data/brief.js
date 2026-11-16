@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "dayType": "OPEN",
-  "headline": "Craig，今天先把市場脈動梳理清楚，迎向新的一週。",
+  "headline": "Craig，今天無行程，先深度閱讀市場趨勢，充實研究視野",
   "terrain": [
     0.15,
     0.15,
@@ -27,15 +27,15 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "快速瀏覽今日重點文章，抓住關鍵資訊。"
+      "text": "喝杯咖啡，快速瀏覽宏觀文章，抓住2027年市場大方向"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "整理筆記，思考如何應用於課題或投資。"
+      "text": "挑選兩篇深度報導，做筆記，思考如何應用於你的碩士研究"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "放鬆一下，回顧今天收穫，為明天做好準備。"
+      "text": "整理今天的閱讀重點，寫下明天的閱讀計畫，放鬆一下"
     }
   ],
   "needs": [],
@@ -45,22 +45,22 @@ window.CD.brief = {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "2026王道銀行新戶活動介紹｜存款、刷卡、台股交易優惠整理",
-          "text": "王道銀行新戶活動整理有實務案例，適合研究金融產品設計。（{src}）",
-          "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBRZnNhOUtDdGdFNm9pbmoxS0F6LW41UGtsSzBIRldVVzJCQkpHb3RPXzRxSzZnbHNIVHZTMFM1WkVkclhOeTlmQmx0U2tCbkNSaHQ1TUYzeXA?oc=5"
-        },
-        {
-          "title": "I500值得投資嗎？市場先生完整評價I500 / iShares標普500 UCITS ETF (累積型)",
-          "text": "I500 ETF 評價深入，能幫助你了解指數基金的選擇與風險。（{src}）",
-          "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1RdW1xVEVvU3ZIcEFnOUZiaWdGV2dNTGFGVi1yTE44eWxqNHplYlRvOE1GbTc4elhTd3p2OEdsSm05cnprTkkxbkJWWjI0UkV4QmRF?oc=5"
-        },
-        {
-          "title": "美債破 40 兆、AI 狂發債！2027 年債市還撐得住嗎？",
-          "text": "美債與 AI 發債趨勢解析，提供宏觀經濟視角，對課題研究很有價值。（{src}）",
+          "title": "展望2027系列二：台韓股市暴跌、印度逆勢大漲！2027 年是避風港還是新主角？",
+          "text": "《展望2027系列二》提供台韓股市與印度走勢，對你研究新興市場風險很有參考價值（{src}）",
           "srcLabel": "MacroMicro 財經M平方",
-          "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNcDBUTVI4ejdyVGZDYWJmMThyZzBwdEFySkhEdFFMWHYyYkQyR0czMjZjUDZ2aV8zWm80b1FkQm9iSF9XNjFESkxXanhIRHhxeG9zcTNBRGpBaGMzaVRKblhmUDRqNUpOVUFpTU1FT1FwRDl6UFhMVlA4amlSVFBxdEtndWFQWU1JNkYyUnJZcEdKM2ZfREphMkV0ZmZNTlRDZ25peGsyakc3ZVR3aDQwNDVVZnY1bFUtY01qcWhVWTlsSW9LRzJXcWNYVVhlT3FETnY5cXdqMlFzNzdUXzJkekJzN19EOEFIT3JoQkxlb3dIYjJkcnFlVzFIS2VlaEpEZnV1Y1dBOUw?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxNR0tJYU9CWENNYVA2MkpPYzRPbUx4cTF3czYwNnJ4Wm92VHE5aDR1NTAzYXh4YkEwVXRsWVJVRkFicUllTHZ6dW9PbnZSVnRkT3NEQjl4T2YzZlczZ2ZJODRhVUF5UWVlVWRlN0hrQnY3QlBpUU53Wk55d21HLVdQcHNlZ1lFUDY0MXlzMDRQMm9tUTNnQlp6ZnVkcVhoT2tJT3RmanZkUGZMMzlnX0xEZ2RNMjQ3WU9lc3paakhJRGFjdWRnTXNvSjhXRHMzZC14STI1WjZEZ3BkWjV4VFlKUm9CRENHOVZaVGprOUpXSFRiaWxkNmlTR3JNN29NYTJETnVoSWJiYUNLVU13WjRrZHNCeEJxVFBwaF9XTjhn?oc=5"
+        },
+        {
+          "title": "後黃仁勳時代的 AI 權力重組",
+          "text": "《後黃仁勳時代的 AI 權力重組》解析 AI 產業格局變化，能啟發你的產業分析（{src}）",
+          "srcLabel": "大叔美股筆記",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9UQld6LTZFOFYyS2pBbFdyMm9fSjQzWXA3TUhSTk1FMVpSVmZ4N1NOWXZTOTR6OTMxOEZKbDBKNUpDNm5wMi04bGRRVFlqOTJwNU4wVk9pVVQ?oc=5"
+        },
+        {
+          "title": "Nvidia 如何在沒有創辦人的情況下前進",
+          "text": "《Nvidia 如何在沒有創辦人的情況下前進》探討領導層變動對公司策略的影響，適合你的管理學課題（{src}）",
+          "srcLabel": "Harvard Business Review",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1qUHZ6NWlIVjZLZ2VSRVB4QUdOZkZiT1hkaHVueVFtcXRCYjRSV0UwU3dVWFRjOE9mUnhsVWhqVWZ3c1g5bkZrMXg2bVlFNVVjVXpBdUduNWxzN2VHWW9wUkE1YTBNZTNIZWhzUTgtMTJmOHJ6ODhPd1I0NA?oc=5"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -72,5 +72,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "00:55"
+  "updated": "04:15"
 };
