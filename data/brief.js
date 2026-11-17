@@ -2,9 +2,9 @@
 // 版型沿用 Claude 晨報（/morning）；公開網站不寫同學名字
 window.CD = window.CD || {};
 window.CD.brief = {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "dayType": "OPEN",
-  "headline": "Craig，今天無行程，先深度閱讀市場趨勢，充實研究視野",
+  "headline": "Craig，今天先放鬆，為明天的 Meet Taipei 2026 創新創業嘉年華養精蓄銳！",
   "terrain": [
     0.15,
     0.15,
@@ -27,15 +27,15 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "喝杯咖啡，快速瀏覽宏觀文章，抓住2027年市場大方向"
+      "text": "喝杯咖啡，快速瀏覽今天的市場文章，挑出最有啟發的三篇。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "挑選兩篇深度報導，做筆記，思考如何應用於你的碩士研究"
+      "text": "整理筆記，思考明天活動可能的學習重點與人脈策略。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "整理今天的閱讀重點，寫下明天的閱讀計畫，放鬆一下"
+      "text": "放空休息，做好明天早起的準備，確保精神飽滿。"
     }
   ],
   "needs": [],
@@ -45,22 +45,22 @@ window.CD.brief = {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "展望2027系列二：台韓股市暴跌、印度逆勢大漲！2027 年是避風港還是新主角？",
-          "text": "《展望2027系列二》提供台韓股市與印度走勢，對你研究新興市場風險很有參考價值（{src}）",
+          "title": "【MM一週盤前】黃仁勳告別輝達執行長身分，本週聚焦輝達法說會！",
+          "text": "第 4 篇探討 2027 年全球股市走向，對你未來投資與宏觀研究很有參考價值。（{src}）",
           "srcLabel": "MacroMicro 財經M平方",
-          "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxNR0tJYU9CWENNYVA2MkpPYzRPbUx4cTF3czYwNnJ4Wm92VHE5aDR1NTAzYXh4YkEwVXRsWVJVRkFicUllTHZ6dW9PbnZSVnRkT3NEQjl4T2YzZlczZ2ZJODRhVUF5UWVlVWRlN0hrQnY3QlBpUU53Wk55d21HLVdQcHNlZ1lFUDY0MXlzMDRQMm9tUTNnQlp6ZnVkcVhoT2tJT3RmanZkUGZMMzlnX0xEZ2RNMjQ3WU9lc3paakhJRGFjdWRnTXNvSjhXRHMzZC14STI1WjZEZ3BkWjV4VFlKUm9CRENHOVZaVGprOUpXSFRiaWxkNmlTR3JNN29NYTJETnVoSWJiYUNLVU13WjRrZHNCeEJxVFBwaF9XTjhn?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNaHM1dXduTFJhZWpuZHNCUkZaVmF6ZnBsYnZ2SDNPWGZpM3BKeEJ4QjlhZGdiWUs5UzBtZ2tsMlM1SXhZRmxTQmRlMHByLXhDV0VaZExVdExjMzdCcm5CbGsxZFR5d0NmVVNTTEtnSEEyTEN3TGNSdTI3eF82cmk5Ykk4b0Q2VWw1RTdDWmR5SGkxMWhycDZQVjdseVM3TEtyTDlmeng0a1BXYnM5c0o0ZHJtdlhxVFZ3VmcxLUNvWWNBNm93RUZSOVhNenlPbnlweGttTVlQMGNsMUhLRjJiNTNncWh2emxUakE?oc=5"
         },
         {
-          "title": "後黃仁勳時代的 AI 權力重組",
-          "text": "《後黃仁勳時代的 AI 權力重組》解析 AI 產業格局變化，能啟發你的產業分析（{src}）",
-          "srcLabel": "大叔美股筆記",
-          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9UQld6LTZFOFYyS2pBbFdyMm9fSjQzWXA3TUhSTk1FMVpSVmZ4N1NOWXZTOTR6OTMxOEZKbDBKNUpDNm5wMi04bGRRVFlqOTJwNU4wVk9pVVQ?oc=5"
+          "title": "Google 擴大 Gemini Tasks 功能，可協助通話與購物",
+          "text": "第 17 篇說明 Google Gemini Tasks 新功能，能啟發你在 AI 應用上的課題構思。（{src}）",
+          "srcLabel": "TechCrunch",
+          "link": "https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/"
         },
         {
-          "title": "Nvidia 如何在沒有創辦人的情況下前進",
-          "text": "《Nvidia 如何在沒有創辦人的情況下前進》探討領導層變動對公司策略的影響，適合你的管理學課題（{src}）",
-          "srcLabel": "Harvard Business Review",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1qUHZ6NWlIVjZLZ2VSRVB4QUdOZkZiT1hkaHVueVFtcXRCYjRSV0UwU3dVWFRjOE9mUnhsVWhqVWZ3c1g5bkZrMXg2bVlFNVVjVXpBdUduNWxzN2VHWW9wUkE1YTBNZTNIZWhzUTgtMTJmOHJ6ODhPd1I0NA?oc=5"
+          "title": "以酒糟製成無黏劑粒板",
+          "text": "第 24 篇介紹以酒糟製成無黏劑粒板，提供新創材料領域的創新案例，適合你的創業課題。（{src}）",
+          "srcLabel": "Springwise",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOQ2VRYkN4ODExeXg2bEltM2RnWXFxeWdYTDh3NVNUdE5JY0gtRzJfalZoX3BpZ3BCcHctcWVvcWR1bjVNdl9sWUtTV0g3WGcwcmhPQ1RWY0c1VFJVOGphemRUNXhLcmxObzl2T3BaeGJPV2hPMzJoaUFmMEJYR3NvRUVDYVB0T3hnQjRJWEtZQTlKSDDSAZ8BQVVfeXFMTUdCTUYxWElNRXBNUlc1aUNNUU4wejZ0bWhfUkJXZzdYaDUyT3VuT3dWVEVoWGxQeHhfRUx6VnBIQXI2UEYxTkhkRElIa3ZOdndHTUx0WnJuRkFkTi1FV0wzQ3EtcTZEOUhOeE1zdS1neTYwRmRiU0l5NEYzWE9DVzhDLWlxb2VJb3BjdlZ3NjZUa1RGXzFwUm5vdDlsQkRz?oc=5"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -72,5 +72,5 @@ window.CD.brief = {
     }
   ],
   "generated": "ai",
-  "updated": "04:15"
+  "updated": "03:00"
 };
