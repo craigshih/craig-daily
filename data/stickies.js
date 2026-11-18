@@ -2,8 +2,18 @@
 window.CD = window.CD || {};
 window.CD.stickiesDb = "https://app.notion.com/p/ad81686b08fe4394ac4c3186529a85fe";
 window.CD.stickiesForm = "https://app.notion.com/p/ad81686b08fe4394ac4c3186529a85fe?v=3fb40356b27a8126a2ba000c12eb1e3e";
-window.CD.stickiesSynced = "2026-11-14 02:55";
+window.CD.stickiesSynced = "2026-11-18 11:55";
 window.CD.stickies = [
+  {
+    "text": "振躍參訪LL",
+    "note": "",
+    "tags": [],
+    "color": "藍",
+    "link": "",
+    "pinned": false,
+    "date": "2026-11-18",
+    "id": "41c40356b27a80408793fa2e6b87f951"
+  },
   {
     "text": "簡報美編prompt",
     "note": "",
