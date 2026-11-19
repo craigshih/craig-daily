@@ -4,7 +4,7 @@ window.CD = window.CD || {};
 window.CD.brief = {
   "date": "2026-11-19",
   "dayType": "OPEN",
-  "headline": "今天行事曆是空的，Craig——挑一篇論文好好讀完。",
+  "headline": "Craig，今天全程沉浸在 Meet Taipei 2026，抓緊創新脈動！",
   "terrain": [
     0.15,
     0.15,
@@ -27,21 +27,21 @@ window.CD.brief = {
   "acts": [
     {
       "time": "早上 – 中午 12 點",
-      "text": "沒有排定的行程，留給閱讀或整理筆記。"
+      "text": "先喝杯咖啡，快速瀏覽今天的市場文章，挑出最關鍵的資訊備用。"
     },
     {
       "time": "下午 12 – 6 點",
-      "text": "沒有排定的行程，留給閱讀或整理筆記。"
+      "text": "全程參與 Meet Taipei，記得帶筆記本，捕捉演講重點與人脈資訊。"
     },
     {
       "time": "晚上 6 點以後",
-      "text": "沒有排定的行程，留給閱讀或整理筆記。"
+      "text": "回顧當天收穫，整理筆記，並規劃明天的報名流程。"
     }
   ],
   "needs": [
     {
-      "title": "報名：群益金鼎證券實習申請（至 11/20）",
-      "text": "明天在{src}上的待辦。",
+      "title": "報名群益金鼎證券實習",
+      "text": "今天要完成 {src} 的實習申請，截止日就在今晚。",
       "srcLabel": "實驗室行事曆",
       "link": "https://deptfin.ccu.edu.tw/p/403-1118-316-1.php?Lang=zh-tw"
     }
@@ -52,22 +52,22 @@ window.CD.brief = {
       "title": "今天值得讀的",
       "items": [
         {
-          "title": "主力是誰？他們在想什麼？主力的基本知識",
-          "text": "說明市場主力投資者的特性，協助企業定位資金流向與策略布局。（{src}）",
-          "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9WVjRBMktfeWt2aG92WDBlYktCeFdzWTZVX0pUVWx0b2RlVUdBWWtQYWpGY0NUOFFQZ0ZTaVJxOTBmMk5nZFczdVJPNUlndy1TWXhzVFM1OXpqMWMyQ0hHREEyamZadWNVaWc0TUR2U0ZlMDBY?oc=5"
+          "title": "【展望 2027 系列二】台韓股市暴跌、印度逆勢大漲！2027 年是避風港還是新主角？",
+          "text": "第 3 篇解析 2027 年台韓股市與印度市場走勢，對你的宏觀經濟研究很有參考價值。（{src}）",
+          "srcLabel": "MacroMicro 財經M平方",
+          "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxNR0tJYU9CWENNYVA2MkpPYzRPbUx4cTF3czYwNnJ4Wm92VHE5aDR1NTAzYXh4YkEwVXRsWVJVRkFicUllTHZ6dW9PbnZSVnRkT3NEQjl4T2YzZlczZ2ZJODRhVUF5UWVlVWRlN0hrQnY3QlBpUU53Wk55d21HLVdQcHNlZ1lFUDY0MXlzMDRQMm9tUTNnQlp6ZnVkcVhoT2tJT3RmanZkUGZMMzlnX0xEZ2RNMjQ3WU9lc3paakhJRGFjdWRnTXNvSjhXRHMzZC14STI1WjZEZ3BkWjV4VFlKUm9CRENHOVZaVGprOUpXSFRiaWxkNmlTR3JNN29NYTJETnVoSWJiYUNLVU13WjRrZHNCeEJxVFBwaF9XTjhn?oc=5"
         },
         {
-          "title": "美國 IPO 市場和早年有哪些不一樣？還有多少成長留給公開市場？",
-          "text": "比較美國 IPO 歷史與現況，提示新創企業上市時機與資本規模的變化。（{src}）",
-          "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5xdnJqdUNFTVo2cWdIZEVSVS1FeWtESGtIc3lEazdpbXZOTi1aVG5Ta2hUOHd3X2ItaWhlWW1RdThaLWt5NUtKNFZLOFRYbnh4Z25z?oc=5"
+          "title": "【MM一週盤前】黃仁勳告別輝達執行長身分，本週聚焦輝達法說會！",
+          "text": "第 4 篇聚焦 NVIDIA 法說會，提供 AI 產業最新財報資訊，對課題分析有幫助。（{src}）",
+          "srcLabel": "MacroMicro 財經M平方",
+          "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNaHM1dXduTFJhZWpuZHNCUkZaVmF6ZnBsYnZ2SDNPWGZpM3BKeEJ4QjlhZGdiWUs5UzBtZ2tsMlM1SXhZRmxTQmRlMHByLXhDV0VaZExVdExjMzdCcm5CbGsxZFR5d0NmVVNTTEtnSEEyTEN3TGNSdTI3eF82cmk5Ykk4b0Q2VWw1RTdDWmR5SGkxMWhycDZQVjdseVM3TEtyTDlmeng0a1BXYnM5c0o0ZHJtdlhxVFZ3VmcxLUNvWWNBNm93RUZSOVhNenlPbnlweGttTVlQMGNsMUhLRjJiNTNncWh2emxUakE?oc=5"
         },
         {
-          "title": "創新板和一般上市股票有差嗎？投資人該注意哪些事？",
-          "text": "解析創新板與主板差異，提醒投資人風險與成長潛力的判斷要點。（{src}）",
-          "srcLabel": "市場先生",
-          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBYMG53NUwwdDNTMS00QXZqNWc3cElqSUNlLU9aNmRKd3FhUGZCWDloUnhCclR6RFM5WnpiRm1vM21RRW1EOGpvbnJfOGhCeXY1?oc=5"
+          "title": "Nvidia 能搞定嗎？臨時 CEO Colette Kress 表示『我們搞得定』",
+          "text": "第 22 篇報導臨時 CEO Colette Kress 的看法，能讓你了解 Nvidia 內部策略變化。（{src}）",
+          "srcLabel": "Wired",
+          "link": "https://www.wired.com/story/guys-really-we-got-this/"
         },
         {
           "title": "穩定幣與存款爭奪戰：動機事實與未解問題",
@@ -78,6 +78,6 @@ window.CD.brief = {
       ]
     }
   ],
-  "generated": "template",
-  "updated": "02:45"
+  "generated": "ai",
+  "updated": "15:50"
 };
