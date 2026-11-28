@@ -1,8 +1,8 @@
 // 每日市場洞察：由 scripts/fetch_market.py 自動產生（每天台灣時間 08:30，中午、傍晚各再抓一次），請不要手動改
 window.CD = window.CD || {};
-window.CD.marketUpdated = "2026-11-28 03:25";
+window.CD.marketUpdated = "2026-11-28 16:20";
 window.CD.marketGroups = [{"id": "tw", "name": "財經・台股美股"}, {"id": "strategy", "name": "商業與戰略"}, {"id": "tech", "name": "科技・新創・創投"}, {"id": "growth", "name": "行銷・產品・增長"}, {"id": "smb", "name": "創業與中小企業"}];
-window.CD.marketSummary = {"text": "今日焦點聚在 AI 產業的供應鏈與估值變化、金融市場的波動與分散投資價值，以及新興科技的安全與合規挑戰。Nvidia 暫停東南亞出貨顯示美國對 AI 晶片的出口管制升溫；同時 AI 估值與供應鏈在 2027 年的深度分析顯示市場仍在尋找平衡點；比特幣大跌後，投資人重新檢視分散投資的意義；而密碼管理與機器人應用的安全議題則提醒企業在創新同時必須加強資安防護。", "watch": ["美國對 AI 晶片出口限制的持續影響", "比特幣與其他加密資產的長期投資價值", "AI 企業估值與供應鏈在未來數年的走向"]};
+window.CD.marketSummary = {"text": "今日焦點聚於AI晶片供應鏈緊縮、金融市場波動與AI內容生成的企業應用三大趨勢；Nvidia 暫停東南亞出貨顯示美中技術戰爭升溫；比特幣大跌後分散投資仍被討論；同時AI生成工具與聊天機器人正重塑企業營運與客戶體驗。", "watch": ["Nvidia 東南亞出貨暫停對供應鏈衝擊", "比特幣大跌後分散投資的長期價值", "生成式AI在企業營運的落地與風險"]};
 window.CD.marketStatus = [{"source": "市場先生", "ok": true, "count": 3}, {"source": "MacroMicro 財經M平方", "ok": true, "count": 3}, {"source": "大叔美股筆記", "ok": true, "count": 3}, {"source": "Harvard Business Review", "ok": true, "count": 3}, {"source": "Business Insider", "ok": true, "count": 3}, {"source": "Fast Company", "ok": true, "count": 3}, {"source": "TechCrunch", "ok": true, "count": 3}, {"source": "The Verge", "ok": true, "count": 2}, {"source": "Wired", "ok": true, "count": 2}, {"source": "Springwise", "ok": true, "count": 2}, {"source": "Lenny's Newsletter", "ok": true, "count": 2}, {"source": "Brian Balfour（Reforge）", "ok": true, "count": 0}, {"source": "HubSpot Blog", "ok": true, "count": 1}, {"source": "Shopify Blog", "ok": true, "count": 2}, {"source": "Entrepreneur", "ok": true, "count": 3}, {"source": "Small Business Trends", "ok": true, "count": 2}];
 window.CD.market = [
   {
@@ -13,7 +13,7 @@ window.CD.market = [
     "date": "2026-11-27",
     "excerpt": "",
     "titleZh": "比特幣大跌之後，還有分散投資價值嗎？—BlackRock報告閱讀心得",
-    "takeaway": "報告指出比特幣劇烈波動後，分散投資仍是降低風險的關鍵，投資人應平衡加密資產與傳統資產配置。"
+    "takeaway": "探討比特幣崩盤後，是否仍適合作為資產配置的一環，提醒投資人檢視風險與多元化策略。"
   },
   {
     "source": "市場先生",
@@ -23,7 +23,7 @@ window.CD.market = [
     "date": "2026-11-27",
     "excerpt": "",
     "titleZh": "利率期貨與選擇權是什麼？以 SOFR 認識利率交易工具",
-    "takeaway": "說明 SOFR 為基準利率的衍生工具，可協助企業管理利率風險，提升資金成本的可預測性。"
+    "takeaway": "說明SOFR基礎的利率期貨與選擇權運作，協助金融機構與投資人管理利率風險。"
   },
   {
     "source": "市場先生",
@@ -33,7 +33,7 @@ window.CD.market = [
     "date": "2026-11-25",
     "excerpt": "",
     "titleZh": "WTI原油 vs 布蘭特原油差異比較：投資人該怎麼看2大油價指標？",
-    "takeaway": "比較兩大油價基準的供需差異，提醒投資人根據地緣政治與產量變化選擇適合的油品投資策略。"
+    "takeaway": "比較兩大油價基準差異，提供能源投資人判斷價格走勢的參考框架。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -43,7 +43,7 @@ window.CD.market = [
     "date": "2026-11-24",
     "excerpt": "",
     "titleZh": "【展望 2027 系列四】黃仁勳回來了，AI 估值回得去嗎？2027 年供應鏈深度分析",
-    "takeaway": "分析 Nvidia 重新領導下的 AI 估值與供應鏈布局，指出關鍵零組件與產能瓶頸將影響未來投資回報。"
+    "takeaway": "分析Nvidia CEO回歸後AI產業估值前景，預測2027年供應鏈結構與投資機會。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -53,7 +53,7 @@ window.CD.market = [
     "date": "2026-11-23",
     "excerpt": "",
     "titleZh": "【創辦人撰文】崩盤、打底、回升：三大循環的2027 修復路線圖",
-    "takeaway": "提出三階段市場循環模型，建議企業在崩盤後加強資本結構，利用打底期布局新興技術以迎接回升。"
+    "takeaway": "闡述經濟三循環模型，指引企業在2027年前的復甦與成長策略。"
   },
   {
     "source": "MacroMicro 財經M平方",
@@ -63,7 +63,17 @@ window.CD.market = [
     "date": "2026-11-22",
     "excerpt": "",
     "titleZh": "【MM一週盤前】全球 AI 股強烈賣壓、聯準會再放鷹，本週關注美國 PCE 物價！",
-    "takeaway": "指出 AI 股面臨賣壓與美聯儲鷹派政策交叉，投資人需關注 PCE 物價指標對利率走向的影響。"
+    "takeaway": "提醒投資人關注AI股賣壓與美聯儲政策，PCE指標將左右短期市場走向。"
+  },
+  {
+    "source": "大叔美股筆記",
+    "group": "tw",
+    "title": "每日重點 261127 Substack 大叔留言重點",
+    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE84Sjhlc2pYZmFSU2psdG85dlJZQ0NqMlRfaVFrc2RJMGRFS3JLTHFlakx4OWVpbXprSEFrMmVwNTZndi0wUFU2SWZPN0RyaS1NbXFQYmtNeXVCc0dKZFh3ZEc5TV8?oc=5",
+    "date": "2026-11-28",
+    "excerpt": "",
+    "titleZh": "每日重點 261127 Substack 大叔留言重點",
+    "takeaway": "匯總當日美股與宏觀觀點，提供投資決策的快速參考。"
   },
   {
     "source": "大叔美股筆記",
@@ -73,7 +83,7 @@ window.CD.market = [
     "date": "2026-11-28",
     "excerpt": "",
     "titleZh": "2027 年的機櫃訂滿了，但買單的人換了",
-    "takeaway": "說明資料中心需求持續增長，但客戶結構轉向新興雲服務供應商，影響機櫃供應鏈策略。"
+    "takeaway": "指出資料中心需求轉移至新玩家，提示供應鏈與客戶結構變化。"
   },
   {
     "source": "大叔美股筆記",
@@ -83,17 +93,7 @@ window.CD.market = [
     "date": "2026-11-27",
     "excerpt": "",
     "titleZh": "每日重點 261126 Substack 大叔留言重點",
-    "takeaway": "彙整當日市場與科技新聞要點，提供快速資訊給投資與決策者參考。"
-  },
-  {
-    "source": "大叔美股筆記",
-    "group": "tw",
-    "title": "致 全體會員 🎁 感恩一路有你🎁",
-    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE10c09XQ1FHaVFxOFhWaHNRTEVrbXNWc2hXaTJ3REtjc0FLTnc3UVF0M2YwbmR5Zm5ValM5QndTSTgyMUx0OGNmdHB0TUZfR3hobHJhVg?oc=5",
-    "date": "2026-11-26",
-    "excerpt": "",
-    "titleZh": "致 全體會員 🎁 感恩一路有你🎁",
-    "takeaway": "感謝會員支持，強調社群互動與持續提供高品質內容的重要性。"
+    "takeaway": "整理前一天的市場要點，協助讀者快速掌握變化。"
   },
   {
     "source": "Harvard Business Review",
@@ -102,8 +102,8 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1Ta0QxSUQ2UXhwNXBGanZidWszSHR4QjA3WmpjQXZ0VWtOVjN4UjQtbzNZVVgwRU5uclpocFlsS2dwZDhBRGMzYTFlVlVXXzRSSzZ5bmNKbW1ndndnMHdva3R3ZzU4RExfVDlzVU53dG1mcnhRbUE2UnllcklDQQ?oc=5",
     "date": "2026-11-27",
     "excerpt": "",
-    "titleZh": "2026 年 11 月最受歡迎的 10 篇 HBR 文章",
-    "takeaway": "列出當月最熱的管理與策略文章，顯示領導與創新議題仍是企業關注焦點。"
+    "titleZh": "2026年11月最受歡迎的10篇HBR文章",
+    "takeaway": "彙整熱門管理與創新議題，為企業領導提供最新思考方向。"
   },
   {
     "source": "Harvard Business Review",
@@ -112,8 +112,8 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORVhOS3M5N2w0TUMxeVQ1cmkwX1JKSzQxck94YWpYVGVBSGFIeU41M1pMaG9SQmlDdGk4NjN1eUtXSXE1M3NyQzF2bmdjRmVqbE1jUkI3U21DNFhkUjlJUHNfa3RQSjhEb2xnR2ZyLUc2YVpJQ3pQS20yQmZXTE5GenVCaUF0SEk?oc=5",
     "date": "2026-11-27",
     "excerpt": "",
-    "titleZh": "生成式 AI 正讓明星公司更具競爭優勢",
-    "takeaway": "說明生成式 AI 為領先企業帶來產品與營運效率雙重提升，建議加速 AI 內部化。"
+    "titleZh": "生成式AI讓超級公司更具競爭優勢",
+    "takeaway": "說明生成式AI如何提升領先企業的效率與創新，提醒競爭者加速布局。"
   },
   {
     "source": "Harvard Business Review",
@@ -122,68 +122,68 @@ window.CD.market = [
     "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBZOUdEWXdmYkdHVGxpdnBMOTdRM0xiZUNrSkJ3a0RzdElaVmVpYTV5LTEtUTlsZU0ycDF0N19HT3E1QkR6MVNXY1o1elU?oc=5",
     "date": "2026-11-26",
     "excerpt": "",
-    "titleZh": "當員工抗拒 AI 時該怎麼做",
-    "takeaway": "提供管理者應對員工 AI 抗拒的策略，強調溝通、教育與漸進式導入的重要性。"
+    "titleZh": "當員工抗拒AI時該怎麼辦",
+    "takeaway": "提供管理層應對AI阻力的策略，強調文化與溝通的重要性。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "The military tested robots to find wounded troops and flag who needs lifesaving care first",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOVUlRVWIyYlNXbFhMOXBFMEl5V1V3Sy1NOG5teHBPMEJ4LW51VVRxMHBsMjczWVQ2SW5qTEVzbTJqaE9ILUlqRXFBZjFldWNnUzl2Zk5ONXEyeXVadnN3NFhPUW1Wb2IzTWVXWWp3N0hVVTE4TGRNMXpOTUZiLXB6djFfN29TMHVITWV5MHZxX2tWN0Z3T2V3djlZWnh0dw?oc=5",
+    "title": "274 Black Friday Deals Still Around for the Weekend",
+    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbTh2YzRQUU51T3ZfUkR5ekE0T1JuTDFfdklTODJLWmNPazBLUVNiX25vMXlqcGVYanVMekI5b2FEZi1YSy1YRHdCUjltVC1lS0hldUZtTE5jaGVkVWs0TEJqQTNTRWRITDhiOGlsNnc3dHZvSlJJWFlqZHdpMHVmVU1xTWJ1Zw?oc=5",
     "date": "2026-11-28",
     "excerpt": "",
-    "titleZh": "軍方測試機器人先找受傷士兵並標記急救需求",
-    "takeaway": "展示機器人在戰場醫療救援的應用，預示未來軍事與民用醫療科技的融合趨勢。"
+    "titleZh": "274項黑色星期五優惠仍在本週末持續",
+    "takeaway": "列出仍可搶購的折扣商品，對零售業者與消費者的購物行為有指引意義。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "Stocks rise as traders try to close out a wild Thanksgiving week on a high note",
-    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPV2lZVUtsTE5UNjlaaVNiWGdJUURSVTlkNGY4LXpNYnNaS21pajlQemw2YWFhRG1LQUVyVG8wWENtNHN3dE1xUWxfLTFoUkJYWExiV1Q2Y09yODFmWE5tbjhTUFlIMWQtQUdtQVpIZ1hlUFNsMXNYcHFFenh4TE84enhqR2RXNExWekozNnJKcXAweU91ZWM2enlmT25USUlMak8yUmhoYw?oc=5",
+    "title": "I've been testing video doorbell cameras all year and my top picks are on sale for Black Friday",
+    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNcjhMQ041VGMwY0JGWXdLWXRYajh4cExsMU05YXVlZGpJeDM2Qjh4NXhaN1dYN1VGc21Sa21tTjJWTElxSUwwNnFSaDdBdzlPVzhxUUZacUNkZUpIeFJ1YzBGQ0xfSEgwNnJBTmlNZmxXbjAzWGNfZ25Fa29FMkxyekNDTGpYQjBWcFNyZ1d2RlpjaXYyam9nM2Y1VERyR3dFdl9yQV9uNWwtQQ?oc=5",
     "date": "2026-11-28",
     "excerpt": "",
-    "titleZh": "感恩節後股市上漲：交易員試圖收尾狂野的一週",
-    "takeaway": "指出投資人利用感恩節假期後的波動收割利潤，顯示短期市場情緒仍具影響力。"
+    "titleZh": "我全年測試的視訊門鈴相機，黑五特賣的最佳選擇",
+    "takeaway": "分享門鈴相機評測與折扣資訊，對智慧家庭市場需求提供參考。"
   },
   {
     "source": "Business Insider",
     "group": "strategy",
-    "title": "Coursera is one of the best online learning platforms, and you can save $160 on a full year of courses for Black Friday",
-    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNVlIydFBFcGFwQ0lvUjJoQkQ4R3ptZmZXZWVzbHpWX3ktbmkxZEpxeXpWM1VLQ3ZieWZjMklQOTlETXB2MnRmdEdpVEdiQlFXOG54UllFYWhWY3dwVmFaVzZSbWlSQ0dLcFZXYlNwcUw0WWxDWmtDamdabVU0Z0hNbDdrNUpoS0dQNUJtT29sU1c?oc=5",
+    "title": "I'm obsessed with Dreame's Airwrap dupe, and it's $65 off for Black Friday",
+    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNbkZ4ZnhMdWFxdFozd2s0SlpZcWxyalE5dUZ1RlVMVUlPZVRjcUNRZWcxVnVuc3Y3R1Y0Z2RURnF4WDdwaE1teEw2TkQyc0RPZ1JsOUFNQ3hnWnRvMWp2TWF6SnM3T1RHaF95Z3FjWUw4aHA3UFRsNVczd0diS0hiQUtyS3N0bEtmV2p3aUpsY1ZmRng0SlNkYg?oc=5",
     "date": "2026-11-28",
     "excerpt": "",
-    "titleZh": "Coursera 為線上學習平台，黑色星期五可省 160 美元全年課程",
-    "takeaway": "促銷訊息顯示線上教育需求持續增長，企業可考慮員工再教育與技能升級。"
+    "titleZh": "我對 Dreame 的 Airwrap 替代品著迷，黑五特賣省65美元",
+    "takeaway": "介紹高性價比美髮工具，顯示消費者對平價替代品的接受度提升。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "A popular password manager was hacked. Here’s what you need to know",
-    "link": "https://www.fastcompany.com/91649530/a-popular-password-manager-was-hacked-heres-what-you-need-to-know",
+    "title": "Screwed up at work? Here’s how to learn from your mistake without overcorrecting",
+    "link": "https://www.fastcompany.com/91648424/screwed-up-at-work-heres-how-to-learn-from-your-mistake-without-overcorrecting",
     "date": "2026-11-28",
-    "excerpt": "Password managers are the safest way short of secret sticky notes to keep track of the hundreds of logins in your life, but even they don’t have perfect security. Popular Password manager 1Password disclosed this week…",
-    "titleZh": "熱門密碼管理員被駭：你需要知道的事",
-    "takeaway": "即使是領先的密碼管理工具也可能被入侵，提醒企業加強多因素驗證與資安防護。"
+    "excerpt": "Part of what separates great leaders and employees from merely good ones is the ability to learn effectively from mistakes. Often, we talk about learning from mistakes as if most people don’t. But while we can always…",
+    "titleZh": "工作失誤怎麼學習而不過度修正？",
+    "takeaway": "提供從錯誤中快速學習的框架，對領導與員工的成長管理具實務價值。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "Elon Musk is giving away nearly $18 billion in SpaceX stock. Here’s who can get it",
-    "link": "https://www.fastcompany.com/91649518/elon-musk-is-giving-away-nearly-18-billion-in-spacex-stock-heres-who-can-get-it",
+    "title": "The 4 secret Amazon clearance sites you should check before buying retail",
+    "link": "https://www.fastcompany.com/91633387/amazon-resale-outlet-woot-haul",
     "date": "2026-11-28",
-    "excerpt": "Your kid is becoming quite the capitalist . Every U.S. child with an active Trump account will soon receive two shares of SpaceX , the space exploration company run by Elon Musk . This donation marks the latest in a…",
-    "titleZh": "Elon Musk 捐贈近 180 億美元的 SpaceX 股票：誰能領取",
-    "takeaway": "此舉顯示富豪慈善與股權激勵的結合，可能影響未來科技公司股權分配與稅務規劃。"
+    "excerpt": "As we power toward the holidays, the shopping pressure is officially on. Your natural instinct may be to type what you need into the Amazon search bar, click the first Prime-eligible result, and pay whatever price the…",
+    "titleZh": "四個祕密的亞馬遜清倉網站購物指南",
+    "takeaway": "揭露亞馬遜低價清倉渠道，對電商採購與價格策略有啟示。"
   },
   {
     "source": "Fast Company",
     "group": "strategy",
-    "title": "Aibo, Sony’s robot dog, now has a second life in hospitals",
-    "link": "https://www.fastcompany.com/91649467/how-sony-giving-dog-robot-aibo-second-life-hospitals",
+    "title": "The 2026 Macy’s Thanksgiving Day Parade isn’t canceled. Here’s when you can watch it this weekend",
+    "link": "https://www.fastcompany.com/91649579/the-2026-macys-thanksgiving-day-parade-isnt-canceled-heres-when-you-can-watch-it-this-weekend",
     "date": "2026-11-28",
-    "excerpt": "The people at Sony don’t use words like “product” or “reboot” when they talk about Aibo , the Japanese electronics and entertainment company’s robotic dog . Aibo robots, which first went on sale in 1999, are all sold…",
-    "titleZh": "Sony 機器狗 Aibo 在醫院獲新生命",
-    "takeaway": "Aibo 進入醫療場域示範機器人情感互動的商業潛力，鼓勵醫療機構探索 AI 伴侶式服務。"
+    "excerpt": "Thanksgiving may be over, but one of the holiday’s biggest traditions is still to come. For the first time in its history, the Macy’s Thanksgiving Day Parade is taking place on a day other than Thanksgiving. On…",
+    "titleZh": "2026年梅西感恩節大遊行未取消，週末可觀看時間",
+    "takeaway": "說明感恩節大遊行改期資訊，對廣告與品牌曝光時機提供參考。"
   },
   {
     "source": "TechCrunch",
@@ -192,8 +192,8 @@ window.CD.market = [
     "link": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
     "date": "2026-11-27",
     "excerpt": "Nvidia has told manufacturing partners to pause server shipments to Malaysia, Singapore, Thailand and Indonesia as the U.S. tightens its push to keep AI chips out of China.",
-    "titleZh": "Nvidia 暫停向東南亞出貨晶片",
-    "takeaway": "因美國限制 AI 晶片對中國的出口，Nvidia 暫停東南亞供應，顯示供應鏈政治風險升高。"
+    "titleZh": "Nvidia暫停向東南亞出貨晶片",
+    "takeaway": "因美國限制AI晶片對中國，Nvidia暫停東南亞供應，衝擊區域供應鏈與成本。"
   },
   {
     "source": "TechCrunch",
@@ -202,8 +202,8 @@ window.CD.market = [
     "link": "https://techcrunch.com/2026/11/26/is-alice-huang-a-spy-or-not/",
     "date": "2026-11-27",
     "excerpt": "The central, still-unproven claim in the Nvidia scandal is that Alice Huang, the former Megaspeed exec with whom Nvidia CEO Jensen Huang had an extramarital affair, is a Chinese spy.",
-    "titleZh": "Alice Huang 是間諜嗎？",
-    "takeaway": "圍繞 Nvidia 醜聞的間諜傳聞突顯企業高層人事與國安議題的敏感性。"
+    "titleZh": "Alice Huang是間諜嗎？—Nvidia醜聞核心未證實指控",
+    "takeaway": "探討Nvidia高層與間諜傳聞，提醒企業在危機公關與資訊安全上的風險。"
   },
   {
     "source": "TechCrunch",
@@ -212,28 +212,28 @@ window.CD.market = [
     "link": "https://techcrunch.com/2026/11/26/x-finally-gets-parental-controls-after-20-years/",
     "date": "2026-11-27",
     "excerpt": "Elon Musk's social network X has finally added parental controls for teenagers, giving parents and guardians a way to manage what their kids see on the platform.",
-    "titleZh": "X 終於在 20 年後推出家長監控功能",
-    "takeaway": "X 加入青少年家長控制，回應社會對社群平台兒童安全的壓力，可能提升平台使用者信任。"
+    "titleZh": "X終於在20年後推出家長監控功能",
+    "takeaway": "X平台加入青少年家長控制，顯示社群平台在安全治理上的新趨勢。"
   },
   {
     "source": "The Verge",
     "group": "tech",
-    "title": "The absolute best Black Friday deals we’ve found (so far)",
+    "title": "The M5 MacBook Air just got its biggest discount since Apple raised the price",
+    "link": "https://www.theverge.com/gadgets/1044771/m5-macbook-air-black-friday-2026-deal-sale",
+    "date": "2026-11-28",
+    "excerpt": "If you’ve been holding off on buying a new MacBook Air since Apple raised prices by $200 in June, you’re in luck. The 13-inch M5 MacBook Air is on sale at Amazon and Best Buy with 16GB of RAM and 512GB of storage…",
+    "titleZh": "M5 MacBook Air 迎最大折扣，自Apple提價後首次降價",
+    "takeaway": "MacBook Air 大幅降價刺激需求，對高階筆電市場競爭格局產生影響。"
+  },
+  {
+    "source": "The Verge",
+    "group": "tech",
+    "title": "The absolute best Black Friday deals you can still get",
     "link": "https://www.theverge.com/gadgets/1039190/best-black-friday-2026-deals-tech-gadgets-gift-ideas",
     "date": "2026-11-28",
-    "excerpt": "This year’s Black Friday deals have launched in waves over the past several weeks, but now the floodgates have officially opened. You can now take advantage of the lowest prices we’ve seen in-store and online for video…",
-    "titleZh": "我們找到的最佳黑色星期五優惠（截至目前）",
-    "takeaway": "彙整當前最划算的商品折扣，顯示消費者在節慶期間的購買行為與價格敏感度。"
-  },
-  {
-    "source": "The Verge",
-    "group": "tech",
-    "title": "Anker’s 100W universal travel charger is down to $60, its lowest price yet",
-    "link": "https://www.theverge.com/gadgets/1041006/anker-100w-universal-travel-charger-black-friday-deal-sale",
-    "date": "2026-11-28",
-    "excerpt": "During Black Friday, the Anker 100W Universal Charger is on sale for $59.99 at Amazon, Best Buy, and Walmart, a $20 discount from its list price. That’s a few dollars lower than the previous best, with both the dark…",
-    "titleZh": "Anker 100W 通用旅行充電器降至 60 美元，創新低價",
-    "takeaway": "高功率充電器大幅降價顯示競爭激烈，對行動裝置與遠距工作者的採購決策有正面影響。"
+    "excerpt": "Black Friday is nearly over, but many of this year’s best deals are still available. You can still find some of the lowest prices we’ve seen in-store and online for video games, wireless earbuds, TVs, robot vacuums, and…",
+    "titleZh": "仍可取得的最佳黑五優惠清單",
+    "takeaway": "彙整仍在熱賣的黑五折扣，顯示消費者購買力仍在延伸。"
   },
   {
     "source": "Wired",
@@ -242,8 +242,8 @@ window.CD.market = [
     "link": "https://www.wired.com/story/a-new-breed-of-chip-runs-ai-models-using-waves-of-light/",
     "date": "2026-11-27",
     "excerpt": "German company Q.ANT is trying to cut the amount of energy required to run AI models by using light to perform the toughest calculations.",
-    "titleZh": "新型光波 AI 晶片：以光波運算降低能耗",
-    "takeaway": "德國 Q.ANT 研發光學 AI 晶片，可能顛覆傳統電力密集型 AI 計算，為綠色 AI 提供新路徑。"
+    "titleZh": "新一代光波AI晶片降低運算能耗",
+    "takeaway": "德國Q.ANT利用光波計算AI模型，預示未來晶片能源效率突破。"
   },
   {
     "source": "Wired",
@@ -252,8 +252,8 @@ window.CD.market = [
     "link": "https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/",
     "date": "2026-11-26",
     "excerpt": "The FCA warned against “another force of attack” from agents after the company declined a request to work on joint testing ahead of rolling out its personal agent in the UK on Tuesday.",
-    "titleZh": "Meta 拒絕共享 Muse 測試，英國金融監管機構投訴",
-    "takeaway": "Meta 在個人助理測試上的合作阻礙，引發監管機構關注 AI 透明度與合規風險。"
+    "titleZh": "Meta拒絕分享Muse測試，英國金融監管機構投訴",
+    "takeaway": "Meta不配合測試引發監管關注，提醒AI產品合規與監管互動的重要性。"
   },
   {
     "source": "Springwise",
@@ -263,7 +263,7 @@ window.CD.market = [
     "date": "2026-11-28",
     "excerpt": "",
     "titleZh": "創新水基鋅電池技術",
-    "takeaway": "水基鋅電池提供更安全、成本較低的儲能方案，對電動車與再生能源儲存市場具潛力。"
+    "takeaway": "新型鋅電池以水系電解質提升安全與成本，對儲能產業具潛在衝擊。"
   },
   {
     "source": "Springwise",
@@ -273,7 +273,7 @@ window.CD.market = [
     "date": "2026-11-27",
     "excerpt": "",
     "titleZh": "預測核燃料儲存材料性能",
-    "takeaway": "新方法可提前評估核燃料儲存材料的長期安全性，提升核能產業的風險管理能力。"
+    "takeaway": "利用AI預測核燃料容器材料壽命，提升核能安全與維護效率。"
   },
   {
     "source": "Lenny's Newsletter",
@@ -282,8 +282,8 @@ window.CD.market = [
     "link": "https://www.lennysnewsletter.com/p/gemini-4-neon-beat-gpt-62-and-claude",
     "date": "2026-11-25",
     "excerpt": "Watch now (32 mins) | 🎙️ My late-2026 How I AI bench: GPT-6.2 disappointed me, Opus 5.5 is my least annoying daily driver, and Gemini 4 Neon is now my top pick",
-    "titleZh": "Gemini 4 Neon 在 25 項 AI 基準測試中擊敗 GPT-6.2 與 Claude",
-    "takeaway": "最新 Gemini 4 Neon 展現卓越效能，暗示 AI 模型競爭加速，企業需持續評估最佳模型。"
+    "titleZh": "Gemini 4 Neon在25項AI基準測試中勝過GPT-6.2與Claude",
+    "takeaway": "Gemini 4 Neon表現領先，顯示AI模型競賽持續加速，企業需關注技術更新。"
   },
   {
     "source": "Lenny's Newsletter",
@@ -292,8 +292,8 @@ window.CD.market = [
     "link": "https://www.lennysnewsletter.com/p/how-i-ai-openclaw-for-executives",
     "date": "2026-11-24",
     "excerpt": "Your weekly listens from How I AI, part of the Lenny’s Podcast Network",
-    "titleZh": "How I AI：OpenClaw 為主管自動化 1% 煩惱",
-    "takeaway": "OpenClaw 針對日常小問題自動化，幫助主管減少行政負擔，提高決策效率。"
+    "titleZh": "How I AI: OpenClaw 為主管自動化1%煩惱任務",
+    "takeaway": "介紹OpenClaw工具幫助主管自動化日常瑣事，提升工作效率的實務案例。"
   },
   {
     "source": "HubSpot Blog",
@@ -302,58 +302,68 @@ window.CD.market = [
     "link": "https://blog.hubspot.com/marketing/crm-for-political-campaigns",
     "date": "2026-11-25",
     "excerpt": "A political campaign CRM is a system for managing supporter relationships and coordinating campaign interactions across teams. Unlike a general CRM, a political campaign CRM focuses on the needs of election campaigns,…",
-    "titleZh": "政治活動 CRM：關鍵術語與常見問答",
-    "takeaway": "說明政治活動專屬 CRM 功能，協助選舉團隊管理支持者與溝通流程。"
+    "titleZh": "政治活動CRM：關鍵術語與常見問答",
+    "takeaway": "說明政治選舉專用CRM功能，對政黨與活動組織的數位化管理提供指引。"
   },
   {
     "source": "Shopify Blog",
     "group": "growth",
-    "title": "3PL Pricing Guide: Common Third-Party Logistics Costs (2026)",
-    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9KVFlZLXhPMFptLWVBMUF4QUI5OG5Gd2NESFNoTkhOR1ZVUVQ3RzZXcGRNbG1lcGNZalhCV1NUMlJ1Rkl2bG8ya193UHJ4SmFlM1E?oc=5",
+    "title": "How ChatGPT Shopping Works for Ecommerce Stores (2026)",
+    "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9DLTNrVnBqcW1wMWp4Q3hWbUxVdG1aVFBTOTVrNHk4TWlHbUtsUVBfeWtmMmQ0bUdDMDdGaEt2ZHlPRERfbUpnSnpKV3V4TzJOUnZvUUpBcnY?oc=5",
     "date": "2026-11-26",
     "excerpt": "",
-    "titleZh": "3PL 定價指南：常見第三方物流成本（2026）",
-    "takeaway": "解析第三方物流的費用結構，幫助電商與製造業優化供應鏈成本。"
+    "titleZh": "ChatGPT購物功能如何在電商平台運作（2026）",
+    "takeaway": "解析ChatGPT在電商的應用流程，協助業者提升客戶導購與轉換率。"
   },
   {
     "source": "Shopify Blog",
     "group": "growth",
-    "title": "TikTok Ads in 2027: Strategy, Costs & Best Practices",
-    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9MNlpTX3dxd3JpbURWc0FNbjhyZ183VkJNNXZTT1JZNzFUWTljQVA4MHhWbE5hU0laZjFqcXRzb25HNkpDSTNfVktQRDI4ODJN?oc=5",
-    "date": "2026-11-25",
+    "title": "A/B Price Testing: Guide for Ecommerce Businesses (2026)",
+    "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE52TjRBQTVkM2NVdWJEd0RIVFJEOUVFbkVFWjBpcHJ5SUxuNGhvVGRaZEdzYmx6bFgxWkx3b1dxT25OOTN6ZjhFcmRUekdRZ19aLWNRVmtDMXY?oc=5",
+    "date": "2026-11-26",
     "excerpt": "",
-    "titleZh": "2027 年 TikTok 廣告：策略、成本與最佳實務",
-    "takeaway": "提供 TikTok 廣告投放的最新策略與預算建議，適用於品牌在短影片平台的行銷規劃。"
+    "titleZh": "A/B價格測試指南：電商業者必備（2026）",
+    "takeaway": "提供電商進行價格A/B測試的步驟與最佳實務，助於優化營收。"
   },
   {
     "source": "Entrepreneur",
     "group": "smb",
-    "title": "Your Career Is Probably Ignoring Your Strongest Leadership Training: Community",
-    "link": "https://www.entrepreneur.com/business-news/your-career-is-probably-ignoring-your-strongest-leadership-training-community",
-    "date": "2026-11-27",
-    "excerpt": "Community involvement can be a powerful source of leadership skills, professional connections and career opportunities. By recognizing the value of their community experiences, building genuine relationships and making…",
-    "titleZh": "你的職涯可能忽略最強領導力訓練：社群",
-    "takeaway": "強調社群參與能培養領導力與人脈，建議職場人士主動投入社群活動。"
+    "title": "How to Set Up AI Agents That Work Toward a Million-Dollar Business Goal Instead of Following Prompts",
+    "link": "https://www.entrepreneur.com/building-a-business/the-ai-setup-so-powerful-you-give-it-a-million-dollar-goal-instead-of-a-prompt",
+    "date": "2026-11-28",
+    "excerpt": "A new breed of AI-powered one-person business is emerging — one that can detect problems, mobilize its own AI team and keep ambitious revenue goals on track.",
+    "titleZh": "如何設定AI代理人達成百萬美元營收目標",
+    "takeaway": "說明AI代理人自動化營運與目標追蹤，對單人創業者具可行藍圖。"
   },
   {
     "source": "Entrepreneur",
     "group": "smb",
-    "title": "How To Build Influence Without Waiting for Authority",
-    "link": "https://www.entrepreneur.com/business-news/how-to-build-influence-without-waiting-for-authority",
-    "date": "2026-11-27",
-    "excerpt": "Building influence requires more than a leadership title or strong job performance. By developing relationships, gathering evidence, earning trust and taking initiative, professionals can shape decisions, create…",
-    "titleZh": "如何在未取得權威前建立影響力",
-    "takeaway": "提供在組織內透過關係與信任建立影響力的實務方法，適用於新進或跨部門合作。"
+    "title": "A Bigger Business Isn’t Automatically a Better One. Here’s What to Ask Before Scaling.",
+    "link": "https://www.entrepreneur.com/building-a-business/a-bigger-business-isnt-automatically-a-better-one-heres-what-to-ask-before-scaling",
+    "date": "2026-11-28",
+    "excerpt": "Scaling a business isn't just about hiring more people and increasing revenue. Growth brings new management challenges, operational complexity and the risk of losing sight of customers.",
+    "titleZh": "規模擴張前必問的關鍵問題",
+    "takeaway": "提醒企業在快速成長前檢視管理與客戶焦點，避免盲目擴張。"
   },
   {
     "source": "Entrepreneur",
     "group": "smb",
-    "title": "The Simple AI Framework I Use to Cut Administrative Waste",
-    "link": "https://www.entrepreneur.com/leadership/the-ai-adoption-framework-i-use-to-cut-administrative-waste/505132",
-    "date": "2026-11-27",
-    "excerpt": "AI delivers the greatest business impact when it's implemented strategically to eliminate repetitive administrative work, reduce burnout and free employees to focus on high-value, relationship-driven tasks.",
-    "titleZh": "我使用的簡易 AI 框架：削減行政浪費",
-    "takeaway": "介紹一套 AI 框架可自動化重複性行政工作，降低員工倦怠並提升高價值任務產出。"
+    "title": "Stop Building AI Into Your Product. Let Your Customers Bring Their Own.",
+    "link": "https://www.entrepreneur.com/business-news/tech/stop-building-ai-into-your-product-let-your-customers-bring-their-own",
+    "date": "2026-11-28",
+    "excerpt": "Your B2B customers already pay for an AI assistant. \"Bring your own agent\" lets you plug into it instead of competing with it.",
+    "titleZh": "停止在產品內建AI，讓客戶自行帶入",
+    "takeaway": "倡導B2B客戶使用自有AI代理，降低開發成本並提升客製化彈性。"
+  },
+  {
+    "source": "Small Business Trends",
+    "group": "smb",
+    "title": "7 Examples of Good Employee Performance Reviews",
+    "link": "https://smallbiztrends.com/examples-of-good-employee-performance-reviews/",
+    "date": "2026-11-28",
+    "excerpt": "Discover 7 examples of good employee performance reviews that highlight effective feedback techniques and strategies. Improve your review process with these insightful examples designed to motivate and guide employees…",
+    "titleZh": "7個優秀員工績效評估範例",
+    "takeaway": "提供具體績效回饋範例，協助管理者提升評估品質與員工動機。"
   },
   {
     "source": "Small Business Trends",
@@ -362,17 +372,7 @@ window.CD.market = [
     "link": "https://smallbiztrends.com/manager-time-management-skills/",
     "date": "2026-11-28",
     "excerpt": "Discover the 7 essential time management skills for managers that can enhance productivity and lead to effective team performance. Master these manager time management skills to optimize your workflow and achieve your…",
-    "titleZh": "管理者必備的 7 項時間管理技巧",
-    "takeaway": "列出提升管理者效率的時間管理技巧，協助領導者優化團隊績效。"
-  },
-  {
-    "source": "Small Business Trends",
-    "group": "smb",
-    "title": "Small Businesses Thrive with Accountants, Findings Reveal",
-    "link": "https://smallbiztrends.com/small-businesses-thrive-with-accountants-findings-reveal/",
-    "date": "2026-11-27",
-    "excerpt": "Discover how small businesses are flourishing with the support of accountants. This article reveals key findings on the vital role accountants play in driving growth, efficiency, and financial success for small…",
-    "titleZh": "小企業與會計師的成功關係：調查結果揭示",
-    "takeaway": "研究顯示會計師對小企業成長與財務健康具關鍵作用，建議企業加強會計合作。"
+    "titleZh": "管理者必備的7項時間管理技巧",
+    "takeaway": "列出提升管理者效率的時間管理技巧，對提升團隊績效有直接幫助。"
   }
 ];
